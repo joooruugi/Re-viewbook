@@ -1,0 +1,31 @@
+.footerrvb{
+    float: left;
+    width: 100%;
+    height: 56px;
+    border-top: 5px solid #fdf6ec;
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.footerrvb .footer_left{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: gray;
+    font-size: 15px;
+}
+.footerrvb .footer_left p{
+    margin: 3px;
+}
+.footerrvb .footer_right{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.footerrvb .footer_right a{
+    color: gray;
+    margin: 0 20px;
+    line-height: 56px;
+    font-size: 15px;
+}
