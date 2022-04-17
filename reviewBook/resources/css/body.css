@@ -1,0 +1,50 @@
+/* 바디부분  */
+.bodyrvb{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+}
+/* 사이드메뉴  */
+.sidemenu{
+    width: 200px;
+    /* margin: 20px; */
+    text-align: left;
+    background-color: #eaf4fc;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #96bff9;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.sidemenu_book {
+    margin: 20px;
+}
+.sidemenu_book .sidemenu_item{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.sidemenu_book li{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+.sidemenu_book li:hover{
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #b6d4ff;
+    border-radius: 30px;
+}
+.sidemenu_book .sidemenu_topmenu{
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* 메인콘텐트 들어갈 부분  */
+

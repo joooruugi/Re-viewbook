@@ -1,0 +1,76 @@
+.navbar{
+    width: 100%;
+    height: 72px;
+    /* background-color: #fdf6ec; */
+    border-bottom: 5px solid #fdf6ec;
+}
+.navbar_left{
+    float: left;
+    text-align: center;
+    line-height: 72px;
+    height: 72px;
+}
+.mainlogo{
+    height: 72px;
+}
+.mainlogo img{
+    height: 72px;
+    width: 180px;
+}
+
+/* 드롭다운 상단 메뉴  */
+.dropdownmenu a{
+    color: black;
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.dropdownmenu .nav_dropdownmenu1 li{
+    position: relative;
+    margin: 0 25px ;
+    height: 72px;
+    float: left;
+    text-align: left;
+}
+.dropdownmenu .nav_dropdownmenu1 .nav_dropdownmenu2 li{
+    top: 80px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fdf6ec;
+}
+.nav_dropdownmenu2 li a{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.nav_dropdownmenu2{
+    display: none;
+}
+.dropdownmenu .nav_dropdownmenu1 li:hover .nav_dropdownmenu2{
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block; 
+    flex-direction: column;
+    margin: 0;
+}
+
+/* 상단메뉴 오른쪽  */
+.navbar_right{
+    float: right;
+}
+.navbar_right input, .navbar_right a{
+    margin: 0 25px;
+}
+.navbar_right a{
+    line-height: 72px;
+    color: black;
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
