@@ -13,7 +13,7 @@
     margin-top: 15px;
     margin-left: 20px;
     color: gray;
-    font-size: 15px;
+    font-size: 12px;
 }
 .footerrvb .footer_left p{
     margin: 3px;
@@ -21,7 +21,7 @@
 .footerrvb .footer_right{
     float: right;
     margin-right: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .footerrvb .footer_right a{
     color: gray;
