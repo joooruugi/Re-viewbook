@@ -13,7 +13,7 @@
 <%@ include file="./view/template_header.jsp" %>
 		<div class="wrap content">
             <div id="content">
-            	책책책책책책책
+            	책책책책책책책 펀딩해라 좋은말 할때!
             </div>
 		</div>
 <%@ include file="./view/template_footer.jsp" %>
