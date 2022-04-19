@@ -15,7 +15,7 @@
             <div id="content">
             	책책책책책책책 펀딩해라 좋은말 할때!
                 안녕하십니까 만나서 반갑숩니다!
-                테스트123
+                제발 되라
             </div>
 		</div>
 <%@ include file="./view/template_footer.jsp" %>
