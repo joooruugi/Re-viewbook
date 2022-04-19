@@ -11,14 +11,16 @@
                 <div class="dropdownmenu">
                     <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="#">도서</a>
+                            <a class="nav_item" href="naver.com">도서</a>
                             <ul class="nav_dropdownmenu2">
-                                <li><a class="nav_item" href="#">스릴러</a></li>
+                                <li><a class="nav_item" href="naver.com">스릴러</a></li>
                                 <li><a class="nav_item" href="#">힐링</a></li>
                                 <li><a class="nav_item" href="#">로맨스</a></li>
                                 <li><a class="nav_item" href="#">자기계발</a></li>
                             </ul>
                         </li>
+                        </ul>
+                        <ul class="nav_dropdownmenu1">
                         <li>
                             <a class="nav_item" href="#">연재</a>
                             <ul class="nav_dropdownmenu2">
@@ -28,6 +30,8 @@
                                 <li><a class="nav_item" href="#">기타</a></li>
                             </ul>
                         </li>
+                        </ul>
+                        <ul class="nav_dropdownmenu1">
                         <li>
                             <a class="nav_item" href="#">펀딩</a>
                             <ul class="nav_dropdownmenu2">
@@ -36,6 +40,8 @@
                                 <li><a class="nav_item" href="#">펀딩 성공작</a></li>
                             </ul>
                         </li>
+                        </ul>
+                        <ul class="nav_dropdownmenu1">
                         <li>
                             <a class="nav_item" href="#">구독</a>
                             <ul class="nav_dropdownmenu2">
@@ -44,6 +50,8 @@
                                 <li><a class="nav_item" href="#">QNA</a></li>
                             </ul>
                         </li>
+                        </ul>
+                        <ul class="nav_dropdownmenu1">
                         <li>
                             <a class="nav_item" href="#">마이페이지</a>
                             <ul class="nav_dropdownmenu2">

@@ -26,20 +26,24 @@
     font-weight: normal;
     font-style: normal;
 }
-.dropdownmenu .nav_dropdownmenu1 li{
-    position: relative;
-    margin: 0 25px ;
-    height: 72px;
-    float: left;
-    text-align: left;
+.dropdownmenu{
+    display: flex;
 }
-.dropdownmenu .nav_dropdownmenu1 .nav_dropdownmenu2 li{
-    top: 80px;
-    width: 100px;
-    height: 40px;
+.dropdownmenu .nav_dropdownmenu1{
+    position: relative;
+    margin: 0 30px ;
+    height: 72px;
+    text-align: left;
+    cursor: pointer;
+}
+.dropdownmenu .nav_dropdownmenu2 li{
+    top: 120px;
+    width: 140px;
     text-align: center;
-    line-height: 40px;
     background-color: #fdf6ec;
+}
+.dropdownmenu .nav_dropdownmenu1 .nav_item{
+	cursor:pointer;
 }
 .nav_dropdownmenu2 li a{
     font-family: 'SF_HailSnow';
@@ -51,10 +55,10 @@
     display: none;
 }
 .dropdownmenu .nav_dropdownmenu1 li:hover .nav_dropdownmenu2{
-    top: 0;
+    top: 72px;
     left: 0;
     position: absolute;
-    display: block; 
+    display: flex; 
     flex-direction: column;
     margin: 0;
 }
