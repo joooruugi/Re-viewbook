@@ -35,5 +35,16 @@
 		<filter-name>LoginFilter</filter-name>
 		<url-pattern>*.lo</url-pattern>
 	</filter-mapping>
-  
+  	<resource-ref>
+  		<description>jkbsPclass</description>
+  		<res-ref-name>jdbc/jkbsPclass</res-ref-name>
+  		<res-type>javax.sql.DataSource</res-type>
+  		<res-auth>Container</res-auth>
+  	</resource-ref>
+  	<resource-ref>
+  		<description>jkbsLocal</description>
+  		<res-ref-name>jdbc/jkbsLocal</res-ref-name>
+  		<res-type>javax.sql.DataSource</res-type>
+  		<res-auth>Container</res-auth>
+  	</resource-ref>
 </web-app>
