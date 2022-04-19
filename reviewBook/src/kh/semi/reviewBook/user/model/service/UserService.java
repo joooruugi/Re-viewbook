@@ -5,7 +5,7 @@ import java.sql.Connection;
 import kh.semi.reviewBook.user.model.dao.UserDao;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
-import static kh.semi.reviewBook.common.jdbc.JdbcTemplate.*;
+import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
 public class UserService {
 	private UserDao dao = new UserDao();
