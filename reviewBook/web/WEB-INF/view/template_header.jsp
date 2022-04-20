@@ -5,7 +5,7 @@
  <header>
         <div class="navbar">
             <nav class="navbar_left mainlogo">
-                <img src="./resources/image/RVBlogo.png">
+                <img src="./resources/image/all/header/RVBlogo.png">
             </nav>
             <nav class="navbar_left">
                 <div class="dropdownmenu">
@@ -65,7 +65,7 @@
             </nav>
             <nav class="navbar_right">
                 <input class="searchBox">
-                <a class="navbar_signup" href="#">회원가입</a>
+                <a class="navbar_signup" href="signup">회원가입</a>
                 <a class="navbar_signup" href="#">로그인</a>
                 <a class="navbar_signup" href="#">공지사항</a>
             </nav>
@@ -88,7 +88,7 @@
                 </a>
             </div>
             <div class="main1_right">
-                <img src="./resources/image/앉아있는애기.jpg">
+                <img src="./resources/image/main/앉아있는애기.jpg">
             </div>
         </div>
         <div class="main2_contentrvb">

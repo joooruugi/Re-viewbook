@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/header.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/reset.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/main/main.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

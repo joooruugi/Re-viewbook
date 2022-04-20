@@ -16,8 +16,7 @@ private static Connection conn = null;
 		try {
 			Context initContext = new InitialContext();
 			Context envContext = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/jkbsPclass");
-//			DataSource ds = (DataSource)envContext.lookup("jdbc/jkbsLocal");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/oracleLocal");
 			conn = ds.getConnection();
 		} catch(SQLException e) {
 			System.out.println("db 접속 실패");
