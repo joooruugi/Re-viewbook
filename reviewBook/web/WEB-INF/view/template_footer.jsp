@@ -5,7 +5,7 @@
      <footer>
         <div class="footerrvb">
             <div class="footer_left">
-                <p>주식(하고싶은)회사 ReViewBook</p>
+                <p>주식(하고싶은)회사 ReViewBook RVB</p>
                 <p>Since 2022.03.30 / 서울특별시 리뷱구 리뷱동 리뷱빌라 1-8층 리뷱</p>
                 <p>사업(하고싶은 대표)자 등록번호 : 010-3328-7786 (장난전화 금지)</p>
                 <p>리뷱의 모든 저작권은 법에 의해 보호...받고싶습니다</p>
