@@ -23,14 +23,14 @@
                     RVB와의 동행
                 </p>
                 <a class="main1_button1" href="#">
-                    <p class="fontnormal">Join with us</p>
+                    <p class="fontnormal">RVB와 함께하기</p>
                 </a>
                 <a class="main1_button2" href="#">
-                    <p class="fontnormal">Subscribe</p>
+                    <p class="fontnormal">책 구독하기</p>
                 </a>
             </div>
             <div class="main1_right">
-                <img src="앉아있는애기.jpg">
+                <img src="<%=request.getContextPath() %>/resources/image/main/앉아있는애기.jpg">
             </div>
         </div>
         <div class="main2_contentrvb">
