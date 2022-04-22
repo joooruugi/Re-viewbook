@@ -1,0 +1,121 @@
+.signup_body2 {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.sidemenu {
+    width: 200px;
+    margin: 20px;
+    text-align: left;
+    background-color: #eaf4fc;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #96bff9;
+    border-radius: 20px;
+    cursor: pointer;
+    float: left;
+}
+
+.sidemenu_signup2 {
+    margin: 20px;
+}
+
+.sidemenu_signup2 .sidemenu_item {
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sidemenu_signup2 li {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.sidemenu_signup2 .signupuser_second {
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #b6d4ff;
+    border-radius: 30px;
+}
+
+.sidemenu_signup2 .sidemenu_topmenu {
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* 정보입력  */
+.signupuser_second_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #f2e2ca;
+    border-radius: 20px;
+    margin: 20px;
+}
+.singupuser_input_info {
+    width: 100%;
+    display: flex;
+    margin: 10px;
+    border-bottom: 2px solid black;
+}
+.signupuser_input_text{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-bottom: 15px;
+    margin-top: 1px;
+    text-decoration: underline;
+    text-decoration-color: #ffd497;
+}
+.signupuser_input_btn{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.sigupsuer_second_signupbtn{
+    margin: 10px;  
+    float: right;
+}
+.signupuser_input_text .signup_infoname{
+    font-size: 16px;
+    margin: 21px 0;
+}
+.signupuser_input_input{
+    display: flex;
+    flex-direction: column;
+}
+.signupuser_input_input input{
+    width: 350px;
+    height: 20px;
+}
+.signupuser_input_input .signup_infoinput{
+    margin: 16px 0;
+}
+.signupinfo_idcheck{
+    margin-top: 7px;
+}
+.signupinfo_emailcheck{
+    margin-top: 440px;
+}
+.sigupsuer_second_signupbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #fce1ba;
+    border: 1px solid #f0d1a6;
+    border-radius: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,106 @@
+.loginadmin_body{
+    margin: 0 auto;
+}
+.loginadmin_content{
+    margin: 25px auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #a9b8c4;
+    border-radius: 20px;
+}
+.loginadmin_notice{
+    margin: 10px;
+}
+.loginadmin_notice p{
+   font-size: 30px;
+   background-color: #d4e9f9;
+}
+.loginadmin_text, .loginadmin_input{
+    display: flex;
+    flex-direction: column;
+    float:left;
+    margin: 40px 40px 10px 40px;
+}
+.loginadmin_text p{
+    margin: 16px;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #98c9f1;
+}
+.loginadmin_input input{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+}
+.loginadmin_input input:hover{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+    border : 1px solid blue;
+}
+.loginadmin_link_find{
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+.loginadmin_link_find a{
+    color: black;
+    margin: 5px;
+    float: right;
+}
+.loginadmin_link_find a:hover{
+    text-decoration: underline;
+    text-decoration-color: #f5debc;
+}
+.loginadmin_btn{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.loginadmin_btn .loginadmin_signupbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginadmin_btn .loginadmin_signupbtn button:hover{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #7bbdf6;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginadmin_btn .loginadmin_loginbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginadmin_btn .loginadmin_loginbtn button:hover{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #7bbdf6;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}

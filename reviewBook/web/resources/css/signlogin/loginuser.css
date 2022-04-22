@@ -1,0 +1,99 @@
+.loginuser_body{
+    margin: 0 auto;
+}
+.loginuser_content{
+    margin: 25px auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #a9b8c4;
+    border-radius: 20px;
+}
+.loginuser_text, .loginuser_input{
+    display: flex;
+    flex-direction: column;
+    float:left;
+    margin: 40px 40px 10px 40px;
+}
+.loginuser_text p{
+    margin: 16px;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #98c9f1;
+}
+.loginuser_input input{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+}
+.loginuser_input input:hover{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+    border : 1px solid blue;
+}
+.loginuser_link_find{
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+.loginuser_link_find a{
+    color: black;
+    margin: 5px;
+    float: right;
+}
+.loginuser_link_find a:hover{
+    text-decoration: underline;
+    text-decoration-color: #f5debc;
+}
+.loginuser_btn{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.loginuser_btn .loginuser_signupbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginuser_btn .loginuser_signupbtn button:hover{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #7bbdf6;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginuser_btn .loginuser_loginbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginuser_btn .loginuser_loginbtn button:hover{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #7bbdf6;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}

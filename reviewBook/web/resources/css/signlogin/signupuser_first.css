@@ -1,0 +1,63 @@
+.signup_body1{
+    width: 80%;
+    margin: 0 auto;
+}
+.sidemenu{
+    width: 200px;
+    margin: 20px;
+    text-align: left;
+    background-color: #eaf4fc;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #96bff9;
+    border-radius: 20px;
+    cursor: pointer;
+    float: left;
+}
+.sidemenu_signup1 {
+    margin: 20px;
+}
+.sidemenu_signup1 .sidemenu_item{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.sidemenu_signup1 li{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+.sidemenu_signup1 .signupuser_first{
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #b6d4ff;
+    border-radius: 30px;
+}
+.sidemenu_signup1 .sidemenu_topmenu{
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+}
+/* 약관내용 */
+.signupuser_first_content{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #fff1dd; */
+    border: 3px solid #f2e2ca;
+    border-radius: 20px;
+    margin: 20px;
+}
+.signupuser_first_content .terms_signup{
+    /* background-color: white; */
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 20px;
+}
+.signupuser_first_content .terms_signup .fontnormal{
+    margin: 20px;
+}

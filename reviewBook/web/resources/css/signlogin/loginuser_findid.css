@@ -1,0 +1,102 @@
+.loginuser_findid_body{
+    margin: 0 auto;
+}
+.loginuser_findid_content{
+    margin: 25px auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #a9b8c4;
+    border-radius: 20px;
+}
+.loginuser_findid_name{
+    margin: 10px;
+}
+.loginuser_findid_name p{
+   font-size: 30px;
+   background-color: #d4e9f9;
+}
+.loginuser_findid_text, .loginuser_findid_input{
+    display: flex;
+    flex-direction: column;
+    float:left;
+    margin: 40px 40px 10px 40px;
+}
+.loginuser_findid_text p{
+    margin: 16px;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #98c9f1;
+}
+.loginuser_findid_input input{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+}
+.loginuser_findid_input input:hover{
+    margin: 8px;
+    width: 200px;
+    height: 30px;
+    border : 1px solid blue;
+}
+.loginuser_findid_btn{
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+.loginuser_findid_btn a{
+    color: black;
+    margin: 5px;
+    float: right;
+}
+.loginuser_findid_btn{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.loginuser_findid_btn .loginuser_findid_findbtn button{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginuser_findid_btn .loginuser_findid_findbtn button:hover{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #7bbdf6;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 20px;
+}
+.loginuser_findid_btn .loginuser_findid_loginbtn a{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #bee1ff;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 30px;
+}
+.loginuser_findid_btn .loginuser_findid_findpwbtn a{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #bee1ff;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    margin: 20px 10px;
+    font-size: 30px;
+}

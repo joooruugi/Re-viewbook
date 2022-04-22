@@ -1,0 +1,69 @@
+.signup_body0{
+    height: 760px;
+    margin: 0 auto;
+}
+.signup_body0 .signup_content{
+    width: 80%;
+    margin: 0 auto;
+    height: 760px;
+    align-items: center;
+    text-align: center;
+}
+.signup_body0 .signup_content .signup_contentmain{
+    height: 720px;
+    margin: 40px;
+    /* background-color: #f2e2ca; */
+    border: 3px solid #f2e2ca;
+    border-radius: 40px;
+    display: flex;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foruser{
+    margin: 30px 30px;
+    width: 100%;
+    height: 85%;
+    float: left;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foradmin{
+    margin: 30px 30px;
+    width: 100%;
+    height: 85%;
+    float: left;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foruser .signup_foruser_img{
+    height: 550px;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foradmin .signup_foradmin_img{
+    height: 550px;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foruser .signup_foruser_img img{
+    margin: 130px;
+    width: 250px;
+    height: 250px;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foradmin .signup_foradmin_img img{
+    margin: 130px;
+    width: 250px;
+    height: 250px;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foruser_button p{
+   font-size: 30px;
+   color: black;
+   margin: 20px 0;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foradmin_button p{
+   font-size: 30px;
+   color: black;
+   margin: 20px 0;
+}
+.signup_body0 .signup_content .signup_contentmain .signup_foruser_button p:hover,
+.signup_body0 .signup_content .signup_contentmain .signup_foradmin_button p:hover {
+   font-size: 32px;
+   color: black;
+   text-decoration: underline;
+   text-decoration-color: #f7c67d;
+   margin: 20px 0;
+}
+.signup_body0 .signup_content .signup_contentmain .divsignup_first{
+    border: 2px solid rgb(135, 135, 135);
+    margin: 30px 0;
+}
