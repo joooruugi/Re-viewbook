@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/series/seriesmain.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/series/seriesmain.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/all/all.css">
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,19 +18,20 @@
 
 	<%
 		ArrayList<SeriesVo> slist = (ArrayList<SeriesVo>) request.getAttribute("slist");
-		//out.print(slist); 
-
+	//out.print(slist);
 	%>
-	
-   <div class="series_banner">
-        <div id="series_banner_title">    
-        <h2><a href="seriesmain">연재</a></h2>
-        <br>
-        <p>작가가 되어 자유롭게 글을 작성해보세요</p>
-    <img src="./resources/image/series/author3.png" class="series_banner_img">
-    </div>
+
+	<div class="series_banner">
+		<div id="series_banner_title">
+			<h2>
+				<a href="seriesmain">연재</a>
+			</h2>
+			<br>
+			<p>작가가 되어 자유롭게 글을 작성해보세요</p>
+			<img src="./resources/image/series/author3.png"class="series_banner_img">
+		</div>
 	</div>
-	<div class="bodyrvb"> 
+	<div class="bodyrvb">
 		<nav class="sidemenu">
 			<ul class="sidemenu_series">
 				<li><a class="sidemenu_item sidemenu_topmenu">연재</a></li>
@@ -77,7 +80,7 @@
 						</div>
 					</div>
 				</div>
-					<div class="serise_search_all">
+				<div class="serise_search_all">
 					<form method="post" action="seriessearch">
 						<table id="serise_search">
 							<tr>
@@ -91,34 +94,38 @@
 					</form>
 				</div>
 				<div id="series_board_write">
-				<button onclick="location.href='seriesinsert';">게시물 작성</button>
+					<button onclick="location.href='seriesinsert';">게시물 작성</button>
 				</div>
 				<table id="series_list">
 					<tr>
 						<td>
 							<ul>
-							
-									<%for(SeriesVo svo:slist) {%>
-										<li>
+
+								<%
+									for (SeriesVo svo : slist) {
+								%>
+								<li>
 									<div class="bbs_board">
 										<div class="bbs_title">
-											<a href="seriesread?wbNo=<%=svo.getWbNo()%>"><%=svo.getWbTitle() %>
-												[<%=svo.getReCommentCnt() %>]</a> <span><%=svo.getWbWriter() %></span>
-												
+											<a href="seriesread?wbNo=<%=svo.getWbNo()%>"><%=svo.getWbTitle()%>
+												[<%=svo.getReCommentCnt()%>]</a> <span><%=svo.getWbWriter()%></span>
 										</div>
 
 										<br>
 										<div class="bbs_content">
 											<p>
-												<a href="seriesread?wbNo=<%=svo.getWbNo()%>"><%=svo.getWbContent() %></a>
+												<a href="seriesread?wbNo=<%=svo.getWbNo()%>"><%=svo.getWbContent()%></a>
 											</p>
 										</div>
-										<div class="bbs_date_ctgory"><%=svo.getWbDate().substring(0, 16) %>
-											<span><%=svo.getWbCategory() %></span>
+										<div class="bbs_date_ctgory"><%=svo.getWbDate().substring(0, 16)%>
+											<span><%=svo.getWbCategory()%></span>
 										</div>
 										<br>
-										</li>
-									</div> <%} %>
+								</li>
+								</div>
+								<%
+									}
+								%>
 							</ul>
 						</td>
 					</tr>
@@ -136,21 +143,20 @@
 				</table>
 			</div>
 		</div>
-</div>
+	</div>
 
 	<script>
-        
-        $(function(){
-        $(".bbs_board").slice(0, 3).show(); 
-        $("#series_loadmore").click(function(e){
-            e.preventDefault();
-            $(".bbs_board:hidden").slice(0, 3).show(); 
-            if($(".bbs_board:hidden").length == 0){ 
-            	 alert("다음 페이지는 마지막 페이지 입니다."); 
-            }
-        });
-    });
-    </script>
+		$(function() {
+			$(".bbs_board").slice(0, 3).show();
+			$("#series_loadmore").click(function(e) {
+				e.preventDefault();
+				$(".bbs_board:hidden").slice(0, 3).show();
+				if ($(".bbs_board:hidden").length == 0) {
+					alert("다음 페이지는 마지막 페이지 입니다.");
+				}
+			});
+		});
+	</script>
 
 
 </body>

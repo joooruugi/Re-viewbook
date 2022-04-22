@@ -1,0 +1,236 @@
+/* 본문 */
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display: flex;
+}
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height: 250px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_series {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_series .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	color: black;
+}
+
+.sidemenu_series li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.sidemenu_series li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_series .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+
+/* 게시글 리스트 테이블 전체 */
+.series_board_read_all {
+	margin: 0 auto;
+	max-width: 80%;
+}
+
+/* 게시글 제목 */
+#series_read_title {
+	padding: 50px 0 50px 50px;
+	width: 100%;
+	border-bottom: 1px solid gray;
+}
+/* 게시글 제목 안 작가,작성시간,카테고리 폰트 */
+#series_read_title p {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#series_read_title  span {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 게시글 내용 */
+#series_read_content {
+	width: 100%;
+	padding: 50px 20px 100px 20px;
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 게시글 -> 펀딩 이동 */
+#board_read_funding {
+	width: 100%;
+	background-color: rgba(204, 204, 214, 0.7);
+	border-bottom: 1px solid gray;
+	padding: 50px 0 50px 50px;
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 댓글 */
+#board_read_recomment {
+	width: 100%;
+	border-bottom: 1px solid gray;
+	padding: 20px 0 0 20px;
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 댓글 리스트 */
+#series_read_comment_rist{
+	width: 100%;
+	border-bottom: 1px solid gray;
+   	padding:20px 0 0 20px;
+   	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+   	
+}
+
+/* 댓글 창 크기 */
+#board_read_recomment input {
+	width: 70%;
+	height: 50px;
+}
+/* 버튼 크기 */
+#board_read_recomment button {
+	width: 50px;
+	height: 50px;
+}
+
+/* 배너 전체 영역 */
+.series_banner {
+	width: 100%;
+	height: 200px;
+	display: inline-block;
+	background-color: rgb(183, 202, 219, 0.7);
+	margin: 0 0 50px 0;
+}
+/* 배너 이미지 */
+.series_banner_img {
+	width: 150px;
+	height: 150px;
+	float: right;
+	position: relative;
+	top: -120px;
+}
+
+/* a태그 텍스트 데코 none */
+#series_banner_title a {
+	text-decoration: none;
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 별점 */
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 1.5em;
+	justify-content: space-around;
+	padding: 0 .2em;
+	text-align: center;
+	width: 5em;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating label {
+	color: #ccc;
+	cursor: pointer;
+}
+
+.star-rating :checked ~ label {
+	color: #f90;
+}
+
+.star-rating label:hover, .star-rating label:hover ~ label {
+	color: #fc0;
+}
+
+/* 폰트 */
+#series_banner_title>h2 {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#series_banner_title p {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#series_read_title h1 {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

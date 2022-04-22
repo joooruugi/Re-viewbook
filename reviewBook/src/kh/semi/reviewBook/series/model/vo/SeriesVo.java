@@ -1,5 +1,7 @@
 package kh.semi.reviewBook.series.model.vo;
 
+import java.util.ArrayList;
+
 public class SeriesVo {
 	
 //	WB_NO       NOT NULL NUMBER         
@@ -20,6 +22,9 @@ public class SeriesVo {
 	private String wbCategory;
 	private String usId;
 	private int reCommentCnt;
+	
+	//게시글 1개 댓글 여러개
+	private ArrayList<SeriesReCommentVo> srvolist;
 	
 	public SeriesVo() {
 		super();
@@ -118,9 +123,20 @@ public class SeriesVo {
 		this.reCommentCnt = reCommentCnt;
 	}
 
+	public ArrayList<SeriesReCommentVo> getSrvolist() {
+		return srvolist;
+	}
+
+	public void setSrvolist(ArrayList<SeriesReCommentVo> srvolist) {
+		this.srvolist = srvolist;
+	}
+
+	
+
+	}
+
 	
 
 	
 	
 
-}

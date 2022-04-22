@@ -1,0 +1,249 @@
+/* 본문 */
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display : flex;
+}
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height : 250px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_series {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_series .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
+}
+
+.sidemenu_series li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.sidemenu_series li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_series .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+
+/* 게시글 리스트 테이블 */
+#series_list {
+	max-width: 100%;
+}
+
+#series_list li {
+	list-style: none;
+}
+
+/* 게시글 리스트*/
+.bbs_board {
+	display: none;
+	border-bottom: 1px solid black;
+}
+/* 게시글 제목 */
+.bbs_title{
+	margin-top:20px
+}
+
+/* 게시글 작가명 */
+.bbs_title span{
+	color: #9ecdf7;
+}
+
+/* 게시글 내용 */
+.bbs_content {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* 게시글 카테고리명 */
+.bbs_date_ctgory span{
+background-color:  rgba(234, 244, 252, 1);
+	
+}
+
+/* 더보기 버튼 */
+#series_loadmore {
+	width: 100%;
+	height: 50px;
+}
+
+/* 검색창 */
+#serise_search {
+	margin: auto;
+}
+/* 검색창 크기 */
+#searchText {
+	width: 300px;
+	height: 30px;
+}
+/* 검색창 버튼 */
+#search_btn {
+	height: 30px;
+	font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #fce1ba;
+    border: 1px solid #f0d1a6;
+    border-radius: 10px;
+}
+
+/* 이달의작가 */
+.series_main_writer{
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%,-50%);  */
+    margin: auto;
+    margin-bottom: 50px;
+    width:700px;
+    height: 250px;
+    background:#f5f5f5;
+    padding: 20px 30px;
+    border-radius: 50px;
+    box-shadow: 5px 10px 5px #ccc;
+}
+/* 이달의 작가 내용 flex 정렬 */
+.series_content_all{
+    display: flex;
+}
+
+.series_main_content:hover{
+	color: rgba(170, 205, 195, 1);
+}
+/* 이달의 작가 컨텐츠 영역 */
+.series_tab_body{
+    padding-top: 40px;
+    margin: auto;
+    /* display: block;
+    border-radius: 50px; */
+}
+
+/* 게시글 작성 버튼 */
+#series_board_write button{
+	height :40px;
+	margin : 0 auto;
+	display: block;
+	font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: rgb(188, 212, 233);
+    border: 1px solid #a9b8c4;
+    border-radius: 10px; 
+}
+
+/* 배너 전체 영역 */
+.series_banner{
+width: 100%;
+height: 200px;
+display: inline-block;
+background-color:  rgb(183, 202, 219,0.7);
+margin: 0 0 50px 0;
+
+}
+/* 배너 이미지 */
+.series_banner_img{
+width: 150px;
+height: 150px;
+float: right;
+position: relative;
+top: -120px;
+}
+
+/* a태그 텍스트 데코 none */
+#series_banner_title a{
+	text-decoration: none;	
+	color:black;
+}
+ a {
+	text-decoration: none;	
+	color:black;	
+}
+
+/* 폰트 */
+
+#series_banner_title>h2{
+	font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#series_banner_title p{
+	font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.series_main_writer_title>h2{
+	font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.series_main_content>h3{
+	 font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bbs_board{
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#series_loadmore{  
+ font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f6e4ca;
+    border: 1px solid #eccda2;
+    border-radius: 10px;
+}

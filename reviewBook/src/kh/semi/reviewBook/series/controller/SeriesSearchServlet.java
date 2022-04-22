@@ -48,7 +48,10 @@ public class SeriesSearchServlet extends HttpServlet {
 		
 		
 		if(slist.size()==0) {
+			//공백, 없는 검색어 입력한경우 메인으로 보냄
 			response.sendRedirect("seriesmain");
+			//콘솔에서 확인
+			System.out.println("slist.size()==0");
 		}
 		else{
 			request.getRequestDispatcher("WEB-INF/view/user/series/seriessearch.jsp").forward(request, response);
