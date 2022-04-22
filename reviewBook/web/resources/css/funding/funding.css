@@ -1,0 +1,40 @@
+/* 표 */
+.contentfd{
+    width: 80%;
+    margin: 0 auto;
+    /* margin: 20px; */
+    text-align: left;
+    /* background-color: #eaf4fc; */
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #96bff9; */
+    cursor: pointer;
+}
+.fdlist{
+    width: 100%;
+    text-align: center;
+}
+.fdlist .fdlist_th{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+   background-color: #eaf4fc;
+   font-size: 15px;
+}
+.fdlist .fdlist_tb{
+    border-bottom: 1px solid gray;
+}
+.fdlist_th .fdlistno{
+    width: 20%;
+}
+.fdlist_th .fdlistname{
+    width: 30%;
+}
+.fdlist_th .fdlistprocess{
+    width: 10%;
+}
+.fdlist_th .fdlistdeadline{
+    width: 20%;
+}
+.fdlist_th .fdlistfunding{
+    width: 20%;
+}
