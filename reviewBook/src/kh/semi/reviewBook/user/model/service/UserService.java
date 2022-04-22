@@ -3,6 +3,7 @@ package kh.semi.reviewBook.user.model.service;
 import java.sql.Connection;
 
 import kh.semi.reviewBook.user.model.dao.UserDao;
+import kh.semi.reviewBook.user.model.vo.SubscribeVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
@@ -22,6 +23,14 @@ public class UserService {
 		UserVo result = null;
 		Connection conn = getConnection();
 		result = dao.login(conn, usId, usPassword);
+		close(conn);
+		return result;
+	}
+	
+	public SubscribeVo selectSubscribe(String usId) {
+		SubscribeVo result = null;
+		Connection conn = getConnection();
+		result = dao.selectSubscribe(conn, usId);
 		close(conn);
 		return result;
 	}

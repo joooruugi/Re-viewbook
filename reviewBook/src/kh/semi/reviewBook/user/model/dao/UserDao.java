@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import kh.semi.reviewBook.user.model.vo.SubscribeVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
 
@@ -73,6 +74,45 @@ public class UserDao {
 			close(rs);
 			close(pstmt);
 		}
+		return result;
+	}
+	public SubscribeVo selectSubscribe(Connection conn, String usId) {
+		System.out.println("dao usId: "+usId);
+		SubscribeVo result = null;
+		String sql = "select * from subscribe where us_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new SubscribeVo();
+//				US_ID      NOT NULL VARCHAR2(30)  
+//				SUB_INF             VARCHAR2(50)  
+//				SUB_YN     NOT NULL VARCHAR2(10)  
+//				SUB_START           TIMESTAMP(6)  
+//				SUB_END             TIMESTAMP(6)  
+//				SUB_REVIEW          VARCHAR2(500) 
+//				SUB_LIST            VARCHAR2(30)  
+//				AD_ID      NOT NULL VARCHAR2(30) 
+				result.setAdId(rs.getString("ad_Id"));
+				result.setSubEnd(rs.getDate("sub_End"));
+				result.setSubInf(rs.getString("sub_Inf"));
+				result.setSubList(rs.getString("Sub_List"));
+				result.setSubReview(rs.getString("SUB_REVIEW"));
+				result.setSubStart(rs.getDate("sub_Start"));
+				result.setSubYN(rs.getString("sub_yn"));
+				result.setUsId(rs.getString("ad_id"));
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		System.out.println("dao result: "+result);
+		
 		return result;
 	}
 }

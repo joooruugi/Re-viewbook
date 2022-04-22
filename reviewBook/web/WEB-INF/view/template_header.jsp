@@ -53,7 +53,7 @@
                         </ul>
                         <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="#">마이페이지</a>
+                            <a class="nav_item" href="<%=request.getContextPath() %>/mypagemain">마이페이지</a>
                             <ul class="nav_dropdownmenu2">
                                 <li><a class="nav_item" href="#">정보수정</a></li>
                                 <li><a class="nav_item" href="#">구독권 조회</a></li>
