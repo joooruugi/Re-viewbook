@@ -15,6 +15,7 @@
 <body>
 	<div id="main_wrap">
 <%@ include file="./view/template_header.jsp" %>
+<%@ include file="./view/user/main/main.jsp" %>
 		<div class="wrap content">
             <div id="content">
             </div>
