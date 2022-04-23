@@ -15,6 +15,7 @@
 %>
 
 [[${sVo }]]
+[[${bLVo }]]
 [[${myOrderlist }]]
 </body>
 </html>

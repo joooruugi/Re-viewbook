@@ -1,4 +1,4 @@
-package kh.semi.reviewBook.user.model.vo;
+package kh.semi.reviewBook.mypage.model.vo;
 
 import java.sql.Date;
 
