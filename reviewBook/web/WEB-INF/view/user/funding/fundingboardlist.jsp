@@ -20,7 +20,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>funding</title>
+<title>펀딩진행중</title>
 </head>
 <body>
 	<div id="main_wrap">
@@ -33,44 +33,46 @@
 					<li><a class="sidemenu_item">펀딩성공작</a></li>
 				</ul>
 			</nav>
-			<div class="contentfd">
-				<div>
+		</div>
+		<%
+			ArrayList<FundingVo> flist = (ArrayList<FundingVo>) request.getAttribute("flist");
+		if (flist != null) {
+		%>
+		<div class="contentfd">
+			<div class="contentmainfd">
+				<table class="fdlist">
+					<tr class="fdlist_th fontimportant2">
+						<td class="fdlistno">No.</td>
+						<td class="fdlistname">책제목</td>
+						<td class="fdlistprocess">상태</td>
+						<td class="fdlistdeadline">펀딩마감일</td>
+						<td class="fdlistfunding">펀딩철회</td>
+					</tr>
 					<%
-						ArrayList<FundingVo> volist = (ArrayList<FundingVo>) request.getAttribute("fundingVolist");
-					if (volist != null) {
+						for (FundingVo vo : flist) {
 					%>
-					<div class="contentmainfd">
-						<table class="fdlist">
-							<tr class="fdlist_th fontimportant2">
-								<td class="fdlistno">No.</td>
-								<td class="fdlistname">책제목</td>
-								<td class="fdlistprocess">상태</td>
-								<td class="fdlistdeadline">펀딩마감일</td>
-								<td class="fdlistfunding">펀딩철회</td>
-							</tr>
-							<%
-								for (FundingVo vo : volist) {
-							%>
-							<tr class="fdlist_tb fontnormal">
-								<td><%=vo.getWbNO()%></td>
-								<td><%=vo.getFdLimit()%></td>
-								<td><%=vo.getFdDonation()%></td>
-								<td><%=vo.getFdDeadline()%></td>
-								<td><%=vo.getFdOX()%></td>
-							</tr>
-							<%
-								}
-							%>
-						</table>
-
-					</div>
-					<% } else {	%>
-					<div>게시글이 없습니다.</div>
-					<% } %>
-					<div class="contentpgfd">페이징</div>
-				</div>
+					<tr class="fdlist_tb fontnormal">
+						<td><%=vo.getWbNO()%></td>
+						<td><%=vo.getFdLimit()%></td>
+						<td><%=vo.getFdDonation()%></td>
+						<td><%=vo.getFdDeadline()%></td>
+						<td><%=vo.getFdOX()%></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+					</tr>
+					<%
+						}
+					%>
+				</table>
 			</div>
+			<%
+				} else {
+			%>
+			<div>게시글이 없습니다.</div>
+			<%
+				}
+			%>
+			<div class="contentpgfd">페이징</div>
 		</div>
 		<%@ include file="../../template_footer.jsp"%>
+	</div>
 </body>
 </html>

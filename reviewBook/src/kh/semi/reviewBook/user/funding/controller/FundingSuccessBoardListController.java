@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.series.model.service.SeriesService;
+import kh.semi.reviewBook.series.model.vo.SeriesVo;
 import kh.semi.reviewBook.user.funding.model.service.FundingService;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 
@@ -16,14 +18,14 @@ import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 /**
  * Servlet implementation class FundingBoardListController
  */
-@WebServlet("/fundingboardlist")
-public class FundingBoardListController extends HttpServlet {
+@WebServlet("/fundingsuccessboardlist")
+public class FundingSuccessBoardListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private FundingService service = new FundingService();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingBoardListController() {
+    public FundingSuccessBoardListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,10 +36,12 @@ public class FundingBoardListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("servlet확인");
 		ArrayList<FundingVo> flist = service.fundingBoardlist();
-		System.out.println("flist: " + flist);
+		ArrayList<SeriesVo> slist = new SeriesService().listBoard();
+		System.out.println(flist);
 		
 		request.setAttribute("flist", flist);
-		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingboardlist.jsp").forward(request, response);
+		request.setAttribute("slist",slist);
+		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingsuccessboardlist.jsp").forward(request, response);
 	}
 
 	/**

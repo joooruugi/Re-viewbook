@@ -12,8 +12,9 @@ public class FundingDao {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
+	// 전체 펀딩진행중 목록 나타내기
 	public ArrayList<FundingVo> fundingBoardlist(Connection conn) {
-		ArrayList<FundingVo> volist = null;
+		ArrayList<FundingVo> flist = null;
 //		WB_NO         NOT NULL NUMBER       
 //		US_ID         NOT NULL VARCHAR2(30) 
 //		FD_ACCUMULATE          NUMBER       
@@ -22,25 +23,25 @@ public class FundingDao {
 //		FD_LIMIT      NOT NULL NUMBER       
 //		FD_OX         NOT NULL NUMBER       
 //		AD_ID         NOT NULL VARCHAR2(30) 
-		String sql = "select * from funding_manage order by fd_ox, fd_deadline ";
+		String sql = "select * from funding_manage order by fd_ox, fd_deadline";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			volist = new ArrayList<FundingVo>();
+			flist = new ArrayList<FundingVo>();
 			while(rs.next()) {
-				FundingVo vo = new FundingVo();
-				vo.setWbNO(rs.getInt("wb_no"));
-				vo.setUsId(rs.getString("us_id"));
-				vo.setFdAccumulate(rs.getInt("fd_accumulate"));
-				vo.setFdDonation(rs.getInt("fd_donation"));
-				vo.setFdDeadline(rs.getString("fd_deadline"));
-				vo.setFdLimit(rs.getInt("fd_limit"));
-				vo.setFdOX(rs.getInt("fd_ox"));
-				vo.setAdId(rs.getString("ad_id"));
+				FundingVo fvo = new FundingVo();
+				fvo.setWbNO(rs.getInt("wb_no"));
+				fvo.setUsId(rs.getString("us_id"));
+				fvo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				fvo.setFdDonation(rs.getInt("fd_donation"));
+				fvo.setFdDeadline(rs.getString("fd_deadline"));
+				fvo.setFdLimit(rs.getInt("fd_limit"));
+				fvo.setFdOX(rs.getInt("fd_ox"));
+				fvo.setAdId(rs.getString("ad_id"));
 				
-				volist.add(vo);
+				flist.add(fvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,7 +49,38 @@ public class FundingDao {
 			close(rs);
 			close(pstmt);
 		}
-		return volist;
+		return flist;
 		
+	}
+	// 철회하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
+	public ArrayList<FundingVo> fundingWithdraw(Connection conn, int wbNo) {
+		ArrayList<FundingVo> flist = null;
+		String sql = "UPDATE FUNDING_MANAGE SET FD_OX = 0 WHERE wb_no = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, wbNo);
+			rs = pstmt.executeQuery();
+			// DB 어떻게 가져가야할지! DAO부터 수정해서 jsp까지 가기
+			flist = new ArrayList<FundingVo>();
+			while(rs.next()) {
+				FundingVo fvo = new FundingVo();
+				fvo.setWbNO(rs.getInt("wb_no"));
+				fvo.setUsId(rs.getString("us_id"));
+				fvo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				fvo.setFdDonation(rs.getInt("fd_donation"));
+				fvo.setFdDeadline(rs.getString("fd_deadline"));
+				fvo.setFdLimit(rs.getInt("fd_limit"));
+				fvo.setFdOX(rs.getInt("fd_ox"));
+				fvo.setAdId(rs.getString("ad_id"));
+				
+				flist.add(fvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return flist;
 	}
 }

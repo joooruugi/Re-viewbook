@@ -12,12 +12,21 @@ public class FundingService {
 	
 	private FundingDao dao = new FundingDao();
 	
+	// 전체 펀딩진행중 목록 나타내기
 	public ArrayList<FundingVo> fundingBoardlist() {
 		Connection conn = getConnection();
-		ArrayList<FundingVo> volist = dao.fundingBoardlist(conn);
+		ArrayList<FundingVo> fvolist = dao.fundingBoardlist(conn);
 		close(conn);
-		return volist;
+		return fvolist;
 	}
-
+	
+	// 철회하기 기능
+	public ArrayList<FundingVo> fundingWithdraw(int wbNo) {
+		Connection conn = getConnection();
+		ArrayList<FundingVo> fvolist = dao.fundingWithdraw(conn, wbNo);
+		close(conn);
+		return fvolist;
+	}
+	
 
 }
