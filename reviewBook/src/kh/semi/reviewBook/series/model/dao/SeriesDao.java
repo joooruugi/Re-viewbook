@@ -52,7 +52,7 @@ public class SeriesDao {
 
 			slist = new ArrayList<SeriesVo>();
 			while (rs.next()) {
-				SeriesVo svo = new SeriesVo();
+				SeriesVo svo = new SeriesVo(); 
 
 				svo.setWbNo(rs.getInt("wb_No"));
 				svo.setWbTitle(rs.getString("wb_Title"));
@@ -338,5 +338,29 @@ public class SeriesDao {
 		
 		return result;
 	}
+	
+	
+	//8. 연재 게시글 작성
+	public int insertSeriesBoard(Connection conn, SeriesVo svo) {
+		String usId = "us111"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
+		String wbcWriter = "사자"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
+		int result = 0;
+		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, svo.getWbTitle());
+			pstmt.setString(2, svo.getWbContent());
+			pstmt.setString(3, wbcWriter);
+			pstmt.setString(4, svo.getWbCategory());
+			pstmt.setString(5, usId);
 
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }

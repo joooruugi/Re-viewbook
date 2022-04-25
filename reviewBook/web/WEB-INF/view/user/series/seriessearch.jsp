@@ -52,7 +52,7 @@
 					<div class="series_content_all">
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/1.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명1</h3>
@@ -61,7 +61,7 @@
 						</div>
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/2.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명2</h3>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/3.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명3</h3>

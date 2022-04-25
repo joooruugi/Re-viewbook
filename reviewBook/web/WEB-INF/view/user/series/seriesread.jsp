@@ -1,14 +1,13 @@
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/series/seriesread.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesReCommentVo"%>
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/resources/css/series/seriesread.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/resources/css/all/all.css">
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <meta charset="UTF-8">
 <title>연재 게시글</title>
 </head>
@@ -66,9 +65,25 @@
 						<div class="series_board_read_funding">
 							<table id="board_read_funding">
 								<tr>
-									<td>해당 작품을 책으로 만나보고 싶으신가요📚📖 이곳을 클릭해주세요
-										<button onclick='' class="button4">펀딩하기👍</button> <br>
-									<br> <small>참고 : 목표 금액 이상이 모이면 해당 작품의 펀딩이 성공되며, 펀딩
+									<td>해당 작품을 책으로 만나보고 싶으신가요📚📖 자세한 정보는 이곳을 클릭해주세요
+										<button id="btn_funding" class="button4">펀딩하기👍</button> <br>
+										<div class="modal">
+										<div class="modal_content">
+										<div id ="modal_funding_content">
+										<p> 작품번호 : <%=svo.getWbNo() %></p>
+										<p> 작품명 : <%=svo.getWbTitle() %></p>
+										<p> 작가 : <%=svo.getWbWriter() %></p>
+										<p> 카테고리 : <%=svo.getWbCategory() %></p>
+										<p> 후원금액 및 마감일 등 자세한 사항은 펀딩 탭에서 확인 가능합니다 </p>
+										<p> 이동하기 버튼을 클릭하여 지금 바로 확인해보세요!💸 </p>
+										</div>
+										<div class="btn_funding_move_close">
+										<button id="btn_funding_move" class="button2">이동하기</button>
+										<button id="btn_funding_close" class="button4">닫기</button>
+										</div>
+										</div>
+										</div>
+									<br><br><small>참고 : 목표 금액 이상이 모이면 해당 작품의 펀딩이 성공되며, 펀딩
 											마감일까지 목표 금액을 달성하지 못한 경우 결제가 진행되지 않습니다.</small>
 
 									</td>
@@ -95,7 +110,7 @@
 											<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
 											<input type="text" id="wbcContent" name="wbcContent"
 												placeholder="댓글을 입력해주세요">
-											<button type="submit" class="button1">등록</button>
+											<button type="submit" id="btn_submit_comment" class="button1">등록</button>
 										</form>
 									</td>
 								</tr>
@@ -131,7 +146,39 @@
 	</div>
 
 
+<script>
 
+
+	//모달창 스크립트 
+ 	//버튼 누르면 펀딩 모달창 on
+	document.getElementById("btn_funding").addEventListener('click',openModal); 
+	//close 버튼 누르면 펀딩 모달창 close
+	document.getElementById("btn_funding_close").addEventListener('click',closeModal);
+	//펀딩 모달창 바깥 부분 클릭시 close
+	document.getElementsByClassName("modal")[0].addEventListener('click',closeModalWindow); 
+
+	// openModal
+    function openModal(){
+        document.getElementsByClassName("modal")[0].style.display = "block";
+        
+    }
+    // closeModal
+    function closeModal(){
+        document.getElementsByClassName("modal")[0].style.display = "none";
+    }
+    // closeModalWindow
+    function closeModalWindow(){
+        if(event.target == document.getElementsByClassName("modal")[0]) {  
+            document.getElementsByClassName("modal")[0].style.display = "none";  
+            }
+        }   
+    
+    
+    //펀딩 탭으로 이동시키는 스크립트 (제이쿼리 방식)
+    $('#btn_funding_move').click(function(){
+      location.href="fundingmain";
+      })
+</script>
 
 
 

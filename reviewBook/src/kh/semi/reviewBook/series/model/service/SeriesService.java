@@ -91,5 +91,13 @@ public class SeriesService {
 		close(conn);
 		return result;
 	}
+	
+	//8. 연재 게시글 작성
+	public int insertSeriesBoard(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.insertSeriesBoard(conn, svo);
+		close(conn);
+		return result;
+	}
 		
 }

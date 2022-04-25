@@ -19,7 +19,6 @@
 		//out.print(slist); 
 
 	%>
-	
    <div class="series_banner">
         <div id="series_banner_title">    
         <h2><a href="seriesmain">연재</a></h2>
@@ -50,7 +49,7 @@
 					<div class="series_content_all">
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/1.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명1</h3>
@@ -59,7 +58,7 @@
 						</div>
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/2.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명2</h3>
@@ -68,7 +67,7 @@
 						</div>
 						<div class="series_tab_body">
 							<div class="series_main_image">
-								<img src="#">
+								<img src="./resources/image/series/3.png">
 							</div>
 							<div class="series_main_content">
 								<h3>작가명3</h3>
@@ -137,7 +136,7 @@
 			</div>
 		</div>
 </div>
-
+</div>
 	<script>
         
         $(function(){
