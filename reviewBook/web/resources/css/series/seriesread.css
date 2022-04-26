@@ -62,18 +62,28 @@
 
 /* 게시글 리스트 테이블 전체 */
 .series_board_read_all {
+	padding-left:50px;
 	margin: 0 auto;
-	max-width: 80%;
+	max-width: 1300px;
 }
 
 /* 게시글 제목 */
 #series_read_title {
-	padding: 50px 0 50px 50px;
+/* 	padding: 50px 0 50px 50px; */
 	width: 100%;
 	border-bottom: 1px solid gray;
+	
 }
+/* 게시글 제목 h1 */
+#series_read_title h1{
+	margin:10px;
+	font-size:1.5rem;
+}
+
 /* 게시글 제목 안 작가,작성시간,카테고리 폰트 */
 #series_read_title p {
+	margin:10px;
+	font-size:1rem;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
@@ -82,7 +92,9 @@
 	font-style: normal;
 }
 
-#series_read_title  span {
+#series_read_title span {
+	margin:10px;
+	font-size:1rem;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
@@ -92,21 +104,30 @@
 }
 /* 게시글 내용 */
 #series_read_content {
+	margin:20px 0 20px 0;
 	width: 100%;
-	padding: 50px 20px 100px 20px;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
 		format('woff');
 	font-weight: normal;
+	font-size: 1rem;
+	line-height: 200%;
 	font-style: normal;
+}
+
+/* 이미지 있는 경우 이미지 사이즈 */
+#series_read_content img{
+	width:400px;
+	height: 400px;
+	margin: auto;
+	display : block;
 }
 /* 게시글 -> 펀딩 이동 */
 #board_read_funding {
 	width: 100%;
 	background-color: rgba(204, 204, 214, 0.7);
 	border-bottom: 1px solid gray;
-	padding: 50px 0 50px 50px;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
@@ -117,8 +138,8 @@
 /* 댓글 */
 #board_read_recomment {
 	width: 100%;
+	margin-top:20px;
 	border-bottom: 1px solid gray;
-	padding: 20px 0 0 20px;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
@@ -127,45 +148,62 @@
 	font-style: normal;
 }
 /* 댓글 리스트 */
-#series_read_comment_rist{
+#series_read_comment_rist {
 	width: 100%;
 	border-bottom: 1px solid gray;
-   	padding:20px 0 0 20px;
-   	font-family: 'SF_HailSnow';
+	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
-   	
+}
+
+#series_read_comment_rist tr td{
+	padding: 10px 0 10px 0;
 }
 
 /* 댓글 창 크기 */
 #board_read_recomment input {
 	width: 70%;
 	height: 50px;
+	margin-bottom : 20px;
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
-/* 버튼 크기 */
+
+
+
+/* 댓글 등록 버튼 크기 */
 #board_read_recomment button {
 	width: 50px;
 	height: 50px;
 }
 
 /* 배너 전체 영역 */
-.series_banner {
-	width: 100%;
-	height: 200px;
-	display: inline-block;
-	background-color: rgb(183, 202, 219, 0.7);
-	margin: 0 0 50px 0;
+.series_banner{
+width: 100%;
+height: 200px;
+display: inline-block;
+background-color:  rgb(183, 202, 219,0.7);
+margin: 0 0 50px 0;
+
 }
 /* 배너 이미지 */
-.series_banner_img {
-	width: 150px;
-	height: 150px;
-	float: right;
-	position: relative;
-	top: -120px;
+.series_banner_img{
+width: 150px;
+height: 150px;
+float: right;
+position: relative;
+top : -90px;
+}
+
+#series_banner_title{
+	padding-left: 50px;
 }
 
 /* a태그 텍스트 데코 none */
@@ -209,6 +247,9 @@ a {
 
 /* 폰트 */
 #series_banner_title>h2 {
+
+	font-size: 2rem;
+	margin-top: 40px;
 	font-family: 'ROKAFSansBold';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
@@ -234,3 +275,72 @@ a {
 	font-weight: normal;
 	font-style: normal;
 }
+
+.series_board_up_de_btn{
+	margin: auto;
+	text-align: center;
+	display: block;
+	margin-bottom: 50px;
+}
+
+.series_board_up_de_btn button{
+	height: 40px;
+	cursor: pointer;
+}
+
+
+/* 펀딩 상세정보 모달창 */
+.modal {
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 펀딩 이동하기 모달창  */
+#btn_funding_move{
+	width: 100px;
+	height: 30px;
+	color: white;
+}
+
+/* 펀딩 모달창 닫기 */
+#btn_funding_close {
+	width: 100px;
+	height: 30px;
+	border: 0;
+	
+}
+
+/* 펀딩 이동하기 닫기 버튼 정렬 */
+
+.btn_funding_move_close{
+	margin: auto;
+	text-align: center;
+}
+#modal_funding_content p{
+	text-align: center;
+	
+	
+} 
+/* 펀딩 모달창 컨텐츠 감싸는부분*/
+.modal_content {
+	position: relative;
+	top: 250px;
+	width: 500px;
+	height: 270px;
+	border: 1px solid;
+	margin: 0 auto;
+	background-color: white;
+}
+
+
+/* hover시 마우스 클릭 효과 */
+#btn_funding:hover, #btn_funding_move:hover, #btn_funding_close:hover, #btn_submit_comment:hover{
+cursor :pointer;
+}
+

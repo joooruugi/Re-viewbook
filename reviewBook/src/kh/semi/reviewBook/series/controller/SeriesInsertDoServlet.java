@@ -90,13 +90,12 @@ System.out.println("do post : /seriesinsert.do");
 		svo.setWbWriter(wbWriter);
 		svo.setWbCategory(wbCategory);
 	
-		
-	
 		 int result = new SeriesService().insertSeriesBoard(svo);
 		 if(result<1) {//게시글 작성에 실패한 경우에도 메인으로 보냄
 			 response.sendRedirect("seriesmain");
 		 }else {//성공해도 메인으로 보냄
-				 response.sendRedirect("seriesmain");
+			 request.getSession().setAttribute("msg", "게시물 등록이 완료되었습니다.");
+			 response.sendRedirect("seriesmain");
 			 }
 		 }
 	}

@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/series/seriesinsert.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
+<%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,12 +14,17 @@
 <title>연재 게시글</title>
 </head>
 <body>
+<% SeriesVo svo = (SeriesVo)request.getAttribute("svo"); 
+	 	System.out.println(svo); 
+	 	%>
+	 <div id="main_wrap">
+	 <%@ include file="../../template_header.jsp"%>
     <div class="series_banner">
 		<div id="series_banner_title">
 			<h2>
 				<a href="seriesmain">연재</a>
 			</h2>
-			<br>
+			<br><br>
 			<p>작가가 되어 자유롭게 글을 작성해보세요</p>
 			<img src="./resources/image/series/author3.png"
 				class="series_banner_img">
@@ -75,7 +85,7 @@
                             <table id="series_insert_btn">
 							<tr>
 								<td><button type="submit" id="insert_btn" class="button4">게시글등록</button>
-                             <button type="reset" id="insert_reset_btn" class="button2">작성취소</button></td>
+                             <button type="button" id="insert_reset_btn" class="button2" onclick="history.back();">작성취소</button></td>
 
 							</tr>
         
@@ -86,10 +96,9 @@
 			</div>
 		</div>
 	</div>
+<%@ include file="../../template_footer.jsp"%>
+</div>
 
 
-
-
-</body>
 </body>
 </html>

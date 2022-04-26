@@ -4,10 +4,10 @@
 	margin: auto;
 	display : flex;
 }
-
 .contentrvb{
 	margin-left: 50px;
 }
+
 /* 사이드메뉴  */
 .sidemenu {
 	width: 200px;
@@ -63,20 +63,21 @@
 	font-size: 20px;
 }
  
-/* 게시물 작성 테이블 전체 */
-#series_insert{
+/* 게시물 수정 테이블 전체 */
+#series_update{
 	padding-left:50px;
     margin: auto;
     max-width: 1100px;
 }
-#series_insert , #series_insert input ,  #wbCategory, #series_insert textarea{
+#series_update , #series_update input , #wbCategory, #series_update textarea{
     font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 /* 테이블 정렬 */
-#series_insert td{
+#series_update td{
 	padding-right: 30px;
 	vertical-align : middle;
 }
@@ -108,12 +109,12 @@
 
 
 /* 버튼정렬 */
-#series_insert_btn {
+#series_update_btn {
 	padding-left:50px;
 	margin: auto;
 	margin-top: 50px;
 }
-#insert_btn, #insert_reset_btn{
+#update_btn, #update_reset_btn{
 
     margin: 0 auto;
     text-align: center;
@@ -147,7 +148,6 @@ top : -90px;
 	font-size: 2rem;
 	margin-top: 40px;
 }
-
 #series_banner_title>h2 {
 	
 	font-family: 'ROKAFSansBold';

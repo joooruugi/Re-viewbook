@@ -4,6 +4,10 @@
 	margin: auto;
 	display : flex;
 }
+
+.contentrvb{
+	margin-left: 50px;
+}
 /* 사이드메뉴  */
 .sidemenu {
 	width: 200px;
@@ -62,21 +66,38 @@
 
 /* 게시글 리스트 테이블 */
 #series_list {
-	max-width: 100%;
+	max-width: 1300px;
+}
+
+#series_list ul{
+	width: 100% 
 }
 
 #series_list li {
 	list-style: none;
+}
+/* 게시글 검색 */
+.serise_search_all{
+	margin: 20px;
 }
 
 /* 게시글 리스트*/
 .bbs_board {
 	display: none;
 	border-bottom: 1px solid black;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
 /* 게시글 제목 */
 .bbs_title{
 	margin-top:20px
+}
+
+.bbs_title a:hover{
+	text-decoration: underline;
 }
 
 /* 게시글 작가명 */
@@ -92,8 +113,17 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
+	line-height: 150%;
+}
+/* 게시글 이미지 */
+.bbs_content img{
+	display: none;
 }
 /* 게시글 카테고리명 */
+
+.bbs_date_ctgory{
+	margin-top: 10px;
+}
 .bbs_date_ctgory span{
 background-color:  rgba(234, 244, 252, 1);
 	
@@ -101,8 +131,16 @@ background-color:  rgba(234, 244, 252, 1);
 
 /* 더보기 버튼 */
 #series_loadmore {
+	margin-top:20px;
 	width: 100%;
 	height: 50px;
+	font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f6e4ca;
+    border: 1px solid #eccda2;
+    border-radius: 10px;
 }
 
 /* 검색창 */
@@ -135,31 +173,55 @@ background-color:  rgba(234, 244, 252, 1);
     margin: auto;
     margin-bottom: 50px;
     width:700px;
-    height: 250px;
+    height: 300px;
     background:#f5f5f5;
-    padding: 20px 30px;
+ 	padding: 20px 30px; 
     border-radius: 50px;
     box-shadow: 5px 10px 5px #ccc;
 }
+
+/* 이달의 작가 이미지 */
+.series_main_image img{
+	width: 160px; height : 160px;
+	
+	
+}
+
 /* 이달의 작가 내용 flex 정렬 */
 .series_content_all{
     display: flex;
 }
 
+/* 이달의 작가 컨텐츠 센터 정렬 */
+.series_main_content{
+	text-align: center;
+	padding: 30px;
+}
+
+.series_main_content>h3{
+	padding: 10px;
+}
 .series_main_content:hover{
+	
 	color: rgba(170, 205, 195, 1);
+}
+
+.series_main_writer_title> h2{
+	font-size: 1.5rem;
 }
 /* 이달의 작가 컨텐츠 영역 */
 .series_tab_body{
-    padding-top: 40px;
     margin: auto;
-    /* display: block;
-    border-radius: 50px; */
-}
+
+} 
 
 /* 게시글 작성 버튼 */
+#series_board_write{
+	margin: 10px;
+}
+
 #series_board_write button{
-	height :40px;
+	height :35px;
 	margin : 0 auto;
 	display: block;
 	font-family: 'GowunDodum-Regular';
@@ -186,7 +248,7 @@ width: 150px;
 height: 150px;
 float: right;
 position: relative;
-top: -120px;
+top : -90px;
 }
 
 /* a태그 텍스트 데코 none */
@@ -194,20 +256,17 @@ top: -120px;
 	text-decoration: none;	
 	color:black;
 }
- a {
+
+.bbs_board a{
 	text-decoration: none;	
 	color:black;	
 }
 
-/* 폰트 */
-
-#series_banner_title>h2{
-	font-family: 'ROKAFSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+/* 배너  */
+#series_banner_title{
+	padding-left: 50px;
 }
-
+/* 폰트 */
 #series_banner_title p{
 	font-family: 'ROKAFSansMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
@@ -215,35 +274,26 @@ top: -120px;
     font-style: normal;
 }
 
+#series_banner_title>h2{
+	font-size: 2rem;
+	margin-top: 40px;
+}
 
-.series_main_writer_title>h2{
+#series_banner_title>h2, .series_main_writer_title>h2, .series_main_content>h3{
 	font-family: 'ROKAFSansBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-.series_main_content>h3{
-	 font-family: 'ROKAFSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.bbs_board{
+#searchText{
 	font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-
-#series_loadmore{  
- font-family: 'GowunDodum-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    background-color: #f6e4ca;
-    border: 1px solid #eccda2;
-    border-radius: 10px;
+/* 버튼 클릭시 커서 동작 */
+#search_btn , #series_board_write button, #series_loadmore{
+	cursor: pointer;
 }

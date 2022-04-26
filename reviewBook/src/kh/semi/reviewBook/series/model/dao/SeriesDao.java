@@ -1,5 +1,6 @@
 package kh.semi.reviewBook.series.model.dao;
 
+
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
 
@@ -9,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import kh.semi.reviewBook.series.model.vo.SeriesReCommentVo;
 import kh.semi.reviewBook.series.model.vo.SeriesVo;
@@ -315,8 +317,8 @@ public class SeriesDao {
 	
 	//7. 댓글 작성
 	public int insertSeriesComment(Connection conn, SeriesReCommentVo srvo) {
-		String usId = "us111"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
-		String wbcWriter = "사자"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
+		String usId = "us222"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
+		String wbcWriter = "호랑이"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
 		int result = 0;
 		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
 				+ "SYSDATE, ? , ? ,?, ?, ?)";
@@ -363,4 +365,86 @@ public class SeriesDao {
 		}
 		return result;
 	}
+	
+//	WB_NO       NOT NULL NUMBER         
+//	WB_TITLE    NOT NULL VARCHAR2(60)   
+//	WB_CONTENT  NOT NULL VARCHAR2(4000) 
+//	WB_COUNT    NOT NULL NUMBER         
+//	WB_DATE     NOT NULL TIMESTAMP(6)   
+//	WB_WRITER   NOT NULL VARCHAR2(45)   
+//	WB_CATEGORY NOT NULL VARCHAR2(20)   
+//	US_ID       NOT NULL VARCHAR2(30)  
+	
+		//9-1. 업데이트 전 기존 글 가져오기
+		public SeriesVo readUpdateBoard(Connection conn, int wbNo) {
+		SeriesVo svo = null;
+		String sql = "SELECT * FROM WRITER_BBS WHERE WB_NO = ? ";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, wbNo);
+			rs = pstmt.executeQuery();
+			
+			rs = pstmt.executeQuery();
+			svo = new SeriesVo();
+			
+			if(rs.next()) {
+				svo.setWbNo(rs.getInt("wb_No"));
+				svo.setWbTitle(rs.getString("wb_Title"));
+				svo.setWbContent(rs.getString("wb_Content"));
+				svo.setWbCount(rs.getInt("wb_Count"));
+				svo.setWbDate(rs.getString("wb_Date"));
+				svo.setWbWriter(rs.getString("wb_Writer"));
+				svo.setWbCategory(rs.getString("wb_Category"));
+				svo.setUsId(rs.getString("us_Id"));
+			
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(rs);
+				close(pstmt);
+			}		
+			return svo;
+		}
+	
+	//9-2. 연재 게시물 수정
+	public int updateSeriesBoard(Connection conn, SeriesVo svo) {
+		String usId = "us111"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
+		String wbcWriter = "사자"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
+		int result = 0;
+		String sql = "UPDATE WRITER_BBS SET WB_TITLE =? , WB_CONTENT = ? , WB_CATEGORY = ? WHERE WB_NO =?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			//제일 중요한 글 번호 맨 앞으로 가져옴
+			pstmt.setInt(4, svo.getWbNo());
+			pstmt.setString(1, svo.getWbTitle());
+			pstmt.setString(2, svo.getWbContent());
+			pstmt.setString(3, svo.getWbCategory());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
+	//9-3. 연재 게시물 삭제
+		public int deleteSeriesBoard(Connection conn, SeriesVo svo) {
+			int result = 0;
+			String sql = "DELETE FROM WRITER_BBS WHERE WB_NO = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, svo.getWbNo());
+				result = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+
+			return result;
+		}
 }

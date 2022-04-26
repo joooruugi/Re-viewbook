@@ -1,10 +1,13 @@
 package kh.semi.reviewBook.series.model.service;
 
+
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
 
 import java.sql.Connection;
 import java.util.ArrayList;
+
+
 
 import kh.semi.reviewBook.series.model.dao.SeriesDao;
 import kh.semi.reviewBook.series.model.vo.SeriesReCommentVo;
@@ -96,6 +99,29 @@ public class SeriesService {
 	public int insertSeriesBoard(SeriesVo svo) {
 		Connection conn = getConnection();
 		int result = dao.insertSeriesBoard(conn, svo);
+		close(conn);
+		return result;
+	}
+	//9-1. 업데이트 전 기존 글 가져오기
+	public SeriesVo readUpdateBoard(int wbNo) {
+		Connection conn = getConnection();
+		SeriesVo svo = dao.readUpdateBoard(conn,wbNo);
+		close(conn);
+		return svo;
+	}
+	
+	//9-2. 연재 게시글 수정
+	public int updateSeriesBoard(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.updateSeriesBoard(conn, svo);
+		close(conn);
+		return result;
+	}
+	
+	//9-3. 연재 게시글 삭제
+	public int deleteSeriesBoard(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.deleteSeriesBoard(conn, svo);
 		close(conn);
 		return result;
 	}
