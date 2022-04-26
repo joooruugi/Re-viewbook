@@ -19,7 +19,7 @@
                 <div class="signup_foruser">
                     <div class="signup_foruser_img"><img src="가입개인.png"></div>
                     <div class="signup_foruser_p">
-                        <a class="signup_foruser_button" href="#">
+                        <a class="signup_foruser_button" href="#" onclick="#">
                             <p class="fontnormal">회원가입</p>
                         </a>
                     </div>
