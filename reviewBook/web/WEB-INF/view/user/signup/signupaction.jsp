@@ -8,8 +8,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	UserDao userDao = new UserDao();
-	int result = userDao.join(user);%>
 </body>
 </html>

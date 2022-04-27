@@ -15,10 +15,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>RVB</title>
 <script src="/resources/js/signlogin/js_signup.js"></script>
 </head>
 <body>
+<%@ include file="../../../view/template_header.jsp" %>
 	<div class="signup_body2">
 		<nav class="sidemenu">
 			<ul class="sidemenu_signup2">
@@ -127,6 +128,6 @@
 			</form>
 		</div>
 	</div>
-
+<%@ include file="../../../view/template_footer.jsp" %>
 </body>
 </html>

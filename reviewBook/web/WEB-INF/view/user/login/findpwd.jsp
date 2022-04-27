@@ -10,9 +10,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>RVB</title>
 </head>
 <body>
+<%@ include file="../../../view/template_header.jsp" %>
 <div class="loginuser_findpwd_body">
         <div class="loginuser_findpwd_content">
             <div class="loginuser_findpwd_name">
@@ -36,10 +37,11 @@
                     <button type="submit">비밀번호 재전송</button>
                 </div>
                 <div class="loginuser_findpwd_loginbtn">
-                    <a href="#">로그인</a>
+                    <a href="<%=request.getContextPath() %>/login">로그인</a>
                 </div>
             </div>
         </div>
     </div>
+    <%@ include file="../../../view/template_footer.jsp" %>
 </body>
 </html>

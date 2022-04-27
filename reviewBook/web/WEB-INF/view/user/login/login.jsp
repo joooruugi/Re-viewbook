@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>login</title>
+<title>RVB</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
                 </div>
             </form>
                 <div class="loginuser_link_find">
-                    <a class="loginuser_link_find_id" href="findid">
+                    <a class="loginuser_link_find_id" href="<%=request.getContextPath() %>/findid">
                         <p class="fontnothing">아이디 찾기</p>
                     </a>
-                    <a class="loginuser_link_find_pw" href="findpwd">
+                    <a class="loginuser_link_find_pw" href="<%=request.getContextPath() %>/findpwd">
                         <p class="fontnothing">비밀번호 찾기</p>
                     </a>
                 </div>
@@ -47,7 +47,7 @@
     </div>
     <%@ include file="../../../view/template_footer.jsp" %>
 	<script>
-		$("#enroll").click(function(){
+		$("#signup").click(function(){
 			location.href = "signup";
 		});
 		/* $("#findId").click(function(){
