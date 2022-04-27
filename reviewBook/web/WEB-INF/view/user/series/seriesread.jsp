@@ -6,13 +6,16 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesReCommentVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<!-- xeicon cdn -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <title>연재 게시글</title>
 </head>
 <body>
@@ -52,20 +55,21 @@
 						<div class="series_read_title_content">
 							<table id="series_read_title">
 								<tr>
-									<td colspan="3"><h1><%=svo.getWbTitle() %></h1></td>
+									<td colspan="4"><h1><%=svo.getWbTitle() %></h1></td>
 								</tr>
 								<tr>
 									<td colspan="2"><p><%=svo.getWbWriter() %></p></td>
-									<td colspan="1"><p><%=svo.getWbDate().substring(0, 16) %></p></td>
+									<td><p><%=svo.getWbDate().substring(0, 16) %></p></td>
+									<td><p><i class="xi-eye-o"></i>&nbsp;<%=svo.getWbCount() %></p></td>
 								</tr>
 								<tr>
-									<td colspan="3"><span
+									<td colspan="4"><span
 										style="background-color: rgba(234, 244, 252, 1);"><%=svo.getWbCategory() %></span></td>
 								</tr>
 							</table>
 							<table id="series_read_content">
 								<tr>
-									<td colspan="3"><%=svo.getWbContent() %></td>
+									<td colspan="4"><%=svo.getWbContent() %></td>
 								</tr>
 							</table>
 						</div>
@@ -198,20 +202,21 @@
 						<div class="series_read_title_content">
 							<table id="series_read_title">
 								<tr>
-									<td colspan="3"><h1><%=svo.getWbTitle() %></h1></td>
+									<td colspan="4"><h1><%=svo.getWbTitle() %></h1></td>
 								</tr>
 								<tr>
 									<td colspan="2"><p><%=svo.getWbWriter() %></p></td>
-									<td colspan="1"><p><%=svo.getWbDate().substring(0, 16) %></p></td>
+									<td><p><%=svo.getWbDate().substring(0, 16) %></p></td>
+									<td><i class="xi-eye-o"></i>&nbsp;<%=svo.getWbCount() %></td>
 								</tr>
 								<tr>
-									<td colspan="3"><span
+									<td colspan="4"><span
 										style="background-color: rgba(234, 244, 252, 1);"><%=svo.getWbCategory() %></span></td>
 								</tr>
 							</table>
 							<table id="series_read_content">
 								<tr>
-									<td colspan="3"><%=svo.getWbContent() %></td>
+									<td colspan="4"><%=svo.getWbContent() %></td>
 								</tr>
 							</table>
 						</div>
@@ -337,7 +342,7 @@
     
     //펀딩 탭으로 이동시키는 스크립트 (제이쿼리 방식)
     $('#btn_funding_move').click(function(){
-      location.href="fundingmain";
+      location.href="fundingboardlist";
       })
       
       

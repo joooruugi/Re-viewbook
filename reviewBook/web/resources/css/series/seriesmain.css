@@ -124,7 +124,7 @@
 .bbs_date_ctgory{
 	margin-top: 10px;
 }
-.bbs_date_ctgory span{
+.bbs_date_ctgory span:first-child{
 background-color:  rgba(234, 244, 252, 1);
 	
 }

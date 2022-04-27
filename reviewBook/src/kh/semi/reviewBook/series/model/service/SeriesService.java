@@ -125,5 +125,13 @@ public class SeriesService {
 		close(conn);
 		return result;
 	}
+	
+	//10. 게시글 read 시 조회수 증가 (WB_COUNT    NOT NULL NUMBER)
+	public int readUpdateCount(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.readUpdateCount(conn, svo);
+		close(conn);
+		return result;
+	}
 		
 }

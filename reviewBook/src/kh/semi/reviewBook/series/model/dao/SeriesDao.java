@@ -344,8 +344,8 @@ public class SeriesDao {
 	
 	//8. 연재 게시글 작성
 	public int insertSeriesBoard(Connection conn, SeriesVo svo) {
-		String usId = "us111"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
-		String wbcWriter = "사자"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
+		String usId = "us111" ; //user 로그인 구현 후 svo.getUsId()수정 예정 
+		String wbcWriter = "사자"; //user 로그인 구현 후 svo.setWbWriter()수정 예정 
 		int result = 0;
 		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
 		try {
@@ -375,8 +375,8 @@ public class SeriesDao {
 //	WB_CATEGORY NOT NULL VARCHAR2(20)   
 //	US_ID       NOT NULL VARCHAR2(30)  
 	
-		//9-1. 업데이트 전 기존 글 가져오기
-		public SeriesVo readUpdateBoard(Connection conn, int wbNo) {
+	//9-1. 업데이트 전 기존 글 가져오기(수정,삭제 시 사용)
+	public SeriesVo readUpdateBoard(Connection conn, int wbNo) {
 		SeriesVo svo = null;
 		String sql = "SELECT * FROM WRITER_BBS WHERE WB_NO = ? ";
 
@@ -418,6 +418,7 @@ public class SeriesDao {
 			pstmt = conn.prepareStatement(sql);
 			//제일 중요한 글 번호 맨 앞으로 가져옴
 			pstmt.setInt(4, svo.getWbNo());
+			//나머지 채워줌
 			pstmt.setString(1, svo.getWbTitle());
 			pstmt.setString(2, svo.getWbContent());
 			pstmt.setString(3, svo.getWbCategory());
@@ -432,7 +433,7 @@ public class SeriesDao {
 	}
 	
 	//9-3. 연재 게시물 삭제
-		public int deleteSeriesBoard(Connection conn, SeriesVo svo) {
+	public int deleteSeriesBoard(Connection conn, SeriesVo svo) {
 			int result = 0;
 			String sql = "DELETE FROM WRITER_BBS WHERE WB_NO = ?";
 			try {
@@ -447,4 +448,21 @@ public class SeriesDao {
 
 			return result;
 		}
+
+	//10. 게시글 read 시 조회수 증가 (WB_COUNT    NOT NULL NUMBER)
+	public int readUpdateCount (Connection conn, SeriesVo svo) {
+		int result = 0;
+		String sql = "UPDATE WRITER_BBS SET WB_COUNT = (WB_COUNT)+1 WHERE WB_NO = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, svo.getWbNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
 }

@@ -14,8 +14,9 @@
 <head>
 <meta charset="UTF-8">
 <title>연재 게시글</title>
-
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+<!-- xeicon cdn -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 <body>
 
@@ -121,7 +122,7 @@
 											</p>
 										</div>
 										<div class="bbs_date_ctgory"><%=svo.getWbDate().substring(0, 16) %>
-											<span><%=svo.getWbCategory() %></span>
+											<span><%=svo.getWbCategory() %></span> &nbsp; &nbsp; <span><i class="xi-eye-o"></i>&nbsp;<%=svo.getWbCount() %></span>
 										</div>
 										<br>
 										</li>
@@ -252,7 +253,7 @@
 											</p>
 										</div>
 										<div class="bbs_date_ctgory"><%=svo.getWbDate().substring(0, 16) %>
-											<span><%=svo.getWbCategory() %></span>
+											<span><%=svo.getWbCategory() %></span> &nbsp; &nbsp; <span><i class="xi-eye-o"></i>&nbsp;<%=svo.getWbCount() %></span>
 										</div>
 										<br>
 										</li>
