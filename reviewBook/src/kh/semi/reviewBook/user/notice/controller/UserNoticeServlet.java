@@ -55,7 +55,7 @@ public class UserNoticeServlet extends HttpServlet {
 //		vo.setNtNo(ntNo);
 		vo.setNtTitle(ntTitle);
 		vo.setNtNickname(ntNickname);
-		vo.getNtDate(ntDate);
+//		vo.getNtDate(ntDate);
 		
 		
 	}
