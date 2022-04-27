@@ -44,6 +44,7 @@ public class FundingSuccessBoardListController extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingsuccessboardlist.jsp").forward(request, response);
 	}
 
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

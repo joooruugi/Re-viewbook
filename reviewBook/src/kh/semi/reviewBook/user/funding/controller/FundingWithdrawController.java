@@ -41,8 +41,8 @@ public class FundingWithdrawController extends HttpServlet {
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet : fundingwithdraw/");
-		String wbNo = request.getParameter("wbNo");
-//		ArrayList<FundingVo> flist = service.fundingWithdraw(int wbNo);
+		int wbNo = Integer.parseInt(request.getParameter("wbNo"));
+		ArrayList<FundingVo> flist = service.fundingWithdraw(wbNo);
 		// 철회하기 버튼을 누르면 여기로 들어와서 버튼을 누른 글번호를 가지고 서비스로 간다.
 		
 //		request.setAttribute("flist", flist);

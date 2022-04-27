@@ -48,6 +48,7 @@
 						<td class="fdlistdeadline">펀딩마감일</td>
 						<td class="fdlistfunding">펀딩철회</td>
 					</tr>
+					
 					<%
 						for (FundingVo vo : flist) {
 					%>
@@ -56,7 +57,11 @@
 						<td><%=vo.getFdLimit()%></td>
 						<td><%=vo.getFdDonation()%></td>
 						<td><%=vo.getFdDeadline()%></td>
-						<td><%=vo.getFdOX()%></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+						<% if(vo.getFdOX() == 1) { %>
+						<td><a class="fdwithdraw" href="#">철회하기</a></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+						<% } else {%>
+						<td><a class="fddonation" href="#">펀딩하기</a></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+						<% } %>
 					</tr>
 					<%
 						}
