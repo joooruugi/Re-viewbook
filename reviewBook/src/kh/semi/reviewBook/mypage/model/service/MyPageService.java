@@ -4,6 +4,7 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.getConnection;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.dao.MyPageDao;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
@@ -19,8 +20,8 @@ public class MyPageService {
 		return result;
 	}
 	
-	public BuyListVo selectBuyList(String usId) {
-		BuyListVo result = null;
+	public ArrayList<BuyListVo> selectBuyList(String usId) {
+		ArrayList<BuyListVo> result = null;
 		Connection conn = getConnection();
 		result = dao.selectBuyList(conn, usId);
 		close(conn);

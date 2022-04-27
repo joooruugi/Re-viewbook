@@ -9,6 +9,9 @@ public class BuyListVo {
 //	OR_PRICE NOT NULL NUMBER       
 //	OR_DATE  NOT NULL TIMESTAMP(6) 
 //	US_ID    NOT NULL VARCHAR2(30)    히든
+//	RV_NUM     NOT NULL NUMBER 
+	
+	
 	private String bkTitle;
 	private int bkNo;
 	private int orNum;
@@ -16,11 +19,10 @@ public class BuyListVo {
 	private Date orDate;
 	private String usId;
 	private int rvNum;
-	
 	@Override
 	public String toString() {
 		return "BuyListVo [bkTitle=" + bkTitle + ", bkNo=" + bkNo + ", orNum=" + orNum + ", orPrice=" + orPrice
-				+ ", orDate=" + orDate + ", usId=" + usId + "]";
+				+ ", orDate=" + orDate + ", usId=" + usId + ", rvNum=" + rvNum + "]";
 	}
 	public String getBkTitle() {
 		return bkTitle;
@@ -58,6 +60,14 @@ public class BuyListVo {
 	public void setUsId(String usId) {
 		this.usId = usId;
 	}
+	public int getRvNum() {
+		return rvNum;
+	}
+	public void setRvNum(int rvNum) {
+		this.rvNum = rvNum;
+	}
+	
+	
 	
 	
 }

@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 
@@ -55,28 +57,33 @@ public class MyPageDao {
 		return result;
 	}
 	
-	public BuyListVo selectBuyList(Connection conn, String usId) {
+	public ArrayList<BuyListVo> selectBuyList(Connection conn, String usId) {
 		System.out.println("dao selectBuyList전: "+usId);
-		BuyListVo result = null;
-		String sql = "select * from order_book ob join (select * from \"ORDER\" where us_id=?) o using (or_num) join book using (bk_no)";
+		ArrayList<BuyListVo> volist = null;
+		String sql = "select * from order_book ob join (select * from \"ORDER\" where us_id=?) o using (or_num) join book using (bk_no) left outer join review using (bk_no)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				result = new BuyListVo();
+			volist = new ArrayList<BuyListVo>();
+			while(rs.next()) {
+				BuyListVo vo = new BuyListVo();
 //				BK_TITLE       NOT NULL VARCHAR2(150) 
 //				BK_NO          NOT NULL NUMBER    히든    
 //				OR_NUM   NOT NULL NUMBER       
 //				OR_PRICE NOT NULL NUMBER       
 //				OR_DATE  NOT NULL TIMESTAMP(6) 
 //				US_ID    NOT NULL VARCHAR2(30)    히든
-				result.setBkNo(rs.getInt("bk_No"));
-				result.setBkTitle(rs.getString("bk_Title"));
-				result.setOrDate(rs.getDate("or_Date"));
-				result.setOrNum(rs.getInt("or_Num"));
-				result.setOrPrice(rs.getInt("or_Price"));
-				result.setUsId(rs.getString("us_Id"));
+//				RV_NUM     NOT NULL NUMBER 
+				
+				vo.setBkNo(rs.getInt("bk_No"));
+				vo.setBkTitle(rs.getString("bk_Title"));
+				vo.setOrDate(rs.getDate("or_Date"));
+				vo.setOrNum(rs.getInt("or_Num"));
+				vo.setOrPrice(rs.getInt("or_Price"));
+				vo.setUsId(rs.getString("us_Id"));
+				vo.setRvNum(rs.getInt("rv_Num"));
+				volist.add(vo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -84,8 +91,8 @@ public class MyPageDao {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println("dao selectBuyList result: "+result);
-		return result;
+		System.out.println("dao selectBuyList result: "+volist);
+		return volist;
 	}
 
 }
