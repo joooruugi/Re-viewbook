@@ -21,7 +21,7 @@ public class UserService {
 	public UserVo login(String usId, String usPassword){
 		UserVo result = null;
 		Connection conn = getConnection();
-		result = dao.login(conn, usId, usPassword);
+		result = dao.loginUser(conn, usId, usPassword);
 		close(conn);
 		return result;
 	}

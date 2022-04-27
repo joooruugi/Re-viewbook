@@ -65,7 +65,7 @@
             </nav>
             <nav class="navbar_right">
                 <input class="searchBox">
-                <a class="navbar_signup" href="signupmain">회원가입</a>
+                <a class="navbar_signup" href="<%=request.getContextPath() %>/signup">회원가입</a>
                 <a class="navbar_signup" href="login">로그인</a>
                 <a class="navbar_signup" href="#">공지사항</a>
             </nav>
