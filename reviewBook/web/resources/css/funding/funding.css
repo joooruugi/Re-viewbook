@@ -19,6 +19,13 @@
 .sidemenu_funding {
     margin: 20px;
 }
+.sidemenu_book .sidemenu_topmenu{
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+}
 .sidemenu_funding .sidemenu_item{
     font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');

@@ -23,6 +23,8 @@
 <title>펀딩진행중</title>
 </head>
 <body>
+	<% FundingVo fvo = (FundingVo)request.getAttribute("fvo"); 
+	 	%>
 	<div id="main_wrap">
 		<%@ include file="../../template_header.jsp"%>
 		<div class="bodyfd">
@@ -48,19 +50,25 @@
 						<td class="fdlistdeadline">펀딩마감일</td>
 						<td class="fdlistfunding">펀딩철회</td>
 					</tr>
-					
+
 					<%
 						for (FundingVo vo : flist) {
 					%>
 					<tr class="fdlist_tb fontnormal">
-						<td><%=vo.getWbNO()%></td>
-						<td><%=vo.getFdLimit()%></td>
-						<td><%=vo.getFdDonation()%></td>
-						<td><%=vo.getFdDeadline()%></td>
-						<% if(vo.getFdOX() == 1) { %>
-						<td><a class="fdwithdraw" href="#">철회하기</a></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+						<td><%=fvo.getWbNO()%></td>
+						<td><%=fvo.getFdLimit()%></td>
+						<td><%=fvo.getFdDonation()%></td>
+						<td><%=fvo.getFdDeadline()%></td>
+						<% if(fvo.getFdOX() == 1) { %>
+						<button id="btn_funding_withdraw" class="button2"
+							onclick="location.href='fundingwithdraw?wbNo=<%=fvo.getWbNO()%>';">철회하기</button>
+						<!-- <td><a class="fdwithdraw" href="#">철회하기</a></td> -->
+						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
 						<% } else {%>
-						<td><a class="fddonation" href="#">펀딩하기</a></td> <!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+						<button id="btn_funding_donation" class="button2"
+							onclick="location.href='fundingdonation?wbNo=<%=fvo.getWbNO()%>';">펀딩하기</button>
+						<!-- <td><a class="fddonation" href="#">펀딩하기</a></td> -->
+						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
 						<% } %>
 					</tr>
 					<%

@@ -16,16 +16,16 @@ import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 
 
 /**
- * Servlet implementation class FundingBoardListController
+ * Servlet implementation class FundingBoardListServlet
  */
 @WebServlet("/fundingsuccessboardlist")
-public class FundingSuccessBoardListController extends HttpServlet {
+public class FundingSuccessBoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private FundingService service = new FundingService();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingSuccessBoardListController() {
+    public FundingSuccessBoardListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

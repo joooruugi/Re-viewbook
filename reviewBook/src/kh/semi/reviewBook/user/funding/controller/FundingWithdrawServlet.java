@@ -13,17 +13,17 @@ import kh.semi.reviewBook.user.funding.model.service.FundingService;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 
 /**
- * Servlet implementation class FundingWithdrawController
+ * Servlet implementation class FundingWithdrawServlet
  */
 @WebServlet("/fundingwithdraw")
-public class FundingWithdrawController extends HttpServlet {
+public class FundingWithdrawServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private FundingService service = new FundingService();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingWithdrawController() {
+    public FundingWithdrawServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

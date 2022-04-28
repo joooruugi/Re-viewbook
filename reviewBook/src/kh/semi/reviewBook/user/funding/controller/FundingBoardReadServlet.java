@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FundingBoardReadController
+ * Servlet implementation class FundingBoardReadServlet
  */
 @WebServlet("/fundingboardread")
-public class FundingBoardReadController extends HttpServlet {
+public class FundingBoardReadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingBoardReadController() {
+    public FundingBoardReadServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
