@@ -10,14 +10,14 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 public class UserService {
 	private UserDao dao = new UserDao();
 	
-	public int insertMember(UserVo vo) {
+	public int insertUser(UserVo vo) {
+		System.out.println("asdf");
 		int result = 0;
 		Connection conn = getConnection();
-		result = dao.insertMember(conn, vo);
+		result = dao.insertUser(conn, vo);
 		close(conn);
 		return result;
 	}
-	
 	public UserVo login(String usId, String usPassword){
 		UserVo result = null;
 		Connection conn = getConnection();

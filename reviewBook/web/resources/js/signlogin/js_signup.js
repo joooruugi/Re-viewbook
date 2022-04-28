@@ -3,6 +3,7 @@
  */
 	// TODO 나머지도 유효성체크해주기
 		$("#btn_enroll").click(function(){
+		console.log("a");
 			var usId = $("#usId").val().trim();
 			var regExpId = /[A-Za-z0-9]{6,20}$/; 
 			//var regExpId = /^[A-Za-z][A-Za-z0-9!_]{2,4}$/;   // 첫글자는 영문자, 영문자숫자!_으로 3-5자 입력가능
@@ -36,7 +37,7 @@
 			}
 			
 			var frm = document.frmRegister;
-			frm.action = "signup.lo";
+			frm.action = "signup_input.lo";
 			frm.method = "post";
 			frm.submit();
 		});

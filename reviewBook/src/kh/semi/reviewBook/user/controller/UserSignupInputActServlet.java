@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.user.model.service.UserService;
+import kh.semi.reviewBook.user.model.vo.UserVo;
+
 /**
  * Servlet implementation class UserSignupInputActServlet
  */
-@WebServlet("/signup.lo")
+@WebServlet("/signup_input.lo")
 public class UserSignupInputActServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -52,6 +55,37 @@ public class UserSignupInputActServlet extends HttpServlet {
 //		private String usAddress;
 //		private String usName;
 //		private String usBirth;
+		
+		String usId = request.getParameter("usId");
+		String usEmail = request.getParameter("usEmail");
+		String usPhone = request.getParameter("usPhone");
+		String usNickname = request.getParameter("usNickname");
+		String usPassword = request.getParameter("usPassword");
+		String usGender= request.getParameter("usGender");
+		String usAddress = request.getParameter("usAddress");
+		String usName = request.getParameter("usName");
+		String usBirth	= request.getParameter("usBirth");
+		
+		UserVo uvo = new UserVo();
+		uvo.setUsId(usId);
+		uvo.setUsEmail(usEmail);
+		uvo.setUsPhone(usPhone);
+		uvo.setUsNickname(usNickname);
+		uvo.setUsPassword(usPassword);
+		uvo.setUsGender(usGender);
+		uvo.setUsAddress(usAddress);
+		uvo.setUsName(usName);
+		uvo.setUsBirth(usBirth);
+		
+		int result = new UserService().insertUser(uvo);
+//		request.getRequestDispatcher("WEB-INF/view/user/signup/signup_final.jsp").forward(request, response);
+//		response.sendRedirect("signup_terms");
+		if(result <1) {
+			response.sendRedirect("signup_input");
+		}else {
+			response.sendRedirect("signup_final");
+		}
+////		
 	}
 
 }

@@ -17,7 +17,7 @@ public class UserDao {
 	private ResultSet rs = null;
 
 //	회원가입 
-	public int insertMember(Connection conn, UserVo vo) {
+	public int insertUser(Connection conn, UserVo vo) {
 //		US_ID       NOT NULL VARCHAR2(30)  
 //		US_EMAIL    NOT NULL VARCHAR2(150) 
 //		US_PHONE    NOT NULL VARCHAR2(30)  
@@ -28,7 +28,7 @@ public class UserDao {
 //		US_NAME     NOT NULL VARCHAR2(10)  
 //		US_BIRTH    NOT NULL DATE         
 		int result = 0;
-		String sql = "insert into user (US_ID, US_EMAIL, US_PHONE, phoUS_NICKNAME, US_PASSWORD, US_GENDER, US_ADDRESS, US_NAME, US_BIRTH) values (?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into JKBS.\"USER\" (US_ID, US_EMAIL, US_PHONE, US_NICKNAME, US_PASSWORD, US_GENDER, US_ADDRESS, US_NAME, US_BIRTH) values (?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getUsId());
