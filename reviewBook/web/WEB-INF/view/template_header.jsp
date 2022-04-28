@@ -5,7 +5,9 @@
  <header>
         <div class="navbar">
             <nav class="navbar_left mainlogo">
+            <a href="<%=request.getContextPath() %>/">
                 <img src="./resources/image/all/header/RVBlogo.png">
+                </a>
             </nav>
             <nav class="navbar_left">
                 <div class="dropdownmenu">
