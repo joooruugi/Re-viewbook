@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.body_adminmain {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.adminmain_profile {
+    border: 2px solid black;
+    width: 40%;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #f9eede;
+}
+
+.adminmain_profile_pic {
+    width: 60%;
+    height: 180px;
+    margin: 30px auto;
+    background-color: white;
+}
+
+.adminmain_profile_text {
+    background-color: white;
+    width: 45%;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.adminmain_notice,
+.adminmain_userlist {
+    width: 45%;
+    text-align: center;
+    margin: 10px;
+    font-size: 35px;
+    border: 2px solid black;
+    background-color: #fffbf6;
+}
+.adminmain_notice:hover,
+.adminmain_userlist:hover {
+    background-color: #fbe9d2;
+}
+
+.adminmain_notice_link_text,
+.adminmain_userlist_link_text{
+    color: black;
+    margin: 30% 0;
+}

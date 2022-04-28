@@ -13,7 +13,7 @@
             <div class="footer_right">
                 <a class="recrument" href="#">입사지원</a>
                 <a class="footerqna" href="#">QnA문의</a>
-                <a class="footerqna" href="#">톱니바퀴모양</a>
+                <a class="footerqna" href="<%=request.getContextPath() %>/adlogin">톱니바퀴모양</a>
             </div>
         </div>
     </footer>
