@@ -34,10 +34,10 @@
                 </div>
             </form>
                 <div class="loginadmin_link_find">
-                    <a class="loginadmin_link_find_id" href="#">
+                    <a class="loginadmin_link_find_id" href="<%=request.getContextPath() %>/adfindid">
                         <p class="fontnothing">아이디 찾기</p>
                     </a>
-                    <a class="loginadmin_link_find_pw" href="#">
+                    <a class="loginadmin_link_find_pw" href="<%=request.getContextPath() %>/adfindpwd">
                         <p class="fontnothing">비밀번호 찾기</p>
                     </a>
                 </div>
