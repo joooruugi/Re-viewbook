@@ -25,7 +25,7 @@
 	<div class="signup_body1">
 		<nav class="sidemenu">
 			<ul class="sidemenu_signup1">
-				<li><a class="sidemenu_item sidemenu_topmenu">회원가입</a></li>
+				<li><a class="sidemenu_item sidemenu_topmenu">관리자 회원가입</a></li>
 				<li><a class="sidemenu_item signupuser_first">약관동의</a></li>
 				<li><a class="sidemenu_item">정보 입력</a></li>
 				<li><a class="sidemenu_item">가입 완료</a></li>
@@ -126,7 +126,7 @@
 		    	//작업 
 	    		 alert('모든 항목에 동의하셔야 회원가입이 가능합니다.');
 		    	}else{
-		    		($("#signup_nextbtn").attr("href","http://localhost:8090/reviewBook/signup_input"));
+		    		($("#signup_nextbtn").attr("href","http://localhost:8090/reviewBook/adsignup_input"));
 		    	}
 		});
 	   

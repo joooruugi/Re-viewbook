@@ -2,13 +2,13 @@ package kh.semi.reviewBook.user.model.dao;
 
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
@@ -51,35 +51,65 @@ public class UserDao {
 		return result;
 	}
 
-//	회원 수정 
-	public int updateUser(Connection conn, UserVo vo) {
-		int result = 0;
-		String sql = "";
+	// 로그인
+	public UserVo login(Connection conn, String usId, String usPassword) {
+		UserVo result = null;
+		String sql = "select us_password from \"USER\" where us_id=?;";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			result = pstmt.executeUpdate();
+			pstmt.setString(1, usId);
+			rs = pstmt.executeQuery();
+			//로그인 성공
+			if (rs.next()) {
+				usId = rs.getString("usId");
+				String usNickname = rs.getString("usNickname");
+				
+				result = new UserVo();
+				result.setUsEmail(rs.getString("us_email"));
+				result.setUsNickname(rs.getString("us_nickname"));
+				result.setUsPhone(rs.getString("us_phone"));
+				result.setUsGender(rs.getString("us_gender"));
+				result.setUsAddress(rs.getString("us_address"));
+				result.setUsName(rs.getString("us_name"));
+				result.setUsBirth(rs.getString("us_birth"));
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		return result;
 	}
-
-//	회원삭제 
-	public int deleteUser(Connection conn, UserVo vo) {
-		int result = 0;
-		String sql = "";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		return result;
-	}
+////	회원 수정 
+//	public int updateUser(Connection conn, UserVo vo) {
+//		int result = 0;
+//		String sql = "";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(pstmt);
+//		}
+//		return result;
+//	}
+//
+////	회원삭제 
+//	public int deleteUser(Connection conn, UserVo vo) {
+//		int result = 0;
+//		String sql = "";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(pstmt);
+//		}
+//		return result;
+//	}
 
 //	회원 목록 
 	public ArrayList<UserVo> listUser(Connection conn) {
@@ -125,33 +155,6 @@ public class UserDao {
 		return result;
 	}
 
-	// 로그인
-	public UserVo login(Connection conn, String usId, String usPassword){
-		UserVo result = null;
-		String sql = "select us_password from user where us_id=? and us_password=?";
-		try { 
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, usId);
-			pstmt.setString(2, usPassword);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				result = new UserVo();
-				result.setUsEmail(rs.getString("us_email"));
-				result.setUsNickname(rs.getString("us_nickname"));
-				result.setUsPhone(rs.getString("us_phone"));
-				result.setUsGender(rs.getString("us_gender"));
-				result.setUsAddress(rs.getString("us_address"));
-				result.setUsName(rs.getString("us_name"));
-				result.setUsBirth(rs.getString("us_birth"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally { 
-			close(rs);
-			close(pstmt);
-		}
-		return result;
-	}
 //	public int loginUser(Connection conn, String usId, String usPassword) {
 //		String sql = "select US_PASSWORD from user where US_ID =?";
 //		try {

@@ -1,5 +1,5 @@
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_input.css">
+	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_second.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet"
@@ -21,7 +21,7 @@
 	<div class="signup_body2">
 		<nav class="sidemenu">
 			<ul class="sidemenu_signup2">
-				<li><a class="sidemenu_item sidemenu_topmenu">회원가입</a></li>
+				<li><a class="sidemenu_item sidemenu_topmenu">관리자 회원가입</a></li>
 				<li><a class="sidemenu_item">약관동의</a></li>
 				<li><a class="sidemenu_item signupuser_second">정보 입력</a></li>
 				<li><a class="sidemenu_item">가입 완료</a></li>
@@ -36,7 +36,7 @@
 							<p class="fontnormal signup_infoname">아이디</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="adId" class="signup_infoinput" id="usId"
+							name="adId" class="signup_infoinput" id="adId"
 							required="required" placeholder="영문자, 숫자를 사용한 6자이상 20자이하"></td>
 						<td class="signupuser_input_btn">
 							<button type="submit" id="idCheck" class="signupinfo_idcheck">
@@ -49,7 +49,7 @@
 							<p class="fontnormal signup_infoname">비밀번호</p>
 						</td>
 						<td class="signupuser_input_input"><input type="password"
-							name="usPassword" class="signup_infoinput" id="adPassword"
+							name="adPassword" class="signup_infoinput" id="adPassword"
 							required="required" placeholder="영문자, 숫자, 특수문자가 적어도 1개이상, 8~16글자"></td>
 					</tr>
 					<tr>
@@ -57,7 +57,7 @@
 							<p class="fontnormal signup_infoname">닉네임</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usNickname" class="signup_infoinput" id="adNickname"
+							name="adNickname" class="signup_infoinput" id="adNickname"
 							required="required"></td>
 						<td class="signupuser_input_btn">
 							<button type="submit" id="idCheck" class="signupinfo_idcheck">
@@ -70,7 +70,7 @@
 							<p class="fontnormal signup_infoname">성별</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="adGender" class="signup_infoinput" id="usGender"
+							name="adGender" class="signup_infoinput" id="adGender"
 							required="required" placeholder="'F' 또는 'M' 한글자만 입력"></td>
 					</tr>
 					<tr>
@@ -78,7 +78,7 @@
 							<p class="fontnormal signup_infoname">전화번호</p>
 						</td>
 						<td class="signupuser_input_input"><input type="tel"
-							name="adPhone" class="signup_infoinput" id="usPhone"
+							name="adPhone" class="signup_infoinput" id="adPhone"
 							required="required" placeholder="'000-0000-0000' 형식으로 입력"></td>
 					</tr>
 					<tr>
@@ -86,7 +86,7 @@
 							<p class="fontnormal signup_infoname">이메일</p>
 						</td>
 						<td class="signupuser_input_input"><input type="email"
-							name="adEmail" class="signup_infoinput" id="usEmail"
+							name="adEmail" class="signup_infoinput" id="adEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
 								id="btn_email" class="signupinfo_emailcheck">
@@ -97,8 +97,8 @@
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">인증번호</p>
 						</td>
-						<td class="signupuser_input_input"><input type="email"
-							name="adEmail_chk" class="signup_infoinput" id="usEmail"
+						<td class="signupuser_input_input"><input type="text"
+							name="adEmail_chk" class="signup_infoinput" id="adEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
 								id="btn_email_chk" class="signupinfo_emailcheck">
@@ -110,7 +110,7 @@
 							<p class="fontnormal signup_infoname">회사(소속)</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usCompany" class="signup_infoinput" id="usAddress"
+							name="adCompany" class="signup_infoinput" id="adAddress"
 							required="required"></td>
 					</tr>
 				</table>

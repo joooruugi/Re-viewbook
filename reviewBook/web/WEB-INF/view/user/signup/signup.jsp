@@ -39,7 +39,7 @@
 						<img src="가입관리자.png">
 					</div>
 					<div class="signup_foradmin_p">
-						<a class="signup_foradmin_button" href="#">
+						<a class="signup_foradmin_button" href="<%=request.getContextPath()%>/adsignup_terms">
 							<p class="fontnormal">관리자 권한 신청</p>
 						</a>
 					</div>

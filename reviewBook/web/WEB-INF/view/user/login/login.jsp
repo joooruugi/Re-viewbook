@@ -17,14 +17,15 @@
 <%@ include file="../../../view/template_header.jsp" %>
 	<div class="loginuser_body">
         <div class="loginuser_content">
-            <form action="login.lo" method="post">
+            <form action="login.lo" method="post"
+            action="<%=request.getContextPath()%>/login.lo">
                 <div class="loginuser_text">
                     <p class="fontnormal">아이디</p>
                     <p class="fontnormal">비밀번호</p>
                 </div>
                 <div class="loginuser_input">
-                    <input type="text" name="id" required="required">
-                    <input type="password" name="pwd" required="required">
+                    <input type="text" name="usId" required="required">
+                    <input type="password" name="usPassword" required="required">
                 </div>
             </form>
                 <div class="loginuser_link_find">

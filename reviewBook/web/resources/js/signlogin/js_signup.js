@@ -13,14 +13,14 @@
 				return false;
 			}
 			
-			var password = $("#usPassword").val().trim();
+			/*var password = $("#usPassword").val().trim();
 			if(!password || password != $("#usPassword_re").val().trim()){
 				alert("패스워드 입력란과 확인란이 같지 않습니다.");
 				$("#usPassword").val("");
 				$("#usPassword_re").val("");
 				$("#usPassword").focus();
 				return false;
-			}
+			}*/
 			var regExpPassword = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,16}$/; // 영문자, 숫자, 특수문자가 적어도 1개이상, 8~16글자
 			if(!regExpPassword.test(password)){
 				alert("패스워드 입력란에는 영문자, 숫자, 특수문자가 적어도 1개이상, 8~16글자");

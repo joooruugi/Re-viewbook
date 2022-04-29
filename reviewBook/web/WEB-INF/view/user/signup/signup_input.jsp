@@ -1,5 +1,5 @@
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_input.css">
+	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_second.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet"
