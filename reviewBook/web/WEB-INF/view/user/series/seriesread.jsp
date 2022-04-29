@@ -16,7 +16,7 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <!-- xeicon cdn -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-<title>연재 게시글</title>
+<title>RVB 연재 게시글</title>
 </head>
 <body>
 	<% SeriesVo svo = (SeriesVo)request.getAttribute("svo"); 
@@ -74,9 +74,9 @@
 							</table>
 						</div>
 						<div class="series_board_up_de_btn">
-						<button id="btn_funding_update" class="button2"
+						<button id="btn_series_update" class="button2"
 						 onclick="location.href='seriesupdate?wbNo=<%=svo.getWbNo()%>';">게시물 수정</button>
-						<button id="btn_funding_delete" class="button4">게시물 삭제</button>
+						<button id="btn_series_delete" class="button4">게시물 삭제</button>
 						</div>
 						<div class="series_board_read_funding">
 							<table id="board_read_funding">
@@ -124,10 +124,13 @@
 													type="radio" id="1-star" name="wbcRating" value="1" /> <label
 													for="1-star" class="star">&#9733;</label>
 											</div>
+									
 											<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
 											<input type="text" id="wbcContent" name="wbcContent"
-												placeholder="댓글을 입력해주세요">
+												placeholder="댓글을 입력해주세요. 한번 등록한 별점은 수정이 불가능합니다." 
+												required="required">
 											<button type="submit" id="btn_submit_comment" class="button1">등록</button>
+											
 										</form>
 									</td>
 								</tr>
@@ -137,7 +140,22 @@
 			if(svo.getReCommentCnt()>0){
 			//자료형 ArrayList<SeriesReCommentVo>
 			for(SeriesReCommentVo srvo : svo.getSrvolist()){
-			%>
+			%>				
+							<div id="series_read_comment">
+							<div class="series_board_comment_up_de_btn" >
+							<button class="btn_board_comment_update">댓글 수정</button>
+							<div class="update_board_comment">
+								<form action="seriescommentupdate" method="post">
+									<input type ="text" value="<%=srvo.getWbcContent() %>" id = "wbcContent" name="wbcContent">
+									<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
+									<input type="hidden" name="wbcNo" value="<%=srvo.getWbcNo()%>">
+									<button type="submit" id="btn_update_submit_comment" class="button2">수정</button>
+									<button id="btn_update_reset" class="button4">취소</button>
+								</form> 
+								</div>
+							<button class="btn_board_comment_delete"
+							onclick="location.href='seriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
+							</div>
 							<table id="series_read_comment_rist">
 								<tr>
 									<td colspan="3"><%=srvo.getWbcWriter() %> &nbsp; &nbsp; <span><%=srvo.getWbcDate().substring(0, 16) %></span></td>
@@ -148,7 +166,10 @@
 								<tr>
 									<td colspan="3"><%=srvo.getWbcContent() %></td>
 								</tr>
-							</table>
+							
+								</table>
+							
+							</div>
 							<%		
 			}
 		}
@@ -270,10 +291,11 @@
 													for="2-stars" class="star">&#9733;</label> <input
 													type="radio" id="1-star" name="wbcRating" value="1" /> <label
 													for="1-star" class="star">&#9733;</label>
-											</div>
+											</div>									
 											<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
 											<input type="text" id="wbcContent" name="wbcContent"
-												placeholder="댓글을 입력해주세요">
+												placeholder="댓글을 입력해주세요. 한번 등록한 별점은 수정이 불가능합니다."
+												required="required">
 											<button type="submit" id="btn_submit_comment" class="button1">등록</button>
 										</form>
 									</td>
@@ -285,6 +307,21 @@
 			//자료형 ArrayList<SeriesReCommentVo>
 			for(SeriesReCommentVo srvo : svo.getSrvolist()){
 			%>
+							<div id="series_read_comment">
+							<div class="series_board_comment_up_de_btn" >
+							<button class="btn_board_comment_update">댓글 수정</button>
+							<div class="update_board_comment">
+								<form action="seriescommentupdate" method="post">
+									<input type ="text" value="<%=srvo.getWbcContent() %>" id = "wbcContent" name="wbcContent">
+									<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
+									<input type="hidden" name="wbcNo" value="<%=srvo.getWbcNo()%>">
+									<button type="submit" id="btn_update_submit_comment" class="button2">수정</button>
+									<button id="btn_update_reset" class="button4">취소</button>
+								</form> 
+								</div>
+							<button class="btn_board_comment_delete"
+							onclick="location.href='seriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
+							</div>
 							<table id="series_read_comment_rist">
 								<tr>
 									<td colspan="3"><%=srvo.getWbcWriter() %> &nbsp; &nbsp; <span><%=srvo.getWbcDate().substring(0, 16) %></span></td>
@@ -295,7 +332,10 @@
 								<tr>
 									<td colspan="3"><%=srvo.getWbcContent() %></td>
 								</tr>
-							</table>
+							
+								</table>
+							
+							</div>
 							<%		
 			}
 		}
@@ -348,17 +388,31 @@
       
       
      //게시물 삭제 스크립트(제이쿼리 방식)
-    $('#btn_funding_delete').click(function(){
+    $('#btn_series_delete').click(function(){
     	if(confirm("해당 게시글을 삭제하시겠습니까?")){
     		location.href="seriesdelete?wbNo=<%=svo.getWbNo()%>";
     	}
     })
+    
+	//댓글 수정 클릭시 댓글 창 block
+	 let eleBtns= document.getElementsByClassName("btn_board_comment_update");
+     for (var i = 0; i<eleBtns.length ; i++){
+       eleBtns[i].onclick = function(){
+           console.log(this); // this = .onclick 앞에 있는 eleBtns[i]
+           console.log(this.nextElementSibling);
+           var eleNext = this.nextElementSibling;
+           var isDisplay = eleNext.style.display;
+           console.log(isDisplay);
+           if(isDisplay =="" || isDisplay =="none"){
+               eleNext.style.display="block" ;
+
+           } else{
+               eleNext.style.display="none" ;  
+           }
+    }
+    }
+
 </script>
-
-
-
-
-
 
 
 

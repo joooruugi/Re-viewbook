@@ -37,6 +37,8 @@
 	width: 150px;
 	height: 30px;
 	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
 }
 
 .sidemenu_series li:hover {
@@ -147,10 +149,18 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+.series_board_recomment_all{
+	margin-bottom: 20px;
+}
 /* 댓글 리스트 */
+
+#series_read_comment{
+	border-bottom: 1px solid gray;
+}
+
 #series_read_comment_rist {
 	width: 100%;
-	border-bottom: 1px solid gray;
 	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
@@ -289,6 +299,13 @@ a {
 }
 
 
+.series_board_comment_up_de_btn button{
+	margin-top :10px;
+	height: 20px;
+	cursor: pointer;
+}
+
+
 /* 펀딩 상세정보 모달창 */
 .modal {
 	display: none;
@@ -341,7 +358,43 @@ a {
 
 
 /* hover시 마우스 클릭 효과 */
-#btn_funding:hover, #btn_funding_move:hover, #btn_funding_close:hover, #btn_submit_comment:hover{
+#btn_funding:hover, #btn_funding_move:hover, #btn_funding_close:hover, #btn_submit_comment:hover, 
+#btn_update_submit_comment:hover, #btn_update_reset:hover {
 cursor :pointer;
+}
+
+/* 댓글 수정 버튼 안보이게 클릭시 보이게 설정 */
+.update_board_comment{
+	margin-top: 10px;
+	display: none;
+}
+/* 댓글 수정 크기 창 */
+#wbcContent{
+	width: 70%;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+/* 댓글 수정 버튼 */
+.btn_board_comment_update{
+	font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal; 
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+}
+
+
+/* 댓글 삭제 버튼 */
+.btn_board_comment_delete{
+	font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f6e4ca;
+    border: 1px solid #eccda2;
+    border-radius: 10px;
 }
 

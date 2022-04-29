@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>연재 게시글</title>
+<title>RVB 연재 게시글</title>
 </head>
 <body>
 <% SeriesVo svo = (SeriesVo)request.getAttribute("svo"); 
@@ -84,8 +84,8 @@
                         </table>
                             <table id="series_insert_btn">
 							<tr>
-								<td><button type="submit" id="insert_btn" class="button4">게시글등록</button>
-                             <button type="button" id="insert_reset_btn" class="button2" onclick="history.back();">작성취소</button></td>
+								<td><button type="submit" id="insert_btn" class="button2">게시글등록</button>
+                             <button type="button" id="insert_reset_btn" class="button4" onclick="history.back();">작성취소</button></td>
 
 							</tr>
         

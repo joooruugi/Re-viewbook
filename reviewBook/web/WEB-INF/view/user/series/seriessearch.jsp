@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>연재 게시글</title>
+<title>RVB 연재 게시글</title>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <!-- xeicon cdn -->
  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> 

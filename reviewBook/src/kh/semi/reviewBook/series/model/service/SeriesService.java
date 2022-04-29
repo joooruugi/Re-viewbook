@@ -134,4 +134,19 @@ public class SeriesService {
 		return result;
 	}
 		
+	//11-1. 댓글 내용 수정
+	public int updateSeriesBoardComment(SeriesReCommentVo srvo) {
+		Connection conn = getConnection();
+		int result = dao.updateSeriesBoardComment(conn, srvo);
+		close(conn);
+		return result;
+	}
+	
+	//11-2. 댓글 내용 수정
+		public int deleteSeriesBoardComment(SeriesReCommentVo srvo) {
+			Connection conn = getConnection();
+			int result = dao.deleteSeriesBoardComment(conn, srvo);
+			close(conn);
+			return result;
+		}
 }

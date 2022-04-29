@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>연재 게시글</title>
+<title>RVB 연재 게시글</title>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <!-- xeicon cdn -->
  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> 
@@ -97,6 +97,14 @@
 				</div>
 				<div id="series_board_write">
 				<button onclick="location.href='seriesinsert';">게시물 작성</button>
+				</div>
+				<div class="series_series_hashtag">
+				<div class="series_hastag">
+				<div class="tag">#일상기록</div>
+				<div class="tag">#운동</div>
+				<div class="tag">#여행</div>
+				<div class="tag">#취미</div>
+				</div>
 				</div>
 				<table id="series_list">
 					<tr>

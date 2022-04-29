@@ -274,6 +274,8 @@ public class SeriesDao {
 			close(rs);
 			close(pstmt);
 		}		
+	
+	
 		return svo;
 	}
 	
@@ -300,8 +302,7 @@ public class SeriesDao {
 				SeriesReCommentVo srvo = new SeriesReCommentVo(rs.getInt("WBC_NO"), rs.getString("WBC_DATE"),
 						rs.getString("WBC_CONTENT"), rs.getInt("WBC_RATING"), rs.getInt("WB_NO"), rs.getString("US_ID"),
 						rs.getString("WBC_WRITER"));
-				// (int rNo, int bNo, String rWriter, Timestamp rWriteDate, String rContent,
-				// String mId)
+		
 				srlist.add(srvo);
 			}
 		} catch (SQLException e) {
@@ -315,13 +316,16 @@ public class SeriesDao {
 	}
 	
 	
-	//7. 댓글 작성
+	//7. 게시글 READ 시 댓글 작성
 	public int insertSeriesComment(Connection conn, SeriesReCommentVo srvo) {
-		String usId = "us222"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
-		String wbcWriter = "호랑이"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
+		String usId = "us222"; //USER 로그인 구현 후 srvo.getUsId()수정 예정 
+		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성) 
 		int result = 0;
 		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
 				+ "SYSDATE, ? , ? ,?, ?, ?)";
+//		로그인 구현되면 sql문 수정
+//		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
+//				+ "SYSDATE, ? , ? ,?, ?,(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?))"; -> (5, wbcWriter) -> (5, usId) 로 변경
 		try {
 			pstmt = conn.prepareStatement(sql);
 			//제일 중요한 글번호 맨 앞으로 가져옴
@@ -344,10 +348,13 @@ public class SeriesDao {
 	
 	//8. 연재 게시글 작성
 	public int insertSeriesBoard(Connection conn, SeriesVo svo) {
-		String usId = "us111" ; //user 로그인 구현 후 svo.getUsId()수정 예정 
-		String wbcWriter = "사자"; //user 로그인 구현 후 svo.setWbWriter()수정 예정 
+		String usId = "us222" ; //USER 로그인 구현 후 svo.getUsId()수정 예정 
+		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성)
 		int result = 0;
 		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
+//		로그인 구현되면 sql문 수정
+//		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP,"
+//				+ "(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?), ? ,?)"; -> (3, wbcWriter) -> (3, usId) 로 변경
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, svo.getWbTitle());
@@ -385,7 +392,6 @@ public class SeriesDao {
 			pstmt.setInt(1, wbNo);
 			rs = pstmt.executeQuery();
 			
-			rs = pstmt.executeQuery();
 			svo = new SeriesVo();
 			
 			if(rs.next()) {
@@ -465,4 +471,40 @@ public class SeriesDao {
 		return result;
 	}
 
-}
+	//11-1.댓글내용 수정
+	public int updateSeriesBoardComment(Connection conn, SeriesReCommentVo srvo) {
+		int result = 0;
+		String sql = "UPDATE WRITER_BBS_COMMENT SET WBC_CONTENT =? WHERE WBC_NO =?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			//제일 중요한 댓글 번호 맨 앞으로 가져옴
+			pstmt.setInt(2, srvo.getWbcNo());
+			//나머지 채워줌
+			pstmt.setString(1, srvo.getWbcContent());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+		
+	
+	//11-2.댓글내용 삭제
+		public int deleteSeriesBoardComment(Connection conn, SeriesReCommentVo srvo) {
+			int result = 0;
+			String sql = "DELETE FROM WRITER_BBS_COMMENT WHERE WBC_NO = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, srvo.getWbcNo());
+				
+				result = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+			return result;
+		}
+	}

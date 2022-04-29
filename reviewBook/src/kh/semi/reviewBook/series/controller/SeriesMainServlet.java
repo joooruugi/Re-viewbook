@@ -12,24 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import kh.semi.reviewBook.series.model.service.SeriesService;
 import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
-/**
- * Servlet implementation class SeriesMainServlet
- */
+
 @WebServlet("/seriesmain")
 public class SeriesMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public SeriesMainServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet : /seriesmain");
 		
@@ -40,7 +34,7 @@ public class SeriesMainServlet extends HttpServlet {
 
 		request.setAttribute("slist",slist);
 		
-//		if(slist.n)
+
 		request.getRequestDispatcher("WEB-INF/view/user/series/seriesmain.jsp").forward(request, response);
 	}
 

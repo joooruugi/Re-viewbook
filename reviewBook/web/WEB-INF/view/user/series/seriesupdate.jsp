@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>연재 게시글</title>
+<title>RVB 연재 게시글</title>
 </head>
 <body>
 	<%
@@ -49,7 +49,7 @@
 						<form action="seriesupdate.do" method="post"
 							enctype="multipart/form-data">
 							<table id="series_update">
-
+								<!-- 관리자 페이지에서 작업하는 경우에는 카테고리 제외 모두 readonly 옵션 부여 필수  -->
 								<tr>
 									<td>카테고리</td>
 									<td colspan="3"><select name="wbCategory" id="wbCategory"
@@ -63,7 +63,7 @@
 								<tr>
 									<td>제목</td>
 									<td colspan="3"><input type="text" id="wbTitle"
-										name="wbTitle" value="<%=svo.getWbTitle()%>" required>
+										name="wbTitle" value="<%=svo.getWbTitle()%>" required >
 									</td>
 								</tr>
 								<tr>
@@ -89,10 +89,10 @@
 							</table>
 							<table id="series_update_btn">
 								<tr>
-									<td><button type="submit" id="update_btn" class="button4">게시글
+									<td><button type="submit" id="update_btn" class="button2">게시글
 											수정</button>
-										<button type="button" id="update_reset_btn" class="button2"
-											onclick="history.back();">수정취소</button></td>
+										<button type="button" id="update_reset_btn" class="button4"
+											onclick="location.href='seriesread?wbNo=<%=svo.getWbNo()%>';">수정취소</button></td>
 
 								</tr>
 
