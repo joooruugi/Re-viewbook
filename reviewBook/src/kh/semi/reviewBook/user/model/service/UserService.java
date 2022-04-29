@@ -11,7 +11,6 @@ public class UserService {
 	private UserDao dao = new UserDao();
 	
 	public int insertUser(UserVo vo) {
-		System.out.println("asdf");
 		int result = 0;
 		Connection conn = getConnection();
 		result = dao.insertUser(conn, vo);

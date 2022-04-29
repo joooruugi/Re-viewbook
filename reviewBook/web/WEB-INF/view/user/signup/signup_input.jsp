@@ -1,5 +1,5 @@
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_second.css">
+	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_input.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet"
@@ -30,7 +30,8 @@
 			</ul>
 		</nav>
 		<div class="signupuser_second_content">
-			<form name="frmRegister" method="post" action="<%=request.getContextPath() %>/signup_input.lo">
+			<form name="frmRegister" method="post"
+				action="<%=request.getContextPath()%>/signup_input.lo">
 				<table class="singupuser_input_info">
 					<tr>
 						<td class="signupuser_input_text">
@@ -38,9 +39,9 @@
 						</td>
 						<td class="signupuser_input_input"><input type="text"
 							name="usId" class="signup_infoinput" id="usId"
-							required="required"  placeholder="영문자, 숫자를 사용한 6자이상 20자이하"></td>
+							required="required" placeholder="영문자, 숫자를 사용한 6자이상 20자이하"></td>
 						<td class="signupuser_input_btn">
-							<button type="button" id="idCheck" class="signupinfo_idcheck">
+							<button type="submit" id="idCheck" class="signupinfo_idcheck">
 								<p class="fontnothing signup_infobtn ">중복확인</p>
 							</button>
 						</td>
@@ -55,26 +56,23 @@
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">비밀번호 확인</p>
-						</td>
-						<td class="signupuser_input_input"><input type="password"
-							name="usPassword_re" class="signup_infoinput" id="usPassword_re"
-							required="required"></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">닉네임</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usNickname"  class="signup_infoinput" id="usNickname"
+							name="usNickname" class="signup_infoinput" id="usNickname"
 							required="required"></td>
+						<td class="signupuser_input_btn">
+							<button type="submit" id="idCheck" class="signupinfo_idcheck">
+								<p class="fontnothing signup_infobtn ">중복확인</p>
+							</button>
+						</td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이름</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usName"  class="signup_infoinput" id="usName"
+							name="usName" class="signup_infoinput" id="usName"
 							required="required"></td>
 					</tr>
 					<tr>
@@ -82,8 +80,8 @@
 							<p class="fontnormal signup_infoname">성별</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usGender"class="signup_infoinput" id="usGender"
-							required="required" placeholder="'여'또는 '남' 한글자만 입력 바랍니다."></td>
+							name="usGender" class="signup_infoinput" id="usGender"
+							required="required" placeholder="'F' 또는 'M' 한글자만 입력"></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
@@ -91,7 +89,7 @@
 						</td>
 						<td class="signupuser_input_input"><input type="text"
 							name="usBirth" class="signup_infoinput" id="usBirth"
-							required="required" placeholder="YY/MM/DD로 입력 바랍니다."></td>
+							required="required" placeholder="'YY/MM/DD' 형식으로 입력"></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
@@ -99,7 +97,7 @@
 						</td>
 						<td class="signupuser_input_input"><input type="tel"
 							name="usPhone" class="signup_infoinput" id="usPhone"
-							required="required" placeholder="000-0000-0000로 입력 바랍니다."></td>
+							required="required" placeholder="'000-0000-0000' 형식으로 입력"></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
@@ -107,10 +105,22 @@
 						</td>
 						<td class="signupuser_input_input"><input type="email"
 							name="usEmail" class="signup_infoinput" id="usEmail"
-							required="required" placeholder="aaa@aaa.com 형태로 입력 바랍니다."></td>
-						<td class="signupuser_input_btn"><button type="button"
+							required="required"></td>
+						<td class="signupuser_input_btn"><button type="submit"
 								id="btn_email" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
+							</button></td>
+					</tr>
+					<tr>
+						<td class="signupuser_input_text">
+							<p class="fontnormal signup_infoname">인증번호</p>
+						</td>
+						<td class="signupuser_input_input"><input type="email"
+							name="usEmail_chk" class="signup_infoinput" id="usEmail"
+							required="required"></td>
+						<td class="signupuser_input_btn"><button type="submit"
+								id="btn_email_chk" class="signupinfo_emailcheck">
+								<p class="fontnothing signup_infobtn">인증확인</p>
 							</button></td>
 					</tr>
 					<tr>
@@ -118,7 +128,7 @@
 							<p class="fontnormal signup_infoname">주소</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usAddress"value="asd" class="signup_infoinput" id="usAddress"
+							name="usAddress" class="signup_infoinput" id="usAddress"
 							required="required"></td>
 					</tr>
 				</table>
@@ -128,6 +138,6 @@
 			</form>
 		</div>
 	</div>
-<%@ include file="../../../view/template_footer.jsp" %>
+	<%@ include file="../../../view/template_footer.jsp"%>
 </body>
 </html>
