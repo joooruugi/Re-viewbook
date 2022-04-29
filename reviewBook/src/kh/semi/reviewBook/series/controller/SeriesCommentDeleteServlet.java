@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.series.model.service.SeriesService;
 import kh.semi.reviewBook.series.model.vo.SeriesReCommentVo;
+import kh.semi.reviewBook.series.model.vo.SeriesVo;
+
+/**
  * Servlet implementation class SeriesCommentDeleteServlet
  */
 @WebServlet("/seriescommentdelete")
