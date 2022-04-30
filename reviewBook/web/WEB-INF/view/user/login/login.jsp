@@ -17,8 +17,7 @@
 <%@ include file="../../../view/template_header.jsp" %>
 	<div class="loginuser_body">
         <div class="loginuser_content">
-			<form action="login.lo" method="post"
-				action="<%=request.getContextPath()%>/login.lo">
+			<form action="<%=request.getContextPath()%>/login.lo" method="post">
 				<div class="loginuser_text">
 					<p class="fontnormal">아이디</p>
 					<p class="fontnormal">비밀번호</p>
@@ -41,7 +40,6 @@
 						<button type="button" id="signup">회원가입</button>
 					</div>
 					<div class="loginuser_loginbtn">
-
 						<button type="submit">로그인</button>
 					</div>
 				</div>

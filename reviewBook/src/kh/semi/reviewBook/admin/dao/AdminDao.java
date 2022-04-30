@@ -42,4 +42,29 @@ public class AdminDao {
 		return result;
 	}
 	
+	public AdminVo loginAdmin(Connection conn, String adId, String adPassword) {
+		AdminVo result = null;
+		String sql = "select ad_password from \"ADMIN\" where ad_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new AdminVo();
+				result.setAdId(rs.getString("AD_ID"));
+				result.setAdEmail(rs.getString("AD_EMAIL"));
+				result.setAdPhone(rs.getString("AD_PHONE"));
+				result.setAdNickname(rs.getString("AD_NICKNAME"));
+				result.setAdCompany(rs.getString("AD_COMPANY"));
+				result.setAdPassword(rs.getString("AD_PASSWORD"));
+				result.setAdGender(rs.getString("AD_GENDER"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 }

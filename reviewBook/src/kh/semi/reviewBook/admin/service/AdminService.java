@@ -17,4 +17,12 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+	
+	public AdminVo loginAdmin(String adId, String adPassword) {
+		AdminVo result = null;
+		Connection conn = getConnection();
+		result = dao.loginAdmin(conn, adId, adPassword);
+		close(conn);
+		return result;
+	}
 }
