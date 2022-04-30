@@ -74,9 +74,13 @@
    border-bottom: 1px solid gray;
    background-color: #eaf4fc;
    font-size: 15px;
+   height: 30px;
+   line-height: 30px;
 }
 .fdlist .fdlist_tb{
-    border-bottom: 1px solid gray;
+	border-bottom: 1px solid gray;
+    height: 20px;
+    line-height: 20px;
 }
 .fdlist_th .fdlistno{
     width: 20%;
@@ -93,7 +97,13 @@
 .fdlist_th .fdlistfunding{
     width: 20%;
 }
-
+/* 철회,펀딩 버튼 */ 
+.btn_funding_withdraw {
+	background-color: red;
+}
+.btn_funding_donation {
+	background-color: blue;
+}
 /* 펀딩성공작 슬라이드 */
 
 .bookimg {

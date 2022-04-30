@@ -21,12 +21,19 @@ public class FundingService {
 	}
 	
 	// 철회하기 기능
-	public ArrayList<FundingVo> fundingWithdraw(int wbNo) {
+	public int fundingWithdraw(int wbNo) {
 		Connection conn = getConnection();
-		ArrayList<FundingVo> fvolist = dao.fundingWithdraw(conn, wbNo);
+		int result = dao.fundingWithdraw(conn, wbNo);
 		close(conn);
-		return fvolist;
+		return result;
 	}
 	
+	// 펀딩하기 기능
+	public int fundingDonation(int wbNo) {
+		Connection conn = getConnection();
+		int result = dao.fundingDonation(conn, wbNo);
+		close(conn);
+		return result;
+	}
 
 }

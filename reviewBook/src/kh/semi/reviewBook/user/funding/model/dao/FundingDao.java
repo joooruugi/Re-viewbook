@@ -53,34 +53,33 @@ public class FundingDao {
 		
 	}
 	// 철회하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
-	public ArrayList<FundingVo> fundingWithdraw(Connection conn, int wbNo) {
-		ArrayList<FundingVo> flist = null;
+	public int fundingWithdraw(Connection conn, int wbNo) {
+		int result = 0;
 		String sql = "UPDATE FUNDING_MANAGE SET FD_OX = 0 WHERE wb_no = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, wbNo);
-			rs = pstmt.executeQuery();
-			// DB 어떻게 가져가야할지! DAO부터 수정해서 jsp까지 가기
-			flist = new ArrayList<FundingVo>();
-			while(rs.next()) {
-				FundingVo fvo = new FundingVo();
-				fvo.setWbNO(rs.getInt("wb_no"));
-				fvo.setUsId(rs.getString("us_id"));
-				fvo.setFdAccumulate(rs.getInt("fd_accumulate"));
-				fvo.setFdDonation(rs.getInt("fd_donation"));
-				fvo.setFdDeadline(rs.getString("fd_deadline"));
-				fvo.setFdLimit(rs.getInt("fd_limit"));
-				fvo.setFdOX(rs.getInt("fd_ox"));
-				fvo.setAdId(rs.getString("ad_id"));
-				
-				flist.add(fvo);
-			}
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close(rs);
 			close(pstmt);
 		}
-		return flist;
+		return result;
+	}
+	// 펀딩하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
+	public int fundingDonation(Connection conn, int wbNo) {
+		int result = 0;
+		String sql = "UPDATE FUNDING_MANAGE SET FD_OX = 1 WHERE wb_no = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, wbNo);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
 	}
 }

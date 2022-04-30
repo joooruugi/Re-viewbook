@@ -21,10 +21,10 @@
 <head>
 <meta charset="UTF-8">
 <title>펀딩진행중</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	<% FundingVo fvo = (FundingVo)request.getAttribute("fvo"); 
-	 	%>
+
 	<div id="main_wrap">
 		<%@ include file="../../template_header.jsp"%>
 		<div class="bodyfd">
@@ -52,24 +52,28 @@
 					</tr>
 
 					<%
-						for (FundingVo vo : flist) {
+						for (FundingVo fvo : flist) {
 					%>
 					<tr class="fdlist_tb fontnormal">
-						<td><%=fvo.getWbNO()%></td>
+						<td class="wbNo"><%=fvo.getWbNO()%></td>
 						<td><%=fvo.getFdLimit()%></td>
 						<td><%=fvo.getFdDonation()%></td>
 						<td><%=fvo.getFdDeadline()%></td>
-						<% if(fvo.getFdOX() == 1) { %>
-						<button id="btn_funding_withdraw" class="button2"
-							onclick="location.href='fundingwithdraw?wbNo=<%=fvo.getWbNO()%>';">철회하기</button>
+						<%
+							if (fvo.getFdOX() == 1) {
+						%>
+						<td><button class="btn_funding_withdraw button1">철회하기</button></td>
 						<!-- <td><a class="fdwithdraw" href="#">철회하기</a></td> -->
 						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
-						<% } else {%>
-						<button id="btn_funding_donation" class="button2"
-							onclick="location.href='fundingdonation?wbNo=<%=fvo.getWbNO()%>';">펀딩하기</button>
+						<%
+							} else {
+						%>
+						<td><button class="btn_funding_donation button1">펀딩하기</button></td>
 						<!-- <td><a class="fddonation" href="#">펀딩하기</a></td> -->
 						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
-						<% } %>
+						<%
+							}
+						%>
 					</tr>
 					<%
 						}
@@ -87,5 +91,51 @@
 		</div>
 		<%@ include file="../../template_footer.jsp"%>
 	</div>
+<script>
+$(".btn_funding_withdraw").click(funding_withdraw);
+function funding_withdraw() {
+	console.log(this);
+	var wbNoVal = $(this).parents(".fdlist_tb").children(".wbNo")
+			.text();
+	console.log(wbNoVal);
+	//location.href='fundingwithdraw?wbNo='+wbNoVal;
+	$.ajax({
+		url : "fundingwithdraw",
+		type : "post",
+		data : {wbNo : wbNoVal},
+		success : function(result) {
+			console.log(result);
+			if (result == 0) {
+
+			} else {
+
+			}
+			location.reload();
+		}
+	});
+}
+$(".btn_funding_donation").click(funding_donation);
+function funding_donation() {
+	console.log(this);
+	var wbNoVal = $(this).parents(".fdlist_tb").children(".wbNo")
+			.text();
+	console.log(wbNoVal);
+	//location.href='fundingdonation?wbNo='+wbNoVal;
+	$.ajax({
+		url : "fundingdonation",
+		type : "post",
+		data : {wbNo : wbNoVal},
+		success : function(result) {
+			console.log(result);
+			if (result == 0) {
+
+			} else {
+
+			}
+			location.reload();
+		}
+	})
+}
+</script>
 </body>
 </html>

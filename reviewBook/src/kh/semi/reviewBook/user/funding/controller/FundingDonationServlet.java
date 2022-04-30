@@ -14,17 +14,17 @@ import kh.semi.reviewBook.user.funding.model.service.FundingService;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 
 /**
- * Servlet implementation class FundingWithdrawServlet
+ * Servlet implementation class FundingDonationServlet
  */
-@WebServlet("/fundingwithdraw")
-public class FundingWithdrawServlet extends HttpServlet {
+@WebServlet("/fundingdonation")
+public class FundingDonationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private FundingService service = new FundingService();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingWithdrawServlet() {
+    public FundingDonationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,16 +39,16 @@ public class FundingWithdrawServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	System.out.println("doPost : fundingwithdraw/");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost : fundingdonation/");
 		int wbNo = Integer.parseInt(request.getParameter("wbNo"));
 		System.out.println(wbNo);
-		int result = service.fundingWithdraw(wbNo);
-		// 철회하기 버튼을 누르면 여기로 들어와서 버튼을 누른 글번호를 가지고 서비스로 간다.
+		int result = service.fundingDonation(wbNo);
 		
 		PrintWriter out = response.getWriter();
 		out.print(result);
 		out.flush();out.close();
+		
 
 	}
 
