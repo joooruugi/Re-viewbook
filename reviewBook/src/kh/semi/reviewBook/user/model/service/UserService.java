@@ -9,7 +9,7 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
 public class UserService {
 	private UserDao dao = new UserDao();
-	
+
 	public int insertUser(UserVo vo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -17,13 +17,13 @@ public class UserService {
 		close(conn);
 		return result;
 	}
-	public UserVo login(String usId, String usPassword){
+
+	public UserVo loginUser(String usId, String usPassword) {
 		UserVo result = null;
 		Connection conn = getConnection();
-		result = dao.login(conn, usId, usPassword);
+		result = dao.loginUser(conn, usId, usPassword);
 		close(conn);
 		return result;
 	}
-	
-	
+
 }

@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
 public class UserDao {
@@ -51,27 +50,24 @@ public class UserDao {
 		return result;
 	}
 
-	// 로그인
-	public UserVo login(Connection conn, String usId, String usPassword) {
+	public UserVo loginUser(Connection conn, String usId, String usPassword) {
 		UserVo result = null;
-		String sql = "select us_password from \"USER\" where us_id=?;";
+		String sql = "select us_password from \"USER\" where us_id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
 			rs = pstmt.executeQuery();
-			//로그인 성공
 			if (rs.next()) {
-				usId = rs.getString("usId");
-				String usNickname = rs.getString("usNickname");
-				
 				result = new UserVo();
-				result.setUsEmail(rs.getString("us_email"));
-				result.setUsNickname(rs.getString("us_nickname"));
-				result.setUsPhone(rs.getString("us_phone"));
-				result.setUsGender(rs.getString("us_gender"));
-				result.setUsAddress(rs.getString("us_address"));
-				result.setUsName(rs.getString("us_name"));
-				result.setUsBirth(rs.getString("us_birth"));
+				result.setUsEmail(rs.getString("US_EMAIL"));
+				result.setUsId(rs.getString("US_ID"));
+				result.setUsNickname(rs.getString("US_NICKNAME"));
+				result.setUsPassword(rs.getString("US_PASSWORD"));
+				result.setUsPhone(rs.getString("US_PHONE"));
+				result.setUsGender(rs.getString("US_GENDER"));
+				result.setUsName(rs.getString("US_NAME"));
+				result.setUsBirth(rs.getString("US_BIRTH"));
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -81,6 +77,48 @@ public class UserDao {
 		}
 		return result;
 	}
+
+	// 로그인
+//	public int loginUser(Connection conn, String usId, String usPassword) {
+//		String sql = "select us_password from \"USER\" where us_id=?;";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, usId);
+//			rs = pstmt.executeQuery();
+//			if (rs.next()) {
+//				if(rs.getString(1).equals(usPassword)) {
+//					return 1; //로그인 성공
+//				}else {
+//					return 0; //비밀번호 불일치
+//				}
+//			}
+//			return -1; //아이디가 없음
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return -2; //데이터베이스 오류
+//	}
+
+//	public boolean check(Connection conn, String usId) {
+//		String sql = "select usId form \"USER\"";
+//		try {
+//			pstmt  = conn.prepareStatement(sql);
+//			rs = pstmt.executeQuery();
+//			
+//			while(rs.next()) {
+//				if(rs.getString("usId").equals("usId")) {
+//					return true;
+//				}
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return false;
+//	}
+
 ////	회원 수정 
 //	public int updateUser(Connection conn, UserVo vo) {
 //		int result = 0;
