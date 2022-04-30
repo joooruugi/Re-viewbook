@@ -25,5 +25,11 @@ public class UserService {
 		close(conn);
 		return result;
 	}
-
+	public UserVo findidUser(String usName, String usEmail) {
+		UserVo result = null;
+		Connection conn = getConnection();
+		result = dao.findidUser(conn, usName, usEmail);
+		close(conn);
+		return result;
+	}
 }

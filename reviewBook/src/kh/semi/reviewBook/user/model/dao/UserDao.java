@@ -49,7 +49,7 @@ public class UserDao {
 		}
 		return result;
 	}
-
+	//로그인
 	public UserVo loginUser(Connection conn, String usId, String usPassword) {
 		UserVo result = null;
 		String sql = "select us_password from \"USER\" where us_id=?";
@@ -77,7 +77,28 @@ public class UserDao {
 		}
 		return result;
 	}
-
+	//아이디 찾기
+	public UserVo findidUser(Connection conn, String usName, String usEmail) {
+		UserVo result = null;
+		String sql = "select us_id from \"USER\" where us_name=? and us_email=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usName);
+			pstmt.setString(2, usEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new UserVo();
+				//정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 ! 
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 	// 로그인
 //	public int loginUser(Connection conn, String usId, String usPassword) {
 //		String sql = "select us_password from \"USER\" where us_id=?;";
