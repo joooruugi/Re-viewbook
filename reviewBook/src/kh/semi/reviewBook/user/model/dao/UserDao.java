@@ -89,10 +89,10 @@ public class UserDao {
 			pstmt.setString(1, usId);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				result = 1;
-//				System.out.println(result);
-			}else {
 				result = 0;
+				System.out.println(rs.getString("usId"));
+			}else {
+				result = 1;
 			}
 			System.out.println("아이디 중복체크 결과 :" +result);
 		} catch (SQLException e) {
@@ -111,9 +111,9 @@ public class UserDao {
 			pstmt.setString(1, usNickname);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				result = 1;
-			}else {
 				result = 0;
+			}else {
+				result = 1;
 			}
 			System.out.println("닉네임 중복체크 결과 : "+result);
 		} catch (SQLException e) {

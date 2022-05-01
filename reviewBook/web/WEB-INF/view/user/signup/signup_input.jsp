@@ -62,7 +62,7 @@
 							name="usNickname" class="signup_infoinput" id="usNickname"
 							required="required"></td>
 						<td class="signupuser_input_btn">
-							<button type="submit" id="idCheck" class="signupinfo_idcheck">
+							<button type="submit" id="nickCheck" class="signupinfo_idcheck" onclick="winopen2()">
 								<p class="fontnothing signup_infobtn ">중복확인</p>
 							</button>
 						</td>
@@ -183,6 +183,9 @@
 		
 		function winopen(){
 			window.open("signup_check?usId="+document.frmRegister.usId.value,"","width=500, height=300");
+		}
+		function winopen2(){
+			window.open("signup_checknick?usNickname="+document.frmRegister.usNickname.value,"","width=500, height=300");
 		}
 	</script>
 </body>

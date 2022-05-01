@@ -38,10 +38,11 @@ public class UserSignupCheckIdServlet extends HttpServlet {
 
 		int result = new UserService().SignupIdCheck(usId);
 
-		if (result == 1) {
+		if (result == 0) {
 			System.out.println("사용중인 아이디입니다.");
+			
 
-		} else if (result == 0) {
+		} else if (result == 1) {
 			System.out.print("사용가능한 아이디입니다");
 
 		} else {
