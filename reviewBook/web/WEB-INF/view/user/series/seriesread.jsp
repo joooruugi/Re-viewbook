@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesReCommentVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
+<%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,7 +26,14 @@
 		if(msg==null){
 	 	%>
 	 <div id="main_wrap">
-	 <%@ include file="../../template_header.jsp"%>
+	  <%UserVo vo = (UserVo)session.getAttribute("ssUserVo");
+ out.print(vo);
+if(vo == null){
+%>
+<%@ include file="../../template_header.jsp" %>
+	<%} else { %>
+<%@ include file="../../template_header_login.jsp" %>
+	<%} %>
 	<div class="series_banner">
 		<div id="series_banner_title">
 			<h2>
@@ -73,11 +81,14 @@
 								</tr>
 							</table>
 						</div>
+						<!-- 로그인 한 회원 = 게시물 작성자 일치하는 경우에만 게시물 수정 삭제 버튼 표시 -->
+						<% if(vo.getUsId().equals(svo.getUsId())){%>
 						<div class="series_board_up_de_btn">
 						<button id="btn_series_update" class="button2"
 						 onclick="location.href='seriesupdate?wbNo=<%=svo.getWbNo()%>';">게시물 수정</button>
 						<button id="btn_series_delete" class="button4">게시물 삭제</button>
 						</div>
+						<%} %>
 						<div class="series_board_read_funding">
 							<table id="board_read_funding">
 								<tr>
@@ -142,6 +153,8 @@
 			for(SeriesReCommentVo srvo : svo.getSrvolist()){
 			%>				
 							<div id="series_read_comment">
+							<!-- 로그인 한 회원 = 댓글 작성자 일치하는 경우에만 댓글 수정 삭제 버튼 표시 -->
+							<% if(vo.getUsId().equals(srvo.getUsId())){%>
 							<div class="series_board_comment_up_de_btn" >
 							<button class="btn_board_comment_update">댓글 수정</button>
 							<div class="update_board_comment">
@@ -156,6 +169,7 @@
 							<button class="btn_board_comment_delete"
 							onclick="location.href='seriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
 							</div>
+							<%} %>
 							<table id="series_read_comment_rist">
 								<tr>
 									<td colspan="3"><%=srvo.getWbcWriter() %> &nbsp; &nbsp; <span><%=srvo.getWbcDate().substring(0, 16) %></span></td>
@@ -193,7 +207,14 @@
 </script>
 <% session.removeAttribute("msg"); %>
 	<div id="main_wrap">
-	<%@ include file="../../template_header.jsp"%>
+	  <%UserVo vo = (UserVo)session.getAttribute("ssUserVo");
+ out.print(vo);
+if(vo == null){
+%>
+<%@ include file="../../template_header.jsp" %>
+	<%} else { %>
+<%@ include file="../../template_header_login.jsp" %>
+	<%} %>
 	<div class="series_banner">
 		<div id="series_banner_title">
 			<h2>
@@ -241,11 +262,14 @@
 								</tr>
 							</table>
 						</div>
+						<!-- 로그인 한 회원 = 게시물 작성자 일치하는 경우에만 게시물 수정 삭제 버튼 표시 -->
+						<% if(vo.getUsId().equals(svo.getUsId())){%>
 						<div class="series_board_up_de_btn">
-						<button id="btn_funding_update" class="button2"
+						<button id="btn_series_update" class="button2"
 						 onclick="location.href='seriesupdate?wbNo=<%=svo.getWbNo()%>';">게시물 수정</button>
-						<button id="btn_funding_delete" class="button4">게시물 삭제</button>
+						<button id="btn_series_delete" class="button4">게시물 삭제</button>
 						</div>
+						<%} %>
 						<div class="series_board_read_funding">
 							<table id="board_read_funding">
 								<tr>
@@ -308,6 +332,8 @@
 			for(SeriesReCommentVo srvo : svo.getSrvolist()){
 			%>
 							<div id="series_read_comment">
+							<!-- 로그인 한 회원 = 댓글 작성자 일치하는 경우에만 댓글 수정 삭제 버튼 표시 -->
+							<% if(vo.getUsId().equals(srvo.getUsId())){%>
 							<div class="series_board_comment_up_de_btn" >
 							<button class="btn_board_comment_update">댓글 수정</button>
 							<div class="update_board_comment">
@@ -322,6 +348,7 @@
 							<button class="btn_board_comment_delete"
 							onclick="location.href='seriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
 							</div>
+							<%} %>
 							<table id="series_read_comment_rist">
 								<tr>
 									<td colspan="3"><%=srvo.getWbcWriter() %> &nbsp; &nbsp; <span><%=srvo.getWbcDate().substring(0, 16) %></span></td>

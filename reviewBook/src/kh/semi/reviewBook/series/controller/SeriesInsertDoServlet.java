@@ -13,6 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kh.semi.reviewBook.series.model.service.SeriesService;
 import kh.semi.reviewBook.series.model.vo.SeriesVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 
 
 @WebServlet("/seriesinsert.do")
@@ -77,6 +78,18 @@ System.out.println("do post : /seriesinsert.do");
 		//로그인 구현되면 세션에서 값 얻어오는거로 변경해야함 
 		String usId = "";
 		String wbWriter = ""; 
+		
+		//로그인 구현 완료 로그인 정보 읽어오기
+		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo"); 
+		if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
+			response.sendRedirect("login");
+			return; 
+		} else {
+			usId = vo.getUsId();
+			wbWriter = vo.getUsNickname();
+			System.out.println(usId);
+			System.out.println(wbWriter);
+		}
 		
 		if(wbContentFile != null) {
 			wbContent += "<br> <br> <img src = '"+fileSavePath+"/"+wbContentFile+"'>";

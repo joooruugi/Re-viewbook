@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
+<%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,10 +16,17 @@
 </head>
 <body>
 <% SeriesVo svo = (SeriesVo)request.getAttribute("svo"); 
-	 	System.out.println(svo); 
+	 	//System.out.println(svo); 
 	 	%>
 	 <div id="main_wrap">
-	 <%@ include file="../../template_header.jsp"%>
+	 <%UserVo vo = (UserVo)session.getAttribute("ssUserVo");
+ out.print(vo);
+if(vo == null){
+%>
+<%@ include file="../../template_header.jsp" %>
+	<%} else { %>
+<%@ include file="../../template_header_login.jsp" %>
+	<%} %>	
     <div class="series_banner">
 		<div id="series_banner_title">
 			<h2>

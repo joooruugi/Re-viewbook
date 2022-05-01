@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.user.model.vo.UserVo;
+
 /**
  * Servlet implementation class SeriesInsertServlet
  */
@@ -23,7 +25,14 @@ public class SeriesInsertServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet : /seriesinsert");
+		
+		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo"); 
+		if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
+			response.sendRedirect("login");
+			return; 
+		} else {
 		request.getRequestDispatcher("WEB-INF/view/user/series/seriesinsert.jsp").forward(request, response);
+		}
 	}
 
 

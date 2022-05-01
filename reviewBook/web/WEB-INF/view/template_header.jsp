@@ -24,12 +24,12 @@
                         </ul>
                         <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="#">연재</a>
+                            <a class="nav_item" href="seriesmain">연재</a>
                             <ul class="nav_dropdownmenu2">
-                                <li><a class="nav_item" href="#">문학</a></li>
-                                <li><a class="nav_item" href="#">정보공유</a></li>
-                                <li><a class="nav_item" href="#">일상</a></li>
-                                <li><a class="nav_item" href="#">기타</a></li>
+                                <li><a class="nav_item" href="seriescategoryfiction">문학</a></li>
+                                <li><a class="nav_item" href="seriescategoryinfo">정보공유</a></li>
+                                <li><a class="nav_item" href="seriescategorydaily">일상</a></li>
+                                <li><a class="nav_item" href="seriescategoryetc">기타</a></li>
                             </ul>
                         </li>
                         </ul>
@@ -70,6 +70,7 @@
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/signup">회원가입</a>
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/login">로그인</a>
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/notice">공지사항</a>
+           
             </nav>
         </div>
     </header>

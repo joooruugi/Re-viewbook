@@ -52,21 +52,23 @@ public class UserDao {
 	//로그인
 	public UserVo loginUser(Connection conn, String usId, String usPassword) {
 		UserVo result = null;
-		String sql = "select us_password from \"USER\" where us_id=?";
+		String sql = "select * from \"USER\" where us_id=? and us_password = ? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
+			pstmt.setString(2, usPassword);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				result = new UserVo();
-				result.setUsEmail(rs.getString("US_EMAIL"));
-				result.setUsId(rs.getString("US_ID"));
-				result.setUsNickname(rs.getString("US_NICKNAME"));
-				result.setUsPassword(rs.getString("US_PASSWORD"));
-				result.setUsPhone(rs.getString("US_PHONE"));
-				result.setUsGender(rs.getString("US_GENDER"));
-				result.setUsName(rs.getString("US_NAME"));
-				result.setUsBirth(rs.getString("US_BIRTH"));
+				result.setUsId(rs.getString("us_Id"));
+				result.setUsEmail(rs.getString("us_Email"));
+				result.setUsPhone(rs.getString("us_Phone"));
+				result.setUsNickname(rs.getString("us_Nickname"));
+				result.setUsPassword(rs.getString("us_Password"));
+				result.setUsGender(rs.getString("us_Gender"));
+				result.setUsAddress(rs.getString("us_Address"));
+				result.setUsName(rs.getString("us_Name"));
+				result.setUsBirth(rs.getString("us_Birth"));
 
 			}
 		} catch (SQLException e) {

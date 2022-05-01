@@ -60,7 +60,7 @@ public class SeriesCommentDeleteServlet extends HttpServlet {
 
 				
 				int result = new SeriesService().deleteSeriesBoardComment(srvo);
-				if(result<1) {//댓글 수정에 실패한 경우 원래 읽던 글 화면으로
+				if(result<1) {//댓글 삭제에 실패한 경우 원래 읽던 글 화면으로
 					 response.sendRedirect("seriesread?wbNo="+wbNo);
 				 }else { //성공해도 기존 게시글로 
 					

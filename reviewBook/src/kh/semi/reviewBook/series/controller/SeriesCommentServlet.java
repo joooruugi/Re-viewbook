@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.series.model.service.SeriesService;
 import kh.semi.reviewBook.series.model.vo.SeriesReCommentVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 
 
 
@@ -59,8 +60,21 @@ public class SeriesCommentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//로그인 구현되면 세션에서 값 얻어오는거로 변경해야함 
 		String usId = "";
 		String wbcWriter = ""; 
+				
+		//로그인 구현 완료 로그인 정보 읽어오기
+		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo"); 
+		if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
+		response.sendRedirect("login");
+		return; 
+		} else {
+		usId = vo.getUsId();
+		wbcWriter = vo.getUsNickname();
+		System.out.println(usId);
+		System.out.println(wbcWriter);
+		}
 		
 		SeriesReCommentVo srvo = new SeriesReCommentVo();
 		srvo.setWbNo(wbNo);

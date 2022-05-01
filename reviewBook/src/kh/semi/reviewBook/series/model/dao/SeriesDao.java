@@ -318,14 +318,15 @@ public class SeriesDao {
 	
 	//7. 게시글 READ 시 댓글 작성
 	public int insertSeriesComment(Connection conn, SeriesReCommentVo srvo) {
-		String usId = "us222"; //USER 로그인 구현 후 srvo.getUsId()수정 예정 
-		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성) 
+		String usId = srvo.getUsId(); //USER 로그인 구현 후 srvo.getUsId()수정 예정 
+//		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성) 
 		int result = 0;
-		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
-				+ "SYSDATE, ? , ? ,?, ?, ?)";
-//		로그인 구현되면 sql문 수정
 //		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
-//				+ "SYSDATE, ? , ? ,?, ?,(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?))"; -> (5, wbcWriter) -> (5, usId) 로 변경
+//				+ "SYSDATE, ? , ? ,?, ?, ?)";
+//		로그인 구현되면 sql문 수정
+		String sql = "INSERT INTO WRITER_BBS_COMMENT VALUES((SELECT NVL(MAX(WBC_NO),0)+1 FROM WRITER_BBS_COMMENT),"
+				+ "SYSDATE, ? , ? ,?, ?,(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?))"; 
+		//(5, wbcWriter) -> (5, usId) 로 변경
 		try {
 			pstmt = conn.prepareStatement(sql);
 			//제일 중요한 글번호 맨 앞으로 가져옴
@@ -334,7 +335,7 @@ public class SeriesDao {
 			pstmt.setString(1, srvo.getWbcContent());
 			pstmt.setInt(2, srvo.getWbcRating());
 			pstmt.setString(4, usId); 
-			pstmt.setString(5, wbcWriter);
+			pstmt.setString(5, usId);
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -348,18 +349,19 @@ public class SeriesDao {
 	
 	//8. 연재 게시글 작성
 	public int insertSeriesBoard(Connection conn, SeriesVo svo) {
-		String usId = "us222" ; //USER 로그인 구현 후 svo.getUsId()수정 예정 
-		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성)
+		String usId = svo.getUsId() ; //USER 로그인 구현 후 svo.getUsId()수정 예정 
+//		String wbcWriter = "호랑이"; //USER 로그인 구현 후 수정 예정 (서브쿼리문 작성)
 		int result = 0;
-		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
+//		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
 //		로그인 구현되면 sql문 수정
-//		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP,"
-//				+ "(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?), ? ,?)"; -> (3, wbcWriter) -> (3, usId) 로 변경
+		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP,"
+				+ "(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?), ? ,?)";
+		//(3, wbcWriter) -> (3, usId) 로 변경
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, svo.getWbTitle());
 			pstmt.setString(2, svo.getWbContent());
-			pstmt.setString(3, wbcWriter);
+			pstmt.setString(3, usId);
 			pstmt.setString(4, svo.getWbCategory());
 			pstmt.setString(5, usId);
 
