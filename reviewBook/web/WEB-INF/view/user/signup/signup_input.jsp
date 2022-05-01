@@ -41,7 +41,8 @@
 							name="usId" class="signup_infoinput" id="usId"
 							required="required" placeholder="영문자, 숫자를 사용한 6자이상 20자이하"></td>
 						<td class="signupuser_input_btn">
-							<button type="submit" id="idCheck" class="signupinfo_idcheck" onclick="winopen()">
+							<button type="submit" id="idCheck" class="signupinfo_idcheck"
+								onclick="winopen()">
 								<p class="fontnothing signup_infobtn ">중복확인</p>
 							</button>
 						</td>
@@ -62,7 +63,8 @@
 							name="usNickname" class="signup_infoinput" id="usNickname"
 							required="required"></td>
 						<td class="signupuser_input_btn">
-							<button type="submit" id="nickCheck" class="signupinfo_idcheck" onclick="winopen2()">
+							<button type="submit" id="nickCheck" class="signupinfo_idcheck"
+								onclick="winopen2()">
 								<p class="fontnothing signup_infobtn ">중복확인</p>
 							</button>
 						</td>
@@ -99,6 +101,7 @@
 							name="usPhone" class="signup_infoinput" id="usPhone"
 							required="required" placeholder="'000-0000-0000' 형식으로 입력"></td>
 					</tr>
+					<form action="/AuthGoogle/user?cmd=signup_input" method="post">
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이메일</p>
@@ -111,11 +114,12 @@
 								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
 							</button></td>
 					</tr>
+					</form>
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">인증번호</p>
 						</td>
-						<td class="signupuser_input_input"><input type="email"
+						<td class="signupuser_input_input"><input type="text"
 							name="usEmail_chk" class="signup_infoinput" id="usEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
@@ -141,7 +145,9 @@
 	<%@ include file="../../../view/template_footer.jsp"%>
 	<script>
 		// TODO 나머지도 유효성체크해주기
-		$("#btn_enroll").click(function() {
+		$("#btn_enroll")
+				.click(
+						function() {
 							console.log("a");
 							var usId = $("#usId").val().trim();
 							var regExpId = /[A-Za-z0-9]{6,20}$/;
@@ -180,12 +186,15 @@
 							frm.method = "post";
 							frm.submit();
 						});
-		
-		function winopen(){
-			window.open("signup_check?usId="+document.frmRegister.usId.value,"","width=500, height=300");
+
+		function winopen() {
+			window.open("signup_check?usId=" + document.frmRegister.usId.value,
+					"", "width=500, height=300");
 		}
-		function winopen2(){
-			window.open("signup_checknick?usNickname="+document.frmRegister.usNickname.value,"","width=500, height=300");
+		function winopen2() {
+			window.open("signup_checknick?usNickname="
+					+ document.frmRegister.usNickname.value, "",
+					"width=500, height=300");
 		}
 	</script>
 </body>
