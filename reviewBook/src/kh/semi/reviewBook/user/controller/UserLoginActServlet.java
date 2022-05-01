@@ -54,6 +54,7 @@ public class UserLoginActServlet extends HttpServlet {
 		}else {  // 로그인성공
 			request.getSession().setAttribute("ssUserVo", vo);
 //			response.sendRedirect("./");  // 상대경로
+			System.out.println("로그인 성공");
 			response.sendRedirect(request.getContextPath()+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
 			//절대하지 마세요.response.sendRedirect("myWeb1"+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
 		}

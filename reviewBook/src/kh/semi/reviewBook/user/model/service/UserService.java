@@ -32,4 +32,18 @@ public class UserService {
 		close(conn);
 		return result;
 	}
+	public int SignupIdCheck(String usId) {
+		int result;
+		Connection conn = getConnection();
+		result = dao.SignupIdCheck(conn, usId);
+		close(conn);
+		return result;
+	}
+	public int SignupNicknameCheck(String usNickname) {
+		int result;
+		Connection conn = getConnection();
+		result = dao.SignupNicknameCheck(conn, usNickname);
+		close(conn);
+		return result;
+	}
 }
