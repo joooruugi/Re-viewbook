@@ -101,7 +101,16 @@
 							name="usPhone" class="signup_infoinput" id="usPhone"
 							required="required" placeholder="'000-0000-0000' 형식으로 입력"></td>
 					</tr>
-					<form action="/AuthGoogle/user?cmd=signup_input" method="post">
+					<tr>
+						<td class="signupuser_input_text">
+							<p class="fontnormal signup_infoname">주소</p>
+						</td>
+						<td class="signupuser_input_input"><input type="text"
+							name="usAddress" class="signup_infoinput" id="usAddress"
+							required="required"></td>
+					</tr>
+						</form>
+					<form action="<%=request.getContextPath()%>/gmailsendaction" method="get">
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이메일</p>
@@ -110,7 +119,7 @@
 							name="usEmail" class="signup_infoinput" id="usEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email" class="signupinfo_emailcheck">
+								id="btn_email" class="signupinfo_emailcheck" onclick="winopen3()">
 								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
 							</button></td>
 					</tr>
@@ -123,23 +132,15 @@
 							name="usEmail_chk" class="signup_infoinput" id="usEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email_chk" class="signupinfo_emailcheck">
+								id="btn_email_chk" class="signupinfo_emailcheck" onclick="winopen4()">
 								<p class="fontnothing signup_infobtn">인증확인</p>
 							</button></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">주소</p>
-						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usAddress" class="signup_infoinput" id="usAddress"
-							required="required"></td>
 					</tr>
 				</table>
 				<div class="sigupsuer_second_signupbtn">
 					<button type="submit" id="btn_enroll">회원가입</button>
 				</div>
-			</form>
+		
 		</div>
 	</div>
 	<%@ include file="../../../view/template_footer.jsp"%>
@@ -195,6 +196,12 @@
 			window.open("signup_checknick?usNickname="
 					+ document.frmRegister.usNickname.value, "",
 					"width=500, height=300");
+		}
+		function winopen3(){
+			window.open("gmailsendaction?usEmail="+document.frmRegister.usEmail.value,"","width=500, height=300")
+		}
+		function winopen4(){
+			window.open("gmailcheckaction","","width=500, height=300")
 		}
 	</script>
 </body>
