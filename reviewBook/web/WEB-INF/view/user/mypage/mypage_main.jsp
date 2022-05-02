@@ -9,7 +9,7 @@
 <title>마이페이지</title>
 </head>
 <body>
-<input type="button" value="회원정보조회" onclick="location.href='memberinfo.jsp'">
+<input type="button" value="회원정보수정" onclick="location.href='<%= request.getContextPath()%>/myinformation'">
 
 <%
 ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>)request.getAttribute("bLVo");

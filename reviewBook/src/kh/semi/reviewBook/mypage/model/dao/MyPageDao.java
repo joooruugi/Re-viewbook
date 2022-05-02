@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
+import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 
 public class MyPageDao {
@@ -58,7 +59,7 @@ public class MyPageDao {
 	}
 	
 	public ArrayList<BuyListVo> selectBuyList(Connection conn, String usId) {
-		System.out.println("dao selectBuyList전: "+usId);
+		System.out.println("dao usId: "+usId);
 		ArrayList<BuyListVo> volist = null;
 		String sql = "select * from order_book ob join (select * from \"ORDER\" where us_id=?) o using (or_num) join book using (bk_no) left outer join review using (bk_no)";
 		try {
@@ -91,8 +92,63 @@ public class MyPageDao {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println("dao selectBuyList result: "+volist);
+		System.out.println("dao volist: "+volist);
 		return volist;
+	}
+	
+	public MyInformationVo selectMyInformation(Connection conn, String usId) {
+		System.out.println("dao usId: "+usId);
+		MyInformationVo result = null;
+		String sql = "select us_id, us_name, us_nickname, us_email, us_phone, us_address from \"USER\" where us_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new MyInformationVo();
+//				US_ID       NOT NULL VARCHAR2(30)  
+//				US_EMAIL    NOT NULL VARCHAR2(150) 
+//				US_PHONE    NOT NULL VARCHAR2(30)  
+//				US_NICKNAME NOT NULL VARCHAR2(45)
+//				US_ADDRESS  NOT NULL VARCHAR2(300) 
+//				US_NAME     NOT NULL VARCHAR2(10)
+				
+				result.setUsAddress(rs.getString("us_Address"));
+				result.setUsEmail(rs.getString("us_Email"));
+				result.setUsId(rs.getString("us_Id"));
+				result.setUsName(rs.getString("us_Name"));
+				result.setUsNickname(rs.getString("us_Nickname"));
+				result.setUsPhone(rs.getString("us_Phone"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("dao result: "+result);
+		return result;
+	}
+	public int updateMyInformation(Connection conn, MyInformationVo iVo) {
+		System.out.println("dao iVo: "+iVo);
+		int result = 0;
+		String sql = "UPDATE \"USER\" SET US_Nickname = ?, US_Email=?, US_PHONE=?, US_ADDRESS=? WHERE US_ID= ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(5, iVo.getUsId());
+			pstmt.setString(1, iVo.getUsNickname());
+			pstmt.setString(2, iVo.getUsEmail());
+			pstmt.setString(3, iVo.getUsPhone());
+			pstmt.setString(4, iVo.getUsAddress());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("dao result: "+result);
+		return result;
 	}
 
 }
