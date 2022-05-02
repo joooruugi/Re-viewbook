@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
+
+import kh.semi.reviewBook.series.model.vo.SeriesVo;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 
 public class FundingDao {
@@ -23,7 +25,7 @@ public class FundingDao {
 //		FD_LIMIT      NOT NULL NUMBER       
 //		FD_OX         NOT NULL NUMBER       
 //		AD_ID         NOT NULL VARCHAR2(30) 
-		String sql = "select * from funding_manage order by fd_ox, fd_deadline";
+		String sql = "select wb_no, wb_title, fd_accumulate, fd_deadline, fd_ox from funding_manage join writer_bbs using(wb_no) order by fd_ox, fd_deadline";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -32,6 +34,7 @@ public class FundingDao {
 			flist = new ArrayList<FundingVo>();
 			while(rs.next()) {
 				FundingVo fvo = new FundingVo();
+				SeriesVo svo = new SeriesVo();
 				fvo.setWbNO(rs.getInt("wb_no"));
 				fvo.setUsId(rs.getString("us_id"));
 				fvo.setFdAccumulate(rs.getInt("fd_accumulate"));
