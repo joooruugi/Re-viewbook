@@ -109,8 +109,7 @@
 							name="usAddress" class="signup_infoinput" id="usAddress"
 							required="required"></td>
 					</tr>
-						</form>
-					<form action="<%=request.getContextPath()%>/gmailsendaction" method="get">
+
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이메일</p>
@@ -118,13 +117,12 @@
 						<td class="signupuser_input_input"><input type="email"
 							name="usEmail" class="signup_infoinput" id="usEmail"
 							required="required"></td>
-						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email" class="signupinfo_emailcheck" onclick="winopen3()">
+						<!-- <td class="signupuser_input_btn"><button type="submit"
+								id="btn_email" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
-							</button></td>
+							</button></td> -->
 					</tr>
-					</form>
-					<tr>
+					<!-- <tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">인증번호</p>
 						</td>
@@ -132,15 +130,16 @@
 							name="usEmail_chk" class="signup_infoinput" id="usEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email_chk" class="signupinfo_emailcheck" onclick="winopen4()">
+								id="btn_email_chk" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">인증확인</p>
 							</button></td>
-					</tr>
+					</tr> -->
+
 				</table>
 				<div class="sigupsuer_second_signupbtn">
 					<button type="submit" id="btn_enroll">회원가입</button>
 				</div>
-		
+			</form>
 		</div>
 	</div>
 	<%@ include file="../../../view/template_footer.jsp"%>
@@ -197,12 +196,14 @@
 					+ document.frmRegister.usNickname.value, "",
 					"width=500, height=300");
 		}
-		function winopen3(){
-			window.open("gmailsendaction?usEmail="+document.frmRegister.usEmail.value,"","width=500, height=300")
+		/* function winopen3() {
+			window.open("gmailsendaction?usEmail="
+					+ document.frmRegister.usEmail.value, "",
+					"width=500, height=300")
 		}
-		function winopen4(){
-			window.open("gmailcheckaction","","width=500, height=300")
-		}
+		function winopen4() {
+			window.open("gmailcheckaction", "", "width=500, height=300")
+		} */
 	</script>
 </body>
 </html>

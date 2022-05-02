@@ -35,8 +35,8 @@
 				<p class="fontimportant">환영해요 !</p>
 			</div>
 			<div class="signupuser_final_right">
-				<a class="signupuser_final_link final_link_login" href="<%=request.getContextPath() %>/login">
-					<p class="fontevent">로그인</p>
+				<a class="signupuser_final_link final_link_login" href="<%=request.getContextPath() %>/signup_gmail">
+					<p class="fontevent">!필수! 이메일 인증</p>
 				</a> <a class="signupuser_final_link" href="#">
 					<p class="fontimportant2">추천 도서 보러가기 ></p>
 				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/seriesmain">
