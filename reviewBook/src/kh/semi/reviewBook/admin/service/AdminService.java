@@ -25,4 +25,26 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+
+	public int SignupIdCheckAdmin(String adId) {
+		int result;
+		Connection conn = getConnection();
+		result = dao.SignupIdCheckAdmin(conn, adId);
+		close(conn);
+		return result;
+	}
+	public int SignupNicknameCheckAdmin(String adNickname) {
+		int result;
+		Connection conn = getConnection();
+		result = dao.SignupNicknameCheckAdmin(conn, adNickname);
+		close(conn);
+		return result;
+	}
+	public AdminVo findidAdmin(String adNickname, String adEmail) {
+		AdminVo result = null;
+		Connection conn = getConnection();
+		result = dao.findidAdmin(conn, adNickname, adEmail);
+		close(conn);
+		return result;
+	}
 }
