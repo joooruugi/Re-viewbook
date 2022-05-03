@@ -25,9 +25,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	<%
-		SeriesVo svo = (SeriesVo) request.getAttribute("svo");
-	%>
 	<div id="main_wrap">
 		<%@ include file="../../template_header.jsp"%>
 		<div class="bodyfd">
@@ -40,8 +37,8 @@
 			</nav>
 		</div>
 		<%
-			ArrayList<FundingVo> flist = (ArrayList<FundingVo>) request.getAttribute("flist");
-		if (flist != null) {
+			ArrayList<SeriesVo> slist = (ArrayList<SeriesVo>) request.getAttribute("slist");
+		if (slist != null) {
 		%>
 		<div class="contentfd">
 			<div class="contentmainfd">
@@ -55,29 +52,21 @@
 					</tr>
 
 					<%
-						for (FundingVo fvo : flist) {
+						for (SeriesVo svo : slist) {
 					%>
 					<tr class="fdlist_tb fontnormal">
-						<td class="wbNo"><%=fvo.getWbNO()%></td>
+						<td class="wbNo"><%=svo.getWbNo()%></td>
 						<td><%=svo.getWbTitle()%></td>
-						<td><%=fvo.getFdDonation()%></td>
-						<td><%=fvo.getFdDeadline()%></td>
+						<td><%=svo.getAvgDonation()%></td>
+						<td><%=svo.getFdDeadline()%></td>
 						<%
-							if (fvo.getFdOX() == 1) {
+							if (svo.getIsDonation() == 1) {
 						%>
-						<td><button class="btn_funding_withdraw button1">철회하기</button></td>
-						<!-- <td><a class="fdwithdraw" href="#">철회하기</a></td> -->
-						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
-						<%
-							} else {
-						%>
-						<td><button class="btn_funding_donation button1">펀딩하기</button>
+						<td><button class="btn_funding_withdraw button1">철회하기</button>
 							<div class="modal">
 								<div class="modal_content">
 									<div id="modal_funding_content">
-										<p>
-											작품번호 :
-											<%=svo.getWbNo()%></p>
+										<p><span>작품번호 :</span><span class="wbNo"><%=svo.getWbNo()%></span></p>
 										<p>
 											작품명 :
 											<%=svo.getWbTitle()%></p>
@@ -87,18 +76,42 @@
 										<p>
 											카테고리 :
 											<%=svo.getWbCategory()%></p>
-										<p>후원금액 및 마감일 등 자세한 사항은 펀딩 탭에서 확인 가능합니다</p>
-										<p>이동하기 버튼을 클릭하여 지금 바로 확인해보세요!💸</p>
+										<p><%=svo.getFdLimit()%>원 후원하셨습니다.</p>
 									</div>
 									<div class="btn_funding_move_close">
-										<button id="btn_funding_move" class="button2">이동하기</button>
-										<button id="btn_funding_close" class="button4">닫기</button>
-
+										<button class="button2 btn_withdraw">철회하기</button>
+										<button class="button4 btn_funding_close">닫기</button>
 									</div>
 								</div>
-							</div></td>
-						<!-- <td><a class="fddonation" href="#">펀딩하기</a></td> -->
-						<!-- TODO 1, 0에 따라 펀딩하기, 철회하기 버튼 구현 -->
+							</div>
+						</td>
+						
+						<%
+							} else {
+						%>
+						<td><button class="btn_funding_donation button1">펀딩하기</button>
+							<div class="modal">
+								<div class="modal_content">
+									<div id="modal_funding_content">
+										<p><span>작품번호 :</span><span class="wbNo"><%=svo.getWbNo()%></span></p>
+										<p>
+											작품명 :
+											<%=svo.getWbTitle()%></p>
+										<p>
+											작가 :
+											<%=svo.getWbWriter()%></p>
+										<p>
+											카테고리 :
+											<%=svo.getWbCategory()%></p>
+										<p><input type="text" name="fdDonation" class="fdDonation" placeholder="<%=svo.getFdLimit()%>원 이하로 펀딩해주세요"></p>
+									</div>
+									<div class="btn_funding_move_close">
+										<button class="button2 btn_funding">펀딩하기</button>
+										<button class="button4 btn_funding_close">닫기</button>
+									</div>
+								</div>
+							</div>
+						</td>
 						<%
 							}
 						%>
@@ -120,7 +133,8 @@
 		<%@ include file="../../template_footer.jsp"%>
 	</div>
 	<script>
-		$(".btn_funding_withdraw").click(funding_withdraw);
+		// 철회하기 버튼 누르면 후원금액 얼마했는지 모달창 띄우고 펀딩관리에서 delete하기()
+		$(".btn_withdraw").click(funding_withdraw);
 		function funding_withdraw() {
 			console.log(this);
 			var wbNoVal = $(this).parents(".fdlist_tb").children(".wbNo")
@@ -144,18 +158,22 @@
 				}
 			});
 		}
-		$(".btn_funding_donation").click(funding_donation);
+		// 펀딩하기 버튼 누르면 얼마 후원할지를 넣는 모달창 띄우고 게시글에 총후원금액 +하기
+		$(".btn_funding").click(funding_donation);
 		function funding_donation() {
 			console.log(this);
-			var wbNoVal = $(this).parents(".fdlist_tb").children(".wbNo")
-					.text();
+			var wbNoVal = $(this).parents(".modal").children(".wbNo").text();
+			var fdDonationVal = $(this).parents(".modal").children(".fdDonation").text();
 			console.log(wbNoVal);
+			console.log(fdDonationVal);
+			alert("sdfsd");
 			//location.href='fundingdonation?wbNo='+wbNoVal;
 			$.ajax({
 				url : "fundingdonation",
 				type : "post",
 				data : {
-					wbNo : wbNoVal
+					wbNo : wbNoVal, 
+					fdDonation : fdDonationVal
 				},
 				success : function(result) {
 					console.log(result);
@@ -170,34 +188,35 @@
 		}
 		//모달창 스크립트 
 		//버튼 누르면 펀딩 모달창 on
-		document.getElementById("btn_funding").addEventListener('click',
-				openModal);
+		$(".btn_funding_donation").click(function(){
+			console.log(this);
+			openModal(this);
+		});
+		//버튼 누르면 철회 모달창 on
+		$(".btn_funding_withdraw").click(function(){
+			console.log(this);
+			openModal(this);
+		});
+				
 		//close 버튼 누르면 펀딩 모달창 close
-		document.getElementById("btn_funding_close").addEventListener('click',
-				closeModal);
-		//펀딩 모달창 바깥 부분 클릭시 close
-		document.getElementsByClassName("modal")[0].addEventListener('click',
-				closeModalWindow);
+		$(".btn_funding_close").click(function(){
+			console.log(this);
+			closeModal(this);
+		});
 
 		// openModal
-		function openModal() {
-			document.getElementsByClassName("modal")[0].style.display = "block";
-
+		function openModal(thisEle) {
+			console.log(thisEle);
+			console.log($(thisEle).next());// $(".modal")
+			$(thisEle).next().show();
 		}
 		// closeModal
-		function closeModal() {
-			document.getElementsByClassName("modal")[0].style.display = "none";
+		function closeModal(thisEle) {
+			console.log(thisEle);
+			console.log($(thisEle).parents(".modal"));// $(".modal")
+			$(thisEle).parents(".modal").hide();
 		}
-		// closeModalWindow
-		function closeModalWindow() {
-			if (event.target == document.getElementsByClassName("modal")[0]) {
-				document.getElementsByClassName("modal")[0].style.display = "none";
-			}
-		}
-		//펀딩 탭으로 이동시키는 스크립트 (제이쿼리 방식)
-		$('#btn_funding_move').click(function() {
-			location.href = "fundingboardlist";
-		})
+
 	</script>
 </body>
 </html>

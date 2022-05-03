@@ -35,12 +35,12 @@ public class FundingSuccessBoardListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("servlet확인");
-		ArrayList<FundingVo> flist = service.fundingBoardlist();
-		ArrayList<SeriesVo> slist = new SeriesService().listBoard();
-		System.out.println(flist);
-		
-		request.setAttribute("flist", flist);
-		request.setAttribute("slist",slist);
+//		ArrayList<FundingVo> flist = service.fundingBoardlist();
+//		ArrayList<SeriesVo> slist = new SeriesService().listBoard();
+//		System.out.println(flist);
+//		
+//		request.setAttribute("flist", flist);
+//		request.setAttribute("slist",slist);
 		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingsuccessboardlist.jsp").forward(request, response);
 	}
 

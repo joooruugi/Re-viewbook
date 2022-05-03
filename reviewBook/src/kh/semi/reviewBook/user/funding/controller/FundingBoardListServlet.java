@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.series.model.vo.SeriesVo;
 import kh.semi.reviewBook.user.funding.model.service.FundingService;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 
 
 /**
@@ -33,10 +35,19 @@ public class FundingBoardListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("servlet확인");
-		ArrayList<FundingVo> flist = service.fundingBoardlist();
-		System.out.println("flist: " + flist);
+//		String loginId = request.getParameter("usId") - 로그인한 사용자의 아이디
+		String loginId = "";
+		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(vo == null) {
+			response.sendRedirect("login");
+			return;
+		}
+		loginId = vo.getUsId();
+		System.out.println("fundingboardlist loginId: "+ loginId);
+		ArrayList<SeriesVo> slist = service.fundingBoardlist(loginId);
+		System.out.println("slist: " + slist);
 		
-		request.setAttribute("flist", flist);
+		request.setAttribute("slist", slist);
 		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingboardlist.jsp").forward(request, response);
 	}
 

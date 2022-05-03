@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.user.funding.model.service.FundingService;
 import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class FundingDonationServlet
@@ -41,9 +42,31 @@ public class FundingDonationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost : fundingdonation/");
-		int wbNo = Integer.parseInt(request.getParameter("wbNo"));
+		System.out.println(request.getParameter("wbNo"));
+		System.out.println(request.getParameter("fdDonation"));
+		int wbNo = 0;
+		int fdDonation = 0;
+		try {
+			wbNo = Integer.parseInt(request.getParameter("wbNo"));
+			fdDonation = Integer.parseInt(request.getParameter("fdDonation"));
+		} catch (Exception e) {
+			System.out.println("숫자 오류");
+		}
 		System.out.println(wbNo);
-		int result = service.fundingDonation(wbNo);
+		String loginId = "";
+		UserVo ssUserVo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssUserVo == null) {
+			response.sendRedirect("login");
+			return;
+		}
+		loginId = ssUserVo.getUsId();
+		
+		FundingVo vo = new FundingVo();
+		vo.setWbNO(wbNo);
+		vo.setFdDonation(fdDonation);
+		vo.setUsId(loginId);
+		System.out.println("vo: "+vo);
+		int result = service.fundingDonation(vo);
 		
 		PrintWriter out = response.getWriter();
 		out.print(result);
