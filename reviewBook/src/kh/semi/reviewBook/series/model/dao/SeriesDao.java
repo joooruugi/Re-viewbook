@@ -354,8 +354,25 @@ public class SeriesDao {
 		int result = 0;
 //		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP, ? , ? , ? ) ";
 //		로그인 구현되면 sql문 수정
-		String sql = "INSERT INTO WRITER_BBS VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP,"
-				+ "(SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?), ? ,?)";
+		
+//		WB_NO         NOT NULL NUMBER         
+//		WB_TITLE      NOT NULL VARCHAR2(60)   
+//		WB_CONTENT    NOT NULL VARCHAR2(4000) 
+//		WB_COUNT      NOT NULL NUMBER         
+//		WB_DATE       NOT NULL TIMESTAMP(6)   
+//		WB_WRITER     NOT NULL VARCHAR2(45)   
+//		WB_CATEGORY   NOT NULL VARCHAR2(20)   
+//		US_ID         NOT NULL VARCHAR2(30)   
+		// 펀딩 관련으로 default 값 또는 null 로 유지
+//		FD_OX         NOT NULL NUMBER         
+//		FD_DEADLINE            DATE           
+//		FD_LIMIT               NUMBER         
+//		FD_ACCUMULATE          NUMBER         
+//		AD_ID         NOT NULL VARCHAR2(30)  
+		
+		String sql = "INSERT INTO WRITER_BBS (WB_NO, WB_TITLE, WB_CONTENT, WB_COUNT, WB_DATE, WB_WRITER, WB_CATEGORY, US_ID ) "
+				+ " VALUES(SEQ_WB_NO.nextval, ? , ? , default, SYSTIMESTAMP,"
+				+ " (SELECT US_NICKNAME FROM \"USER\" WHERE US_ID = ?), ? ,?)";
 		//(3, wbcWriter) -> (3, usId) 로 변경
 		try {
 			pstmt = conn.prepareStatement(sql);
