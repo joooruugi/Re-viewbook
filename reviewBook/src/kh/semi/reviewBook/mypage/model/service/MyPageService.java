@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import kh.semi.reviewBook.mypage.model.dao.MyPageDao;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
+import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 
 public class MyPageService {
@@ -41,10 +42,19 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+	// 내 정보 수정
 	public int updateMyInformation(MyInformationVo iVo) {
 		int result = 0;
 		Connection conn = getConnection();
 		result = dao.updateMyInformation(conn, iVo);
+		close(conn);
+		return result;
+	}
+	// 리뷰 쓰기
+	public int insertReview(ReviewVo rVo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.insertReview(conn, rVo);
 		close(conn);
 		return result;
 	}

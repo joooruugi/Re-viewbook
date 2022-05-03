@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
+import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 
 public class MyPageDao {
@@ -133,14 +134,34 @@ public class MyPageDao {
 	public int updateMyInformation(Connection conn, MyInformationVo iVo) {
 		System.out.println("dao iVo: "+iVo);
 		int result = 0;
-		String sql = "UPDATE \"USER\" SET US_Nickname = ?, US_Email=?, US_PHONE=?, US_ADDRESS=? WHERE US_ID= ?";
+		String sql = "UPDATE \"USER\" SET US_Email=?, US_PHONE=?, US_ADDRESS=? WHERE US_ID= ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(5, iVo.getUsId());
-			pstmt.setString(1, iVo.getUsNickname());
-			pstmt.setString(2, iVo.getUsEmail());
-			pstmt.setString(3, iVo.getUsPhone());
-			pstmt.setString(4, iVo.getUsAddress());
+			pstmt.setString(4, iVo.getUsId());
+//			pstmt.setString(1, iVo.getUsNickname());
+			pstmt.setString(1, iVo.getUsEmail());
+			pstmt.setString(2, iVo.getUsPhone());
+			pstmt.setString(3, iVo.getUsAddress());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("dao result: "+result);
+		return result;
+	}
+	public int insertReview(Connection conn, ReviewVo rVo) {
+		System.out.println("dao rVo: "+rVo);
+		int result = 0;
+		String sql = "INSERT INTO REVIEW(RV_NUM, RV_DATE, RV_TITLE, RV_RATING, RV_CONTENT, BK_NO, US_ID) VALUES(SEQ_RV_NUM.nextval,default,?,?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rVo.getRvTitle());
+			pstmt.setInt(2, rVo.getRvRating());
+			pstmt.setString(3, rVo.getRvContent());
+			pstmt.setInt(4, rVo.getBkNo());
+			pstmt.setString(5, rVo.getUsId());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

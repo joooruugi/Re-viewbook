@@ -1,5 +1,5 @@
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/signlogin/signupuser_second.css">
+	href="<%=request.getContextPath()%>/resources/css/mypage/myinfoupdate.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet"
@@ -8,7 +8,6 @@
 	href="<%=request.getContextPath()%>/resources/css/all/all.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -17,9 +16,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보 수정</title>
-<script src="/resources/js/signlogin/js_signup.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/signlogin/js_signup.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+	<%@ include file="../../../view/template_header_login.jsp"%>
 	<div class="signup_body2">
 		<nav class="sidemenu">
 			<ul class="sidemenu_signup2">
@@ -35,60 +36,16 @@
 							<p class="fontnormal signup_infoname">아이디</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usId" class="signup_infoinput" id="usId" disabled value="${myinfovo.usId}"></td>
-						<td class="signupuser_input_btn">
-							<button type="button" id="idCheck" class="signupinfo_idcheck">
-								<p class="fontnothing signup_infobtn ">중복확인</p>
-							</button>
-						</td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">비밀번호</p>
-						</td>
-						<td class="signupuser_input_input"><input type="password"
-							name="usPassword" class="signup_infoinput" id="usPassword"
-							required="required" placeholder="영문자, 숫자, 특수문자가 적어도 1개이상, 8~16글자"></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">비밀번호 확인</p>
-						</td>
-						<td class="signupuser_input_input"><input type="password"
-							name="usPassword_re" class="signup_infoinput" id="usPassword_re"
-							required="required"></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">닉네임</p>
-						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usNickname" class="signup_infoinput" id="usNickname"
-							required="required"></td>
+							name="usId" class="signup_infoinput" id="usId" disabled
+							value="${myinfovo.usId}"></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이름</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usName" class="signup_infoinput" id="usName"
-							required="required"></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">성별</p>
-						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usGender" class="signup_infoinput" id="usGender"
-							required="required" placeholder="'여'또는 '남' 한글자만 입력 바랍니다."></td>
-					</tr>
-					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">생년월일</p>
-						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usBirth" class="signup_infoinput" id="usBirth"
-							required="required" placeholder="YYYY-MM-DD로 입력 바랍니다."></td>
+							name="usName" class="signup_infoinput" id="usName" disabled
+							value="${myinfovo.usName}"></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
@@ -103,19 +60,15 @@
 							<p class="fontnormal signup_infoname">이메일</p>
 						</td>
 						<td class="signupuser_input_input"><input type="email"
-							name="usEmail" class="signup_infoinput" id="usEmail"
+							name="usEmail" class="signup_infoinput" id="usEmail" value="${myinfovo.usEmail}"
 							required="required"></td>
-						<td class="signupuser_input_btn"><button type="button"
-								id="btn_email" class="signupinfo_emailcheck">
-								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
-							</button></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">주소</p>
 						</td>
 						<td class="signupuser_input_input"><input type="text"
-							name="usAddress" class="signup_infoinput" id="usAddress"
+							name="usAddress" class="signup_infoinput" id="usAddress" value="${myinfovo.usAddress}"
 							required="required"></td>
 					</tr>
 				</table>
@@ -125,6 +78,31 @@
 			</form>
 		</div>
 	</div>
+	<%@ include file="../../../view/template_footer.jsp"%>
+	<script>
+		// 유효성 검사
+		$("#btn_update").click(function() {
+			var phone = $("#usPhone").val().trim();
+			var regExpPhone = /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/; // 숫자3-숫자3,4-숫자4
+			if (!regExpPhone.test(phone)) {
+				alert("전화번호 입력란에는 000-0000-0000 형식");
+				$("#usPhone").focus();
+				return false;
+			}
 
+			var frm = document.frmRegister;
+			frm.action = "myinfoupdate.lo";
+			frm.method = "post";
+			frm.submit();
+		});
+		
+		// input박스 클릭했을 때 기존정보 없애줌
+		 $("#usEmail").click(function(){
+			 $("#usEmail").val("");
+		 });
+		 $("#usAddress").click(function(){
+			 $("#usAddress").val("");
+		 });
+	</script>
 </body>
 </html>

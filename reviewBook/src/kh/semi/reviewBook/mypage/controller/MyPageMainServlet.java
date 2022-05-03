@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.mypage.model.service.MyPageService;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
+import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
@@ -34,14 +35,13 @@ public class MyPageMainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("들어가나?");
 		
-		//강제 로그인(로그인됐다는 가정하에 마이페이지 들어가기위한 코드)
-		UserVo vo = (UserVo) request.getSession().getAttribute("ssUserVo");
-		if (vo == null) {
-//			response.sendRedirect(request.getContextPath());
-//			return;
-//			TODO
-			vo = new UserVo();
-			vo.setUsId("us111");
+		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 리뷰 작성 가능 ->로그인으로 이동
+			response.sendRedirect("login");
+			return; 
+		} else {
+			String usId = vo.getUsId();
+			vo.setUsId(usId);
 		}
 		SubscribeVo sVo = new MyPageService().selectSubscribe(vo.getUsId());
 		System.out.println("servlet: "+sVo);
