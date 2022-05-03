@@ -53,11 +53,9 @@
             </div>
         </div>
         <div class="adminnotice_btn">
-            <button class="adminnotice_writebtn">작성</button>
+            <button class="adminnotice_writebtn" onclick="">공지사항 작성</button>
         </div>
-        <div class="adminnotice_paging">
-            페이지가 넘어가요
-        </div>
+        
     </div>
     <%@ include file="../../../view/template_footer.jsp"%>
 </body>
