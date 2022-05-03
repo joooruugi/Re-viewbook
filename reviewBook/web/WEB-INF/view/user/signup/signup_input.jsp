@@ -16,7 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>RVB</title>
-<script src="/resources/js/signlogin/js_signup.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 	<%@ include file="../../../view/template_header.jsp"%>
@@ -109,8 +109,7 @@
 							name="usAddress" class="signup_infoinput" id="usAddress"
 							required="required"></td>
 					</tr>
-						</form>
-					<form action="<%=request.getContextPath()%>/gmailsendaction" method="get">
+
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">이메일</p>
@@ -118,13 +117,12 @@
 						<td class="signupuser_input_input"><input type="email"
 							name="usEmail" class="signup_infoinput" id="usEmail"
 							required="required"></td>
-						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email" class="signupinfo_emailcheck" onclick="winopen3()">
+						<!-- <td class="signupuser_input_btn"><button type="submit"
+								id="btn_email" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
-							</button></td>
+							</button></td> -->
 					</tr>
-					</form>
-					<tr>
+					<!-- <tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">인증번호</p>
 						</td>
@@ -132,15 +130,16 @@
 							name="usEmail_chk" class="signup_infoinput" id="usEmail"
 							required="required"></td>
 						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email_chk" class="signupinfo_emailcheck" onclick="winopen4()">
+								id="btn_email_chk" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">인증확인</p>
 							</button></td>
-					</tr>
+					</tr> -->
+
 				</table>
 				<div class="sigupsuer_second_signupbtn">
 					<button type="submit" id="btn_enroll">회원가입</button>
 				</div>
-		
+			</form>
 		</div>
 	</div>
 	<%@ include file="../../../view/template_footer.jsp"%>
@@ -190,19 +189,35 @@
 
 		function winopen() {
 			window.open("signup_check?usId=" + document.frmRegister.usId.value,
-					"", "width=500, height=300");
+					"", "width=500, height=150");
+			/* function result(){
+		    	//팝업창의 아이디정보를 회원가입창에 아이디정보로 전달
+		    	//팝업창은 기존창과 종속관계를 가지고 있으므로 opener를 이용하면 된다.
+		    	//alert("팝업창의 id값"+document.wfr.userid.value + ", 회원가입창의 id값 : " +opener.document.fr.id.value)
+		    	//6-1. 회원가입페이지의 id값에 아이디중복으로 선택된 id값을 대입.
+		    	opener.document.frmRegister.usId.value = document.wfr.usId.value;
+		    	
+		    	//6-3. 회원가입창 제어
+		    	//readonly 속성제어(커멜표기가 아닐때는 제어가 안됨 신기하네 ㅋㅋㅋ)
+		    	opener.document.fr.id.readOnly=true;
+		    	
+		    	//6-2. 창닫기
+		    	window.close();
+		    } */
 		}
 		function winopen2() {
 			window.open("signup_checknick?usNickname="
 					+ document.frmRegister.usNickname.value, "",
 					"width=500, height=300");
 		}
-		function winopen3(){
-			window.open("gmailsendaction?usEmail="+document.frmRegister.usEmail.value,"","width=500, height=300")
+		/* function winopen3() {
+			window.open("gmailsendaction?usEmail="
+					+ document.frmRegister.usEmail.value, "",
+					"width=500, height=300")
 		}
-		function winopen4(){
-			window.open("gmailcheckaction","","width=500, height=300")
-		}
+		function winopen4() {
+			window.open("gmailcheckaction", "", "width=500, height=300")
+		} */
 	</script>
 </body>
 </html>

@@ -40,7 +40,7 @@ public class gmailSendAction extends HttpServlet {
 		//DB 저장 했다고 가정 (DB에는 emailAuth 필드가 있어야 하고 최초에는 0이 저장되어 있음) 1 인증 0 미인증
 		
 		//DB에 저장했으니 google email 인증 페이지로 이동
-		response.sendRedirect("/reviewBook/gmailsendaction?usEmail="+usEmail);
+//		response.sendRedirect("/reviewBook/gmailsendaction.jsp?usEmail="+usEmail);
 		String host = "http://localhost:8000/AuthGoogle/";
 		String from = "reviewbook.rvb@gmail.com";
 		String to = request.getParameter("usEmail");
@@ -48,7 +48,7 @@ public class gmailSendAction extends HttpServlet {
 
 		//사용자에게 보낼 메시지
 		String subject = "회원가입을 위한 이메일 인증 메일입니다.";
-		String content = "다음 링크에 접속하여 이메일 인증을 진행해주세요. " + "<a href='" + host + "gmailcheckaction?code=" + code
+		String content = "다음 링크에 접속하여 이메일 인증을 진행해주세요. " + "<a href='" + host + "gmailCheckAction.jsp?code=" + code
 				+ "'>이메일 인증하기</a>";
 
 		Properties p = new Properties();
@@ -82,11 +82,12 @@ public class gmailSendAction extends HttpServlet {
 			script.println("history.back();");
 			script.println("</script>");
 		}
+		
 	}
 
 
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		doGet(request, response);
-//	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
 }

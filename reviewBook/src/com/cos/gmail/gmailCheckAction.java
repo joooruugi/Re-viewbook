@@ -1,6 +1,7 @@
 package com.cos.gmail;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  * Servlet implementation class EmailCheckAct
@@ -33,17 +35,17 @@ public class gmailCheckAction extends HttpServlet {
 //		request.getRequestDispatcher("WEB-INF/view/user/signup/gmailcheckaction.jsp").forward(request, response);
 		String code = request.getParameter("code");
 		boolean rightCode = 
-				SHA256.getEncrypt("codingspecialist@naver.com", "cos").equals(code) ? true : false;
+				SHA256.getEncrypt("reviewbook.rvb@gmail.com", "cos").equals(code) ? true : false;
 		PrintWriter script = response.getWriter();
 		if(rightCode == true){
 			script.println("<script>");
 			script.println("alert('이메일 인증에 성공하였습니다.')");
-//			script.println("location.href='login.jsp'");
+			script.println("location.href='login'");
 			script.println("</script>");
 		} else{
 			script.println("<script>");
 			script.println("alert('이메일 인증을 실패하였습니다.')");
-//			script.println("location.href='singup_input.jsp'");
+			script.println("location.href='signup_gmail'");
 			script.println("</script>");
 		}
 	}

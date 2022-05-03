@@ -67,4 +67,67 @@ public class AdminDao {
 		}
 		return result;
 	}
+	public int SignupIdCheckAdmin(Connection conn, String adId) {
+		int result = -1;
+		String sql = "select ad_id from \"ADMIN\" where ad_id=?";
+//		System.out.println(usId);
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 0;
+				System.out.println(rs.getString("adId"));
+			}else {
+				result = 1;
+			}
+			System.out.println("아이디 중복체크 결과 :" +result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int SignupNicknameCheckAdmin(Connection conn, String adNickname) {
+		int result = -1;
+		String sql = "select ad_nickname from \"ADMIN\" where ad_nickname=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adNickname);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 0;
+			}else {
+				result = 1;
+			}
+			System.out.println("닉네임 중복체크 결과 : "+result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public AdminVo findidAdmin(Connection conn, String adNickname, String adEmail) {
+		AdminVo result = null;
+		String sql = "select ad_id from \"ADMIN\" where ad_nickname=? and ad_email=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adNickname);
+			pstmt.setString(2, adEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new AdminVo();
+				//정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 ! 
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 }

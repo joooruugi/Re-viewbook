@@ -1,4 +1,4 @@
-package kh.semi.reviewBook.user.controller;
+package kh.semi.reviewBook.admin.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,34 +9,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.admin.service.AdminService;
 import kh.semi.reviewBook.user.model.service.UserService;
 
 /**
- * Servlet implementation class UserSignupCheckIdServlet
+ * Servlet implementation class AdminSignupCheckIdServlet
  */
-@WebServlet("/signup_check")
-public class UserSignupCheckIdServlet extends HttpServlet {
+@WebServlet("/adsignup_checkid")
+public class AdminSignupCheckIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AdminSignupCheckIdServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public UserSignupCheckIdServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-//		request.getRequestDispatcher("WEB-INF/view/user/signup/signup_input.jsp").forward(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String usId = request.getParameter("usId");
+		String adId = request.getParameter("adId");
 
-		int result = new UserService().SignupIdCheck(usId);
+		int result = new AdminService().SignupIdCheckAdmin(adId);
 		PrintWriter script = response.getWriter();
 		if (result == 0) {
 			System.out.println("사용중인 아이디입니다.");
@@ -60,15 +58,14 @@ public class UserSignupCheckIdServlet extends HttpServlet {
 			script.println("window.close();");
 			script.println("</script>");
 		}
-
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
 //	}
 
 }
