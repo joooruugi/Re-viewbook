@@ -60,7 +60,8 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 				,new DefaultFileRenamePolicy());
 		
 		
-		//parameter로 값 가져오기
+		//parameter로 값 가져오기 
+		//1.글번호
 		String wbnostr = multi.getParameter("wbNo");
 		System.out.println("wbNo : "+wbnostr);
 		int wbNo = 0;
@@ -76,28 +77,54 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 			//콘솔에서 확인
 			System.out.println("wbNo < 1");
 		}
+		//2. 카테고리
 		String wbCategory = multi.getParameter("wbCategory");
-		String wbTitle = multi.getParameter("wbTitle");
-		String wbContent = multi.getParameter("wbContent");
-		wbContent = wbContent.replace("\r\n","<br>");
-		String wbContentFile= multi.getFilesystemName("wbContentFile");
 		
-		//값 확인
-		System.out.println(wbCategory);
-		System.out.println(wbTitle);
-		System.out.println(wbContent);
-
-		if(wbContentFile != null) {
-			wbContent += "<br> <br> <img src = '"+fileSavePath+"/"+wbContentFile+"'>";
+		//3.펀딩여부
+		String fdOXstr = multi.getParameter("fdOX");
+		System.out.println("fdOX : "+fdOXstr);
+		int fdOX = Integer.parseInt(fdOXstr);
+			System.out.println(fdOX);
+			
+		//4.1인당 제한금액
+		String fdLimitstr = multi.getParameter("fdLimit");
+		System.out.println("fdLimit : "+fdLimitstr);
+		int fdLimit = Integer.parseInt(fdLimitstr);
+			System.out.println(fdLimit);
+			
+		//5.마감일
+		String fdDeadline = multi.getParameter("fdDeadline");
+		
+		//6.목표금액
+		String fdAccumulatestr = multi.getParameter("fdAccumulate");
+		System.out.println("fdAccumulate : "+fdAccumulatestr);
+		int fdAccumulate = 0;
+		try {		
+		fdAccumulate = Integer.parseInt(fdAccumulatestr);
+			System.out.println(fdAccumulate);
+		}catch(NumberFormatException e) {
+			e.printStackTrace();
 		}
+		//값 확인
+		System.out.println(wbNo);
+		System.out.println(wbCategory);
+		System.out.println(fdOX);
+		System.out.println(fdLimit);
+		System.out.println(fdDeadline);
+		System.out.println(fdAccumulate);
+
+
+	
 		
 		SeriesVo svo = new SeriesVo();
 		svo.setWbNo(wbNo);
-		svo.setWbTitle(wbTitle);
-		svo.setWbContent(wbContent);
 		svo.setWbCategory(wbCategory);
+		svo.setFdOX(fdOX);
+		svo.setFdLimit(fdLimit);
+		svo.setFdDeadline(fdDeadline);
+		svo.setFdAccumulate(fdAccumulate);
 	
-		 int result = new SeriesService().updateSeriesBoard(svo);
+		 int result = new SeriesService().adminUpdateSeriesBoard(svo);
 		 
 		 if(result<1) {//게시글 작성에 실패한 경우에도 메인으로 보냄
 			 response.sendRedirect("adseriesmain");

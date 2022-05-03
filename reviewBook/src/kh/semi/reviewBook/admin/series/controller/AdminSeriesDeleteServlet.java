@@ -42,7 +42,7 @@ public class AdminSeriesDeleteServlet extends HttpServlet {
 			System.out.println("wbNo < 1");
 		}
 		
-		SeriesVo svo = new SeriesService().readUpdateBoard(wbNo); //수정 삭제 동일 메소드 활용! 
+		SeriesVo svo = new SeriesService().adminReadUpdateBoard(wbNo); //수정 삭제 동일 메소드 활용! 
 		
 		if(svo==null) {
 			//query문 실행 중 오류 발생한 경우 메인으로 보냄 
@@ -51,7 +51,7 @@ public class AdminSeriesDeleteServlet extends HttpServlet {
 		}
 		
 		//게시글 삭제 메소드
-		int result =  new SeriesService().deleteSeriesBoard(svo); 
+		int result =  new SeriesService().adminDeleteSeriesBoard(svo); 
 		
 		 if(result<1) {//게시글 삭제에 실패한 경우 기존 게시글로 
 			 response.sendRedirect("adseriesread?wbNo="+wbNo);

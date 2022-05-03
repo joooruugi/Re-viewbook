@@ -1,0 +1,194 @@
+/* 본문 */
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display : flex;
+}
+.contentrvb{
+	margin-left: 50px;
+}
+
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height : 250px;
+	background-color: #eaf4fc;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_series {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_series .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
+}
+
+.sidemenu_series li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.sidemenu_series li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_series .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+ 
+/* 게시물 수정 테이블 전체 */
+#series_update{
+	padding-left:50px;
+    margin: auto;
+    max-width: 1100px;
+}
+#series_update , #series_update input , #wbCategory, #series_update textarea{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 테이블 정렬 */
+#series_update td{
+	padding-right: 30px;
+	vertical-align : middle;
+}
+
+
+/* 카테고리 */
+#wbCategory{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+/* 제목 */
+#wbTitle{
+    width: 700px;
+    height: 30px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+/* 내용 */
+ #wbContent{
+    width: 700px;
+    height: 500px;
+    resize: none;
+    font-size: 1rem;
+    margin-bottom: 10px;
+
+} 
+
+
+/* 버튼정렬 */
+#series_update_btn {
+	padding-left:50px;
+	margin: auto;
+	margin-top: 50px;
+}
+#update_btn, #update_reset_btn{
+
+    margin: 0 auto;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+/* 배너 전체 영역 */
+.series_banner{
+width: 100%;
+height: 200px;
+display: inline-block;
+background-color:  rgb(183, 202, 219,0.7);
+margin: 0 0 50px 0;
+
+}
+/* 배너 이미지 */
+.series_banner_img{
+width: 150px;
+height: 150px;
+float: right;
+position: relative;
+top : -90px;
+}
+/* 배너 타이틀 */
+#series_banner_title{
+	padding-left: 50px;
+}
+#series_banner_title>h2{
+	font-size: 2rem;
+	margin-top: 40px;
+}
+#series_banner_title>h2 {
+	
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+#series_banner_title>h2 a{
+	text-decoration:none;
+	color:black;
+}
+#series_banner_title p {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 펀딩관리 */
+
+#series_update_funding{
+	margin-top: 50px;
+	text-align: center;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	
+}
+
+.header, .update_funding_ox, .update_fdLimit, .update_fdDeadline, .update_fdAccumulate{
+	margin-bottom: 20px;
+}
+
+#series_update_funding p{
+	font-size: 1.2rem;
+}
+
+

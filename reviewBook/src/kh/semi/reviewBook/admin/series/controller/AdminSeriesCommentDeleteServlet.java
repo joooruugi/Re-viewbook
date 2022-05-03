@@ -56,7 +56,7 @@ public class AdminSeriesCommentDeleteServlet extends HttpServlet {
 		srvo.setWbcNo(wbcNo);
 
 		
-		int result = new SeriesService().deleteSeriesBoardComment(srvo);
+		int result = new SeriesService().adminDeleteSeriesBoardComment(srvo);
 		if(result<1) {//댓글 삭제에 실패한 경우 원래 읽던 글 화면으로
 			 response.sendRedirect("adseriesread?wbNo="+wbNo);
 		 }else { //성공해도 기존 게시글로 

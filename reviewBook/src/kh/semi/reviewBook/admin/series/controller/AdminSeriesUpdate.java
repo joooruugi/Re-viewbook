@@ -44,7 +44,7 @@ public class AdminSeriesUpdate extends HttpServlet {
 		}
 		
 		//service - dao 순으로 db에서 읽어오기
-		SeriesVo svo = new SeriesService().readUpdateBoard(wbNo);
+		SeriesVo svo = new SeriesService().adminReadUpdateBoard(wbNo);
 		//db갔다온 데이터는 반드시 sysout으로 콘솔으로 확인  그 다음 request에 담아줌
 		System.out.println(svo);
 		

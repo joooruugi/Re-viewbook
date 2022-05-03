@@ -1,4 +1,4 @@
-<link rel="stylesheet"href="<%=request.getContextPath()%>/resources/css/series/seriesupdate.css">
+<link rel="stylesheet"href="<%=request.getContextPath()%>/resources/css/series/adseriesupdate.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
@@ -82,7 +82,27 @@
 									<td colspan="3"><input type="file" id="wbContentFile"
 										name="wbContentFile"></td>
 								</tr>
-							</table>
+								</table>
+								<div id="series_update_funding">
+								<div class="header">
+								<p>--- 펀딩관리 --- </p>
+								</div>
+								<div class="update_funding_ox">
+								펀딩 여부  <input type ="radio" name="fdOX" value="0" id="fdX"><label for="fdX"> 펀딩 X</label> &nbsp; &nbsp;
+								<input type ="radio" name="fdOX" value="1" id="fdO"> <label for="fdO"> 펀딩 O </label>
+								</div>
+								<div class="update_fdLimit">
+								1인당 제한금액 <input type="text" name ="fdLimit" id = "fdLimit" value="<%=svo.getFdLimit()%>">
+								</div>
+								<div class="update_fdDeadline">
+								펀딩 마감일 <input type="text" name ="fdDeadline" id = "fdDeadline"
+								placeholder="날짜 형태로 입력해주세요" value="<%=svo.getFdDeadline()%>">
+								</div>
+								<div class="update_fdAccumulate">
+								목표금액 <input type="text" name ="fdAccumulate" id = "fdAccumulate"
+								placeholder="숫자만 입력해주세요" value="<%=svo.getFdAccumulate()%>">
+								</div>
+								</div>
 							<table id="series_update_btn">
 								<tr>
 									<td><button type="submit" id="update_btn" class="button2">게시글

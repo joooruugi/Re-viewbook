@@ -142,11 +142,44 @@ public class SeriesService {
 		return result;
 	}
 	
-	//11-2. 댓글 내용 수정
+	//11-2. 댓글 내용 삭제
 		public int deleteSeriesBoardComment(SeriesReCommentVo srvo) {
 			Connection conn = getConnection();
 			int result = dao.deleteSeriesBoardComment(conn, srvo);
 			close(conn);
 			return result;
 		}
+		
+	//12-1. 관리자 업데이트 전 기존 글 가져오기(수정,삭제 시 사용)
+	public SeriesVo adminReadUpdateBoard(int wbNo) {
+		Connection conn = getConnection();
+		SeriesVo svo = dao.adminReadUpdateBoard(conn,wbNo);
+		close(conn);
+		return svo;
+	}
+	
+	//12-2. 관리자 게시글 + 펀딩 수정 
+	public int adminUpdateSeriesBoard(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.adminUpdateSeriesBoard(conn, svo);
+		close(conn);
+		return result;
+	}
+	
+	//12-3. 관리자 게시글 삭제
+	public int adminDeleteSeriesBoard(SeriesVo svo) {
+		Connection conn = getConnection();
+		int result = dao.adminDeleteSeriesBoard(conn, svo);
+		close(conn);
+		return result;
+	}
+	
+	//12-4. 관리자 댓글 삭제
+	public int adminDeleteSeriesBoardComment( SeriesReCommentVo srvo) {
+		Connection conn = getConnection();
+		int result = dao.adminDeleteSeriesBoardComment(conn, srvo);
+		close(conn);
+		return result;
+	}
+	
 }

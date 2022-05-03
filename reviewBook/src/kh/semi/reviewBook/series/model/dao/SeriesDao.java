@@ -435,8 +435,6 @@ public class SeriesDao {
 	
 	//9-2. 연재 게시물 수정
 	public int updateSeriesBoard(Connection conn, SeriesVo svo) {
-		String usId = "us111"; //member 로그인 구현 후 srvo.getUsId()수정 예정 
-		String wbcWriter = "사자"; //member 로그인 구현 후 srvo.setWbcWriter()수정 예정 
 		int result = 0;
 		String sql = "UPDATE WRITER_BBS SET WB_TITLE =? , WB_CONTENT = ? , WB_CATEGORY = ? WHERE WB_NO =?";
 		try {
@@ -512,6 +510,121 @@ public class SeriesDao {
 	
 	//11-2.댓글내용 삭제
 		public int deleteSeriesBoardComment(Connection conn, SeriesReCommentVo srvo) {
+			int result = 0;
+			String sql = "DELETE FROM WRITER_BBS_COMMENT WHERE WBC_NO = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, srvo.getWbcNo());
+				
+				result = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+			return result;
+		}
+		
+		
+		//게시글번호
+//		private int wbNo;
+//		private String wbTitle;
+//		private String wbContent;
+//		private int wbCount;
+//		private String wbDate;
+//		private String wbWriter;
+//		private String wbCategory;
+//		private String usId;
+//		private int reCommentCnt;
+		//펀딩관리
+//		private int fdAccumulate;
+//		private String fdDeadline;
+//		private int fdLimit;
+//		private int fdOX;
+//		private String adId;
+		
+		
+		//12-1. 관리자 업데이트 전 기존 글 가져오기(수정,삭제 시 사용)
+		public SeriesVo adminReadUpdateBoard(Connection conn, int wbNo) {
+			SeriesVo svo = null;
+			String sql = "SELECT * FROM WRITER_BBS WHERE WB_NO = ? ";
+
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, wbNo);
+				rs = pstmt.executeQuery();
+				
+				svo = new SeriesVo();
+				
+				if(rs.next()) {
+					svo.setWbNo(rs.getInt("wb_No"));
+					svo.setWbTitle(rs.getString("wb_Title"));
+					svo.setWbContent(rs.getString("wb_Content"));
+					svo.setWbCount(rs.getInt("wb_Count"));
+					svo.setWbDate(rs.getString("wb_Date"));
+					svo.setWbWriter(rs.getString("wb_Writer"));
+					svo.setWbCategory(rs.getString("wb_Category"));
+					svo.setUsId(rs.getString("us_Id"));
+					svo.setFdAccumulate(rs.getInt("fd_Accumulate"));
+					svo.setFdDeadline(rs.getString("fd_Deadline"));
+					svo.setFdLimit(rs.getInt("fd_Limit"));
+					svo.setFdOX(rs.getInt("fd_OX"));
+					svo.setAdId(rs.getString("ad_Id"));
+				
+				}
+				}catch (SQLException e) {
+					e.printStackTrace();
+				} finally {
+					close(rs);
+					close(pstmt);
+				}		
+				return svo;
+			}
+		
+		
+		//12-2. 관리자 게시글 + 펀딩 수정 업데이트
+		public int adminUpdateSeriesBoard(Connection conn, SeriesVo svo) {
+			int result = 0;
+			String sql = "UPDATE WRITER_BBS SET WB_CATEGORY = ? , FD_OX = ? , FD_DEADLINE= ? , FD_LIMIT = DEFAULT, FD_ACCUMULATE = ? WHERE WB_NO = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				//제일 중요한 글 번호 맨 앞으로 가져옴
+				pstmt.setInt(5, svo.getWbNo());
+				//나머지 채워줌
+				pstmt.setString(1, svo.getWbCategory());
+				pstmt.setInt(2, svo.getFdOX());
+				pstmt.setString(3, svo.getFdDeadline());
+				pstmt.setInt(4, svo.getFdAccumulate());
+				result = pstmt.executeUpdate();
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+			return result;
+		}
+		
+		//12-3. 관리자 게시글 삭제
+		public int adminDeleteSeriesBoard(Connection conn, SeriesVo svo) {
+			int result = 0;
+			String sql = "DELETE FROM WRITER_BBS WHERE WB_NO = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, svo.getWbNo());
+				result = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+
+			return result;
+		}
+		
+		
+		//12-4. 관리자 댓글 삭제
+		public int adminDeleteSeriesBoardComment(Connection conn, SeriesReCommentVo srvo) {
 			int result = 0;
 			String sql = "DELETE FROM WRITER_BBS_COMMENT WHERE WBC_NO = ?";
 			try {
