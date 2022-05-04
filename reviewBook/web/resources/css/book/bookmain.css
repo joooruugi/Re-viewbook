@@ -1,0 +1,94 @@
+
+.bookbody{
+    width: 10%;
+    /* display: flex; */
+}
+/* �궗�씠�뱶硫붾돱  */
+.book_sidemenu{
+    width: 20%px;
+    /* margin: 20px; */
+    text-align: left;
+    background-color: #eaf4fc;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    border: 1px solid #96bff9;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.book_sidemenu_main {
+    margin: 20px;
+}
+.book_sidemenu_main .book_sidemenu_detail{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.book_sidemenu_main li{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+.book_sidemenu_main li:hover{
+    font-family: 'ROKAFSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    background-color: #b6d4ff;
+    border-radius: 30px;
+}
+/* �겢由��떆 �깋�긽蹂�寃� �쑀吏�(�쁽�옱蹂댁뿬吏��뒗 �꺆�씠 萸붿� �븣湲곗쐞�빐�꽌*/
+.book_sidemenu_main li{
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+}
+
+
+
+.bookbody_total{
+
+    /* display: flex; */
+}
+.bookmain_total{
+    max-width: 1100px;
+    border: 3px solid;
+    color: powderblue;
+    float: right;
+    width: auto;
+    vertical-align: middle;
+
+}
+
+.bookmain_sell_rank_list{
+    display: flex;
+
+
+
+}
+.bookmain_grade_rank_list{
+    display: flex;
+
+
+
+}.bookmain_review_rank_list{
+    display: flex;
+
+
+
+}
+.bookmain_thumbnail{
+    margin: 30px;
+
+}
+
+.thumbnail_img{
+    width: 150px;
+}
+
+.real_img{
+    width: 100%;
+}
