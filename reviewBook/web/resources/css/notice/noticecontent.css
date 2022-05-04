@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.body_notice {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.adminnotice_name {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 3px solid gray;
+}
+.notice_noticecontent{
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+}
+.notice_noticecontenthead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    
+}
+.notice_noticecontentname p{
+    font-size: 20px;
+    text-align: center;
+}
+.notice_contentright{
+    border: 2px solid #9ecdf7;
+    border-radius: 10px;
+    float: right;
+    margin: 10px;
+}
+.notice_content_div{
+    border: 1px solid gray;
+}
+.notice_noticecontentnick p, .notice_noticecontentcnt p, .notice_noticecontentdate p{
+    margin: 10px;
+}
+.notice_noticecontentbody{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #b6dcfd;
+    border-radius: 15px;
+    text-align: center;
+}
+.notice_noticecontentbody{
+    margin: 10px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.noticecontentname{
+    margin: 10px;
+    font-size: 20px;
+}
+.noticecontentcontent{
+    font-size: 18px;
+}
+
+.adminnotice_btn {
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.adminnotice_btn button {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal; 
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    font-size: 20px;
+}
+

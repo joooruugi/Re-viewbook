@@ -19,7 +19,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RVB Admin</title>
+<title>RVB</title>
 </head>
 <body>
 	<%
@@ -75,7 +75,7 @@
         </div>
         <div class="adminnotice_btn">
             <button type="submit" class="notice_listbtn">목록으로</button>
-            <button type="submit" class="adminnotice_deletebtn">삭제</button>
+            
         </div>
 
     </div>
