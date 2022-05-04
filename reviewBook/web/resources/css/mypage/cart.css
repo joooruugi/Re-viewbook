@@ -1,1 +1,103 @@
 @charset "UTF-8";
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display : flex;
+}
+
+.contentrvb{
+	margin-left: 50px;
+}
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height : 250px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_mypage {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_mypage .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
+}
+
+.sidemenu_mypage li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.sidemenu_mypage li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_mypage .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+/* 장바구니 목록 */
+.cartlist {
+	max-width: 1300px;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+}
+
+.cartlist .cartlist_th{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+   background-color: #eaf4fc;
+   font-size: 15px;
+   height: 30px;
+   line-height: 30px;
+}
+.cartlist .cartlist_td{
+	border-bottom: 1px solid gray;
+    height: 20px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+.cartlist_th .cartlistname{
+    width: 30%;
+}
+.cartlist_th .cartlistno{
+    width: 10%;
+}
+.cartlist_th .cartlistdate{
+    width: 35%;
+}
+.cartlist_th .cartlistreview{
+    width: 25%;
+}

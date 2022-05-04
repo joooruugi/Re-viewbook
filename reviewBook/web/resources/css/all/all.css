@@ -84,6 +84,7 @@
     background-color: rgb(188, 212, 233);
     border: 1px solid #a9b8c4;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* 버튼2 모양 css */

@@ -13,10 +13,11 @@ import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
+import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
 public class MyPageService {
 	private MyPageDao dao = new MyPageDao();
-	
+
 	// 구독권 조회
 	public SubscribeVo selectSubscribe(String usId) {
 		SubscribeVo result = null;
@@ -25,7 +26,7 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
-	
+
 	// 구매목록 조회
 	public ArrayList<BuyListVo> selectBuyList(String usId) {
 		ArrayList<BuyListVo> result = null;
@@ -34,7 +35,7 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
-	
+
 	// 내정보 수정 전 기존 정보 가져오기
 	public MyInformationVo selectMyInformation(String usId) {
 		MyInformationVo result = null;
@@ -43,6 +44,7 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+
 	// 내 정보 수정
 	public int updateMyInformation(MyInformationVo iVo) {
 		int result = 0;
@@ -51,6 +53,7 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+
 	// 리뷰 쓰기
 	public int insertReview(ReviewVo rVo) {
 		int result = 0;
@@ -59,11 +62,29 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+
 	// 장바구니 목록 조회
-	public ArrayList<CartVo> selectCartList(String usId){
+	public ArrayList<CartVo> selectCartList(String usId) {
 		ArrayList<CartVo> result = null;
 		Connection conn = getConnection();
 		result = dao.selectCartList(conn, usId);
+		close(conn);
+		return result;
+	}
+
+	// 장바구니 삭제 전 기존 정보 가져오기
+//	public CartVo readUpdateCart(String usId, int bkNo) {
+//		Connection conn = getConnection();
+//		CartVo cVo = dao.readUpdateCart(conn, usId, bkNo);
+//		close(conn);
+//		return cVo;
+//	}
+
+	// 장바구니 삭제
+	public int deleteCart(String usId, int bkNo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.deleteCart(conn, usId, bkNo);
 		close(conn);
 		return result;
 	}
