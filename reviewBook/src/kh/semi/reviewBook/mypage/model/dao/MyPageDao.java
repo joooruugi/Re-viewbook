@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
+import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
@@ -62,7 +63,7 @@ public class MyPageDao {
 	public ArrayList<BuyListVo> selectBuyList(Connection conn, String usId) {
 		System.out.println("dao usId: "+usId);
 		ArrayList<BuyListVo> volist = null;
-		String sql = "select * from order_book ob join (select * from \"ORDER\" where us_id=?) o using (or_num) join book using (bk_no) left outer join review using (bk_no)";
+		String sql = "select * from order_book ob join (select * from \"ORDER\" where us_id=?) o using (or_num) join book using (bk_no) left outer join review using (bk_no) order by or_date desc";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
@@ -170,6 +171,45 @@ public class MyPageDao {
 		}
 		System.out.println("dao result: "+result);
 		return result;
+	}
+	public ArrayList<CartVo> selectCartList(Connection conn, String usId) {
+		System.out.println("dao usid: "+usId);
+		ArrayList<CartVo> volist = null;
+		String sql = "select * from cart join book using (bk_no) where us_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usId);
+			rs = pstmt.executeQuery();
+			volist = new ArrayList<CartVo>();
+			while(rs.next()) {
+				CartVo vo = new CartVo();
+//				US_ID    NOT NULL VARCHAR2(30) 
+//				BK_NO    NOT NULL NUMBER       
+//				CA_COUNT          NUMBER  
+//				BK_TITLE       NOT NULL VARCHAR2(150) 
+//				BK_IMG                  VARCHAR2(255) 
+//				BK_PRICE       NOT NULL NUMBER        
+//				BK_WRITER               VARCHAR2(30)  
+//				BK_PUBLISHDATE          DATE     
+				vo.setBkNo(rs.getInt("bk_No"));
+				vo.setCaCount(rs.getInt("ca_Count"));
+				vo.setUsId(rs.getString("us_Id"));
+				vo.setBkImg(rs.getString("bk_Img"));
+				vo.setBkPrice(rs.getInt("bk_price"));
+				vo.setBkPublishdate(rs.getDate("bk_publishdate"));
+				vo.setBkTitle(rs.getString("bk_Title"));
+				vo.setBkWriter(rs.getString("bk_Writer"));
+				volist.add(vo);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("dao volist: "+volist);
+		return volist;
 	}
 
 }

@@ -66,13 +66,6 @@
 	font-size: 20px;
 }
 
-#buylist {
-	max-width: 1300px;
-	font-family: 'SF_HailSnow';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* 리뷰작성 modal box */
 .modal {
@@ -125,4 +118,42 @@
 
 .star-rating label:hover, .star-rating label:hover ~ label {
 	color: #fc0;
+}
+
+
+/* 구매목록 */
+.buylist {
+	max-width: 1300px;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+}
+
+.buylist .buylist_th{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+   background-color: #eaf4fc;
+   font-size: 15px;
+   height: 30px;
+   line-height: 30px;
+}
+.buylist .buylist_td{
+	border-bottom: 1px solid gray;
+    height: 20px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+.buylist_th .buylistname{
+    width: 30%;
+}
+.buylist_th .buylistno{
+    width: 10%;
+}
+.buylist_th .buylistdate{
+    width: 35%;
+}
+.buylist_th .buylistreview{
+    width: 25%;
 }

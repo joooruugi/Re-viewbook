@@ -22,10 +22,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	
+
 	<%@ include file="../../../view/template_header_login.jsp"%>
 	<input type="button" value="회원정보수정"
 		onclick="location.href='<%=request.getContextPath()%>/myinformation'">
+	<input type="button" value="장바구니"
+		onclick="location.href='<%=request.getContextPath()%>/cartlist'">
+
 	<%
 		ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
 	if (volist != null) {
@@ -40,24 +43,26 @@
 		</nav>
 	</div>
 	<div>
-		<table id="buylist">
-			<tr>
-				<th>주문상품</th>
-				<th>주문번호</th>
-				<th>주문날짜</th>
-				<th>상품리뷰</th>
+		<table class="buylist">
+			<tr class="buylist_th fontimportant2">
+				<th class="buylistname">주문상품</th>
+				<th class="buylistno">주문번호</th>
+				<th class="buylistdate">주문날짜</th>
+				<th class="buylistreview">상품리뷰</th>
 			</tr>
 			<%
 				for (BuyListVo vo : volist) {
 			%>
-			<tr>
+			<tr class="buylisy_td fontnormal">
 				<td><%=vo.getBkTitle()%></td>
 				<td><%=vo.getOrNum()%></td>
 				<td><%=vo.getOrDate()%></td>
 				<%
 					if (vo.getRvNum() == 0) {
 				%>
-				<td><button class="btn_modal"><span style="display:none;"><%=vo.getBkNo() %></span>리뷰작성</button></td>
+				<td><button class="btn_modal button1">
+						<span style="display: none;"><%=vo.getBkNo()%></span>리뷰작성
+					</button></td>
 				<%
 					} else {
 				%>
@@ -86,6 +91,7 @@
 
 
 
+
 	<div id="modal_wrap">
 		<div class="modal">
 			<!-- 여기에는 아무 내용 적지 않음. - 대체로 -->
@@ -94,19 +100,18 @@
 				<div class="close">&#9932;</div>
 				<div class="buyreivew">
 					<form action="insertreview" method="post">
-						<br>
-						<input type="text" id="rvTitle" name="rvTitle" placeholder="제목을 입력해주세요." required="required">
+						<br> <input type="text" id="rvTitle" name="rvTitle"
+							placeholder="제목을 입력해주세요." required="required">
 						<div class="star-rating">
-							<input type="radio" id="5-stars" name="rvRating" value="5" /> 
-							<label for="5-stars" class="star">&#9733;</label>
-							<input type="radio" id="4-stars" name="rvRating" value="4" /> 
-							<label for="4-stars" class="star">&#9733;</label> 
-							<input type="radio" id="3-stars" name="rvRating" value="3" />
-							<label for="3-stars" class="star">&#9733;</label>
-							<input type="radio" id="2-stars" name="rvRating" value="2" /> 
-							<label for="2-stars" class="star">&#9733;</label>
-							<input type="radio" id="1-star" name="rvRating" value="1" />
-							<label for="1-star"	class="star">&#9733;</label>
+							<input type="radio" id="5-stars" name="rvRating" value="5" /> <label
+								for="5-stars" class="star">&#9733;</label> <input type="radio"
+								id="4-stars" name="rvRating" value="4" /> <label for="4-stars"
+								class="star">&#9733;</label> <input type="radio" id="3-stars"
+								name="rvRating" value="3" /> <label for="3-stars" class="star">&#9733;</label>
+							<input type="radio" id="2-stars" name="rvRating" value="2" /> <label
+								for="2-stars" class="star">&#9733;</label> <input type="radio"
+								id="1-star" name="rvRating" value="1" /> <label for="1-star"
+								class="star">&#9733;</label>
 						</div>
 						<textarea id="rvContent" name="rvContent"
 							placeholder="리뷰를 입력해주세요. 한번 등록한 별점은 수정이 불가능합니다."
@@ -144,7 +149,7 @@
 		}
 	</script>
 
-	[[${sVo }]] [[${bLVo }]] [[${myOrderlist }]]
+	[[${sVo }]] [[${bLVo }]]
 	<%@ include file="../../../view/template_footer.jsp"%>
 </body>
 </html>

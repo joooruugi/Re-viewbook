@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.dao.MyPageDao;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
+import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
@@ -55,6 +56,14 @@ public class MyPageService {
 		int result = 0;
 		Connection conn = getConnection();
 		result = dao.insertReview(conn, rVo);
+		close(conn);
+		return result;
+	}
+	// 장바구니 목록 조회
+	public ArrayList<CartVo> selectCartList(String usId){
+		ArrayList<CartVo> result = null;
+		Connection conn = getConnection();
+		result = dao.selectCartList(conn, usId);
 		close(conn);
 		return result;
 	}

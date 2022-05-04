@@ -37,7 +37,7 @@ public class MyInformationServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("/myinformation doGet");
-		// 로그인..
+		// 로그인
 		UserVo vo = (UserVo) request.getSession().getAttribute("ssUserVo");
 		if (vo == null) { // 로그인이 되지 않은 상황 -> 로그인 해야만 리뷰 작성 가능 ->로그인으로 이동
 			response.sendRedirect("login");
