@@ -63,7 +63,7 @@ public class SeriesReadServlet extends HttpServlet {
 
 			request.setAttribute("svo", svo); // 이동할 jsp파일의 getAttribute와 같은 이름인지 확인
 			UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo"); 
-			if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
+			if(vo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 읽기 가능
 				response.sendRedirect("login");
 				return; 
 			} else {
