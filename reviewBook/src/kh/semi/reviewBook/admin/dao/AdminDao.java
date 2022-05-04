@@ -1,6 +1,7 @@
 package kh.semi.reviewBook.admin.dao;
 
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.admin.vo.NoticeVo;
 
 public class AdminDao {
 	private Statement stmt = null;
@@ -44,10 +46,11 @@ public class AdminDao {
 	
 	public AdminVo loginAdmin(Connection conn, String adId, String adPassword) {
 		AdminVo result = null;
-		String sql = "select ad_password from \"ADMIN\" where ad_id=?";
+		String sql = "select * from \"ADMIN\" where ad_id=? and ad_password=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, adId);
+			pstmt.setString(2, adPassword);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				result = new AdminVo();
@@ -126,6 +129,27 @@ public class AdminDao {
 			e.printStackTrace();
 		}finally {
 			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
+	public int NoticeRegister(Connection conn, NoticeVo nvo) {
+		int result = 0;
+		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"
+				+ "VALUES (SEQ_NT_NO.nextval, ? , ? , DEFAULT, SYSTIMESTAMP,"
+				+ "(SELECT AD_NICKNAME FROM ADMIN WHERE AD_ID =?),?);";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, nvo.getNtTitle());
+			pstmt.setString(2, nvo.getNtContent());
+			pstmt.setString(3, nvo.getAdId());
+			pstmt.setString(4, nvo.getAdId());
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs); 
 			close(pstmt);
 		}
 		return result;

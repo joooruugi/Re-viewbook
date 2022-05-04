@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import kh.semi.reviewBook.admin.dao.AdminDao;
 import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.admin.vo.NoticeVo;
 
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
@@ -44,6 +45,13 @@ public class AdminService {
 		AdminVo result = null;
 		Connection conn = getConnection();
 		result = dao.findidAdmin(conn, adNickname, adEmail);
+		close(conn);
+		return result;
+	}
+	public int NoticeRegister(NoticeVo nvo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.NoticeRegister(conn, nvo);
 		close(conn);
 		return result;
 	}

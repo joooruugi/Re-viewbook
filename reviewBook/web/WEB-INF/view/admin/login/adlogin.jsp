@@ -23,7 +23,7 @@
             <div class="loginadmin_notice">
                 <p class="fontimportant2">관리자 로그인</p>
             </div>
-			<form action="<%=request.getContextPath()%>/login.lo" method="post">
+			<form action="<%=request.getContextPath()%>/adlogin.lo" method="post">
 				<div class="loginadmin_text">
 					<p class="fontnormal">아이디</p>
 					<p class="fontnormal">비밀번호</p>

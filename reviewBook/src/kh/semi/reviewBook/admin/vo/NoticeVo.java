@@ -1,8 +1,8 @@
-package kh.semi.reviewBook.user.notice.vo;
+package kh.semi.reviewBook.admin.vo;
 
 import java.sql.Date;
 
-public class UserNoticeVo {
+public class NoticeVo {
 //	NT_NO	NUMBER	✔	PK	
 //	NT_TITLE	VARCHAR2(300)	✔		
 //	NT_CONTENT	VARCHAR2(3000)	✔		
