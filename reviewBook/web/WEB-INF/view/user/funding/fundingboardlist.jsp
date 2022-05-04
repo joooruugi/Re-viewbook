@@ -26,13 +26,13 @@
 </head>
 <body>
 	<div id="main_wrap">
-		<%@ include file="../../template_header.jsp"%>
+		<%@ include file="../../template_header_login.jsp"%>
 		<div class="bodyfd">
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">펀딩</a></li>
-					<li><a class="sidemenu_item">펀딩진행중</a></li>
-					<li><a class="sidemenu_item">펀딩성공작</a></li>
+					<li><a class="sidemenu_item" href="fundingboardlist">펀딩진행중</a></li>
+					<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
 				</ul>
 			</nav>
 		</div>

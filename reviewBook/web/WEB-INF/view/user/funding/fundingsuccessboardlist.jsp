@@ -39,25 +39,13 @@
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">펀딩</a></li>
-					<li><a class="sidemenu_item">펀딩진행중</a></li>
-					<li><a class="sidemenu_item">펀딩성공작</a></li>
+					<li><a class="sidemenu_item" href="fundingboardlist">펀딩진행중</a></li>
+					<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="contentfd">
 			<div class="contentmainfd">
-				<!-- <div class="serise_search_all">
-					<form method="post" action="seriessearch">
-						<table id="serise_search">
-							<tr>
-								<td><input type="text" id="searchText"
-									placeholder="작가명 또는 작품명을 입력해주세요" name="searchText"
-									maxlength="100"></td>
-								<td><button type="submit" id="search_btn">검색</button></td>
-							</tr>
-						</table>
-					</form>
-				</div> -->
 
 				<!-- TODO 작품 받아와서 슬라이딩으로 구성하기 -->
 				<h2 class="fontimportant fdtag">최근에 펀딩에 성공했어요😘</h2>

@@ -35,11 +35,10 @@
                         </ul>
                         <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="#">펀딩</a>
+                            <a class="nav_item" href="fundingsuccessboardlist">펀딩</a>
                             <ul class="nav_dropdownmenu2">
-                                <li><a class="nav_item" href="#">나의펀딩</a></li>
-                                <li><a class="nav_item" href="#">펀딩진행중</a></li>
-                                <li><a class="nav_item" href="#">펀딩 성공작</a></li>
+                                <li><a class="nav_item" href="fundingboardlist">펀딩진행중</a></li>
+                                <li><a class="nav_item" href="fundingsuccessboardlist">펀딩 성공작</a></li>
                             </ul>
                         </li>
                         </ul>

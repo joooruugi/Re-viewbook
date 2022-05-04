@@ -5,7 +5,7 @@
 }
 /* 사이드메뉴  */
 .sidemenu{
-    width: 20%px;
+    width: 200px;
     /* margin: 20px; */
     text-align: left;
     background-color: #eaf4fc;
@@ -56,6 +56,7 @@
 /* 표 */
 .contentfd{
     width: 80%;
+    height: 60%;
     margin: 0 auto;
     /* margin: 20px; */
     text-align: left;
@@ -101,65 +102,100 @@
 .btn_funding_withdraw {
 	background-color: red;
 }
+
 .btn_funding_donation {
 	background-color: blue;
 }
+
 /* 펀딩성공작 슬라이드 */
 
 .bookimg {
-	width:100px;
-	height:160px;
+	width:100%;
+	height:100%;
 }
 
-    
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
+.swiper {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10px;
+}
 
-      body {
-        /* background: #eee; */
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 10px;
-      }
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+.swiper-slide img {
+ /*  display: block;
+  width: 100%;
+  height: 100%; */
+  object-fit: cover;
+}
   
 .fdtag {
 	margin : 5px;
+}
+/* 펀딩 상세정보 모달창 */
+.modal {
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 펀딩 이동하기 모달창  */
+.btn_funding, .btn_withdraw{
+	width: 100px;
+	height: 30px;
+	color: white;
+}
+
+/* 펀딩 모달창 닫기 */
+.btn_funding_close {
+	width: 100px;
+	height: 30px;
+	border: 0;
+	
+}
+
+/* 펀딩 이동하기 닫기 버튼 정렬 */
+
+.btn_funding_move_close{
+	margin: auto;
+	text-align: center;
+}
+#modal_funding_content p{
+	padding:10px;
+	text-align: center;
+	
+	
+} 
+/* 펀딩 모달창 컨텐츠 감싸는부분*/
+.modal_content {
+	position: relative;
+	top: 250px;
+	width: 500px;
+	height: 270px;
+	border: 1px solid;
+	margin: 0 auto;
+	background-color: white;
 }

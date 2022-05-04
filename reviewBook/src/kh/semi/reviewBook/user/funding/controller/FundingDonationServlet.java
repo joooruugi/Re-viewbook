@@ -50,7 +50,7 @@ public class FundingDonationServlet extends HttpServlet {
 			wbNo = Integer.parseInt(request.getParameter("wbNo"));
 			fdDonation = Integer.parseInt(request.getParameter("fdDonation"));
 		} catch (Exception e) {
-			System.out.println("¼ıÀÚ ¿À·ù");
+			System.out.println("ìˆ«ì ì˜¤ë¥˜");
 		}
 		System.out.println(wbNo);
 		String loginId = "";
