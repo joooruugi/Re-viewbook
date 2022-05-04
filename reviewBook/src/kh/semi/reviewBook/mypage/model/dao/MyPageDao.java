@@ -40,6 +40,7 @@ public class MyPageDao {
 //				SUB_REVIEW          VARCHAR2(500) 
 //				SUB_LIST            VARCHAR2(30)  
 //				AD_ID      NOT NULL VARCHAR2(30) 
+//				SUB_PRICE  NOT NULL NUMBER 
 				result.setAdId(rs.getString("ad_Id"));
 				result.setSubEnd(rs.getDate("sub_End"));
 				result.setSubInf(rs.getString("sub_Inf"));
@@ -48,6 +49,7 @@ public class MyPageDao {
 				result.setSubStart(rs.getDate("sub_Start"));
 				result.setSubYN(rs.getString("sub_yn"));
 				result.setUsId(rs.getString("ad_id"));
+				result.setSubPrice(rs.getInt("sub_price"));
 
 			}
 		} catch (SQLException e) {

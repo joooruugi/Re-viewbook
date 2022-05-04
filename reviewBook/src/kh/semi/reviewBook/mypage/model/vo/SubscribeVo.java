@@ -12,6 +12,7 @@ public class SubscribeVo {
 //	SUB_REVIEW          VARCHAR2(500) 
 //	SUB_LIST            VARCHAR2(30)  
 //	AD_ID      NOT NULL VARCHAR2(30)  
+//	SUB_PRICE  NOT NULL NUMBER   
 	private String usId;
 	private String subInf;
 	private String subYN;
@@ -20,16 +21,43 @@ public class SubscribeVo {
 	private String subReview;
 	private String subList;
 	private String adId;
+	private int subPrice;
 	
+	
+	
+	public SubscribeVo() {
+		super();
+	}
+
+	
+	
+	public SubscribeVo(String usId, String subInf, String subYN, Date subStart, Date subEnd, String subReview,
+			String subList, String adId, int subPrice) {
+		super();
+		this.usId = usId;
+		this.subInf = subInf;
+		this.subYN = subYN;
+		this.subStart = subStart;
+		this.subEnd = subEnd;
+		this.subReview = subReview;
+		this.subList = subList;
+		this.adId = adId;
+		this.subPrice = subPrice;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "SubscribeVo [usId=" + usId + ", subInf=" + subInf + ", subYN=" + subYN + ", subStart=" + subStart
-				+ ", subEnd=" + subEnd + ", subReview=" + subReview + ", subList=" + subList + ", adId=" + adId + "]";
+				+ ", subEnd=" + subEnd + ", subReview=" + subReview + ", subList=" + subList + ", adId=" + adId
+				+ ", subPrice=" + subPrice + "]";
 	}
 
 	public String getUsId() {
 		return usId;
 	}
+
 
 	public void setUsId(String usId) {
 		this.usId = usId;
@@ -89,6 +117,14 @@ public class SubscribeVo {
 
 	public void setAdId(String adId) {
 		this.adId = adId;
+	}
+
+	public int getSubPrice() {
+		return subPrice;
+	}
+
+	public void setSubPrice(int subPrice) {
+		this.subPrice = subPrice;
 	}
 	
 	

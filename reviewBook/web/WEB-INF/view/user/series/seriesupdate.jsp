@@ -14,6 +14,8 @@
 <meta charset="UTF-8">
 <title>RVB 연재 게시글</title>
 </head>
+<!-- ckediter cdn  -->
+<script src="//cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 <body>
 	<%
 		SeriesVo svo = (SeriesVo) request.getAttribute("svo");
@@ -112,6 +114,13 @@ if(vo == null){
 		</div>
 		<%@ include file="../../template_footer.jsp"%>
 	</div>
+
+	<!-- ckediter api 스크립트 -->
+	<script>
+		CKEDITOR.replace('wbContent', {
+			height : 500
+		});
+	</script>
 </body>
 
 

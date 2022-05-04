@@ -40,11 +40,11 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 		//db에 저장하러 가는 코드 
 		request.setCharacterEncoding("euc-kr");
 	 	String encType = "euc-kr";
-		String fileSavePath = "test";
+		String fileSavePath = "FileUpload";
 		//metadata의 realpath get하기
 		String contextPath = request.getContextPath();  
 		System.out.println("contextPath : "+contextPath);
-		String uploadPath = getServletContext().getRealPath("test");
+		String uploadPath = getServletContext().getRealPath("FileUpload");
 		System.out.println("uploadPath : " + uploadPath);
 		//업로드할 폴더 여부 확인 후 없다면 생성하도록 함
 		File path = new File(uploadPath);

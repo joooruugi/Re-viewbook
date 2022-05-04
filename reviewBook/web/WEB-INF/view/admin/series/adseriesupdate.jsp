@@ -10,6 +10,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- ckediter cdn  -->
+<script src="//cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 <meta charset="UTF-8">
 <title>RVB 연재 게시글</title>
 </head>
@@ -80,7 +82,7 @@
 								<tr>
 									<td>첨부파일</td>
 									<td colspan="3"><input type="file" id="wbContentFile"
-										name="wbContentFile"></td>
+										name="wbContentFile" readonly="readonly"></td>
 								</tr>
 								</table>
 								<div id="series_update_funding">
@@ -120,6 +122,13 @@
 		</div>
 		<%@ include file="../../template_footer.jsp"%>
 	</div>
+	
+	<!-- ckediter api 스크립트 -->
+	<script>
+		CKEDITOR.replace('wbContent', {
+			height : 500
+		});
+	</script>
 </body>
 
 

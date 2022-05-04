@@ -121,7 +121,7 @@
 /* 이미지 있는 경우 이미지 사이즈 */
 #series_read_content img{
 	width:400px;
-	height: 400px;
+	height: 300px;
 	margin: auto;
 	display : block;
 }

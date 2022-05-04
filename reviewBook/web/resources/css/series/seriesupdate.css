@@ -101,14 +101,19 @@
 }
 /* 내용 */
  #wbContent{
-    width: 700px;
-    height: 500px;
     resize: none;
     font-size: 1rem;
     margin-bottom: 10px;
 
 } 
-
+/* ckediter api */
+#cke_wbContent{
+	margin-bottom: 30px;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 버튼정렬 */
 #series_update_btn {
