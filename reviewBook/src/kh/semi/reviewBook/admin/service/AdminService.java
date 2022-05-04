@@ -55,4 +55,11 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+	public int NoticeDelete(NoticeVo dnvo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.NoticeDelete(conn, dnvo);
+		close(conn);
+		return result;
+	}
 }

@@ -1,6 +1,7 @@
 package kh.semi.reviewBook.admin.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class NoticeVo {
 //	NT_NO	NUMBER	✔	PK	
@@ -18,6 +19,8 @@ public class NoticeVo {
 	private Date ntDate;
 	private String ntNickname;
 	private String adId;
+	
+	private ArrayList<NoticeVo> nvolist;
 	
 	@Override
 	public String toString() {
@@ -79,6 +82,14 @@ public class NoticeVo {
 
 	public void setAdId(String adId) {
 		this.adId = adId;
+	}
+
+	public ArrayList<NoticeVo> getNvolist() {
+		return nvolist;
+	}
+
+	public void setNvolist(ArrayList<NoticeVo> nvolist) {
+		this.nvolist = nvolist;
 	}
 	
 	

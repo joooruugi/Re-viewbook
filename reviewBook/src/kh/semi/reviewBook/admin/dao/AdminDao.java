@@ -154,4 +154,20 @@ public class AdminDao {
 		}
 		return result;
 	}
+	
+	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
+		int result = 0;
+		String sql ="";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 }
