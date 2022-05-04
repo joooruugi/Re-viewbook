@@ -1,6 +1,8 @@
 package kh.semi.reviewBook.user.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +28,11 @@ public class UserLogoutServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().removeAttribute("ssMemberVo");
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = response.getWriter();
+		writer.println("<script> alert('로그아웃 되었습니다. 또 만나요!'); location.href='\"+/logout+\"';</script>");
+		request.getSession().removeAttribute("ssUserVo");
+		request.getSession().removeAttribute("ssAdminVo");
 		response.sendRedirect(request.getContextPath()+"/");
 	}
 

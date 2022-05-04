@@ -15,6 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Notice Admin</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 <%@ include file="../../../view/template_header.jsp"%>
@@ -53,7 +54,7 @@
             </div>
         </div>
         <div class="adminnotice_btn">
-            <button class="adminnotice_writebtn" onclick="">공지사항 작성</button>
+            <button class="adminnotice_writebtn" onclick="location.href='adminnotice_write'">공지사항 작성</button>
         </div>
         
     </div>

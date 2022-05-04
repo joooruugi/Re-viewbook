@@ -17,7 +17,7 @@ import kh.semi.reviewBook.admin.vo.NoticeVo;
 /**
  * Servlet implementation class AdminNoticeWriteActServlet
  */
-@WebServlet("/AdminNoticeWriteActServlet")
+@WebServlet("/adminnotice_write.lo")
 public class AdminNoticeWriteActServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -71,7 +71,8 @@ public class AdminNoticeWriteActServlet extends HttpServlet {
 		nvo.setNtNickname(ntNickname);
 		int result = new AdminService().NoticeRegister(nvo);
 		if(result == 1) {
-			System.out.println("작성완료? ");
+			System.out.println("작성완료");
+			response.sendRedirect("adnotice");
 		}else {
 			System.out.println("실패하지마");
 			response.sendRedirect("adminnotice_write");

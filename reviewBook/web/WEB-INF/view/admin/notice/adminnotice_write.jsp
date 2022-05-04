@@ -20,7 +20,7 @@
 <body>
 <%-- <%@ include file="../../../view/template_header.jsp"%> --%>
 <%AdminVo vo = (AdminVo)session.getAttribute("ssAdminVo");
- out.print(vo);
+ //out.print(vo);
 if(vo == null){
 %>
 <%@ include file="../../template_header.jsp" %>
@@ -31,7 +31,7 @@ if(vo == null){
         <div class="adminnotice_name">
             <p class="fontimportant">공지사항 작성</p>
         </div>
-        <form name="noticeRegister" method="post">
+        <form name="noticeRegister" method="post" action="<%=request.getContextPath()%>/adminnotice_write.lo">
         <div class="adminnotice_noticewrite">
             <div class="adminnotice_noticewritecontent">
                 <div class="adminnotice_writename">
@@ -40,12 +40,12 @@ if(vo == null){
                 </div>
                 <div class="adminnotice_writecontent">
                     <p class="fontimportant2">내용</p>
-                    <textarea name="ntContent" cols="150" rows="40" placeholder="내용을 입력하세요"></textarea>
+                    <textarea name="ntContent" cols="150" rows="30" placeholder="내용을 입력하세요"></textarea>
                 </div>
             </div>
         </div>
         <div class="adminnotice_btn">
-            <button type="submit" class="adminnotice_writebtn">등록하기</button>
+            <button type="submit" class="adminnotice_writebtn" >등록하기</button>
         </div>
         </form>
         

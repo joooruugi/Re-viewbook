@@ -137,7 +137,7 @@ public class AdminDao {
 		int result = 0;
 		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"
 				+ "VALUES (SEQ_NT_NO.nextval, ? , ? , DEFAULT, SYSTIMESTAMP,"
-				+ "(SELECT AD_NICKNAME FROM ADMIN WHERE AD_ID =?),?);";
+				+ "(SELECT AD_NICKNAME FROM \"ADMIN\" WHERE AD_ID =?),?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, nvo.getNtTitle());
