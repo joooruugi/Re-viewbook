@@ -34,7 +34,7 @@
 </head>
 <body>
 	<div id="main_wrap">
-		<%@ include file="../../template_header.jsp"%>
+		<%@ include file="../../template_header_login.jsp"%>
 		<div class="bodyfd">
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">

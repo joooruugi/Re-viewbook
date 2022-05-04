@@ -69,7 +69,7 @@ public class FundingDao {
 	// 철회하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
 	public int fundingWithdraw(Connection conn, FundingVo vo) {
 		int result = 0;
-		String sql = "delete from funding_manage (where wb_no=? and us_id=?)";
+		String sql = "delete from funding_manage where wb_no=? and us_id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getWbNO());

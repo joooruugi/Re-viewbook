@@ -137,8 +137,7 @@
 		$(".btn_withdraw").click(funding_withdraw);
 		function funding_withdraw() {
 			console.log(this);
-			var wbNoVal = $(this).parents(".fdlist_tb").children(".wbNo")
-					.text();
+			var wbNoVal = $(this).parents(".modal").find(".wbNo").text();
 			console.log(wbNoVal);
 			//location.href='fundingwithdraw?wbNo='+wbNoVal;
 			$.ajax({
@@ -162,8 +161,8 @@
 		$(".btn_funding").click(funding_donation);
 		function funding_donation() {
 			console.log(this);
-			var wbNoVal = $(this).parents(".modal").children(".wbNo").text();
-			var fdDonationVal = $(this).parents(".modal").children(".fdDonation").text();
+			var wbNoVal = $(this).parents(".modal").find(".wbNo").text();
+			var fdDonationVal = $(this).parents(".modal").find(".fdDonation").val();
 			console.log(wbNoVal);
 			console.log(fdDonationVal);
 			alert("sdfsd");
