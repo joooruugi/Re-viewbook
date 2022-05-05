@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.userlist{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    align-items: center;
+}
+.userlist_content{
+    width: 100%;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+}
+.userlist_name{
+    font-size: 23px;
+    margin: 10px;
+}
+.userlisttable{
+    margin: 20px auto;
+    width: 90%;
+}
+.userlist_thead td{
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+.userlisttable .userlist_tr{
+    font-size: 13px;
+    border: 10px solid white;
+}
+.userlisttable .userlist_tr td{
+    margin: 20px;
+}
+
+.userlist_paging{
+    text-align: center;
+    margin: 15px;
+    
+}
+.userlist_pagingbtn{
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal; 
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+}
