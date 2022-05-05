@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="adminnotice_btn">
-            <button type="submit" class="notice_listbtn">목록으로</button>
+            <button type="submit" class="notice_listbtn" onclick="location.href='notice'" >목록으로</button>
             
         </div>
 

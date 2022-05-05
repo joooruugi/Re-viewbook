@@ -1,3 +1,4 @@
+<%@page import="kh.semi.reviewBook.admin.service.AdminService"%>
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -44,11 +45,11 @@
 		<div class="usernotice_name">
 			<p class="fontimportant">공지사항</p>
 		</div>
-		<%
-		ArrayList<NoticeVo> nlist = (ArrayList<NoticeVo>) request.getAttribute("nlist"); 
-		out.print(nlist);
-		if(nlist !=null){
-		%>
+		<%-- <%
+		NoticeView vvo = new AdminService().NoticeView(vvo);
+		out.print("제발");
+		out.print(vvo);
+		%> --%>
 		<div class="usernotice_noticecontent">
 			<div class="usernotice_noticelist">
 				<table class="notice">
@@ -58,14 +59,14 @@
 						<td>작성자</td>
 						<td>작성일</td>
 					</tr>
-					<% for(NoticeVo nvo : nlist){ %>
-					<tr class="notice_line">
-						<td><%=nvo.getNtNo()%></td>
-						<td><%=nvo.getNtTitle()%></td>
-						<td><%=nvo.getNtNickname()%></td>
-						<td><%=nvo.getNtDate()%></td>
-					</tr>
-					<% }} %>
+					
+				<%-- 	 <tr class="notice_line">
+						<td><%=vvo.getNtNo()%></td>
+						<td><%=vvo.getNtTitle()%></td>
+						<td><%=vvo.getNtNickname()%></td>
+						<td><%=vvo.getNtDate()%></td>
+					</tr>  --%>
+					
 					<tr class="notice_line">
 						<td>NO.</td>
 						<td>제목</td>

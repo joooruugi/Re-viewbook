@@ -154,13 +154,36 @@ public class AdminDao {
 		}
 		return result;
 	}
+	public NoticeVo NoticeView(Connection conn, NoticeVo vvo) {
+		NoticeVo result = null;
+		String sql = "select * from notice";
+		System.out.println("여기로 오니");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new NoticeVo();
+				result.setNtNo(rs.getInt("nt_no"));
+				result.setNtTitle(rs.getString("nt_title"));
+				result.setNtContent(rs.getString("nt_content"));
+				result.setNtCnt(rs.getInt("nt_cnt"));
+				result.setNtDate(rs.getDate("nt_date"));
+				result.setNtNickname(rs.getString("nt_nickname"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 	
 	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
 		int result = 0;
 		String sql ="";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

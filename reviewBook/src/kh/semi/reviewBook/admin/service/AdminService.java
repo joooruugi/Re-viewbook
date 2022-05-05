@@ -55,6 +55,13 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+	public NoticeVo NoticeView(NoticeVo vvo) {
+		NoticeVo result = null;
+		Connection conn = getConnection();
+		result = dao.NoticeView(conn, vvo);
+		close(conn);
+		return result;
+	}
 	public int NoticeDelete(NoticeVo dnvo) {
 		int result = 0;
 		Connection conn = getConnection();

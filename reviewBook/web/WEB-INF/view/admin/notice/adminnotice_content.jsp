@@ -23,7 +23,7 @@
 </head>
 <body>
 	<%
-			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+		UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
 		// out.print(vo);
 		if (vo == null && avo == null) {
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="adminnotice_btn">
-            <button type="submit" class="notice_listbtn">목록으로</button>
+            <button type="submit" class="notice_listbtn" onclick="location.href='adnotice'">목록으로</button>
             <button type="submit" class="adminnotice_deletebtn">삭제</button>
         </div>
 

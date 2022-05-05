@@ -46,17 +46,17 @@ public class UserNoticeServlet extends HttpServlet {
 //		private String ntNickname;
 //		private String adId;
 //		
-//		String ntNo = request.getParameter("ntNo");
+//		int ntNo = Integer.parseInt(request.getParameter("ntNo"));
 //		String ntTitle = request.getParameter("ntTitle");
 //		String ntNickname = request.getParameter("ntNickname");
 //		String ntDate = request.getParameter("ntDate");
-//		
-//		UserNoticeVo vo = new UserNoticeVo();
+////		
+//		NoticeVo vo = new NoticeVo();
 ////		vo.setNtNo(ntNo);
 //		vo.setNtTitle(ntTitle);
 //		vo.setNtNickname(ntNickname);
 ////		vo.getNtDate(ntDate);
-//		
+		
 //	}
 
 }
