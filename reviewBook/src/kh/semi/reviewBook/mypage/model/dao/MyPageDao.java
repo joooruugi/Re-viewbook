@@ -284,5 +284,6 @@ public class MyPageDao {
 		System.out.println("dao deletecart result: " + result);
 		return result;
 	}
+	
 
 }

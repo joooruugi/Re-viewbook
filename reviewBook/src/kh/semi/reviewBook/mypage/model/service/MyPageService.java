@@ -88,4 +88,5 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+	
 }
