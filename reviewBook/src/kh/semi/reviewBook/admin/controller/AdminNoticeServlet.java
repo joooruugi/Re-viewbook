@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.admin.vo.NoticeVo;
+
 /**
  * Servlet implementation class AdminNoticeServlet
  */
@@ -27,6 +29,7 @@ public class AdminNoticeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("들어오냐!");
 		request.getRequestDispatcher("WEB-INF/view/admin/notice/adnotice.jsp").forward(request, response);
 	}
 
@@ -34,8 +37,10 @@ public class AdminNoticeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		doGet(request, response);
+//		System.out.println("servlet 들어오냐!");
+//		NoticeVo vo = (NoticeVo)request.getAttribute("NoticeVo");
+////		ArrayList<NoticeVo> nlist = AdminService().NoticeView(NoticeVo);
+//		request.getRequestDispatcher("WEB-INF/view/admin/notice/adnotice.jsp").forward(request, response);
 //	}
 
 }

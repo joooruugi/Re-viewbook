@@ -61,3 +61,12 @@
 .signupuser_first_content .terms_signup .fontnormal{
     margin: 20px;
 }
+.allterms_checkbox{
+	margin:20px;
+	text-align:right;
+}
+.nextto_signupsuer{
+	text-align:center;
+	margin:20px;
+	color:black;
+}

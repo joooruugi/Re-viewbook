@@ -22,7 +22,7 @@
                 <p class="fontimportant main1_leftword2">
                     RVB와의 동행
                 </p>
-                <a class="main1_button1" href="<%=request.getContextPath() %>/signupmain">
+                <a class="main1_button1" href="<%=request.getContextPath() %>/signup">
                     <p class="fontnormal">RVB와 함께하기</p>
                 </a>
                 <a class="main1_button2" href="#">
