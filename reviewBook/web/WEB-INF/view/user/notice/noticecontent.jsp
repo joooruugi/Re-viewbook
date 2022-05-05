@@ -1,7 +1,7 @@
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="kh.semi.reviewBook.admin.vo.NoticeVo"%>
+<%@page import="kh.semi.reviewBook.user.notice.vo.NoticeVo"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/notice/noticecontent.css">
 <link rel="stylesheet"

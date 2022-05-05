@@ -2,7 +2,7 @@
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="kh.semi.reviewBook.admin.vo.NoticeVo"%>
+<%@page import="kh.semi.reviewBook.user.notice.vo.NoticeVo"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/notice/notice.css">
 <link rel="stylesheet"
@@ -29,27 +29,26 @@
 		// out.print(vo);
 		if (vo == null && avo == null) {
 		%>
-		<%@ include file="../../../view/template_header.jsp"%>
-		<%
+	<%@ include file="../../../view/template_header.jsp"%>
+	<%
 			} else if (vo != null) {
 		%>
-		<%@ include file="../../../view/template_header_login.jsp"%>
-		<%
+	<%@ include file="../../../view/template_header_login.jsp"%>
+	<%
 			} else if (avo != null) {
 		%>
-		<%@ include file="../../../view/template_header_adlogin.jsp"%>
-		<%
+	<%@ include file="../../../view/template_header_adlogin.jsp"%>
+	<%
 			}
 		%>
 	<div class="body_usernotice">
 		<div class="usernotice_name">
 			<p class="fontimportant">공지사항</p>
 		</div>
-		<%-- <%
-		NoticeView vvo = new AdminService().NoticeView(vvo);
-		out.print("제발");
-		out.print(vvo);
-		%> --%>
+		<%
+			ArrayList<NoticeVo> nlist = (ArrayList<NoticeVo>) request.getAttribute("nlist");
+		if (nlist != null) {
+		%>
 		<div class="usernotice_noticecontent">
 			<div class="usernotice_noticelist">
 				<table class="notice">
@@ -59,20 +58,17 @@
 						<td>작성자</td>
 						<td>작성일</td>
 					</tr>
-					
-				<%-- 	 <tr class="notice_line">
-						<td><%=vvo.getNtNo()%></td>
-						<td><%=vvo.getNtTitle()%></td>
-						<td><%=vvo.getNtNickname()%></td>
-						<td><%=vvo.getNtDate()%></td>
-					</tr>  --%>
-					
+					<%
+						for (NoticeVo nvo : nlist) {
+					%>
+
 					<tr class="notice_line">
-						<td>NO.</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일</td>
+						<td><%=nvo.getNtNo()%></td>
+						<td><%=nvo.getNtTitle()%></td>
+						<td><%=nvo.getNtNickname()%></td>
+						<td><%=nvo.getNtDate()%></td>
 					</tr>
+					<%} }%>
 				</table>
 			</div>
 		</div>

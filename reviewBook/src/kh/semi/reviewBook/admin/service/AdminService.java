@@ -1,10 +1,11 @@
 package kh.semi.reviewBook.admin.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import kh.semi.reviewBook.admin.dao.AdminDao;
 import kh.semi.reviewBook.admin.vo.AdminVo;
-import kh.semi.reviewBook.admin.vo.NoticeVo;
+import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
@@ -55,12 +56,19 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	public NoticeVo NoticeView(NoticeVo vvo) {
-		NoticeVo result = null;
+//	public NoticeVo NoticeView(NoticeVo vvo) {
+//		NoticeVo result = null;
+//		Connection conn = getConnection();
+//		result = dao.NoticeView(conn, vvo);
+//		close(conn);
+//		return result;
+//	}
+	
+	public ArrayList<NoticeVo> Noticelist(String adId){
 		Connection conn = getConnection();
-		result = dao.NoticeView(conn, vvo);
+		ArrayList<NoticeVo> nlist = dao.Noticelist(conn, adId);
 		close(conn);
-		return result;
+		return nlist;
 	}
 	public int NoticeDelete(NoticeVo dnvo) {
 		int result = 0;

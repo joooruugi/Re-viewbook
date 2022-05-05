@@ -1,4 +1,4 @@
-package kh.semi.reviewBook.admin.vo;
+package kh.semi.reviewBook.user.notice.vo;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class NoticeVo {
 	private String ntTitle;
 	private String ntContent;
 	private int ntCnt;
-	private Date ntDate;
+	private String ntDate;
 	private String ntNickname;
 	private String adId;
 	
@@ -60,11 +60,11 @@ public class NoticeVo {
 		this.ntCnt = ntCnt;
 	}
 
-	public Date getNtDate() {
+	public String getNtDate() {
 		return ntDate;
 	}
 
-	public void setNtDate(Date ntDate) {
+	public void setNtDate(String ntDate) {
 		this.ntDate = ntDate;
 	}
 

@@ -7,9 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import kh.semi.reviewBook.admin.vo.AdminVo;
-import kh.semi.reviewBook.admin.vo.NoticeVo;
+import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
 public class AdminDao {
 	private Statement stmt = null;
@@ -154,21 +155,29 @@ public class AdminDao {
 		}
 		return result;
 	}
-	public NoticeVo NoticeView(Connection conn, NoticeVo vvo) {
-		NoticeVo result = null;
-		String sql = "select * from notice";
-		System.out.println("여기로 오니");
+	public ArrayList<NoticeVo> Noticelist(Connection conn, String usId){
+		ArrayList<NoticeVo> nlist = null;
+//		NT_NO	NUMBER	✔	PK	
+//		NT_TITLE	VARCHAR2(300)	✔		
+//		NT_CONTENT	VARCHAR2(3000)	✔		
+//		NT_CNT	NUMBER	✔		0
+//		NT_DATE	TIMESTAMP	✔		SYSTIMESTAMP
+//		NT_NICKNAME	VARCHAR2(45)	✔		
+//		AD_ID	VARCHAR2(30)	✔	FK	
+		String sql="select * from notice";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				result = new NoticeVo();
-				result.setNtNo(rs.getInt("nt_no"));
-				result.setNtTitle(rs.getString("nt_title"));
-				result.setNtContent(rs.getString("nt_content"));
-				result.setNtCnt(rs.getInt("nt_cnt"));
-				result.setNtDate(rs.getDate("nt_date"));
-				result.setNtNickname(rs.getString("nt_nickname"));
+			
+			nlist = new ArrayList<NoticeVo>();
+			while(rs.next()) {
+				NoticeVo nvo = new NoticeVo();
+				nvo.setNtNo(rs.getInt("nt_no"));
+				nvo.setNtTitle(rs.getString("nt_title"));
+				nvo.setNtNickname(rs.getString("nt_nickname"));
+				nvo.setNtDate(rs.getString("nt_date"));
+				
+				nlist.add(nvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -176,8 +185,32 @@ public class AdminDao {
 			close(rs);
 			close(pstmt);
 		}
-		return result;
+		return nlist;
 	}
+//	public NoticeVo NoticeView(Connection conn, NoticeVo vvo) {
+//		NoticeVo result = null;
+//		String sql = "select * from notice";
+//		System.out.println("여기로 오니");
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			rs = pstmt.executeQuery();
+//			if(rs.next()) {
+//				result = new NoticeVo();
+//				result.setNtNo(rs.getInt("nt_no"));
+//				result.setNtTitle(rs.getString("nt_title"));
+//				result.setNtContent(rs.getString("nt_content"));
+//				result.setNtCnt(rs.getInt("nt_cnt"));
+//				result.setNtDate(rs.getDate("nt_date"));
+//				result.setNtNickname(rs.getString("nt_nickname"));
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return result;
+//	}
 	
 	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
 		int result = 0;

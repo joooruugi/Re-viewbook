@@ -2,13 +2,19 @@ package kh.semi.reviewBook.user.notice.controller;
 
 import java.io.IOException;
 
+
 import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kh.semi.reviewBook.admin.service.AdminService;
+import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
 
 /**
@@ -17,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/notice")
 public class UserNoticeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private AdminService service = new AdminService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,7 +37,12 @@ public class UserNoticeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		System.out.println("들어오냐서블릿에");
+		
+		ArrayList<NoticeVo> nlist = service.Noticelist("adId");
+		System.out.println("nlist = "+nlist);
+		request.setAttribute("nlist", nlist);
+		
 		request.getRequestDispatcher("WEB-INF/view/user/notice/notice.jsp").forward(request, response);
 	}
 

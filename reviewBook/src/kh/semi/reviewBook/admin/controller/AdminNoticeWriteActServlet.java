@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import kh.semi.reviewBook.admin.dao.AdminDao;
 import kh.semi.reviewBook.admin.service.AdminService;
 import kh.semi.reviewBook.admin.vo.AdminVo;
-import kh.semi.reviewBook.admin.vo.NoticeVo;
+import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
 /**
  * Servlet implementation class AdminNoticeWriteActServlet
