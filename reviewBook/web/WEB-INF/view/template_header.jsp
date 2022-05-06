@@ -44,10 +44,10 @@
                         </ul>
                         <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="#">구독</a>
+                            <a class="nav_item" href="subscribemain">구독</a>
                             <ul class="nav_dropdownmenu2">
-                                <li><a class="nav_item" href="#">구독권 안내</a></li>
-                                <li><a class="nav_item" href="#">구독 철회</a></li>
+                                <li><a class="nav_item" href="subscribemain">구독권 안내</a></li>
+                                <li><a class="nav_item" href="subscribecancle">구독 철회</a></li>
                                 <li><a class="nav_item" href="#">QNA</a></li>
                             </ul>
                         </li>

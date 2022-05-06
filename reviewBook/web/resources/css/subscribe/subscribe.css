@@ -1,0 +1,382 @@
+/* 본문 */
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display : flex;
+}
+
+.contentrvb{
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    margin: auto;
+}
+
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height : 200px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_subscribe {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_subscribe .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
+}
+
+.sidemenu_subscribe li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.sidemenu_subscribe li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_subscribe .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+
+
+/* 구독권 intro */
+.sub_intro{
+	margin: 0 auto;
+    width : 70%;
+    height: 270px;
+    border : 2px solid  #bed8ea;
+ 	padding: 30px; 
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px #bed8ea;
+    
+}
+.sub_intro_title p:first-of-type{
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.sub_intro_content {
+	width:180px; height:180px;
+}
+.sub_intro_content_explain{
+	margin-top :10px;
+	text-align: center;
+}
+.sub_intro_content_image, .sub_intro_content_image img {
+	width: 150px;
+	height: 150px;
+}
+
+/* .sub_intro{
+	animation-duration: 3s; 
+	animation-name: slo-slidein;
+} 
+
+@keyframes slo-slidein {
+from {
+margin-top: 6%; width: 100%; opacity: 0;}
+to { 
+	margin-top: 0%; width: 100%; opacity: 1;}
+} 
+ */
+ 
+ /* 구독자 후기 */
+ .sub_review_all{
+ width: 60%;
+ margin: 0 auto;
+ margin-top: 30px;
+ }
+ 
+ .sub_review_all h1{
+ font-size: 1.2rem;
+ font-weight: bold;
+ padding-bottom: 10px;
+ }
+ 
+ /* 구독권 종류 */
+ 
+ .sub_type{
+ margin-top: 50px;
+ }
+ 
+ .sub_type_title{
+ animation-duration: 3s;  
+ animation-name: fadeIn;
+ }
+ @keyframes fadeIn {
+from {
+opacity: 0; transform:translateY(20px);}
+to { 
+	opacity: 3; transform:none; }
+} 
+ 
+.sub_type_title small{
+	color: red;
+}
+ .sub_recommend{
+ position: static;
+ }
+
+ .sub_list1, .sub_list2 {
+ margin-top: 20px;
+ font-size: 1.1rem;
+ line-height: 130%;
+ 
+ }
+ 
+ .sub_list1{
+ float:left; 
+ width:50%;
+ background:  rgba(190,216,234,0.5);
+ overflow: hidden;
+ }
+ .sub_list2{
+ float:right; 
+ width:50%;
+ background: rgba(129,165,215,0.5);
+ overflow: hidden;
+ }
+
+.sub_list1 p , .sub_list2 p{
+	padding: 5px;
+}
+
+.sub_list1 a , .sub_list2 a{
+	text-decoration: underline gray;
+	color: gray;
+}
+
+.sub_list1 p:first-of-type , .sub_list2 p:first-of-type{
+	text-align: center;
+	font-size: 1.2rem;
+}
+.sub_intro_content_all{
+	margin-top:20px;
+	display: flex;
+}
+.sub_intro_content{
+	margin: 0 auto;
+}
+
+
+.sub_type_title p {
+	font-size: 1.5rem;
+}
+
+.sub_recommend{
+	width:70%;
+	padding:20px;
+	margin-top: 30px;
+	line-height: 150%;
+	background-color: #FdF6ec;
+    border: 1px solid #f5debc;
+    border-radius: 30px;
+}
+
+.sub_recommend h1{
+	text-decoration: underline rgb(129,165,215);
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.sub_type{
+	
+	margin-left: 50px;
+}
+
+.sub_type button{
+	display:block;
+	margin: 0 auto;
+	margin-top:10px;
+	margin-bottom: 10px;
+	height: 30px;
+	cursor: pointer;
+}
+
+/* 구독 후 보여지는 화면에 들어가는 css*/
+@keyframes ani {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+body {
+  background: white;
+}
+.circle {
+  z-index: 1;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #bed8ea;
+  animation: ani 3s alternate infinite;
+  margin-bottom: 50px;
+}
+
+.welcome_subscribe{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+}
+.welcome {
+  transform : translateY(-160px);
+  margin-top: 20px;
+  z-index: 2;
+  height: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: block;
+}
+
+.welcome_subscribe p {
+	font-size: 1.2rem;
+	line-height: 120%;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.welcome_subscribe p:first-of-type {
+	font-size: 1.5rem;
+	color:blue;
+	font-weight: bold;
+}
+
+.welcome_subscribe button{
+	margin: 0 auto;
+	display: block;
+	width : 150px;
+	height: 30px;
+}
+
+.welcome_content {
+	padding: 20px;
+	width : 800px;
+	border : 2px solid  #bed8ea;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px #bed8ea;
+}
+
+/* 구독 약관 css */
+.subscribe_term{
+	line-height: 200%;
+}
+
+.subscribe_term_title p{
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.subscribe_term_title_content{
+	margin: 0 0 20px 20px;
+}
+
+/* 구독 철회 css*/
+@keyframes ani {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+body {
+  background: white;
+}
+.circle {
+  z-index: 1;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background:  #9ecdf7;
+  animation: ani 3s alternate infinite;
+  margin-bottom: 50px;
+}
+
+.subscribe_cancle{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+}
+.subscribe_cancle_title {
+  transform : translateY(-160px);
+  margin-top: 20px;
+  z-index: 2;
+  height: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: block;
+}
+
+.subscribe_cancle p {
+	font-size: 1.2rem;
+	line-height: 120%;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.subscribe_cancle p:first-of-type {
+	font-size: 1.5rem;
+	color:blue;
+	font-weight: bold;
+}
+
+.subscribe_cancle button{
+	margin: 0 auto;
+	display: block;
+	width : 150px;
+	height: 30px;
+}
+
+.subscribe_cancle_content {
+	padding: 20px;
+	width : 800px;
+	border : 2px solid  #bed8ea;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px #bed8ea;
+}
+
+.subscribe_cancle_content a{
+	text-decoration: underline gray;
+	color:gray;
+}

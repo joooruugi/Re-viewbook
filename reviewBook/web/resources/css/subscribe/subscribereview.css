@@ -1,0 +1,115 @@
+/* 본문 */
+.bodyrvb {
+	width: 100%;
+	margin: auto;
+	display : flex;
+}
+
+.contentrvb{
+	margin: 30px 0 0 50px;
+	font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 사이드메뉴  */
+.sidemenu {
+	width: 200px;
+	height : 200px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sidemenu_subscribe {
+	margin: 20px;
+	margin-left: 0px;
+}
+
+.sidemenu_subscribe .sidemenu_item {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
+}
+
+.sidemenu_subscribe li {
+	list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.sidemenu_subscribe li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
+}
+
+.sidemenu_subscribe .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+
+
+/* input */
+
+#sub_review_update{
+	padding-left:50px;
+    margin: auto;
+    max-width: 1100px;
+}
+
+#sub_review_update td{
+	padding-right: 30px;
+	vertical-align : middle;
+}
+
+#sub_review_update , #sub_review_update input{
+    font-family: 'SF_HailSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#usId, #subInf, #subYN{
+	margin-bottom: 5px;
+}
+
+/* 버튼정렬 */
+#sub_rivew_update_btn {
+	padding-left:50px;
+	margin: auto;
+	margin-top: 20px;
+
+}
+#update_btn, #update_reset_btn{
+
+    margin: 0 auto;
+    text-align: center;
+    height: 20px;
+    cursor: pointer;
+}
+ 
+ 
+
