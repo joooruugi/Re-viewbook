@@ -53,7 +53,6 @@
 						<td>NO.</td>
 						<td>제목</td>
 						<td>작성자</td>
-						<td>작성일</td>
 					</tr>
 					<%
 						for (NoticeVo nvo : nlist) {
@@ -62,7 +61,6 @@
 						<td><%=nvo.getNtNo()%></td>
 						<td><%=nvo.getNtTitle()%></td>
 						<td><%=nvo.getNtNickname()%></td>
-						<td><%=nvo.getNtDate()%></td>
 					</tr>
 					<%
 						}

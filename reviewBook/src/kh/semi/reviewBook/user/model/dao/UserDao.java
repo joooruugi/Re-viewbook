@@ -137,7 +137,7 @@ public class UserDao {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				result = new UserVo();
-				//정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 ! 
+				result.setUsId(rs.getString("us_id"));
 			}
 			
 		} catch (SQLException e) {
@@ -148,76 +148,6 @@ public class UserDao {
 		}
 		return result;
 	}
-	// 로그인
-//	public int loginUser(Connection conn, String usId, String usPassword) {
-//		String sql = "select us_password from \"USER\" where us_id=?;";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, usId);
-//			rs = pstmt.executeQuery();
-//			if (rs.next()) {
-//				if(rs.getString(1).equals(usPassword)) {
-//					return 1; //로그인 성공
-//				}else {
-//					return 0; //비밀번호 불일치
-//				}
-//			}
-//			return -1; //아이디가 없음
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		return -2; //데이터베이스 오류
-//	}
-
-//	public boolean check(Connection conn, String usId) {
-//		String sql = "select usId form \"USER\"";
-//		try {
-//			pstmt  = conn.prepareStatement(sql);
-//			rs = pstmt.executeQuery();
-//			
-//			while(rs.next()) {
-//				if(rs.getString("usId").equals("usId")) {
-//					return true;
-//				}
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return false;
-//	}
-
-////	회원 수정 
-//	public int updateUser(Connection conn, UserVo vo) {
-//		int result = 0;
-//		String sql = "";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			result = pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(pstmt);
-//		}
-//		return result;
-//	}
-//
-////	회원삭제 
-//	public int deleteUser(Connection conn, UserVo vo) {
-//		int result = 0;
-//		String sql = "";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			result = pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(pstmt);
-//		}
-//		return result;
-//	}
 
 //	회원 목록 
 	public ArrayList<UserVo> listUser(Connection conn) {

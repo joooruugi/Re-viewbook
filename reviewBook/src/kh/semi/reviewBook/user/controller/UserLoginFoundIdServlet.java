@@ -1,29 +1,23 @@
-package kh.semi.reviewBook.admin.controller;
+package kh.semi.reviewBook.user.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kh.semi.reviewBook.admin.service.AdminService;
-import kh.semi.reviewBook.user.model.vo.UserVo;
-
 /**
- * Servlet implementation class AdminUserListServlet
+ * Servlet implementation class UserLoginFoundIdServlet
  */
-@WebServlet("/userlist")
-public class AdminUserListServlet extends HttpServlet {
+@WebServlet("/foundid")
+public class UserLoginFoundIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AdminService service = new AdminService();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminUserListServlet() {
+    public UserLoginFoundIdServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,16 +26,12 @@ public class AdminUserListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("서블릿 확인");
-		ArrayList<UserVo> ulist = service.UserList("usId");
-		System.out.println("ulist = "+ulist);
-		request.setAttribute("ulist", ulist);
-		request.getRequestDispatcher("WEB-INF/view/admin/main/userlist.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/view/user/login/foundid.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+//	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		// TODO Auto-generated method stub
 //		doGet(request, response);

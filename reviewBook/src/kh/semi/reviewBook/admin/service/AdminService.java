@@ -13,7 +13,7 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 public class AdminService {
 	private AdminDao dao = new AdminDao();
 	
-	//°ü¸®ÀÚ È¸¿ø°¡ÀÔ
+	//ê´€ë¦¬ì íšŒì›ê°€ì…
 	public int insertAdmin(AdminVo vo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -21,7 +21,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ ¾ÆÀÌµğ Áßº¹È®ÀÎ
+	//ê´€ë¦¬ì ì•„ì´ë”” ì¤‘ë³µí™•ì¸
 	public int SignupIdCheckAdmin(String adId) {
 		int result;
 		Connection conn = getConnection();
@@ -29,7 +29,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ ´Ğ³×ÀÓ Áßº¹È®ÀÎ
+	//ê´€ë¦¬ì ë‹‰ë„¤ì„ ì¤‘ë³µí™•ì¸
 	public int SignupNicknameCheckAdmin(String adNickname) {
 		int result;
 		Connection conn = getConnection();
@@ -37,7 +37,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ ·Î±×ÀÎ
+	//ê´€ë¦¬ì ë¡œê·¸ì¸
 	public AdminVo loginAdmin(String adId, String adPassword) {
 		AdminVo result = null;
 		Connection conn = getConnection();
@@ -45,7 +45,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ ¾ÆÀÌµğ Ã£±â
+	//ê´€ë¦¬ì ì•„ì´ë”” ì°¾ê¸°
 	public AdminVo findidAdmin(String adNickname, String adEmail) {
 		AdminVo result = null;
 		Connection conn = getConnection();
@@ -53,14 +53,22 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ °øÁö»çÇ× ¸ñ·Ï Á¶È¸
+	//ê´€ë¦¬ì ê³µì§€ì‚¬í•­ ëª©ë¡ ì¡°íšŒ
 	public ArrayList<NoticeVo> Noticelist(String adId){
 		Connection conn = getConnection();
 		ArrayList<NoticeVo> nlist = dao.Noticelist(conn, adId);
 		close(conn);
 		return nlist;
 	}
-	//°ü¸®ÀÚ °øÁö»çÇ× µî·Ï
+	//ê³µì§€ì‚¬í•­ ë‚´ìš© ì¡°íšŒ
+	public NoticeVo ReadNotice(int ntNo) {
+		Connection conn = getConnection();
+		NoticeVo nvo = dao.ReadNotice(conn, ntNo);
+		close(conn);
+		return nvo;
+		
+	}
+	//ê´€ë¦¬ì ê³µì§€ì‚¬í•­ ë“±ë¡
 	public int NoticeRegister(NoticeVo nvo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -68,7 +76,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ °øÁö»çÇ× »èÁ¦
+	//ê´€ë¦¬ì ê³µì§€ì‚¬í•­ ì‚­ì œ
 	public int NoticeDelete(NoticeVo dnvo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -76,7 +84,7 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//°ü¸®ÀÚ È¸¿ø Á¶È¸
+	//ê´€ë¦¬ì íšŒì› ì¡°íšŒ
 	public ArrayList<UserVo> UserList(String usId){
 		Connection conn = getConnection();
 		ArrayList<UserVo> ulist = dao.Userlist(conn, usId);

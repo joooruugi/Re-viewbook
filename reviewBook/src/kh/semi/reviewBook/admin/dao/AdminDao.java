@@ -210,6 +210,32 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//공지사항 내용 조회
+	public NoticeVo ReadNotice(Connection conn, int ntNo) {
+		NoticeVo nvo = null;
+		String sql="select * from notice where NT_NO=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ntNo);
+			rs = pstmt.executeQuery();
+			nvo = new NoticeVo();
+			if(rs.next()) {
+				nvo.setAdId(rs.getString("ad_id"));
+				nvo.setNtCnt(rs.getInt("nt_cnt"));
+				nvo.setNtContent(rs.getString("nt_content"));
+				nvo.setNtDate(rs.getString("nt_date"));
+				nvo.setNtNickname(rs.getString("nt_nickname"));
+				nvo.setNtNo(rs.getInt("nt_no"));
+				nvo.setNtTitle(rs.getString("nt_title"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return nvo;
+	}
 	//회원 목록 조회
 	public ArrayList<UserVo> Userlist(Connection conn, String usId){
 		ArrayList<UserVo> ulist = null;

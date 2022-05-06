@@ -56,17 +56,15 @@
 						<td>NO.</td>
 						<td>제목</td>
 						<td>작성자</td>
-						<td>작성일</td>
 					</tr>
 					<%
 						for (NoticeVo nvo : nlist) {
 					%>
 
 					<tr class="notice_line fontnothing">
-						<td><%=nvo.getNtNo()%></td>
-						<td><%=nvo.getNtTitle()%></td>
+						<td><a href="noticecontent?ntNo=<%=nvo.getNtNo()%>"><%=nvo.getNtNo() %></a></td>
+						<td><a href="noticecontent?ntNo=<%=nvo.getNtNo()%>"><%=nvo.getNtTitle()%></a></td>
 						<td><%=nvo.getNtNickname()%></td>
-						<td><%=nvo.getNtDate()%></td>
 					</tr>
 					<%} }%>
 				</table>

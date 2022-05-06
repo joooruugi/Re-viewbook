@@ -51,12 +51,15 @@ public class UserLoginFindIdActServlet extends HttpServlet {
 		UserVo vo = new UserService().findidUser(usName, usEmail);
 		if (vo == null) { // 아이디 찾기 실패
 			System.out.println("아이디 찾기 실패");
-			response.sendRedirect("findid");
-		}else {//아이디 찾기 성공
 			script.println("<script>");
 			//usId띄워주고 싶은데 어떻게 넣어야하지?
-			script.println("alert('usId')");
-			script.println("location.href='login'");
+			script.println("alert('없는 정보입니다.')");
+			script.println("location.href='findid'");
+			script.println("</script>");
+//			response.sendRedirect("findid");
+		}else {//아이디 찾기 성공
+			script.println("<script>");
+			script.println("location.href='foundid'");
 			script.println("</script>");
 		}
 

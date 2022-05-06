@@ -20,7 +20,6 @@ public class NoticeVo {
 	private String ntNickname;
 	private String adId;
 	
-	private ArrayList<NoticeVo> nvolist;
 	
 	@Override
 	public String toString() {
@@ -84,14 +83,6 @@ public class NoticeVo {
 		this.adId = adId;
 	}
 
-	public ArrayList<NoticeVo> getNvolist() {
-		return nvolist;
-	}
-
-	public void setNvolist(ArrayList<NoticeVo> nvolist) {
-		this.nvolist = nvolist;
-	}
-	
 	
 	
 	
