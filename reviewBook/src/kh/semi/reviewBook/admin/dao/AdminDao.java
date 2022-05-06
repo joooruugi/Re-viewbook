@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
 public class AdminDao {
@@ -17,6 +18,8 @@ public class AdminDao {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
+	
+	//관리자 회원가입
 	public int insertAdmin(Connection conn, AdminVo vo) {
 //		AD_ID	VARCHAR2(30)	✔	PK
 //		AD_EMAIL	VARCHAR2(150)	✔	
@@ -44,7 +47,7 @@ public class AdminDao {
 		}
 		return result;
 	}
-	
+	//관리자 로그인
 	public AdminVo loginAdmin(Connection conn, String adId, String adPassword) {
 		AdminVo result = null;
 		String sql = "select * from \"ADMIN\" where ad_id=? and ad_password=?";
@@ -71,6 +74,7 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//관리자 아이디 중복체크
 	public int SignupIdCheckAdmin(Connection conn, String adId) {
 		int result = -1;
 		String sql = "select ad_id from \"ADMIN\" where ad_id=?";
@@ -93,6 +97,7 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//관리자 닉네임 중복체크
 	public int SignupNicknameCheckAdmin(Connection conn, String adNickname) {
 		int result = -1;
 		String sql = "select ad_nickname from \"ADMIN\" where ad_nickname=?";
@@ -113,6 +118,7 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//관리자 아이디 찾기
 	public AdminVo findidAdmin(Connection conn, String adNickname, String adEmail) {
 		AdminVo result = null;
 		String sql = "select ad_id from \"ADMIN\" where ad_nickname=? and ad_email=?";
@@ -134,6 +140,7 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//관리자 공지사항 등록
 	public int NoticeRegister(Connection conn, NoticeVo nvo) {
 		int result = 0;
 		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"
@@ -155,6 +162,7 @@ public class AdminDao {
 		}
 		return result;
 	}
+	//공지사항 목록 나타내기 (공지사항 갯수 10개 안 넘을 예정 > 페이징 처리 x
 	public ArrayList<NoticeVo> Noticelist(Connection conn, String usId){
 		ArrayList<NoticeVo> nlist = null;
 //		NT_NO	NUMBER	✔	PK	
@@ -187,31 +195,7 @@ public class AdminDao {
 		}
 		return nlist;
 	}
-//	public NoticeVo NoticeView(Connection conn, NoticeVo vvo) {
-//		NoticeVo result = null;
-//		String sql = "select * from notice";
-//		System.out.println("여기로 오니");
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			rs = pstmt.executeQuery();
-//			if(rs.next()) {
-//				result = new NoticeVo();
-//				result.setNtNo(rs.getInt("nt_no"));
-//				result.setNtTitle(rs.getString("nt_title"));
-//				result.setNtContent(rs.getString("nt_content"));
-//				result.setNtCnt(rs.getInt("nt_cnt"));
-//				result.setNtDate(rs.getDate("nt_date"));
-//				result.setNtNickname(rs.getString("nt_nickname"));
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		return result;
-//	}
-	
+	//공지사항 삭제
 	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
 		int result = 0;
 		String sql ="";
@@ -225,5 +209,34 @@ public class AdminDao {
 			close(pstmt);
 		}
 		return result;
+	}
+	//회원 목록 조회
+	public ArrayList<UserVo> Userlist(Connection conn, String usId){
+		ArrayList<UserVo> ulist = null;
+		String sql = "select * from \"USER\"";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			ulist = new ArrayList<UserVo>();
+			while(rs.next()) {
+				UserVo uvo = new UserVo();
+				uvo.setUsId(rs.getString("us_id"));
+				uvo.setUsEmail(rs.getString("us_email"));
+				uvo.setUsPhone(rs.getString("us_phone"));
+				uvo.setUsNickname(rs.getString("us_nickname"));
+				uvo.setUsPassword(rs.getString("us_password"));
+				uvo.setUsGender(rs.getString("us_gender"));
+				uvo.setUsAddress(rs.getString("us_address"));
+				uvo.setUsName(rs.getString("us_name"));
+				uvo.setUsBirth(rs.getString("us_birth"));
+				ulist.add(uvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return ulist;
 	}
 }

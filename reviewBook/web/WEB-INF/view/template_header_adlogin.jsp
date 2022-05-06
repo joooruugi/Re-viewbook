@@ -66,7 +66,7 @@
             </nav>
             <nav class="navbar_right">
                 <input class="searchBox">
-                <a class="navbar_signup">[관리자 화면]</a>
+                <a class="navbar_signup" href="<%=request.getContextPath() %>/admain">[관리자 화면]</a>
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/logout" onclick="adlogoutpop()">로그아웃</a> 
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/adnotice">공지사항</a>
             </nav>

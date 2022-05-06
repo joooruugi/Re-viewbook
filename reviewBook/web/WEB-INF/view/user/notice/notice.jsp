@@ -62,7 +62,7 @@
 						for (NoticeVo nvo : nlist) {
 					%>
 
-					<tr class="notice_line">
+					<tr class="notice_line fontnothing">
 						<td><%=nvo.getNtNo()%></td>
 						<td><%=nvo.getNtTitle()%></td>
 						<td><%=nvo.getNtNickname()%></td>

@@ -17,12 +17,10 @@
     margin: 10px;
 }
 .usernotice_noticecontent{
-    border: 1px solid blue;
     width: 90%;
     margin: 20px auto;
 }
 .notice{
-    border: 1px solid blueviolet;
     width: 100%;
 }
 .notice .notice_thead{
@@ -31,6 +29,7 @@
     border-bottom: 1px solid gray;
 }
 .notice .notice_line{
+	border: 15px solid white;
     font-size: 20px;
     text-align: center;
 }

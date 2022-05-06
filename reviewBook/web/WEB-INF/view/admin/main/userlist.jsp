@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main/userlist.css">
@@ -36,6 +37,10 @@
             <div class="userlist_name">
                 <p class="fontimportant">회원정보 조회</p>
             </div>
+            <%
+			ArrayList<UserVo> ulist = (ArrayList<UserVo>) request.getAttribute("ulist");
+		if (ulist != null) {
+		%>
             <table class="userlisttable">
                 <thead class="userlist_thead fontimportant2">
                     <td>이름</td>
@@ -46,24 +51,19 @@
                     <td>이메일</td>
                     <td>주소</td>
                 </thead>
+                <%
+						for (UserVo uvo : ulist) {
+					%>
                 <tr class="userlist_tr fontnormal">
-                    <td>쥬르기</td>
-                    <td>쥬르기</td>
-                    <td>F</td>
-                    <td>98.08.01</td>
-                    <td>010-2342-2323</td>
-                    <td>adsfd@asdfa.com</td>
-                    <td>어쩌구</td>
+                    <td><%=uvo.getUsName()%></td>
+                    <td><%=uvo.getUsNickname()%></td>
+                    <td><%=uvo.getUsGender()%></td>
+                    <td><%=uvo.getUsBirth()%></td>
+                    <td><%=uvo.getUsPhone()%></td>
+                    <td><%=uvo.getUsEmail()%></td>
+                    <td><%=uvo.getUsAddress()%></td>
                 </tr>
-                <tr class="userlist_tr fontnormal">
-                    <td>이름 들어감</td>
-                    <td>닉네임 들어감</td>
-                    <td>성별 들어감</td>
-                    <td>생년월일 들어감</td>
-                    <td>연락처 들어감</td>
-                    <td>이메일 들어감</td>
-                    <td>주소들어감</td>
-                </tr>
+                	<%} }%>
 
             </table>
         </div>
