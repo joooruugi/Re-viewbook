@@ -75,7 +75,34 @@ public class SeriesService {
 			close(conn);
 			return slist;
 		}
-	
+	//4-1-1.카테고리별 게시글 조회순위 나타내는 메소드(문학) -- 펀딩성공작 페이지
+		public ArrayList<SeriesVo> listSeriesFictionRank () {
+			Connection conn = getConnection();
+			ArrayList<SeriesVo> slist = dao.listSeriesFictionRank(conn);
+			close(conn);
+			return slist;
+		}
+	//4-2-1.카테고리별 게시글 조회순위 나타내는 메소드(정보공유)  -- 펀딩성공작 페이지
+		public ArrayList<SeriesVo> listSeriesInfoRank () {
+			Connection conn = getConnection();
+			ArrayList<SeriesVo> slist = dao.listSeriesInfoRank(conn);
+			close(conn);
+			return slist;
+		}
+	//4-3.카테고리별 게시글 조회순위 나타내는 메소드(일상)  -- 펀딩성공작 페이지
+		public ArrayList<SeriesVo> listSeriesDailyRank () {
+			Connection conn = getConnection();
+			ArrayList<SeriesVo> slist = dao.listSeriesDailyRank(conn);
+			close(conn);
+			return slist;
+		}
+	//4-4.카테고리별 게시글 조회순위 나타내는 메소드(기타)  -- 펀딩성공작 페이지
+		public ArrayList<SeriesVo> listSeriesEtcRank () {
+			Connection conn = getConnection();
+			ArrayList<SeriesVo> slist = dao.listSeriesEtcRank(conn);
+			close(conn);
+			return slist;
+		}
 		
 	//5-6. 게시글 읽기와 댓글 목록을 동시에 나타내는 메소드
 	public SeriesVo readBoardAndReComment(int wbNo) {

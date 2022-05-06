@@ -13,31 +13,22 @@ import kh.semi.reviewBook.user.funding.model.vo.FundingVo;
 public class FundingDao {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	
+
 	// 전체 펀딩진행중 목록 나타내기
 	public ArrayList<SeriesVo> fundingBoardlist(Connection conn, String loginId) {
 		ArrayList<SeriesVo> slist = null;
-//		WB_NO         NOT NULL NUMBER       
-//		US_ID         NOT NULL VARCHAR2(30) 
-//		FD_ACCUMULATE          NUMBER       
-//		FD_DONATION            NUMBER       
-//		FD_DEADLINE   NOT NULL DATE         
-//		FD_LIMIT      NOT NULL NUMBER       
-//		FD_OX         NOT NULL NUMBER       
-//		AD_ID         NOT NULL VARCHAR2(30) 
-//		String sql = "select wb_no, wb_title, fd_accumulate, fd_deadline, fd_ox from funding_manage join writer_bbs using(wb_no) order by fd_ox, fd_deadline";
-		String sql = "select tb_wbbs.*, round(nvl(total_donation, 0)/fd_accumulate, 4)*100   avg_donation"
-				+ "    , (select count(*)  from funding_manage tb_f2 where tb_f2.wb_no = tb_wbbs.wb_no and us_id=?) is_donation"
-				+ "    from writer_bbs tb_wbbs left outer join (select wb_no, sum(fd_donation) total_donation from funding_manage group by wb_no)  tb_f1 on tb_wbbs.wb_no = tb_f1.wb_no"
+		String sql = "select tb_wbbs.*, round(nvl(total_donation, 0)/fd_accumulate, 4)*100   avg_donation "
+				+ "    , (select count(*)  from funding_manage tb_f2 where tb_f2.wb_no = tb_wbbs.wb_no and us_id=?) is_donation "
+				+ "    from writer_bbs tb_wbbs left outer join (select wb_no, sum(fd_donation) total_donation from funding_manage group by wb_no)  tb_f1 on tb_wbbs.wb_no = tb_f1.wb_no "
 				+ "    where fd_ox=1 order by is_donation desc, tb_wbbs.fd_limit, tb_wbbs.wb_no";
-				
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, loginId);
 			rs = pstmt.executeQuery();
-			
+
 			slist = new ArrayList<SeriesVo>();
-			while(rs.next()) {
+			while (rs.next()) {
 				SeriesVo svo = new SeriesVo();
 				svo.setWbNo(rs.getInt("wb_no"));
 				svo.setWbTitle(rs.getString("wb_title"));
@@ -54,7 +45,7 @@ public class FundingDao {
 				svo.setAdId(rs.getString("ad_id"));
 				svo.setIsDonation(rs.getInt("is_donation"));
 				svo.setAvgDonation(rs.getDouble("avg_donation"));
-				
+
 				slist.add(svo);
 			}
 		} catch (SQLException e) {
@@ -64,8 +55,35 @@ public class FundingDao {
 			close(pstmt);
 		}
 		return slist;
-		
+
 	}
+//	// 게시글에 사용자가 후원한 금액 가져오기
+//	public ArrayList<FundingVo> fundingBoardlistDonation(Connection conn, int wbNo, String loginId) {
+//		ArrayList<FundingVo> flist = null;
+//		String sql = "select fd_donation from funding_manage where wb_no=? and us_id=?";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, wbNo);
+//			pstmt.setString(2, loginId);
+//			rs = pstmt.executeQuery();
+//			
+//			flist = new ArrayList<FundingVo>();
+//			while (rs.next()) {
+//				FundingVo fvo = new FundingVo();
+//				fvo.setFdDonation(rs.getInt("fd_donation"));
+//				
+//				flist.add(fvo);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return flist;
+//		
+//	}
+
 	// 철회하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
 	public int fundingWithdraw(Connection conn, FundingVo vo) {
 		int result = 0;
@@ -82,9 +100,10 @@ public class FundingDao {
 		}
 		return result;
 	}
+
 	// 펀딩하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
 	public int fundingDonation(Connection conn, FundingVo vo) {
-		System.out.println("fundingDonation:"+vo);
+		System.out.println("fundingDonation:" + vo);
 		int result = 0;
 		String sql = "insert into  FUNDING_MANAGE values (?,?,?)";
 		try {
@@ -100,4 +119,6 @@ public class FundingDao {
 		}
 		return result;
 	}
+
+
 }

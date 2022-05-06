@@ -29,6 +29,7 @@ public class SeriesVo {
 	private String adId;
 	private int isDonation;
 	private double avgDonation;
+	private String wbImgPath;
 	
 	//게시글 1개 댓글 여러개
 	private ArrayList<SeriesReCommentVo> srvolist;
@@ -40,7 +41,7 @@ public class SeriesVo {
 	
 	public SeriesVo(int wbNo, String wbTitle, String wbContent, int wbCount, String wbDate, String wbWriter,
 			String wbCategory, String usId, int reCommentCnt, int fdAccumulate, String fdDeadline, int fdLimit,
-			int fdOX, String adId, ArrayList<SeriesReCommentVo> srvolist) {
+			int fdOX, String adId, String wbImgPath, ArrayList<SeriesReCommentVo> srvolist) {
 		super();
 		this.wbNo = wbNo;
 		this.wbTitle = wbTitle;
@@ -57,6 +58,7 @@ public class SeriesVo {
 		this.fdOX = fdOX;
 		this.adId = adId;
 		this.srvolist = srvolist;
+		this.wbImgPath = wbImgPath;
 	}
 
 
@@ -68,7 +70,7 @@ public class SeriesVo {
 				+ ", wbDate=" + wbDate + ", wbWriter=" + wbWriter + ", wbCategory=" + wbCategory + ", usId=" + usId
 				+ ", reCommentCnt=" + reCommentCnt + ", fdAccumulate=" + fdAccumulate + ", fdDeadline=" + fdDeadline
 				+ ", fdLimit=" + fdLimit + ", fdOX=" + fdOX + ", adId=" + adId + ", isDonation=" + isDonation
-				+ ", avgDonation=" + avgDonation + ", srvolist=" + srvolist + "]";
+				+ ", avgDonation=" + avgDonation + ", wbImgPath=" + wbImgPath + ", srvolist=" + srvolist + "]";
 	}
 
 
@@ -239,6 +241,16 @@ public class SeriesVo {
 
 	public void setAvgDonation(double avgDonation) {
 		this.avgDonation = avgDonation;
+	}
+
+
+	public String getWbImgPath() {
+		return wbImgPath;
+	}
+
+
+	public void setWbImgPath(String wbImgPath) {
+		this.wbImgPath = wbImgPath;
 	}
 
 

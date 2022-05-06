@@ -242,7 +242,157 @@ public class SeriesDao {
 		}
 		return slist;
 	}
-	
+	// ---- 펀딩성공작 목록 나타내기 ----
+	// 펀딩성공작 태그별(문학)
+	public ArrayList<SeriesVo> listSeriesFictionRank(Connection conn) {
+		ArrayList<SeriesVo> slist = null;
+		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "문학" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			slist = new ArrayList<SeriesVo>();
+			while (rs.next()) {
+				SeriesVo svo = new SeriesVo();
+				svo.setWbNo(rs.getInt("wb_no"));
+				svo.setWbTitle(rs.getString("wb_title"));
+				svo.setWbContent(rs.getString("wb_Content"));
+				svo.setWbCount(rs.getInt("wb_Count"));
+				svo.setWbDate(rs.getString("wb_Date"));
+				svo.setWbWriter(rs.getString("wb_Writer"));
+				svo.setWbCategory(rs.getString("wb_Category"));
+				svo.setUsId(rs.getString("us_Id"));
+				svo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				svo.setFdDeadline(rs.getString("fd_deadline"));
+				svo.setFdLimit(rs.getInt("fd_limit"));
+				svo.setFdOX(rs.getInt("fd_ox"));
+				svo.setAdId(rs.getString("ad_id"));
+				svo.setWbImgPath(rs.getString("wb_imgpath"));
+				slist.add(svo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return slist;
+	}
+
+	// 펀딩성공작 태그별(정보공유)
+	public ArrayList<SeriesVo> listSeriesInfoRank(Connection conn) {
+		ArrayList<SeriesVo> slist = null;
+		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "정보공유" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			slist = new ArrayList<SeriesVo>();
+			while (rs.next()) {
+				SeriesVo svo = new SeriesVo();
+				svo.setWbNo(rs.getInt("wb_no"));
+				svo.setWbTitle(rs.getString("wb_title"));
+				svo.setWbContent(rs.getString("wb_Content"));
+				svo.setWbCount(rs.getInt("wb_Count"));
+				svo.setWbDate(rs.getString("wb_Date"));
+				svo.setWbWriter(rs.getString("wb_Writer"));
+				svo.setWbCategory(rs.getString("wb_Category"));
+				svo.setUsId(rs.getString("us_Id"));
+				svo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				svo.setFdDeadline(rs.getString("fd_deadline"));
+				svo.setFdLimit(rs.getInt("fd_limit"));
+				svo.setFdOX(rs.getInt("fd_ox"));
+				svo.setAdId(rs.getString("ad_id"));
+				svo.setWbImgPath(rs.getString("wb_imgpath"));
+				slist.add(svo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return slist;
+	}
+			
+	// 펀딩성공작 태그별(일상)
+	public ArrayList<SeriesVo> listSeriesDailyRank(Connection conn) {
+		ArrayList<SeriesVo> slist = null;
+		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "정보공유" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			slist = new ArrayList<SeriesVo>();
+			while (rs.next()) {
+				SeriesVo svo = new SeriesVo();
+				svo.setWbNo(rs.getInt("wb_no"));
+				svo.setWbTitle(rs.getString("wb_title"));
+				svo.setWbContent(rs.getString("wb_Content"));
+				svo.setWbCount(rs.getInt("wb_Count"));
+				svo.setWbDate(rs.getString("wb_Date"));
+				svo.setWbWriter(rs.getString("wb_Writer"));
+				svo.setWbCategory(rs.getString("wb_Category"));
+				svo.setUsId(rs.getString("us_Id"));
+				svo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				svo.setFdDeadline(rs.getString("fd_deadline"));
+				svo.setFdLimit(rs.getInt("fd_limit"));
+				svo.setFdOX(rs.getInt("fd_ox"));
+				svo.setAdId(rs.getString("ad_id"));
+				svo.setWbImgPath(rs.getString("wb_imgpath"));
+				slist.add(svo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return slist;
+	}
+	// 펀딩성공작 태그별(기타)
+	public ArrayList<SeriesVo> listSeriesEtcRank(Connection conn) {
+		ArrayList<SeriesVo> slist = null;
+		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "정보공유" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			slist = new ArrayList<SeriesVo>();
+			while (rs.next()) {
+				SeriesVo svo = new SeriesVo();
+				svo.setWbNo(rs.getInt("wb_no"));
+				svo.setWbTitle(rs.getString("wb_title"));
+				svo.setWbContent(rs.getString("wb_Content"));
+				svo.setWbCount(rs.getInt("wb_Count"));
+				svo.setWbDate(rs.getString("wb_Date"));
+				svo.setWbWriter(rs.getString("wb_Writer"));
+				svo.setWbCategory(rs.getString("wb_Category"));
+				svo.setUsId(rs.getString("us_Id"));
+				svo.setFdAccumulate(rs.getInt("fd_accumulate"));
+				svo.setFdDeadline(rs.getString("fd_deadline"));
+				svo.setFdLimit(rs.getInt("fd_limit"));
+				svo.setFdOX(rs.getInt("fd_ox"));
+				svo.setAdId(rs.getString("ad_id"));
+				svo.setWbImgPath(rs.getString("wb_imgpath"));
+				slist.add(svo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return slist;
+	}
 
 	//5. 게시글 읽기
 	public SeriesVo readSeries (Connection conn, int wbNo) {

@@ -20,6 +20,13 @@ public class FundingService {
 		close(conn);
 		return svolist;
 	}
+//	// 게시글에 사용자가 후원한 금액 가져오기
+//	public ArrayList<FundingVo> fundingBoardlistDonation(int wbNo, String loginId) {
+//		Connection conn = getConnection();
+//		ArrayList<FundingVo> fvolist = dao.fundingBoardlistDonation(conn, wbNo, loginId);
+//		close(conn);
+//		return fvolist;
+//	}
 	
 	// 철회하기 기능
 	public int fundingWithdraw(FundingVo vo) {
@@ -36,5 +43,5 @@ public class FundingService {
 		close(conn);
 		return result;
 	}
-
+	
 }

@@ -10,8 +10,6 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/all/body.css">
-<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main/main.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/funding/funding.css">
@@ -35,7 +33,6 @@
 					<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
 				</ul>
 			</nav>
-		</div>
 		<%
 			ArrayList<SeriesVo> slist = (ArrayList<SeriesVo>) request.getAttribute("slist");
 		if (slist != null) {
@@ -61,6 +58,7 @@
 						<td><%=svo.getFdDeadline()%></td>
 						<%
 							if (svo.getIsDonation() == 1) {
+								FundingVo fvo = new FundingVo();
 						%>
 						<td><button class="btn_funding_withdraw button1">철회하기</button>
 							<div class="modal">
@@ -76,7 +74,7 @@
 										<p>
 											카테고리 :
 											<%=svo.getWbCategory()%></p>
-										<p><%=svo.getFdLimit()%>원 후원하셨습니다.</p>
+										<p><%=fvo.getFdDonation()%>원 후원하셨습니다.</p>
 									</div>
 									<div class="btn_funding_move_close">
 										<button class="button2 btn_withdraw">철회하기</button>
@@ -129,6 +127,7 @@
 				}
 			%>
 			<div class="contentpgfd">페이징</div>
+		</div>
 		</div>
 		<%@ include file="../../template_footer.jsp"%>
 	</div>
