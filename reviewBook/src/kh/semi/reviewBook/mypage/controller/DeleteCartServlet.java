@@ -73,7 +73,7 @@ public class DeleteCartServlet extends HttpServlet {
 		} else {
 			PrintWriter out = response.getWriter();
 			out.print("<script language='javascript'>");
-			out.print("alert('장바구니 삭제가 완료되었습니다.'); location.href='" + request.getContextPath() + "'");
+			out.print("alert('장바구니 삭제가 완료되었습니다.'); location.href='" + request.getContextPath() + "/deletecart'");
 			out.print("</script>");
 			out.flush();
 		}

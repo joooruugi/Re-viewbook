@@ -89,14 +89,12 @@ public class MyInformationServlet extends HttpServlet {
 			// 정보수정 버튼 눌렀을 때 알림창 띄우기
 			if (result == 1) {
 				PrintWriter out = response.getWriter();
-				response.setContentType("text/html; charset=utf-8");
 				out.print("<script language='javascript'>");
-				out.print("alert('정보 수정이 완료되었습니다.'); location.href='" + request.getContextPath() + "'");
+				out.print("alert('정보 수정이 완료되었습니다.'); location.href='" + request.getContextPath() + "/myinformation'");
 				out.print("</script>");
 				out.flush();
 			} else {
 				PrintWriter out = response.getWriter();
-				response.setContentType("text/html; charset=utf-8");
 				out.print("<script language='javascript'>");
 				out.print("alert('정보 수정에 실패하였습니다.'); history.back();");
 				out.print("</script>");

@@ -14,7 +14,6 @@ import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
-import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
 public class MyPageDao {
 	private Statement stmt = null;

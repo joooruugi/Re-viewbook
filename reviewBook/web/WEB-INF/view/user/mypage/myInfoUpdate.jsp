@@ -16,7 +16,6 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보 수정</title>
-<script src="<%=request.getContextPath()%>/resources/js/signlogin/js_signup.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
@@ -52,8 +51,8 @@
 							<p class="fontnormal signup_infoname">전화번호</p>
 						</td>
 						<td class="signupuser_input_input"><input type="tel"
-							name="usPhone" class="signup_infoinput" id="usPhone"
-							required="required" placeholder="000-0000-0000로 입력 바랍니다."></td>
+							name="usPhone" class="signup_infoinput" id="usPhone" value="${myinfovo.usPhone}"
+							required pattern="\d{3}\-\d{4}\-\d{4}" title="000-0000-0000 형식으로 입력 바랍니다."></td>
 					</tr>
 					<tr>
 						<td class="signupuser_input_text">
@@ -85,7 +84,7 @@
 			var phone = $("#usPhone").val().trim();
 			var regExpPhone = /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/; // 숫자3-숫자3,4-숫자4
 			if (!regExpPhone.test(phone)) {
-				alert("전화번호 입력란에는 000-0000-0000 형식");
+				alert("전화번호 입력란에는 000-0000-0000 형식으로 입력해주세요.");
 				$("#usPhone").focus();
 				return false;
 			}
@@ -97,6 +96,9 @@
 		});
 		
 		// input박스 클릭했을 때 기존정보 없애줌
+		 $("#usPhone").click(function(){
+			 $("#usPhone").val("");
+		 });
 		 $("#usEmail").click(function(){
 			 $("#usEmail").val("");
 		 });

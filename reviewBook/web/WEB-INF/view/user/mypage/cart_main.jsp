@@ -86,8 +86,7 @@
 	<script>
 	{
 		$(".btn_delete").on("click", deletecartHandler);
-		//$(".close").on("click", closeModalHandler);
-		//$(".modal").on("click", closeModalWindowHandler);
+		$(".btn_buy").on("click", buycartHandler);
 	}
 	function deletecartHandler() {
 		console.log(this); // <button 엘리먼트
@@ -96,6 +95,10 @@
 		var bkNoVal= $(this).parents(".cartlisy_td").find(".bkNo").text();
 		location.href = "deletecart?bkNo="+bkNoVal;
 	}
+	function buycartHandler() {
+		alert("서비스 준비중입니다.");
+	}
+	
 	</script>
 	
 ${cVo }

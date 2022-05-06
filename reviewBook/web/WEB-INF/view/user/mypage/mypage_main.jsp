@@ -11,6 +11,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main/main.css">
 <%@page import="kh.semi.reviewBook.mypage.model.vo.BuyListVo"%>
+<%@page import="kh.semi.reviewBook.mypage.model.vo.SubscribeVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -88,7 +89,25 @@
 	<%
 		}
 	%>
-
+	
+	
+	<div>
+	<%
+		SubscribeVo vo = (SubscribeVo) request.getAttribute("sVo");
+	if (vo.getSubYN().equals('n')) {
+	%>
+	<p><%=vo.getUsId()%>님 반갑습니다! 구독중인 구독권이 없습니다.</p>
+	<%
+		} else {
+	%>	
+	<p><%=vo.getUsId()%>님 반갑습니다!</p>
+	<p>구독중인 구독권 : <%=vo.getSubInf()%></p>
+	<p>구독 시작일 : <%=vo.getSubStart()%></p>
+	<hr>
+	<%
+	}
+	%>
+	</div>
 
 
 

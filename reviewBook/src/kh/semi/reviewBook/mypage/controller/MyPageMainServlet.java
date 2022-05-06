@@ -46,12 +46,10 @@ public class MyPageMainServlet extends HttpServlet {
 		SubscribeVo sVo = new MyPageService().selectSubscribe(vo.getUsId());
 		System.out.println("servlet: "+sVo);
 		ArrayList<BuyListVo> bLVo = new MyPageService().selectBuyList(vo.getUsId());
-//		ArrayList<OrderVo> myOrderlist = new OrderService().listOrder();
 		
 		request.setAttribute("sVo", sVo);
 		request.setAttribute("bLVo", bLVo);
 		
-//		request.setAttribute("myOrderlist", myOrderlist);
 		
 		request.getRequestDispatcher("WEB-INF/view/user/mypage/mypage_main.jsp").forward(request, response);
 	}
