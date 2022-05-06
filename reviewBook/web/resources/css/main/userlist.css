@@ -1,4 +1,7 @@
 @charset "UTF-8";
+a{
+	color:black;
+}
 .userlist{
     width: 80%;
     margin: 20px auto;

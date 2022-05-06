@@ -17,6 +17,7 @@
 <head>
 <meta charset="UTF-8">
 <title>RVB Admin</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 <%
@@ -36,6 +37,7 @@
         <div class="userlist_content">
             <div class="userlist_name">
                 <p class="fontimportant">회원정보 조회</p>
+                <input type="text"><button type="submit" value="검색">검색</button>
             </div>
             <%
 			ArrayList<UserVo> ulist = (ArrayList<UserVo>) request.getAttribute("ulist");
@@ -54,7 +56,7 @@
                 <%
 						for (UserVo uvo : ulist) {
 					%>
-                <tr class="userlist_tr fontnormal">
+                <tr class="userlist_tr fontnormal user_board">
                     <td><%=uvo.getUsName()%></td>
                     <td><%=uvo.getUsNickname()%></td>
                     <td><%=uvo.getUsGender()%></td>
@@ -69,8 +71,20 @@
         </div>
     </div>
     <div class="userlist_paging">
-        <button class="userlist_pagingbtn">아마 페이징</button>
+        <button type="button" id="userlist_loadmore" class="userlist_pagingbtn">더보기</button>
     </div>
     <%@ include file="../../../view/template_footer.jsp"%>
+    <script>
+    $(function(){
+        $(".user_board").slice(0, 2).show(); 
+        $("#userlist_loadmore").click(function(e){
+            e.preventDefault();
+            $(".user_board:hidden").slice(0, 2).show(); 
+            if($(".user_board:hidden").length == 0){ 
+            	 alert("다음 페이지는 마지막 페이지 입니다."); 
+            }
+        });
+    });
+    </script>
 </body>
 </html>

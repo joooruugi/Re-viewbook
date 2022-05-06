@@ -198,9 +198,10 @@ public class AdminDao {
 	//공지사항 삭제
 	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
 		int result = 0;
-		String sql ="";
+		String sql ="delete from * where nt_no=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, dnvo.getNtNo());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -265,4 +266,34 @@ public class AdminDao {
 		}
 		return ulist;
 	}
+	//관리자 회원 검색
+		public ArrayList<UserVo> SearchUser(Connection conn, String searchUser){
+			ArrayList<UserVo> ulist = null;
+			String sql = "";
+			try {
+				pstmt = conn.prepareCall(sql);
+				rs = pstmt.executeQuery();
+				ulist = new ArrayList<UserVo>();
+				while(rs.next()) {
+					UserVo uvo = new UserVo();
+					uvo.setUsId(rs.getString("us_id"));
+					uvo.setUsEmail(rs.getString("us_email"));
+					uvo.setUsPhone(rs.getString("us_phone"));
+					uvo.setUsNickname(rs.getString("us_nickname"));
+					uvo.setUsPassword(rs.getString("us_password"));
+					uvo.setUsGender(rs.getString("us_gender"));
+					uvo.setUsAddress(rs.getString("us_address"));
+					uvo.setUsName(rs.getString("us_name"));
+					uvo.setUsBirth(rs.getString("us_birth"));
+					ulist.add(uvo);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				close(rs);
+				close(pstmt);
+			}
+			return ulist;
+			
+		}
 }

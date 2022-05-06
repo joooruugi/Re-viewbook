@@ -81,7 +81,7 @@
          <%}%>
         <div class="adminnotice_btn">
             <button type="submit" class="notice_listbtn" onclick="location.href='adnotice'">목록으로</button>
-            <button type="submit" class="adminnotice_deletebtn">삭제</button>
+            <button type="submit" class="adminnotice_deletebtn" onclick="location.href='adminnotice_content.lo'">삭제</button>
         </div>
 
     </div>

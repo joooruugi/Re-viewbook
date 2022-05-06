@@ -67,6 +67,7 @@ public class AdminService {
 		close(conn);
 		return nvo;
 	}
+	
 	//관리자 공지사항 등록
 	public int NoticeRegister(NoticeVo nvo) {
 		int result = 0;
@@ -87,6 +88,13 @@ public class AdminService {
 	public ArrayList<UserVo> UserList(String usId){
 		Connection conn = getConnection();
 		ArrayList<UserVo> ulist = dao.Userlist(conn, usId);
+		close(conn);
+		return ulist;
+	}
+	//관리자 회원 검색
+	public ArrayList<UserVo> SearchUser(String searchUser){
+		Connection conn = getConnection();
+		ArrayList<UserVo> ulist = dao.SearchUser(conn, searchUser);
 		close(conn);
 		return ulist;
 	}
