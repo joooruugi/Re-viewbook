@@ -22,7 +22,6 @@
 <title>RVB</title>
 </head>
 <body>
-<%NoticeVo nvo = (NoticeVo)request.getAttribute("nvo");%>
 	<%
 			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
@@ -46,8 +45,8 @@
             <p class="fontimportant">공지사항</p>
         </div>
         <%
-			ArrayList<NoticeVo> nlist = (ArrayList<NoticeVo>) request.getAttribute("nlist");
-		if (nlist != null) {
+			NoticeVo nvo = (NoticeVo)request.getAttribute("nvo");
+		if (nvo != null) {
 		%>
 		
         <div class="notice_noticecontent">

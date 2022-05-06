@@ -58,8 +58,8 @@
 						for (NoticeVo nvo : nlist) {
 					%>
 					<tr class="notice_line">
-						<td><%=nvo.getNtNo()%></td>
-						<td><%=nvo.getNtTitle()%></td>
+						<td><a href="noticecontent?ntNo=<%=nvo.getNtNo()%>"><%=nvo.getNtNo() %></a></td>
+						<td><a href="noticecontent?ntNo=<%=nvo.getNtNo()%>"><%=nvo.getNtTitle()%></a></td>
 						<td><%=nvo.getNtNickname()%></td>
 					</tr>
 					<%

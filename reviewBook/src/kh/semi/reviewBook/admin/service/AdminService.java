@@ -66,7 +66,6 @@ public class AdminService {
 		NoticeVo nvo = dao.ReadNotice(conn, ntNo);
 		close(conn);
 		return nvo;
-		
 	}
 	//관리자 공지사항 등록
 	public int NoticeRegister(NoticeVo nvo) {

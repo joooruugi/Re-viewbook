@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 a{
 	color:black;
@@ -39,6 +40,7 @@ a{
 }
 
 .notice .notice_line {
+	border:15px solid white;
     font-size: 20px;
     text-align: center;
 }

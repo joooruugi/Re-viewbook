@@ -32,23 +32,12 @@ public class UserNoticeContentServlet extends HttpServlet {
 		System.out.println("do Get /notice");
 		
 		String ntNostr = request.getParameter("ntNo");
+		int ntNo = Integer.parseInt(ntNostr);
 		System.out.println("ntNo: "+ntNostr);
-		int ntNo = 0;
-		try {
-			ntNo = Integer.parseInt(ntNostr);
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		}
-		if(ntNo <1) {
-			response.sendRedirect("notice");
-			System.out.println("ntNo <1");
-		}
+		
 		NoticeVo nvo = new AdminService().ReadNotice(ntNo);
-		System.out.println(nvo);
-		if(nvo == null) {
-			response.sendRedirect("notice");
-			return;
-		}
+		System.out.println("nvo ="+nvo);
+		request.setAttribute("nvo", nvo);
 		
 		request.getRequestDispatcher("WEB-INF/view/user/notice/noticecontent.jsp").forward(request, response);
 	}
