@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.book.model.vo.BookVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
@@ -305,21 +306,6 @@ public class AdminDao {
 		}
 		return ulist;
 	}
-//	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
-//		int result = 0;
-//		String sql = "delete from \"NOTICE\" where nt_no=?";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, dnvo.getNtNo());
-//			result = pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		return result;
-//	}
 	//회원 삭제
 	public int DeleteUser(Connection conn, String usName) {
 		int result = 0;
@@ -369,6 +355,49 @@ public class AdminDao {
 			close(pstmt);
 		}
 		return ulist;
-
+	}
+//	public int NoticeRegister(Connection conn, NoticeVo nvo) {
+//		int result = 0;
+//		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"
+//				+ "VALUES (SEQ_NT_NO.nextval, ? , ? , DEFAULT, SYSTIMESTAMP,"
+//				+ "(SELECT AD_NICKNAME FROM \"ADMIN\" WHERE AD_ID =?),?)";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, nvo.getNtTitle());
+//			pstmt.setString(2, nvo.getNtContent());
+//			pstmt.setString(3, nvo.getAdId());
+//			pstmt.setString(4, nvo.getAdId());
+//			result = pstmt.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return result;
+//	}
+	//관리자 도서 게시
+	//Publishdate sql에 자료형 변경 필요 TODO
+	public int BookRegister(Connection conn, BookVo bvo) {
+		int result = 0;
+		String sql = "insert into book (bk_no, bk_title, bk_content, bk_img, bk_price, bk_writer, gn_no, bk_index) values (seq_bk_no.nextval, ?, ?, ?, ?, ?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bvo.getBkNo());
+			pstmt.setString(2, bvo.getBkTitle());
+			pstmt.setString(3, bvo.getBkContent());
+			pstmt.setString(4, bvo.getBkImg());
+			pstmt.setInt(5, bvo.getBkPrice());
+			pstmt.setString(6, bvo.getBkWriter());
+			pstmt.setInt(7, bvo.getGnNo());
+			pstmt.setString(8, bvo.getBkIndex());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}return result;
 	}
 }

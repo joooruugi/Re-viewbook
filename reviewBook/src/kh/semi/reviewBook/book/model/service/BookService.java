@@ -26,14 +26,14 @@ public class BookService {
 //		close(conn);
 //		return blist;
 //	}
-	//√• ∏Ò∑œ
+	//Ï±Ö Î™©Î°ù
 	public ArrayList<BookVo> BookList(){
 		Connection conn = getConnection();
 		ArrayList<BookVo> blist = new BookDao().BookList(conn);
 		close(conn);
 		return blist;
 	}
-	//√• ªÛºº¡∂»∏
+	//Ï±Ö ÏÉÅÏÑ∏Ï°∞Ìöå
 	public BookVo BookContent(int bkNo) {
 		Connection conn = getConnection();
 		BookVo bvo = new BookDao().BookContent(conn, bkNo);

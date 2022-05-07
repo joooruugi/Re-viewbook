@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import kh.semi.reviewBook.admin.dao.AdminDao;
 import kh.semi.reviewBook.admin.vo.AdminVo;
+import kh.semi.reviewBook.book.model.vo.BookVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
@@ -112,6 +113,21 @@ public class AdminService {
 		ArrayList<UserVo> ulist = dao.SearchUser(conn, searchUser);
 		close(conn);
 		return ulist;
+	}
+//	public int NoticeRegister(NoticeVo nvo) {
+//		int result = 0;
+//		Connection conn = getConnection();
+//		result = dao.NoticeRegister(conn, nvo);
+//		close(conn);
+//		return result;
+//	}
+	//관리자 도서 게시
+	public int BookRegister(BookVo bvo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.BookRegister(conn, bvo);
+		close(conn);
+		return result;
 	}
 	
 }

@@ -123,7 +123,7 @@ public class BookDao {
 				bvo.setGnNo(rs.getInt("gn_no"));
 				bvo.setBkPrice(rs.getInt("bk_price"));
 				bvo.setBkImg(rs.getString("bk_img"));
-				bvo.setBkPublishdate(rs.getDate("bk_publishdate"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
 				bvo.setBkRv(rs.getInt("bk_rv"));
 				bvo.setBkSales(rs.getInt("bk_sales"));
 				bvo.setBkIndex(rs.getString("bk_index"));
@@ -152,7 +152,7 @@ public class BookDao {
 				bvo.setBkTitle(rs.getString("bk_title"));
 				bvo.setBkWriter(rs.getString("bk_writer"));
 				bvo.setBkPrice(rs.getInt("bk_price"));
-				bvo.setBkPublishdate(rs.getDate("bk_publishdate"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
 				bvo.setBkIndex(rs.getString("bk_index"));
 				bvo.setBkContent(rs.getString("bk_content"));
 			}

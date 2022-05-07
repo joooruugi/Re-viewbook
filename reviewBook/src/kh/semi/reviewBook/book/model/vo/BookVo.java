@@ -20,7 +20,7 @@ public class BookVo {
 	private String bkImg;
 	private int bkPrice;
 	private String bkWriter;
-	private Date bkPublishdate;
+	private String bkPublishdate;
 	private int bkRating;
 	private int bkRv;
 	private int bkSales;
@@ -76,11 +76,11 @@ public class BookVo {
 		this.bkWriter = bkWriter;
 	}
 
-	public Date getBkPublishdate() {
+	public String getBkPublishdate() {
 		return bkPublishdate;
 	}
 
-	public void setBkPublishdate(Date bkPublishdate) {
+	public void setBkPublishdate(String bkPublishdate) {
 		this.bkPublishdate = bkPublishdate;
 	}
 
