@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.body_bookcontent {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.bookcontent_name {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 3px solid gray;
+}
+.book_bookcontent{
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+}
+.book_bookcontenthead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    
+}
+.book_bookcontentname p{
+    font-size: 20px;
+    text-align: center;
+}
+.book_bookcontentright{
+    border: 2px solid #9ecdf7;
+    border-radius: 10px;
+    float: right;
+    margin: 10px;
+}
+.book_bookcontent_div{
+    border: 1px solid gray;
+}
+.book_bookcontentnick p, .book_bookcontentprice p, .book_bookcontentpublishdate p, .book_bookcontentindex p{
+    margin: 10px;
+}
+.book_bookcontentbody{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #b6dcfd;
+    border-radius: 15px;
+    text-align: center;
+}
+.book_bookcontentbody{
+    margin: 10px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.bookcontentname{
+    margin: 10px;
+    font-size: 20px;
+}
+.bookcontentcontent{
+    font-size: 18px;
+}
+
+.booklist_btn {
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.booklist_btn button {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal; 
+    font-style: normal;
+    background-color: #9ecdf7;
+    border: 1px solid #bed8ea;
+    border-radius: 10px;
+    font-size: 20px;
+}
+

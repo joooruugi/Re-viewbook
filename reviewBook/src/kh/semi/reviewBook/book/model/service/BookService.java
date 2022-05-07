@@ -19,12 +19,26 @@ public class BookService {
 		return blist;
 	}
 
-	public ArrayList<BookVo> booklist() {
-		ArrayList<BookVo> blist = null;
+//	public ArrayList<BookVo> booklist() {
+//		ArrayList<BookVo> blist = null;
+//		Connection conn = getConnection();
+//		blist = new BookDao().booklist(conn);
+//		close(conn);
+//		return blist;
+//	}
+	//책 목록
+	public ArrayList<BookVo> BookList(){
 		Connection conn = getConnection();
-		blist = new BookDao().booklist(conn);
+		ArrayList<BookVo> blist = new BookDao().BookList(conn);
 		close(conn);
 		return blist;
+	}
+	//책 상세조회
+	public BookVo BookContent(int bkNo) {
+		Connection conn = getConnection();
+		BookVo bvo = new BookDao().BookContent(conn, bkNo);
+		close(conn);
+		return bvo;
 	}
 	
 }

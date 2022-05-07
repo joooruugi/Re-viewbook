@@ -1,12 +1,12 @@
-
-.bookbody{
-    width: 10%;
-    /* display: flex; */
+.bookmain_total{
+    width: 80%;
+    margin: 20px auto;
+    margin-top: 20px;
 }
 /* �궗�씠�뱶硫붾돱  */
 .book_sidemenu{
-    width: 20%px;
-    /* margin: 20px; */
+    width: 200px;
+    margin: 20px;
     text-align: left;
     background-color: #eaf4fc;
     display: flex;
@@ -46,34 +46,36 @@
     font-style: normal;
     font-size: 20px;
 }
-
+.bookmain_rank{
+    width: 80%;
+    border: 1px solid black;
+    margin: 20px;
+}
 .bookimg{
     width: 80%;
     height: 80%;
-
 }
- .bookmain_total{
+ .bookmain_rank{
     width: 80%;
-    height: 60%;
     margin: 0 auto;
-    /* margin: 20px; */
     text-align: left;
-    /* background-color: #eaf4fc; */
     display: flex;
     flex-direction: column;
-    /* border: 1px solid #96bff9; */
     cursor: pointer;
 } 
+.bookmain_rank h1{
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+}
 .swiper {
-    width: 100%;
+    width: 90%;
     height: 50%;
     margin-bottom: 10%;
   }
 
   .swiper-slide {
-/*     text-align: center;
-    font-size: 18px; */
-  background: #fff; 
+  background-color: #fff; 
 
 
     /* Center slide text vertically */
