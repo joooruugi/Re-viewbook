@@ -32,7 +32,7 @@ public class AdminMainServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("°ü¸®ÀÚ ¸ŞÀÎ ¼­ºí¸´ È®ÀÎ");
+		System.out.println("ê´€ë¦¬ì ë©”ì¸ ì„œë¸”ë¦¿ í™•ì¸");
 		AdminVo avo = (AdminVo)request.getSession().getAttribute("ssAdminVo");
 		if(avo == null) {
 			response.sendRedirect("adlogin");
