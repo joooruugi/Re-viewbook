@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main/admain.css">
@@ -18,27 +19,22 @@
 <title>RVB Admin</title>
 </head>
 <body>
-<%
-		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		// out.print(vo);
-		if (avo == null) {
-		%>
-		<%@ include file="../../../view/template_header.jsp"%>
-		<%
-			} else {
-		%>
-		<%@ include file="../../../view/template_header_adlogin.jsp"%>
-		<%
-			}
-		%>
+<%@ include file="../../../view/template_header_adlogin.jsp"%>
   <div class="body_adminmain">
         <div class="adminmain_profile">
             <div class="adminmain_profile_pic">
-                관리자 이미지
+                <img src="<%=request.getContextPath()%>/resources/image/signuplogin/회원가입개인.png">
+                <p class="fontimportant">관리자님 환영합니다!</p>
             </div>
+            <%AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+            ArrayList<AdminVo> alist = (ArrayList<AdminVo>)request.getAttribute("alist");%>
+           
             <div class="adminmain_profile_text">
-                관리자 정보
+                <p class="fontnormal">1:1 문의 이메일<br>reviewbook.rvb@gmail.com</p><br><br>
+                <p class="fontnormal">총괄관리자 연락처<br><strong>010-3328-7786</strong></p><br><br>
+                <p class="fontnormal">시스템 이상 문의<br>reviewbook.rvb@gmail.com</p>
             </div>
+            
         </div>
         <div class="adminmain_notice">
             <a class="adminmain_notice_link" href="adnotice">

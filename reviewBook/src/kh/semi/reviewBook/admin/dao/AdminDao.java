@@ -144,6 +144,37 @@ public class AdminDao {
 		return result;
 	}
 
+	// 관리자 리스트
+
+	public ArrayList<AdminVo> AdminList(Connection conn, String adId) {
+		ArrayList<AdminVo> alist = null;
+		String sql = "select * from \"ADMIN\" where ad_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adId);
+			rs = pstmt.executeQuery();
+			alist = new ArrayList<AdminVo>();
+			while (rs.next()) {
+				AdminVo avo = new AdminVo();
+				avo.setAdId(rs.getString("ad_id"));
+				avo.setAdEmail(rs.getString("ad_email"));
+				avo.setAdPhone(rs.getString("ad_phone"));
+				avo.setAdNickname(rs.getString("ad_nickname"));
+				avo.setAdPassword(rs.getString("ad_password"));
+				avo.setAdGender(rs.getString("ad_gender"));
+				avo.setAdCompany(rs.getString("ad_company"));
+				alist.add(avo);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return alist;
+	}
+
 	// 관리자 공지사항 등록
 	public int NoticeRegister(Connection conn, NoticeVo nvo) {
 		int result = 0;

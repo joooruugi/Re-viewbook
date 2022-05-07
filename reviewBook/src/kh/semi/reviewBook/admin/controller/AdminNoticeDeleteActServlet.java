@@ -1,6 +1,7 @@
 package kh.semi.reviewBook.admin.controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -31,7 +32,7 @@ public class AdminNoticeDeleteActServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("º≠∫Ì∏¥ »Æ¿Œ");
+		System.out.println("ÏÑúÎ∏îÎ¶ø ÌôïÏù∏");
 		String ntNostr = request.getParameter("ntNo");
 		System.out.println("ntNo: "+ntNostr);
 		int ntNo = Integer.parseInt(ntNostr);
@@ -43,7 +44,7 @@ public class AdminNoticeDeleteActServlet extends HttpServlet {
 			response.sendRedirect("adminnotice_content?ntNo="+ntNo);
 			return;
 		}else {
-			System.out.println("∞‘Ω√π∞ ªË¡¶ º∫∞¯");
+			System.out.println("Í≤åÏãúÎ¨º ÏÇ≠Ï†ú ÏÑ±Í≥µ");
 			response.sendRedirect("adnotice");
 		}
 		

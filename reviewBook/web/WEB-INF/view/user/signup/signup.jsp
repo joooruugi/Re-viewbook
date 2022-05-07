@@ -24,7 +24,7 @@
 			<div class="signup_contentmain">
 				<div class="signup_foruser">
 					<div class="signup_foruser_img">
-						<img src="가입개인.png">
+						<img src="<%=request.getContextPath()%>/resources/image/signuplogin/회원가입개인.png">
 					</div>
 					<div class="signup_foruser_p">
 						<a class="signup_foruser_button"
@@ -36,7 +36,7 @@
 				<div class="divsignup_first"></div>
 				<div class="signup_foradmin">
 					<div class="signup_foradmin_img">
-						<img src="가입관리자.png">
+						<img src="<%=request.getContextPath()%>/resources/image/signuplogin/회원가입관리자.png">
 					</div>
 					<div class="signup_foradmin_p">
 						<a class="signup_foradmin_button" href="<%=request.getContextPath()%>/adsignup_terms">

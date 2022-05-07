@@ -53,6 +53,13 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+	//관리자 리스트
+	public ArrayList<AdminVo> AdminList(String adId){
+		Connection conn = getConnection();
+		ArrayList<AdminVo> alist = dao.AdminList(conn, adId);
+		close(conn);
+		return alist;
+	}
 	//관리자 공지사항 목록 조회
 	public ArrayList<NoticeVo> Noticelist(String adId){
 		Connection conn = getConnection();
