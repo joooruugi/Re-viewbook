@@ -20,58 +20,58 @@
 </head>
 <body>
 	<%@ include file="../../../view/template_header_login.jsp"%>
-	<div class="signup_body2">
+	<div class="infoupdate_body">
 		<nav class="sidemenu">
-			<ul class="sidemenu_signup2">
+			<ul class="sidemenu_infoupdate">
 				<li><a class="sidemenu_item sidemenu_topmenu">회원정보 수정</a></li>
 				<li><a class="sidemenu_item">수정 완료</a></li>
 			</ul>
 		</nav>
-		<div class="signupuser_second_content">
+		<div class="infoupdate_content">
 			<form name="frmRegister" method="post">
-				<table class="singupuser_input_info">
+				<table class="update_input_info">
 					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">아이디</p>
+						<td class="infoupdate_input_text">
+							<p class="fontnormal update_infoname">아이디</p>
 						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usId" class="signup_infoinput" id="usId" disabled
+						<td class="infoupdate_input_input"><input type="text"
+							name="usId" class="update_infoinput" id="usId" disabled
 							value="${myinfovo.usId}"></td>
 					</tr>
 					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">이름</p>
+						<td class="infoupdate_input_text">
+							<p class="fontnormal update_infoname">이름</p>
 						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usName" class="signup_infoinput" id="usName" disabled
+						<td class="infoupdate_input_input"><input type="text"
+							name="usName" class="update_infoinput" id="usName" disabled
 							value="${myinfovo.usName}"></td>
 					</tr>
 					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">전화번호</p>
+						<td class="infoupdate_input_text">
+							<p class="fontnormal update_infophone">전화번호</p>
 						</td>
-						<td class="signupuser_input_input"><input type="tel"
-							name="usPhone" class="signup_infoinput" id="usPhone" value="${myinfovo.usPhone}"
+						<td class="infoupdate_input_input"><input type="tel"
+							name="usPhone" class="update_infoinput" id="usPhone" value="${myinfovo.usPhone}"
 							required pattern="\d{3}\-\d{4}\-\d{4}" title="000-0000-0000 형식으로 입력 바랍니다."></td>
 					</tr>
 					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">이메일</p>
+						<td class="infoupdate_input_text">
+							<p class="fontnormal update_infoemail">이메일</p>
 						</td>
-						<td class="signupuser_input_input"><input type="email"
-							name="usEmail" class="signup_infoinput" id="usEmail" value="${myinfovo.usEmail}"
+						<td class="infoupdate_input_input"><input type="email"
+							name="usEmail" class="update_infoinput" id="usEmail" value="${myinfovo.usEmail}"
 							required="required"></td>
 					</tr>
 					<tr>
-						<td class="signupuser_input_text">
-							<p class="fontnormal signup_infoname">주소</p>
+						<td class="infoupdate_input_text">
+							<p class="fontnormal update_infoaddress">주소</p>
 						</td>
-						<td class="signupuser_input_input"><input type="text"
-							name="usAddress" class="signup_infoinput" id="usAddress" value="${myinfovo.usAddress}"
+						<td class="infoupdate_input_input"><input type="text"
+							name="usAddress" class="update_infoinput" id="usAddress" value="${myinfovo.usAddress}"
 							required="required"></td>
 					</tr>
 				</table>
-				<div class="sigupsuer_second_signupbtn">
+				<div class="infoupdate_btn">
 					<button type="submit" id="btn_update">수정완료</button>
 				</div>
 			</form>

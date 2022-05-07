@@ -24,27 +24,75 @@
 </head>
 <body>
 
-	<%@ include file="../../../view/template_header_login.jsp"%>
-	<input type="button" value="회원정보수정"
-		onclick="location.href='<%=request.getContextPath()%>/myinformation'">
-	<input type="button" value="장바구니"
-		onclick="location.href='<%=request.getContextPath()%>/cartlist'">
+	<%@ include file="../../../view/template_header_login.jsp"%>		
+	<div class="bodyrvb">
+		<nav class="sidemenu">
+			<ul class="sidemenu_mypage">
+				<li><a class="sidemenu_item sidemenu_topmenu">마이페이지</a></li>
+				<li><a class="sidemenu_item" href="myinformation">정보수정</a></li>
+				<li><a class="sidemenu_item" href="cartlist">장바구니</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<%
+		SubscribeVo sVo = (SubscribeVo) request.getAttribute("sVo");
+	%>
+	<div class="contentrvb">
+		<div class="contentmain">
+			<div class="mypage_main">
+				<div class="mypage_tab_header">
+					<div class="mypage_main_welcome_title">
+						<h2><%=sVo.getUsId()%>님 반갑습니다!😘
+						</h2>
+					</div>
+				</div>
+				<%
+					if (sVo.getSubYN().charAt(0) == 'n') {
+				%>
+				<div class="mypage_content_all">
+					<div class="mypage_tab_body">
+						<div class="mypage_main_image">
+							<img src="./resources/image/mypage/mypage1.png">
+						</div>
+						<div class="mypage_main_content">
+							<h3>구독중인 구독권이 없습니다.</h3>
+						</div>
+					</div>
+				</div>
+
+				<%
+					} else {
+				%>
+				<div class="mypage_content_all">
+					<div class="mypage_tab_body">
+						<div class="mypage_main_image">
+							<img src="./resources/image/mypage/mypage1.png">
+						</div>
+						<div class="mypage_main_content">
+							<h3>
+								구독중인 구독권 :
+								<%=sVo.getSubInf()%></h3>
+							<h3>
+								구독 시작일 :
+								<%=sVo.getSubStart()%></h3>
+						</div>
+					</div>
+				</div>
+				<%
+					}
+				%>
+			</div>
+		</div>
+	</div>
 
 	<%
 		ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
 	if (volist != null) {
 	%>
-	<div class="bodyrvb">
-		<nav class="sidemenu">
-			<ul class="sidemenu_mypage">
-				<li><a class="sidemenu_item sidemenu_topmenu">마이페이지</a></li>
-				<li><a class="sidemenu_item" href="#">정보수정</a></li>
-				<li><a class="sidemenu_item" href="#">장바구니</a></li>
-			</ul>
-		</nav>
-	</div>
 	<div>
 		<table class="buylist">
+		<caption>구매목록</caption>
 			<tr class="buylist_th fontimportant2">
 				<th class="buylistname">주문상품</th>
 				<th class="buylistno">주문번호</th>
@@ -89,25 +137,6 @@
 	<%
 		}
 	%>
-	
-	
-	<div>
-	<%
-		SubscribeVo vo = (SubscribeVo) request.getAttribute("sVo");
-	if (vo.getSubYN().equals('n')) {
-	%>
-	<p><%=vo.getUsId()%>님 반갑습니다! 구독중인 구독권이 없습니다.</p>
-	<%
-		} else {
-	%>	
-	<p><%=vo.getUsId()%>님 반갑습니다!</p>
-	<p>구독중인 구독권 : <%=vo.getSubInf()%></p>
-	<p>구독 시작일 : <%=vo.getSubStart()%></p>
-	<hr>
-	<%
-	}
-	%>
-	</div>
 
 
 
@@ -167,8 +196,6 @@
 			}
 		}
 	</script>
-
-	[[${sVo }]] [[${bLVo }]]
 	<%@ include file="../../../view/template_footer.jsp"%>
 </body>
 </html>

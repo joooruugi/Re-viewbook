@@ -7,6 +7,7 @@
 
 .contentrvb{
 	margin-left: 50px;
+	display : flex;
 }
 /* 사이드메뉴  */
 .sidemenu {
@@ -18,6 +19,8 @@
 	border: 1px solid #96bff9;
 	border-radius: 20px;
 	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .sidemenu_mypage {
@@ -97,7 +100,6 @@
 	text-align: center;
 	width: 5em;
 }
-
 .star-rating input {
 	display: none;
 }
@@ -130,7 +132,6 @@
     font-style: normal;
     text-align: center;
 }
-
 .buylist .buylist_th{
    border-top: 1px solid gray;
    border-bottom: 1px solid gray;
@@ -156,4 +157,60 @@
 }
 .buylist_th .buylistreview{
     width: 25%;
+}
+
+
+/* 마이페이지 웰컴&구독권 조회 */
+.mypage_main{
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%,-50%);  */
+    margin: auto;
+    margin-bottom: 50px;
+    width:700px;
+    height: 300px;
+    background:#f5f5f5;
+ 	padding: 20px 30px; 
+    border-radius: 50px;
+    box-shadow: 5px 10px 5px #ccc;
+}
+
+/* 마이페이지 유저 이미지 */
+.mypage_main_image img{
+	width: 160px; height : 160px;
+	
+	
+}
+
+/* 마이페이지 내용 flex 정렬 */
+.mypage_content_all{
+    display: flex;
+}
+
+/* 마이페이지 컨텐츠 센터 정렬 */
+.mypage_main_content{
+	text-align: center;
+	padding: 30px;
+}
+
+.mypage_main_content>h3{
+	padding: 10px;
+}
+
+.mypage_main_welcome_title> h2{
+	font-size: 1.5rem;
+}
+/* 마이페이지 컨텐츠 영역 */
+.mypage_tab_body{
+    margin: auto;
+
+} 
+
+/* 폰트 */
+.mypage_main_welcome_title>h2, .mypage_main_content>h3{
+	font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
