@@ -20,6 +20,7 @@
 <head>
 <meta charset="UTF-8">
 <title>RVB Admin</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 	<%
@@ -81,10 +82,15 @@
          <%}%>
         <div class="adminnotice_btn">
             <button type="submit" class="notice_listbtn" onclick="location.href='adnotice'">목록으로</button>
-            <button type="submit" class="adminnotice_deletebtn" onclick="location.href='adminnotice_content.lo'">삭제</button>
+            <button type="submit" class="adminnotice_deletebtn" id="noticedeletebtn" onclick="location.href='adminnotice_content.lo?ntNo=<%=nvo.getNtNo()%>'">삭제</button>
         </div>
 
     </div>
 	<%@ include file="../../../view/template_footer.jsp"%>
+	<script>
+	$('#noticedeletebtn').click(function(){
+		alert("삭제되었습니다.");
+	}));
+	</script>
 </body>
 </html>

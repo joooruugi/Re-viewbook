@@ -17,9 +17,8 @@ public class AdminDao {
 	private Statement stmt = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	
-	
-	//관리자 회원가입
+
+	// 관리자 회원가입
 	public int insertAdmin(Connection conn, AdminVo vo) {
 //		AD_ID	VARCHAR2(30)	✔	PK
 //		AD_EMAIL	VARCHAR2(150)	✔	
@@ -42,12 +41,13 @@ public class AdminDao {
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(pstmt);
 		}
 		return result;
 	}
-	//관리자 로그인
+
+	// 관리자 로그인
 	public AdminVo loginAdmin(Connection conn, String adId, String adPassword) {
 		AdminVo result = null;
 		String sql = "select * from \"ADMIN\" where ad_id=? and ad_password=?";
@@ -56,7 +56,7 @@ public class AdminDao {
 			pstmt.setString(1, adId);
 			pstmt.setString(2, adPassword);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				result = new AdminVo();
 				result.setAdId(rs.getString("AD_ID"));
 				result.setAdEmail(rs.getString("AD_EMAIL"));
@@ -68,13 +68,14 @@ public class AdminDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return result;
 	}
-	//관리자 아이디 중복체크
+
+	// 관리자 아이디 중복체크
 	public int SignupIdCheckAdmin(Connection conn, String adId) {
 		int result = -1;
 		String sql = "select ad_id from \"ADMIN\" where ad_id=?";
@@ -83,21 +84,22 @@ public class AdminDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, adId);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				result = 0;
 				System.out.println(rs.getString("adId"));
-			}else {
+			} else {
 				result = 1;
 			}
-			System.out.println("아이디 중복체크 결과 :" +result);
+			System.out.println("아이디 중복체크 결과 :" + result);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(pstmt);
 		}
 		return result;
 	}
-	//관리자 닉네임 중복체크
+
+	// 관리자 닉네임 중복체크
 	public int SignupNicknameCheckAdmin(Connection conn, String adNickname) {
 		int result = -1;
 		String sql = "select ad_nickname from \"ADMIN\" where ad_nickname=?";
@@ -105,20 +107,21 @@ public class AdminDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, adNickname);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				result = 0;
-			}else {
+			} else {
 				result = 1;
 			}
-			System.out.println("닉네임 중복체크 결과 : "+result);
+			System.out.println("닉네임 중복체크 결과 : " + result);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(pstmt);
 		}
 		return result;
 	}
-	//관리자 아이디 찾기
+
+	// 관리자 아이디 찾기
 	public AdminVo findidAdmin(Connection conn, String adNickname, String adEmail) {
 		AdminVo result = null;
 		String sql = "select ad_id from \"ADMIN\" where ad_nickname=? and ad_email=?";
@@ -127,20 +130,21 @@ public class AdminDao {
 			pstmt.setString(1, adNickname);
 			pstmt.setString(2, adEmail);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				result = new AdminVo();
-				//정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 ! 
+				// 정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 !
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return result;
 	}
-	//관리자 공지사항 등록
+
+	// 관리자 공지사항 등록
 	public int NoticeRegister(Connection conn, NoticeVo nvo) {
 		int result = 0;
 		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"
@@ -153,17 +157,18 @@ public class AdminDao {
 			pstmt.setString(3, nvo.getAdId());
 			pstmt.setString(4, nvo.getAdId());
 			result = pstmt.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
-			close(rs); 
+		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		return result;
 	}
-	//공지사항 목록 나타내기 (공지사항 갯수 10개 안 넘을 예정 > 페이징 처리 x
-	public ArrayList<NoticeVo> Noticelist(Connection conn, String usId){
+
+	// 공지사항 목록 나타내기 (공지사항 갯수 10개 안 넘을 예정 > 페이징 처리 x
+	public ArrayList<NoticeVo> Noticelist(Connection conn, String usId) {
 		ArrayList<NoticeVo> nlist = null;
 //		NT_NO	NUMBER	✔	PK	
 //		NT_TITLE	VARCHAR2(300)	✔		
@@ -172,55 +177,57 @@ public class AdminDao {
 //		NT_DATE	TIMESTAMP	✔		SYSTIMESTAMP
 //		NT_NICKNAME	VARCHAR2(45)	✔		
 //		AD_ID	VARCHAR2(30)	✔	FK	
-		String sql="select * from notice";
+		String sql = "select * from notice";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			nlist = new ArrayList<NoticeVo>();
-			while(rs.next()) {
+			while (rs.next()) {
 				NoticeVo nvo = new NoticeVo();
 				nvo.setNtNo(rs.getInt("nt_no"));
 				nvo.setNtTitle(rs.getString("nt_title"));
 				nvo.setNtNickname(rs.getString("nt_nickname"));
 				nvo.setNtDate(rs.getString("nt_date"));
-				
+
 				nlist.add(nvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return nlist;
 	}
-	//공지사항 삭제
+
+	// 공지사항 삭제
 	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
 		int result = 0;
-		String sql ="delete from * where nt_no=?";
+		String sql = "delete from \"NOTICE\" where nt_no=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dnvo.getNtNo());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return result;
 	}
-	//공지사항 내용 조회
+
+	// 공지사항 내용 조회
 	public NoticeVo ReadNotice(Connection conn, int ntNo) {
 		NoticeVo nvo = null;
-		String sql="select * from notice where NT_NO=?";
+		String sql = "select * from notice where NT_NO=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, ntNo);
 			rs = pstmt.executeQuery();
 			nvo = new NoticeVo();
-			if(rs.next()) {
+			if (rs.next()) {
 				nvo.setAdId(rs.getString("ad_id"));
 				nvo.setNtCnt(rs.getInt("nt_cnt"));
 				nvo.setNtContent(rs.getString("nt_content"));
@@ -231,21 +238,22 @@ public class AdminDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return nvo;
 	}
-	//회원 목록 조회
-	public ArrayList<UserVo> Userlist(Connection conn, String usId){
+
+	// 회원 목록 조회
+	public ArrayList<UserVo> Userlist(Connection conn, String usId) {
 		ArrayList<UserVo> ulist = null;
 		String sql = "select * from \"USER\"";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			ulist = new ArrayList<UserVo>();
-			while(rs.next()) {
+			while (rs.next()) {
 				UserVo uvo = new UserVo();
 				uvo.setUsId(rs.getString("us_id"));
 				uvo.setUsEmail(rs.getString("us_email"));
@@ -260,40 +268,41 @@ public class AdminDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return ulist;
 	}
-	//관리자 회원 검색
-		public ArrayList<UserVo> SearchUser(Connection conn, String searchUser){
-			ArrayList<UserVo> ulist = null;
-			String sql = "";
-			try {
-				pstmt = conn.prepareCall(sql);
-				rs = pstmt.executeQuery();
-				ulist = new ArrayList<UserVo>();
-				while(rs.next()) {
-					UserVo uvo = new UserVo();
-					uvo.setUsId(rs.getString("us_id"));
-					uvo.setUsEmail(rs.getString("us_email"));
-					uvo.setUsPhone(rs.getString("us_phone"));
-					uvo.setUsNickname(rs.getString("us_nickname"));
-					uvo.setUsPassword(rs.getString("us_password"));
-					uvo.setUsGender(rs.getString("us_gender"));
-					uvo.setUsAddress(rs.getString("us_address"));
-					uvo.setUsName(rs.getString("us_name"));
-					uvo.setUsBirth(rs.getString("us_birth"));
-					ulist.add(uvo);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}finally {
-				close(rs);
-				close(pstmt);
+
+	// 관리자 회원 검색
+	public ArrayList<UserVo> SearchUser(Connection conn, String searchUser) {
+		ArrayList<UserVo> ulist = null;
+		String sql = "";
+		try {
+			pstmt = conn.prepareCall(sql);
+			rs = pstmt.executeQuery();
+			ulist = new ArrayList<UserVo>();
+			while (rs.next()) {
+				UserVo uvo = new UserVo();
+				uvo.setUsId(rs.getString("us_id"));
+				uvo.setUsEmail(rs.getString("us_email"));
+				uvo.setUsPhone(rs.getString("us_phone"));
+				uvo.setUsNickname(rs.getString("us_nickname"));
+				uvo.setUsPassword(rs.getString("us_password"));
+				uvo.setUsGender(rs.getString("us_gender"));
+				uvo.setUsAddress(rs.getString("us_address"));
+				uvo.setUsName(rs.getString("us_name"));
+				uvo.setUsBirth(rs.getString("us_birth"));
+				ulist.add(uvo);
 			}
-			return ulist;
-			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
 		}
+		return ulist;
+
+	}
 }

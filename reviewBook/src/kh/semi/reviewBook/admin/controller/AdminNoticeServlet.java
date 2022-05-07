@@ -37,7 +37,7 @@ public class AdminNoticeServlet extends HttpServlet {
 		System.out.println("들어오냐서블릿에");
 
 		ArrayList<NoticeVo> nlist = service.Noticelist("adId");
-		System.out.println("nlist = " + nlist);
+//		System.out.println("nlist = " + nlist);
 		request.setAttribute("nlist", nlist);
 
 		request.getRequestDispatcher("WEB-INF/view/admin/notice/adnotice.jsp").forward(request, response);

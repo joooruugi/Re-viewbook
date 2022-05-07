@@ -32,9 +32,14 @@ public class AdminNoticeDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<NoticeVo> nlist = service.Noticelist("adId");
-		System.out.println("nlist = "+nlist);
-		request.setAttribute("nlist", nlist);
+		String ntNostr = request.getParameter("ntNo");
+		int ntNo = Integer.parseInt(ntNostr);
+		System.out.println("ntNo: "+ntNostr);
+		
+		NoticeVo nvo = new AdminService().ReadNotice(ntNo);
+		System.out.println("nvo ="+nvo);
+		request.setAttribute("nvo", nvo);
+		
 		
 		request.getRequestDispatcher("WEB-INF/view/admin/notice/adminnotice_content.jsp").forward(request, response);
 	}
