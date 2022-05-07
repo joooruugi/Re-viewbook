@@ -49,7 +49,7 @@
                             <ul class="nav_dropdownmenu2">
                                 <li><a class="nav_item" href="subscribemain">구독권 안내</a></li>
                                 <li><a class="nav_item" href="subscribecancle">구독 철회</a></li>
-                                <li><a class="nav_item" href="#">QNA</a></li>
+                                <li><a class="nav_item" href="subscribeqna">QNA</a></li>
                             </ul>
                         </li>
                         </ul>

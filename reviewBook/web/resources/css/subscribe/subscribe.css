@@ -380,3 +380,45 @@ body {
 	text-decoration: underline gray;
 	color:gray;
 }
+
+/* qna css*/
+.subscribe_qna_title{
+	margin: 20px;
+	padding: 10px;
+	text-align: center;
+}
+.subscribe_qna_title h1 {
+	font-size: 3rem;
+}
+.qna{
+	text-align:center;
+	width: 800px;
+	margin: 20px;
+}
+
+.qna p {
+	font-size: 2rem;
+}
+.subscribe_desc{
+	display: none;
+}
+
+.qna_etc{
+	text-align: center;
+}
+
+.qna_etc a {
+	color: blue;
+	text-decoration: underline;
+}
+.subscribe_qna{
+	padding:20px;
+	background-color: #bed8ea;
+	border-radius: 5px;
+}
+
+.subscribe_desc{
+	padding: 20px;
+	background: rgba(248,248,248,0.5);
+}
+

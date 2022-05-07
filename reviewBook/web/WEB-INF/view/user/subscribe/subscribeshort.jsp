@@ -30,7 +30,7 @@
 				<li><a class="sidemenu_item sidemenu_topmenu">구독</a></li>
 				<li><a class="sidemenu_item" href="subscribemain">구독권 안내</a></li>
 				<li><a class="sidemenu_item" href="subscribecancle">구독 철회</a></li>
-				<li><a class="sidemenu_item" href="#">QNA</a></li>
+				<li><a class="sidemenu_item" href="subscribeqna">QNA</a></li>
 
 			</ul>
 		</nav>
