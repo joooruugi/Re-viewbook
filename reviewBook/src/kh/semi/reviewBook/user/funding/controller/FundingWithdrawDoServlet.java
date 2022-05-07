@@ -17,15 +17,15 @@ import kh.semi.reviewBook.user.model.vo.UserVo;
 /**
  * Servlet implementation class FundingWithdrawServlet
  */
-@WebServlet("/fundingwithdraw")
-public class FundingWithdrawServlet extends HttpServlet {
+@WebServlet("/fundingwithdraw.do")
+public class FundingWithdrawDoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private FundingService service = new FundingService();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FundingWithdrawServlet() {
+    public FundingWithdrawDoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +34,7 @@ public class FundingWithdrawServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 //	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
+//
 //	}
 
 	/**
@@ -53,21 +53,17 @@ public class FundingWithdrawServlet extends HttpServlet {
 		}
 		loginId = ssUserVo.getUsId();
 		
-		// 글번호와 사용자 아이디를 가지고 후원금액 알아오기
+		FundingVo vo = new FundingVo();
+		vo.setWbNO(wbNo);
+		vo.setUsId(loginId);
+		System.out.println("vo: "+vo);
+		// 철회하기 버튼을 누르면 여기로 들어와서 글번호와 사용자아이디를 가지고 서비스로 간다.
+		int result = service.fundingWithdraw(vo);
 		FundingVo fvo = new FundingService().fundingBoardlistDonation(wbNo, loginId);
-		System.out.println("fvo:" + fvo);
+		
 		PrintWriter out = response.getWriter();
-		out.print(fvo);
+		out.print(result);
 		out.flush();out.close();
-		
-		if(fvo==null) {
-			//query문 실행 중 오류 발생한 경우 메인으로 보냄 
-			response.sendRedirect("fundingboardlist");
-			return ;
-		}
-		
-		request.setAttribute("fvo", fvo); //이동할 jsp파일의 getAttribute와 같은 이름인지 확인 
-		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingboardlist.jsp").forward(request, response);
 	}
 
 }

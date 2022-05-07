@@ -58,8 +58,10 @@
 						for (SeriesVo svo : slistFiction) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
+								<img src="<%=request.getContextPath()%><%=svo.getWbImgPath() %>"
 									class="bookimg">
+								<%-- <img src="<%=request.getContextPath()%>/FileUpload/wbimg/harrypotter1.jpg"
+									class="bookimg"> --%>
 							</div>
 						<% } %>
 						</div>
@@ -94,7 +96,9 @@
 						for (SeriesVo svo : slistDaily) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
+								<%-- <img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
+									class="bookimg"> --%>
+								<img src="${pageContext.request.contextPath}/web/FileUpload/wbimg/harrypotter1.jpg"
 									class="bookimg">
 							</div>
 						<% } %>

@@ -323,7 +323,7 @@ public class SeriesDao {
 	public ArrayList<SeriesVo> listSeriesDailyRank(Connection conn) {
 		ArrayList<SeriesVo> slist = null;
 		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
-				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "정보공유" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "일상" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -360,7 +360,7 @@ public class SeriesDao {
 	public ArrayList<SeriesVo> listSeriesEtcRank(Connection conn) {
 		ArrayList<SeriesVo> slist = null;
 		String sql = "SELECT WB.*, (SELECT COUNT(*) FROM WRITER_BBS_COMMENT WBC WHERE WBC.WB_NO = WB.WB_NO) reCommentCnt \r\n"
-				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "정보공유" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
+				+ " FROM WRITER_BBS WB WHERE WB_CATEGORY =" + "'" + "기타" + "'" + "ORDER BY WB_COUNT desc, WB_NO DESC";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

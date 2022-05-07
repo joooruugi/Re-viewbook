@@ -57,32 +57,30 @@ public class FundingDao {
 		return slist;
 
 	}
-//	// 게시글에 사용자가 후원한 금액 가져오기
-//	public ArrayList<FundingVo> fundingBoardlistDonation(Connection conn, int wbNo, String loginId) {
-//		ArrayList<FundingVo> flist = null;
-//		String sql = "select fd_donation from funding_manage where wb_no=? and us_id=?";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, wbNo);
-//			pstmt.setString(2, loginId);
-//			rs = pstmt.executeQuery();
-//			
-//			flist = new ArrayList<FundingVo>();
-//			while (rs.next()) {
-//				FundingVo fvo = new FundingVo();
-//				fvo.setFdDonation(rs.getInt("fd_donation"));
-//				
-//				flist.add(fvo);
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		return flist;
-//		
-//	}
+	// 게시글에 사용자가 후원한 금액 가져오기
+	public FundingVo fundingBoardlistDonation(Connection conn, int wbNo, String loginId) {
+		FundingVo fvo = null;
+		String sql = "select fd_donation from funding_manage where wb_no=? and us_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, wbNo);
+			pstmt.setString(2, loginId);
+			rs = pstmt.executeQuery();
+			fvo = new FundingVo();
+			
+			while (rs.next()) {
+				fvo.setFdDonation(rs.getInt("fd_donation"));
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return fvo;
+	}
 
 	// 철회하기 기능 (완성되면 SET FD_OX = 1 로 바꾸는 펀딩하기 기능 추가)
 	public int fundingWithdraw(Connection conn, FundingVo vo) {
