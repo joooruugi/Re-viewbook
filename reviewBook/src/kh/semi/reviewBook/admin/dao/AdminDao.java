@@ -305,6 +305,41 @@ public class AdminDao {
 		}
 		return ulist;
 	}
+//	public int NoticeDelete(Connection conn, NoticeVo dnvo) {
+//		int result = 0;
+//		String sql = "delete from \"NOTICE\" where nt_no=?";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, dnvo.getNtNo());
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return result;
+//	}
+	//회원 삭제
+	public int DeleteUser(Connection conn, String usName) {
+		int result = 0;
+		String sql = "delete from \"USER\" where us_name=?";
+		System.out.println("여기 들어오긴 하나?");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usName);
+			System.out.println("여긴 들어와?");
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("여긴 들어와?2");
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("여긴 33들어와?");
+		return result;
+	}
 
 	// 관리자 회원 검색
 	public ArrayList<UserVo> SearchUser(Connection conn, String searchUser) {

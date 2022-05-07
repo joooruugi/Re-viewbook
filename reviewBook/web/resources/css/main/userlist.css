@@ -40,7 +40,7 @@ a{
     text-align: center;
     margin: 15px;
 }
-.userlist_pagingbtn{
+.userlist_pagingbtn, .userlist_deletebtn{
     font-family: 'GowunDodum-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
     font-weight: normal; 

@@ -98,6 +98,14 @@ public class AdminService {
 		close(conn);
 		return ulist;
 	}
+	//관리자 회원 삭제
+	public int DeleteUser(String usName) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.DeleteUser(conn, usName);
+		close(conn);
+		return result;
+	}
 	//관리자 회원 검색
 	public ArrayList<UserVo> SearchUser(String searchUser){
 		Connection conn = getConnection();
