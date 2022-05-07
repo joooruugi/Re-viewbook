@@ -58,10 +58,8 @@
 						for (SeriesVo svo : slistFiction) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath()%><%=svo.getWbImgPath() %>"
+								<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 									class="bookimg">
-								<%-- <img src="<%=request.getContextPath()%>/FileUpload/wbimg/harrypotter1.jpg"
-									class="bookimg"> --%>
 							</div>
 						<% } %>
 						</div>
@@ -78,7 +76,7 @@
 						for (SeriesVo svo : slistInfo) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
+								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 									class="bookimg">
 							</div>
 						<% } %>	
@@ -88,7 +86,6 @@
 						<div class="swiper-pagination"></div>
 					</div>
 					<h2 class="fontimportant fdtag">일상게시글 TOP😘</h2>
-					
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -96,9 +93,7 @@
 						for (SeriesVo svo : slistDaily) {
 						%>
 							<div class="swiper-slide">
-								<%-- <img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
-									class="bookimg"> --%>
-								<img src="${pageContext.request.contextPath}/web/FileUpload/wbimg/harrypotter1.jpg"
+								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 									class="bookimg">
 							</div>
 						<% } %>
@@ -109,7 +104,6 @@
 					</div>
 					
 					<h2 class="fontimportant fdtag">기타게시글 TOP😘</h2>
-					
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -117,7 +111,7 @@
 						for (SeriesVo svo : slistEtc) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath() %>"
+								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 									class="bookimg">
 							</div>
 						<% } %>	
