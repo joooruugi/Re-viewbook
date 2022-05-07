@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/subscribe/subscribe.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/subscribe/adsubscribe.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
@@ -10,7 +10,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RVB 구독</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<title></title>
 </head>
 <body>
 <%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
@@ -24,40 +25,46 @@
 	<% } else if (avo != null) { %>
 	<%@ include file="../../../view/template_header_adlogin.jsp"%>
 	<% } %>
-	<div id="main_wrap">
-	<div class="bodyrvb"> 
-	<nav class="sidemenu">
+		<div id="main_wrap">
+	<div class="bodyrvb">
+		<nav class="sidemenu">
 			<ul class="sidemenu_subscribe">
 				<li><a class="sidemenu_item sidemenu_topmenu">구독</a></li>
-				<li><a class="sidemenu_item" href="subscribemain">구독권 안내</a></li>
-				<li><a class="sidemenu_item" href="subscribecancle">구독 철회</a></li>
-				<li><a class="sidemenu_item" href="subscribeqna">QNA</a></li>
-
+				<li><a class="sidemenu_item" href="adsubscribemain">구독 회원 조회</a></li>
+				<li><a class="sidemenu_item" href="adsubscribedel">철회 회원 조회</a></li>
 			</ul>
 		</nav>
 		<div class="contentrvb">
 			<div class="contentmain">
-			<div class="welcome_subscribe">
-			<div class="circle"></div>
-			<div class="welcome">
-			Welcome RVB Subscribe!
+			<div class="adsubscribe_title">
+			<h1>RVB 구독 철회 회원 조회</h1>
 			</div>
-			<div class="welcome_content">
-			<form action="subscribeshort" method="post">
-			<p><%=vo.getUsId() %>님 ! </p>
-			<p> RVB 월별 구독을 이용해주셔서 감사합니다. </p>
-			<p> 해당 서비스가 마음에 드시면 RVB와 또 만나요 </p>
-			<p> 반드시 아래의 월 구독 신청 완료 버튼을 눌러주세요! </p>
-			<button type="submit" class="button5">월 구독 신청 완료</button>
-			</form>
+			<table id="subscribe_member">
+			<tr class="subscribe_member_th">
+			<th class="subscribeid">구독자 ID</th>
+			<th class="subscribetype">구독권 종류</th>
+			<th class="subscribestart">구독 종료일</th>
+			<th class="subscribeprice">가격</th>
+			<th class="subscribedelete">삭제</th>
+			</tr>
+			<c:forEach var ="ssvo" items="${sslist}">  
+			<tr class="subscribe_member_td">
+			<td>${ssvo.usId}</td>
+			<td>${ssvo.subInf}</td>
+			<td>${ssvo.subEnd}</td>
+			<td>${ssvo.subPrice}</td>
+			<td><button type="button" class="button3" 
+			onClick="location.href='adsubscribedelete?usId=${ssvo.usId}'">내역삭제</button></td>
+			</tr>
+			</c:forEach>
+			</table>
 			</div>
-			</div>
-			</div>	
-			</div>
-		
 		</div>
-	</div>	
-		<%@ include file="../../template_footer.jsp"%>
+	</div>
+	</div>
+	<%@ include file="../../template_footer.jsp"%>
+
+
 
 </body>
 </html>

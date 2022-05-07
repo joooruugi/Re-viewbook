@@ -165,4 +165,94 @@ public class SubscribeDao {
 		}
 		return result;
 	}
+	
+	//7-1. 관리자 - 구독 y 회원 조회 
+	public ArrayList<SubscribeVo> checkSubscribe(Connection conn) {
+		ArrayList<SubscribeVo> sslist = null;
+		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'y' ORDER BY SUB_START DESC, SUB_INF DESC";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			sslist = new ArrayList<SubscribeVo>();
+			while (rs.next()) {
+			SubscribeVo ssvo = new SubscribeVo(); 
+			
+			ssvo.setUsId(rs.getString("us_Id"));
+			ssvo.setSubInf(rs.getString("sub_Inf"));
+			ssvo.setSubYN(rs.getString("sub_YN"));
+			ssvo.setSubStart(rs.getDate("sub_Start"));
+			ssvo.setSubEnd(rs.getDate("sub_End"));
+			ssvo.setSubReview(rs.getString("sub_Review"));
+			ssvo.setSubList(rs.getString("sub_List"));
+			ssvo.setAdId(rs.getString("ad_Id"));
+			ssvo.setSubPrice(rs.getInt("sub_Price"));
+			sslist.add(ssvo);
+			
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		System.out.println("dao result: "+sslist);
+		
+		return sslist;
+	}
+	
+	//7-2. 관리자 - 구독 n 회원 조회 
+	public ArrayList<SubscribeVo> checkSubscribeDel(Connection conn) {
+		ArrayList<SubscribeVo> sslist = null;
+		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'n' ORDER BY SUB_START DESC, SUB_INF DESC";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			sslist = new ArrayList<SubscribeVo>();
+			while (rs.next()) {
+			SubscribeVo ssvo = new SubscribeVo(); 
+			
+			ssvo.setUsId(rs.getString("us_Id"));
+			ssvo.setSubInf(rs.getString("sub_Inf"));
+			ssvo.setSubYN(rs.getString("sub_YN"));
+			ssvo.setSubStart(rs.getDate("sub_Start"));
+			ssvo.setSubEnd(rs.getDate("sub_End"));
+			ssvo.setSubReview(rs.getString("sub_Review"));
+			ssvo.setSubList(rs.getString("sub_List"));
+			ssvo.setAdId(rs.getString("ad_Id"));
+			ssvo.setSubPrice(rs.getInt("sub_Price"));
+			sslist.add(ssvo);
+			
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		System.out.println("dao result: "+sslist);
+		
+		return sslist;
+	}
+	
+	//8. 관리자 구독 n 회원 삭제
+	public int deleteSubscribe(Connection conn, String usId) {
+		int result = 0;
+		String sql = "DELETE FROM SUBSCRIBE WHERE SUB_YN='n' and US_ID = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usId);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
 }

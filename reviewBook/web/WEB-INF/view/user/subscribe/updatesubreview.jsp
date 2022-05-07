@@ -17,7 +17,7 @@
 <body>
 <%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		 out.print(vo);
+		 //out.print(vo);
 		// out.print(avo);
 		if (vo == null && avo == null) { %>
 	<%@ include file="../../../view/template_header.jsp"%>
@@ -26,6 +26,7 @@
 	<% } else if (avo != null) { %>
 	<%@ include file="../../../view/template_header_adlogin.jsp"%>
 	<% } %>
+		<div id="main_wrap">
 		<div class="bodyrvb">
 			<nav class="sidemenu">
 			<ul class="sidemenu_subscribe">
@@ -80,9 +81,8 @@
 				</div>
 			</div>
 		</div>
-		<%@ include file="../../template_footer.jsp"%>
 	</div>
-
+	<%@ include file="../../template_footer.jsp"%>
 	<!-- ckediter api 스크립트 -->
 	<script>
 		CKEDITOR.replace('subReview', {

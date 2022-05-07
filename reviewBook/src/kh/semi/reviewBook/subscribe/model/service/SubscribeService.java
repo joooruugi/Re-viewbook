@@ -65,4 +65,31 @@ public class SubscribeService {
 		close(conn);
 		return result;
 		}
-}
+	
+	//7-1. 관리자 - 구독 y 회원 조회 
+	public ArrayList<SubscribeVo> checkSubscribe() {
+		Connection conn = getConnection();
+		ArrayList<SubscribeVo> sslist = dao.checkSubscribe(conn);
+		close(conn);
+		return sslist;	
+				
+	}
+	
+	//7-2. 관리자 - 구독 y 회원 조회 
+	public ArrayList<SubscribeVo> checkSubscribeDel() {
+		Connection conn = getConnection();
+		ArrayList<SubscribeVo> sslist = dao.checkSubscribeDel(conn);
+		close(conn);
+		return sslist;	
+				
+	}
+	
+	//8. 관리자 구독 n 회원 삭제
+	public int deleteSubscribe(String usId) {
+		Connection conn = getConnection();
+		int result = dao.deleteSubscribe(conn, usId);
+		close(conn);
+		return result;
+		}
+	
+	}

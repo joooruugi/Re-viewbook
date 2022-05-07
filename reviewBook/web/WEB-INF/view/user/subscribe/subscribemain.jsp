@@ -18,10 +18,9 @@
 <title>RVB 구독</title>
 </head>
 <body>
-	<div id="main_wrap">
 <%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		 out.print(vo);
+		 //out.print(vo);
 		// out.print(avo);
 		if (vo == null && avo == null) { %>
 	<%@ include file="../../../view/template_header.jsp"%>
@@ -30,6 +29,7 @@
 	<% } else if (avo != null) { %>
 	<%@ include file="../../../view/template_header_adlogin.jsp"%>
 	<% } %>	
+	<div id="main_wrap">
 	<div class="bodyrvb"> 
 		<nav class="sidemenu">
 			<ul class="sidemenu_subscribe">
@@ -80,9 +80,9 @@
 					<div class="sub_review_all">
 					<h1>RVB 구독자들의 생생한 구독 후기 이곳에서 확인해보세요</h1>
 		 			<c:forEach var ="ssvo" items="${sslist}">  
+					 <c:if test="${not empty ssvo.subReview}"> 
 					<div class="sub_review">
 					<!-- 구독권 리뷰 작성하지 않은 경우에 리뷰 보여지면 안되니까 조건문 추가 -->
-					 <c:if test="${not empty ssvo.subReview}"> 
 					 <p>${ssvo.usId}님</p>
 					 <p>구독권 종류 : ${ssvo.subInf}</p>
 					 <p>${ssvo.subReview}</p>
@@ -92,7 +92,7 @@
  	 				</c:forEach>   
 	 				<a href="updatesubreview">구독 후기를 작성하고싶으면 여기를 클릭해주세요 >></a>
 	 				</div>
-	 				</div>
+	 			
 					<div class="sub_type">
 					<div class="sub_type_title">
 					<p>RVB에서 만날 수 있는 구독권 종류</p>
@@ -106,6 +106,9 @@
 					<p>다양한 장르별  / 추천별 도서를 읽고 싶으신 분 🙋🏻</p>
 					<p>신작 도서, 베스트셀러에 관심이 많으신 분 👴🏻</p>
 					<p>이외에도 책에 관심이 있는 모든 분들께 추천드립니다 😄</p>
+					</div>
+					<div class="sub_notice">
+					<h1> * 결제 후 나타나는 버튼을 반드시 클릭하여야 정상적으로 구독 신청이 완료됩니다. </h1>
 					</div>
 					<div class="sub_list1">
 					<p>정기구독권</p>
@@ -151,11 +154,7 @@
 		</div>
 			</div>
 			</div>
-		</div>
-	</div>
-	<%@ include file="../../template_footer.jsp"%>
-	</div>
-	
+<%@ include file="../../template_footer.jsp"%>	
 	
 
  	 	<script>

@@ -2,6 +2,8 @@ package kh.semi.reviewBook.admin.series.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -94,7 +96,8 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 			
 		//5.마감일
 		String fdDeadline = multi.getParameter("fdDeadline");
-		
+		System.out.println("fdDeadline :"+fdDeadline);
+	
 		//6.목표금액
 		String fdAccumulatestr = multi.getParameter("fdAccumulate");
 		System.out.println("fdAccumulate : "+fdAccumulatestr);
@@ -112,9 +115,6 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 		System.out.println(fdLimit);
 		System.out.println(fdDeadline);
 		System.out.println(fdAccumulate);
-
-
-	
 		
 		SeriesVo svo = new SeriesVo();
 		svo.setWbNo(wbNo);
@@ -126,13 +126,19 @@ public class AdminSeriesUpdateDoServlet extends HttpServlet {
 	
 		 int result = new SeriesService().adminUpdateSeriesBoard(svo);
 		 
-		 if(result<1) {//게시글 작성에 실패한 경우에도 메인으로 보냄
-			 response.sendRedirect("adseriesmain");
-			 return;
-		 }else {//성공하면 글 읽기
-			 	request.getSession().setAttribute("msg", "게시물 수정이 완료되었습니다.");
-				response.sendRedirect("adseriesread?wbNo="+wbNo);
-				
+		 if(result<1) {//게시글 수정에 실패한 경우에도 메인으로 보냄
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('게시물 수정에 실패하였습니다.'); location.href='" + request.getContextPath() + "/adseriesmain'");
+				out.print("</script>");
+				out.flush();
+				return;
+		 }else {//성공해도 메인
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('게시물 수정에 성공하였습니다.'); location.href='" + request.getContextPath() + "/adseriesmain'");
+				out.print("</script>");
+				out.flush();
 			 }
 		 }
 	}

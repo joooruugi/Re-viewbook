@@ -6,11 +6,11 @@
 }
 
 .contentrvb{
-	margin: 30px 0 0 50px;
 	font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    margin: auto;
 }
 
 /* 사이드메뉴  */
@@ -71,45 +71,48 @@
 	font-size: 20px;
 }
 
+/* 관리자 구독권 화면 */
 
-/* input */
-
-#sub_review_update{
-	padding-left:50px;
-    margin: auto;
-    max-width: 1100px;
+.adsubscribe_title h1{
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#subscribe_member {
+	width: 900px;
+	text-align: center;
 }
 
-#sub_review_update td{
-	padding-right: 30px;
-	vertical-align : middle;
+#subscribe_member .subscribe_member_th{
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-collapse:collapse;
+   background-color: #eaf4fc;
+   font-size: 15px;
+   height: 30px;
+   line-height: 30px;
 }
 
-#sub_review_update , #sub_review_update input{
-    font-family: 'SF_HailSnow';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-#usId, #subInf, #subYN{
-	margin-bottom: 5px;
-}
-
-/* 버튼정렬 */
-#sub_rivew_update_btn {
-	padding-left:50px;
-	margin: auto;
-	margin-top: 20px;
-
-}
-#update_btn, #update_reset_btn{
-
-    margin: 0 auto;
-    text-align: center;
+#subscribe_member .subscribe_member_td{
+	border-bottom: 1px solid gray;
+	border-collapse:collapse;
     height: 20px;
-    cursor: pointer;
+    line-height: 20px;
+    padding-bottom: 10px;
 }
- 
- 
-
+.subscribe_member_th .subscribeid{
+    width: 20%;
+}
+.subscribe_member_th .subscribetype{
+    width: 20%;
+}
+.subscribe_member_th .subscribestart{
+    width: 20%;
+}
+.subscribe_member_th .subscribeprice{
+    width: 20%;
+}
+.subscribe_member_th .subscribedelete{
+    width: 20%;
+}

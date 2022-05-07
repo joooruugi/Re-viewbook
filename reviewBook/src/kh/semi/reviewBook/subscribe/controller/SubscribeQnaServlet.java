@@ -23,15 +23,6 @@ public class SubscribeQnaServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do get : /subscribeqna");
-		String usId = "";
-		UserVo vo = (UserVo) request.getSession().getAttribute("ssUserVo");
-		if (vo == null) { // 로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
-			response.sendRedirect("login");
-			return;
-		} else {
-			usId = vo.getUsId();
-		}
-		
 		request.getRequestDispatcher("WEB-INF/view/user/subscribe/subscribeqna.jsp").forward(request, response);
 	}
 

@@ -1,6 +1,7 @@
 package kh.semi.reviewBook.series.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -49,9 +50,13 @@ public class SeriesSearchServlet extends HttpServlet {
 		
 		if(slist.size()==0) {
 			//공백, 없는 검색어 입력한경우 메인으로 보냄
-			response.sendRedirect("seriesmain");
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('해당 검색 조건에 일치하는 게시물이 없습니다.'); location.href='" + request.getContextPath() + "/seriesmain'");
+				out.print("</script>");
+				out.flush();
+				return;
 			//콘솔에서 확인
-			System.out.println("slist.size()==0");
 		}
 		else{
 			request.getRequestDispatcher("WEB-INF/view/user/series/seriessearch.jsp").forward(request, response);

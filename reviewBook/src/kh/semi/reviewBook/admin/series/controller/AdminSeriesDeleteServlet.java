@@ -1,6 +1,8 @@
 package kh.semi.reviewBook.admin.series.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -57,10 +59,11 @@ public class AdminSeriesDeleteServlet extends HttpServlet {
 			 response.sendRedirect("adseriesread?wbNo="+wbNo);
 			 return;
 		 }else {//게시글 삭제 성공하면 목록으로
-			 	System.out.println("게시물 삭제에 성공하였습니다.");
-			 	request.getSession().setAttribute("msg", "게시물 삭제에 성공하였습니다.");
-				response.sendRedirect("adseriesmain");
-				
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('게시물 삭제에 성공하였습니다.'); location.href='" + request.getContextPath() + "/adseriesmain'");
+				out.print("</script>");
+				out.flush();	
 			 }
 	}
 

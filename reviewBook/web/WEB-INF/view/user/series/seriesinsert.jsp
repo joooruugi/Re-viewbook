@@ -20,10 +20,9 @@
 <% SeriesVo svo = (SeriesVo)request.getAttribute("svo"); 
 	 	//System.out.println(svo); 
 	 	%>
-	 <div id="main_wrap">
-	<%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+	 	<%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		 out.print(vo);
+		 //out.print(vo);
 		// out.print(avo);
 		if (vo == null && avo == null) { %>
 	<%@ include file="../../../view/template_header.jsp"%>
@@ -32,6 +31,7 @@
 	<% } else if (avo != null) { %>
 	<%@ include file="../../../view/template_header_adlogin.jsp"%>
 	<% } %>
+	 <div id="main_wrap">
     <div class="series_banner">
 		<div id="series_banner_title">
 			<h2>
@@ -109,9 +109,8 @@
 			</div>
 		</div>
 	</div>
-<%@ include file="../../template_footer.jsp"%>
 </div>
-
+<%@ include file="../../template_footer.jsp"%>
 
 <!-- ckediter api 스크립트 -->
 <script>

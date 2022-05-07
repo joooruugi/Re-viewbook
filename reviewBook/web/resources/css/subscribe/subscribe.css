@@ -50,7 +50,7 @@
 	margin-left: 10px;
 }
 
-.sidemenu_subscribe li:hover {
+.sidemenu_subscribe li:hover:not(:first-of-type) {
 	font-family: 'ROKAFSansMedium';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
@@ -195,10 +195,11 @@ to {
 
 .sub_type_title p {
 	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .sub_recommend{
-	width:70%;
+	width:60%;
 	padding:20px;
 	margin-top: 30px;
 	line-height: 150%;
@@ -207,8 +208,14 @@ to {
     border-radius: 30px;
 }
 
+.sub_notice h1{
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
 .sub_recommend h1{
-	text-decoration: underline rgb(129,165,215);
 	font-weight: bold;
 	font-size: 1.2rem;
 }
@@ -389,6 +396,7 @@ body {
 }
 .subscribe_qna_title h1 {
 	font-size: 3rem;
+	margin-bottom: 10px;
 }
 .qna{
 	text-align:center;

@@ -2,6 +2,8 @@ package kh.semi.reviewBook.series.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -97,13 +99,19 @@ public class SeriesUpdateDoServlet extends HttpServlet {
 	
 		 int result = new SeriesService().updateSeriesBoard(svo);
 		 
-		 if(result<1) {//게시글 작성에 실패한 경우에도 메인으로 보냄
-			 response.sendRedirect("seriesmain");
-			 return;
-		 }else {//성공하면 글 읽기
-			 	request.getSession().setAttribute("msg", "게시물 수정이 완료되었습니다.");
-				response.sendRedirect("seriesread?wbNo="+wbNo);
-				
+		 if(result<1) {//게시글 수정에 실패한 경우에도 메인으로 보냄
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('게시물 수정에 실패하였습니다.'); location.href='" + request.getContextPath() + "/seriesmain'");
+				out.print("</script>");
+				out.flush();
+				return;
+		 }else {//성공해도 메인
+			 PrintWriter out = response.getWriter();
+				out.print("<script language='javascript'>");
+				out.print("alert('게시물 수정에 성공하였습니다.'); location.href='" + request.getContextPath() + "/seriesmain'");
+				out.print("</script>");
+				out.flush();
 			 }
 		 }
 		
