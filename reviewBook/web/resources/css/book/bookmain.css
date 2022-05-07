@@ -47,48 +47,54 @@
     font-size: 20px;
 }
 
-
-
-.bookbody_total{
-
-    /* display: flex; */
-}
-.bookmain_total{
-    max-width: 1100px;
-    border: 3px solid;
-    color: powderblue;
-    float: right;
-    width: auto;
-    vertical-align: middle;
+.bookimg{
+    width: 80%;
+    height: 80%;
 
 }
-
-.bookmain_sell_rank_list{
+ .bookmain_total{
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    /* margin: 20px; */
+    text-align: left;
+    /* background-color: #eaf4fc; */
     display: flex;
-
-
-
-}
-.bookmain_grade_rank_list{
-    display: flex;
-
-
-
-}.bookmain_review_rank_list{
-    display: flex;
-
-
-
-}
-.bookmain_thumbnail{
-    margin: 30px;
-
-}
-
-.thumbnail_img{
-    width: 150px;
-}
-
-.real_img{
+    flex-direction: column;
+    /* border: 1px solid #96bff9; */
+    cursor: pointer;
+} 
+.swiper {
     width: 100%;
-}
+    height: 50%;
+    margin-bottom: 10%;
+  }
+
+  .swiper-slide {
+/*     text-align: center;
+    font-size: 18px; */
+  background: #fff; 
+
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: block;
+    text-align: left;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+/*   .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }  */

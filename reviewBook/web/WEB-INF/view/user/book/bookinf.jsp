@@ -23,6 +23,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+
+<%
+            UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+        AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+        // out.print(vo);
+        if (vo == null && avo == null) {
+        %>
+        <%@ include file="../../../view/template_header.jsp"%>
+        <%
+            } else if (vo != null) {
+        %>
+        <%@ include file="../../../view/template_header_login.jsp"%>
+        <%
+            } else if (avo != null) {
+        %>
+        <%@ include file="../../../view/template_header_adlogin.jsp"%>
+        <%
+            }
+        %>
    <div class="bookinf_total">
         <div class="bookinf_title">
             <div class="bookinf_title_img">

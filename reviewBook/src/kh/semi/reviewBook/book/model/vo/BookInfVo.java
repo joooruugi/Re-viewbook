@@ -58,6 +58,13 @@ public class BookInfVo {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "BookInfVo [bkNo=" + bkNo + ", bkTitle=" + bkTitle + ", bkImg=" + bkImg + ", bkPrice=" + bkPrice
+				+ ", bkWrither=" + bkWrither + ", bkPublishdate=" + bkPublishdate + ", bkRating=" + bkRating + ", bkRv="
+				+ bkRv + ", gnNo=" + gnNo + ", bkContent=" + bkContent + ", bkIndex=" + bkIndex + "]";
+	}
+
 	public int getBkNo() {
 		return bkNo;
 	}

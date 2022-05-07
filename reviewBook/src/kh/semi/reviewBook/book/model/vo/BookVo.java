@@ -27,6 +27,15 @@ public class BookVo {
 		this.bkRating = bkRating;
 		this.bkRv = bkRv;
 	}
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "BookVo [bkRank=" + bkRank + ", bkWeeksales=" + bkWeeksales + ", bkNo=" + bkNo + ", bkTitle=" + bkTitle
+				+ ", bkImg=" + bkImg + ", bkRating=" + bkRating + ", bkRv=" + bkRv + "]";
+	}
 	public int getBkRank() {
 		return bkRank;
 	}

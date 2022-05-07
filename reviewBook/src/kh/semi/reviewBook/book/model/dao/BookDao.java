@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 import kh.semi.reviewBook.book.model.vo.*;
 
+
 public class BookDao {
 
 	private Statement stmt = null;
@@ -16,7 +17,7 @@ public class BookDao {
 	private ResultSet rs = null;
 
 	public ArrayList<BookVo> rankinglist(Connection conn) {
-		ArrayList<BookVo> rlist = null;
+		ArrayList<BookVo> blist = null;
 		String sql = "select * from book order by bk_rank "
 				+ ", bk_weeksales"
 				;
@@ -25,7 +26,7 @@ public class BookDao {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			rlist = new ArrayList<BookVo>();
+			blist = new ArrayList<BookVo>();
 			while (rs.next()) {
 				BookVo bvo = new BookVo();
 
@@ -35,7 +36,7 @@ public class BookDao {
 				bvo.setBkTitle(rs.getString("bk_title"));
 				bvo.setBkRating(rs.getInt("bk_rating"));
 				bvo.setBkRv(rs.getInt("bk_rv"));
-				rlist.add(bvo);
+				blist.add(bvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -43,12 +44,12 @@ public class BookDao {
 			close(rs);
 			close(pstmt);
 		}
-		return rlist;
+		return blist;
 	}
 	
 
 	public ArrayList<BookVo> booklist(Connection conn) {
-		ArrayList<BookVo> rlist = null;
+		ArrayList<BookVo> blist = null;
 		String sql = "select * from book order by BK_PUBLISHDATE desc"
 //				+ ", bk_weeksales"
 				;
@@ -57,7 +58,7 @@ public class BookDao {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			rlist = new ArrayList<BookVo>();
+			blist = new ArrayList<BookVo>();
 			while (rs.next()) {
 				BookVo bvo = new BookVo();
 
@@ -66,7 +67,7 @@ public class BookDao {
 				bvo.setBkTitle(rs.getString("bk_title"));
 				bvo.setBkRating(rs.getInt("bk_rating"));
 				bvo.setBkRv(rs.getInt("bk_rv"));
-				rlist.add(bvo);
+				blist.add(bvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -74,7 +75,46 @@ public class BookDao {
 			close(rs);
 			close(pstmt);
 		}
-		return rlist;
+		return blist;
 	}
+	
+	
+	// 랭킹 메소드
+	
+	
+	public ArrayList<BookVo> listSeries(Connection conn) {
+		
+		ArrayList<BookVo> blist = null;
+		String sql = "SELECT * FROM BK_RANKING";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			blist = new ArrayList<BookVo>();
+			while (rs.next()) {
+				BookVo bvo = new BookVo(); 
+
+				bvo.setBkNo(rs.getInt("bK_No"));
+				bvo.setBkImg(rs.getString("bK_Img"));
+				bvo.setBkRank(rs.getInt("bK_Rank"));
+				bvo.setBkTitle(rs.getString("bK_Title"));
+				bvo.setBkRating(rs.getInt("bK_Rating"));
+				bvo.setBkRv(rs.getInt("bK_Rv"));
+
+
+				blist.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return blist;
+	}
+	
+	
+	
 	
 }

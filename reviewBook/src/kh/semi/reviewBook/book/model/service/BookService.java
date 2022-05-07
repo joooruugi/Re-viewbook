@@ -12,19 +12,19 @@ public class BookService {
 
 	
 	public ArrayList<BookVo> rankinglist() {
-		ArrayList<BookVo> rlist = null;
+		ArrayList<BookVo> blist = null;
 		Connection conn = getConnection();
-		rlist = new BookDao().rankinglist(conn);
+		blist = new BookDao().rankinglist(conn);
 		close(conn);
-		return rlist;
+		return blist;
 	}
 
 	public ArrayList<BookVo> booklist() {
-		ArrayList<BookVo> rlist = null;
+		ArrayList<BookVo> blist = null;
 		Connection conn = getConnection();
-		rlist = new BookDao().booklist(conn);
+		blist = new BookDao().booklist(conn);
 		close(conn);
-		return rlist;
+		return blist;
 	}
 	
 }
