@@ -70,13 +70,14 @@
 											<p>
 												작품명 :
 												<%=svo.getWbTitle()%></p>
+											<p><img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
+												class="bookimg"></p>
 											<p>
 												작가 :
 												<%=svo.getWbWriter()%></p>
 											<p>
 												카테고리 :
 												<%=svo.getWbCategory()%></p>
-											<%-- <p><%=fvo.getFdDonation()%>원 후원하셨습니다.</p> --%>
 										</div>
 										<div class="btn_funding_move_close">
 											<button class="button2 btn_withdraw">철회하기</button>
@@ -98,6 +99,8 @@
 											<p>
 												작품명 :
 												<%=svo.getWbTitle()%></p>
+											<p><img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
+												class="bookimg"></p>
 											<p>
 												작가 :
 												<%=svo.getWbWriter()%></p>

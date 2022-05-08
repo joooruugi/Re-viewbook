@@ -45,6 +45,7 @@ public class FundingDao {
 				svo.setAdId(rs.getString("ad_id"));
 				svo.setIsDonation(rs.getInt("is_donation"));
 				svo.setAvgDonation(rs.getDouble("avg_donation"));
+				svo.setWbImgPath(rs.getString("wb_imgpath"));
 
 				slist.add(svo);
 			}

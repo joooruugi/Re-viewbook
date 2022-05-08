@@ -109,18 +109,21 @@
 }
 /* 철회,펀딩 버튼 */ 
 .btn_funding_withdraw {
-	background-color: red;
+	background-color: #fce1ba;
 }
 
 .btn_funding_donation {
-	background-color: blue;
+	background-color: #9ecdf7;
+}
+.fdDonation {
+	width: 200px;
 }
 
 /* 펀딩성공작 슬라이드 */
 
 .bookimg {
-	width:160px;
-	height:100px;
+	width:100px;
+	height:160px;
 }
 
 .swiper {
@@ -189,7 +192,7 @@
 /* 펀딩 이동하기 닫기 버튼 정렬 */
 
 .btn_funding_move_close{
-	margin: auto;
+	margin: 10px auto;
 	text-align: center;
 }
 #modal_funding_content p{
@@ -203,7 +206,7 @@
 	position: relative;
 	top: 250px;
 	width: 500px;
-	height: 270px;
+	height: flex;
 	border: 1px solid;
 	margin: 0 auto;
 	background-color: white;
