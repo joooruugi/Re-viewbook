@@ -19,7 +19,7 @@ import kh.semi.reviewBook.user.model.vo.UserVo;
 @WebServlet("/userlist.lo")
 public class AdminDeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AdminService service = new AdminService();
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,26 +32,27 @@ public class AdminDeleteUserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		System.out.println("회원삭제 서블릿 확인");
 		String usName = request.getParameter("usName");
 		System.out.println("usName : "+usName);
 		PrintWriter script = response.getWriter();
-		int result = service.DeleteUser(usName);
+		int result = new AdminService().DeleteUser(usName);
 		if(result <1) {
 			script.println("<script>");
 			script.println("alert('"+usName+"님의 회원정보 삭제를 실패했습니다.')");
 			script.println("location.href='userlist'");
 			script.println("</script>");
 			System.out.println("회원삭제 실패");
-			response.sendRedirect("userlist");
 			return;
 		}else {
 			script.println("<script>");
+
 			script.println("alert('"+usName+"님의 회원정보를 삭제했습니다.')");
 			script.println("location.href='userlist'");
 			script.println("</script>");
 			System.out.println("회원 삭제 성공");
-			response.sendRedirect("userlist");
 		}
 	}
 
