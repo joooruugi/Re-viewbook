@@ -13,7 +13,7 @@
                 <div class="dropdownmenu">
                     <ul class="nav_dropdownmenu1">
                         <li>
-                            <a class="nav_item" href="naver.com">도서</a>
+                            <a class="nav_item" href="bookmain">도서</a>
                             <ul class="nav_dropdownmenu2">
                                 <li><a class="nav_item" href="naver.com">스릴러</a></li>
                                 <li><a class="nav_item" href="#">힐링</a></li>

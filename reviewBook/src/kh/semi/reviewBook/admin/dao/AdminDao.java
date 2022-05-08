@@ -133,12 +133,36 @@ public class AdminDao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				result = new AdminVo();
-				// 정보가 일치하면 아이디를 띄워줘야하는데 어캐 띄워주지 !
+				result.setAdId(rs.getString("ad_id"));
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
+	//관리자 비밀번호 찾기
+	public AdminVo findpwdAdmin(Connection conn, String adId, String adEmail, String adPhone, String adNickname, String adCompany) {
+		AdminVo result = null;
+		String sql = "select ad_password from \"ADMIN\" where ad_id=? and ad_email=? and ad_phone=? and ad_nickname=? and ad_company=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adId);
+			pstmt.setString(2, adEmail);
+			pstmt.setString(3, adPhone);
+			pstmt.setString(4, adNickname);
+			pstmt.setString(5, adCompany);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new AdminVo();
+				result.setAdPassword(rs.getString("ad_password"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
 			close(rs);
 			close(pstmt);
 		}

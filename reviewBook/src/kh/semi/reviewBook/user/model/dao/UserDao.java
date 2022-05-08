@@ -148,6 +148,31 @@ public class UserDao {
 		}
 		return result;
 	}
+	//비밀번호 찾기
+	public UserVo findpwdUser(Connection conn, String usName, String usId, String usEmail, String usPhone, String usNickname) {
+		UserVo result = null;
+		String sql = "select us_password from \"USER\" where us_name=? and us_Id=? and us_Email=? and us_phone=? and us_nickname=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, usName);
+			pstmt.setString(2, usId);
+			pstmt.setString(3, usEmail);
+			pstmt.setString(4, usPhone);
+			pstmt.setString(5, usNickname);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = new UserVo();
+				result.setUsPassword(rs.getString("us_password"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 
 //	회원 목록 
 	public ArrayList<UserVo> listUser(Connection conn) {

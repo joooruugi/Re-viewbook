@@ -54,6 +54,14 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
+	//관리자 비밀번호 찾기
+	public AdminVo findqwdAdmin(String adId, String adEmail, String adPhone, String adNickname, String adCompany) {
+		AdminVo result = null;
+		Connection conn= getConnection();
+		result = dao.findpwdAdmin(conn, adId, adEmail, adPhone, adNickname, adCompany);
+		close(conn);
+		return result;
+	}
 	//관리자 리스트
 	public ArrayList<AdminVo> AdminList(String adId){
 		Connection conn = getConnection();

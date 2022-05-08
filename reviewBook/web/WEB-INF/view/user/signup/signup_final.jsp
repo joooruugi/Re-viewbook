@@ -35,13 +35,13 @@
 				<p class="fontimportant">환영해요 !</p>
 			</div>
 			<div class="signupuser_final_right">
-				<a class="signupuser_final_link final_link_login" href="<%=request.getContextPath() %>/signup_gmail">
-					<p class="fontevent">!필수! 이메일 인증</p>
-				</a> <a class="signupuser_final_link" href="#">
+				<a class="signupuser_final_link final_link_login" href="<%=request.getContextPath() %>/login">
+					<p class="fontevent">로그인 하러가기 ></p>
+				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/bookmain">
 					<p class="fontimportant2">추천 도서 보러가기 ></p>
 				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/seriesmain">
 					<p class="fontimportant2">추천 연재글 보러가기 ></p>
-				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/">
+				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/subscribemain">
 					<p class="fontimportant2">구독권 보러가기 ></p>
 				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/fundingboardlist">
 					<p class="fontimportant2">펀딩 작품 보러가기 ></p>

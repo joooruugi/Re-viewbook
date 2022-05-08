@@ -11,27 +11,29 @@
     border-radius: 20px;
 }
 .loginuser_findpwd_name{
-    margin: 10px;
+    margin: 5px;
 }
 .loginuser_findpwd_name p{
    font-size: 30px;
    background-color: #d4e9f9;
 }
-.loginuser_findpwd_text, .loginuser_findpwd_input{
+.loginuser_findpwd_text{
     display: flex;
     flex-direction: column;
     float:left;
-    margin: 40px 40px 10px 40px;
+    margin: 10px 40px 10px 40px;
 }
 .loginuser_findpwd_text p{
     margin: 16px;
     font-size: 25px;
+    text-align:center;
     text-decoration: underline;
     text-decoration-color: #98c9f1;
 }
-.loginuser_findpwd_input input{
-    margin: 8px;
+.loginuser_findpwd_text input{
+    
     width: 200px;
+    
     height: 30px;
 }
 .loginuser_findpwd_input input:hover{
@@ -48,13 +50,13 @@
 }
 .loginuser_findpwd_btn a{
     color: black;
-    margin: 5px;
+    margin: 10px;
     float: right;
 }
 .loginuser_findpwd_btn{
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    margin: 20px;
 }
 .loginuser_findpwd_btn .loginuser_findpwd_findbtn button{
     font-family: 'GowunDodum-Regular';

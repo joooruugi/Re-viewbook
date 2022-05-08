@@ -47,8 +47,8 @@ public class UserLoginFindIdActServlet extends HttpServlet {
 		PrintWriter script = response.getWriter();
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-
 		UserVo vo = new UserService().findidUser(usName, usEmail);
+		
 		if (vo == null) { // 아이디 찾기 실패
 			System.out.println("아이디 찾기 실패");
 			script.println("<script>");
@@ -56,10 +56,13 @@ public class UserLoginFindIdActServlet extends HttpServlet {
 			script.println("alert('없는 정보입니다.')");
 			script.println("location.href='findid'");
 			script.println("</script>");
-//			response.sendRedirect("findid");
 		}else {//아이디 찾기 성공
+			request.setAttribute("usId", vo.getUsId());
+			String findId = vo.getUsId();
+			System.out.println(usName);
 			script.println("<script>");
-			script.println("location.href='foundid'");
+			script.println("alert('"+usName+"님의 아이디는 "+findId+"입니다.')");
+			script.println("location.href='login'");
 			script.println("</script>");
 		}
 
