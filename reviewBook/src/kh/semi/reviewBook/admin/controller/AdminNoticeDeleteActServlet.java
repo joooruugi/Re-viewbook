@@ -1,7 +1,7 @@
 package kh.semi.reviewBook.admin.controller;
 
 import java.io.IOException;
-
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -36,7 +36,7 @@ public class AdminNoticeDeleteActServlet extends HttpServlet {
 		String ntNostr = request.getParameter("ntNo");
 		System.out.println("ntNo: "+ntNostr);
 		int ntNo = Integer.parseInt(ntNostr);
-		
+		PrintWriter script = response.getWriter();
 		NoticeVo dnvo = service.ReadNotice(ntNo);
 		
 		int result = service.NoticeDelete(dnvo);
@@ -44,8 +44,11 @@ public class AdminNoticeDeleteActServlet extends HttpServlet {
 			response.sendRedirect("adminnotice_content?ntNo="+ntNo);
 			return;
 		}else {
+			script.println("<script>");
+			script.println("alert('"+ntNo+"번 공지사항이 삭제되었습니다.')");
+			script.println("location.href='adnotice'");
+			script.println("</script>");
 			System.out.println("게시물 삭제 성공");
-			response.sendRedirect("adnotice");
 		}
 		
 		

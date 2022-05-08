@@ -19,33 +19,48 @@ import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 public class AdminNoticeDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AdminService service = new AdminService();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminNoticeDeleteServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String ntNostr = request.getParameter("ntNo");
-		int ntNo = Integer.parseInt(ntNostr);
-		System.out.println("ntNo: "+ntNostr);
-		
-		NoticeVo nvo = new AdminService().ReadNotice(ntNo);
-		System.out.println("nvo ="+nvo);
-		request.setAttribute("nvo", nvo);
-		
-		
-		request.getRequestDispatcher("WEB-INF/view/admin/notice/adminnotice_content.jsp").forward(request, response);
+	public AdminNoticeDeleteServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String ntNostr = request.getParameter("ntNo");
+		int ntNo = Integer.parseInt(ntNostr);
+		System.out.println("ntNo: " + ntNostr);
+
+		NoticeVo nvo = new AdminService().ReadNotice(ntNo);
+		System.out.println("nvo =" + nvo);
+		request.setAttribute("nvo", nvo);
+
+		// 조회수 증가
+		int updateCnt = new AdminService().NoticeCntUpdate(nvo);
+		if (updateCnt < 1) {
+			response.sendRedirect("notice");
+			System.out.println("조회수 증가 안먹음");
+			return;
+		} else {
+			System.out.println("조회수 증가됨");
+			request.setAttribute("nvo", nvo);
+			request.getRequestDispatcher("WEB-INF/view/admin/notice/adminnotice_content.jsp").forward(request, response);
+
+		}
+
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		// TODO Auto-generated method stub

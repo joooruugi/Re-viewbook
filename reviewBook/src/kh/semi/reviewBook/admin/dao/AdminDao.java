@@ -301,6 +301,21 @@ public class AdminDao {
 		return nvo;
 	}
 
+	// 공지사항 조회수
+	public int NoticeCntUpdate(Connection conn, NoticeVo nvo) {
+		int result = 0;
+		String sql="update notice set nt_cnt = (nt_cnt)+1 where nt_no=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, nvo.getNtNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	// 회원 목록 조회
 	public ArrayList<UserVo> Userlist(Connection conn, String usId) {
 		ArrayList<UserVo> ulist = null;

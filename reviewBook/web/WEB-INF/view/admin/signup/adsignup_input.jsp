@@ -91,12 +91,8 @@
 						<td class="signupuser_input_input"><input type="email"
 							name="adEmail" class="signup_infoinput" id="adEmail"
 							required="required"></td>
-						<td class="signupuser_input_btn"><button type="submit"
-								id="btn_email" class="signupinfo_emailcheck">
-								<p class="fontnothing signup_infobtn">이메일 인증하기</p>
-							</button></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">인증번호</p>
 						</td>
@@ -107,7 +103,7 @@
 								id="btn_email_chk" class="signupinfo_emailcheck">
 								<p class="fontnothing signup_infobtn">인증확인</p>
 							</button></td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td class="signupuser_input_text">
 							<p class="fontnormal signup_infoname">회사(소속)</p>

@@ -38,8 +38,19 @@ public class UserNoticeContentServlet extends HttpServlet {
 		NoticeVo nvo = new AdminService().ReadNotice(ntNo);
 		System.out.println("nvo ="+nvo);
 		request.setAttribute("nvo", nvo);
+		//조회수 증가
+		int updateCnt = new AdminService().NoticeCntUpdate(nvo);
+		if(updateCnt <1) {
+			response.sendRedirect("notice");
+			System.out.println("조회수 증가 안먹음");
+			return;
+		}else {
+			System.out.println("조회수 증가됨");
+			request.setAttribute("nvo", nvo);
+			request.getRequestDispatcher("WEB-INF/view/user/notice/noticecontent.jsp").forward(request, response);
+	
+		}
 		
-		request.getRequestDispatcher("WEB-INF/view/user/notice/noticecontent.jsp").forward(request, response);
 	}
 
 	/**

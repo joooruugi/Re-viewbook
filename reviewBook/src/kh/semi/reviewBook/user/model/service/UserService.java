@@ -10,7 +10,7 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 public class UserService {
 	private UserDao dao = new UserDao();
 
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	public int insertUser(UserVo vo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -18,7 +18,7 @@ public class UserService {
 		close(conn);
 		return result;
 	}
-	//¾ÆÀÌµğ Áßº¹È®ÀÎ
+	//ì•„ì´ë”” ì¤‘ë³µí™•ì¸
 		public int SignupIdCheck(String usId) {
 			int result;
 			Connection conn = getConnection();
@@ -26,7 +26,7 @@ public class UserService {
 			close(conn);
 			return result;
 		}
-		//´Ğ³×ÀÓ Áßº¹È®ÀÎ
+		//ë‹‰ë„¤ì„ ì¤‘ë³µí™•ì¸
 		public int SignupNicknameCheck(String usNickname) {
 			int result;
 			Connection conn = getConnection();
@@ -34,7 +34,7 @@ public class UserService {
 			close(conn);
 			return result;
 		}
-	//·Î±×ÀÎ
+	//ë¡œê·¸ì¸
 	public UserVo loginUser(String usId, String usPassword) {
 		UserVo result = null;
 		Connection conn = getConnection();
@@ -42,7 +42,7 @@ public class UserService {
 		close(conn);
 		return result;
 	}
-	//¾ÆÀÌµğ Ã£±â
+	//ì•„ì´ë”” ì°¾ê¸°
 	public UserVo findidUser(String usName, String usEmail) {
 		UserVo result = null;
 		Connection conn = getConnection();
@@ -50,7 +50,7 @@ public class UserService {
 		close(conn);
 		return result;
 	}
-	//ºñ¹Ğ¹øÈ£ Ã£±â
+	//ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
 	public UserVo findpwdUser(String usName, String usId, String usEmail, String usPhone, String usNickname	) {
 		UserVo result = null;
 		Connection conn = getConnection();

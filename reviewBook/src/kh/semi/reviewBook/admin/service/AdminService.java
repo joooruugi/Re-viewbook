@@ -83,6 +83,13 @@ public class AdminService {
 		close(conn);
 		return nvo;
 	}
+	//공지사항 조회수 
+	public int NoticeCntUpdate(NoticeVo nvo) {
+		Connection conn = getConnection();
+		int result = dao.NoticeCntUpdate(conn, nvo);
+		close(conn);
+		return result;
+	}
 	
 	//관리자 공지사항 등록
 	public int NoticeRegister(NoticeVo nvo) {

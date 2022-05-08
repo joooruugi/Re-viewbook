@@ -37,9 +37,9 @@
 			<div class="signupuser_final_right">
 				<a class="signupuser_final_link final_link_login" href="<%=request.getContextPath() %>/adlogin">
 					<p class="fontevent">로그인</p>
-				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/">
+				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/admain">
 					<p class="fontimportant2">메인페이지 ></p>
-				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/">
+				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/userlist">
 					<p class="fontimportant2">회원정보 ></p>
 				</a> <a class="signupuser_final_link" href="<%=request.getContextPath() %>/adnotice">
 					<p class="fontimportant2">공지사항 ></p>
