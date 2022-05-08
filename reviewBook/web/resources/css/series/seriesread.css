@@ -1,8 +1,8 @@
 /* 본문 */
 .bodyrvb {
-	width: 100%;
+	width: 80%;
 	margin: auto;
-	display: flex;
+	display : flex;
 }
 /* 사이드메뉴  */
 .sidemenu {

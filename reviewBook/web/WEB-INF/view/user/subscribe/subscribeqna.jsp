@@ -8,8 +8,7 @@
 	href="<%=request.getContextPath()%>/resources/css/all/reset.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/main/main.css">
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

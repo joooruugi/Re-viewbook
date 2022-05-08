@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
+
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesReCommentVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 

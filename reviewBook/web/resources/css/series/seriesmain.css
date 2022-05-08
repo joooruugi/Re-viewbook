@@ -1,6 +1,7 @@
 /* 본문 */
+
 .bodyrvb {
-	width: 100%;
+	width: 80%;
 	margin: auto;
 	display : flex;
 }
@@ -168,10 +169,6 @@ background-color:  rgba(234, 244, 252, 1);
 
 /* 이달의작가 */
 .series_main_writer{
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%,-50%);  */
     margin: auto;
     margin-bottom: 50px;
     width:700px;

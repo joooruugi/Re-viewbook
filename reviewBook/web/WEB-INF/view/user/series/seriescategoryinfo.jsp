@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main/main.css">
 <%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -25,7 +24,7 @@
 	%>
 <%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
 		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		 out.print(vo);
+		 //out.print(vo);
 		// out.print(avo);
 		if (vo == null && avo == null) { %>
 	<%@ include file="../../../view/template_header.jsp"%>
