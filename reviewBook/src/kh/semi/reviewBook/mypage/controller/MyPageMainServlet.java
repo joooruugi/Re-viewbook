@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.mypage.model.service.MyPageService;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
-import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 

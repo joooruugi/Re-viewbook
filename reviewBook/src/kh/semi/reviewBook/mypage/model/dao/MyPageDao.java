@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.Statement;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
@@ -16,7 +16,7 @@ import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
 
 public class MyPageDao {
-	private Statement stmt = null;
+//	private Statement stmt = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
@@ -222,48 +222,6 @@ public class MyPageDao {
 		System.out.println("dao volist: " + volist);
 		return volist;
 	}
-
-	// 장바구니 삭제 전 기본정보 불러오기
-//	public CartVo readUpdateCart(Connection conn, String usId, int bkNo) {
-//		System.out.println("dao readUpdateCart usId: " + usId);
-//		CartVo result = null;
-//		String sql = "select * from cart join book using (bk_no) where us_id=? and bk_no=?";
-//
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, usId);
-//			pstmt.setInt(2, bkNo);
-//			rs = pstmt.executeQuery();
-//			if (rs.next()) {
-//				result = new CartVo();
-//				US_ID    NOT NULL VARCHAR2(30) 
-//				BK_NO    NOT NULL NUMBER       
-//				CA_COUNT          NUMBER
-//				BK_TITLE       NOT NULL VARCHAR2(150) 
-//				BK_IMG                  VARCHAR2(255) 
-//				BK_PRICE       NOT NULL NUMBER        
-//				BK_WRITER               VARCHAR2(30)  
-//				BK_PUBLISHDATE          DATE   
-//
-//				result.setBkImg(rs.getString("bk_Img"));
-//				result.setBkNo(rs.getInt("bk_No"));
-//				result.setBkPrice(rs.getInt("bk_Price"));
-//				result.setBkPublishdate(rs.getDate("bk_Publishdate"));
-//				result.setBkTitle(rs.getString("bk_Title"));
-//				result.setBkWriter(rs.getString("bk_Writer"));
-//				result.setCaCount(rs.getInt("ca_Count"));
-//				result.setUsId(rs.getString("us_Id"));
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		System.out.println("dao readUpdateCart result: " + result);
-//		return result;
-//	}
 
 	// 장바구니 삭제
 	public int deleteCart(Connection conn, String usId, int bkNo) {

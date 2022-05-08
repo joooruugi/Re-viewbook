@@ -4,7 +4,6 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.getConnection;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import kh.semi.reviewBook.mypage.model.dao.MyPageDao;
@@ -13,7 +12,6 @@ import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
 import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
-import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
 public class MyPageService {
 	private MyPageDao dao = new MyPageDao();
@@ -71,14 +69,6 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
-
-	// 장바구니 삭제 전 기존 정보 가져오기
-//	public CartVo readUpdateCart(String usId, int bkNo) {
-//		Connection conn = getConnection();
-//		CartVo cVo = dao.readUpdateCart(conn, usId, bkNo);
-//		close(conn);
-//		return cVo;
-//	}
 
 	// 장바구니 삭제
 	public int deleteCart(String usId, int bkNo) {
