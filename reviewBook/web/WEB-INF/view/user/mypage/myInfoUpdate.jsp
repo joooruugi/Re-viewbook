@@ -20,11 +20,12 @@
 </head>
 <body>
 	<%@ include file="../../../view/template_header_login.jsp"%>
-	<div class="infoupdate_body">
+	<div class="bodyrvb">
 		<nav class="sidemenu">
 			<ul class="sidemenu_infoupdate">
-				<li><a class="sidemenu_item sidemenu_topmenu">회원정보 수정</a></li>
-				<li><a class="sidemenu_item">수정 완료</a></li>
+				<li><a class="sidemenu_item sidemenu_topmenu">정보수정</a></li>
+				<li><a class="sidemenu_item" href="mypagemain">마이페이지</a></li>
+				<li><a class="sidemenu_item" href="cartlist">장바구니</a></li>
 			</ul>
 		</nav>
 		<div class="infoupdate_content">

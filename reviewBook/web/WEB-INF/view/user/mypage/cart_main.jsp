@@ -8,10 +8,10 @@
 	href="<%=request.getContextPath()%>/resources/css/all/all.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/main/main.css">
+
 <%@page import="kh.semi.reviewBook.mypage.model.vo.CartVo"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,11 +28,32 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	<%@ include file="../../../view/template_header_login.jsp"%>
 	<%
 		ArrayList<CartVo> volist = (ArrayList<CartVo>) request.getAttribute("cVo");
 	if (volist != null) {
 	%>
+
+	<div id="main_wrap">
+		<%
+			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+		//out.print(vo);
+		// out.print(avo);
+		if (vo == null && avo == null) {
+		%>
+		<%@ include file="../../../view/template_header.jsp"%>
+		<%
+			} else if (vo != null) {
+		%>
+		<%@ include file="../../../view/template_header_login.jsp"%>
+		<%
+			} else if (avo != null) {
+		%>
+		<%@ include file="../../../view/template_header_adlogin.jsp"%>
+		<%
+			}
+		%>
+	</div>
 	<div class="bodyrvb">
 		<nav class="sidemenu">
 			<ul class="sidemenu_cart">
@@ -41,52 +62,54 @@
 				<li><a class="sidemenu_item" href="mypagemain">마이페이지</a></li>
 			</ul>
 		</nav>
+		<div class="contentrvb">
+			<div class="contentmain">
+				<table class="cartlist">
+					<caption class="caption">장바구니 목록</caption>
+					<tr class="cartlist_th fontimportant2">
+						<th class="cartlistimg">상품이미지</th>
+						<th class="cartlisttitle">상품제목</th>
+						<th class="cartlistwriter">저자</th>
+						<th class="cartlistdate">출판일</th>
+						<th class="cartlistbookno">도서번호</th>
+						<th class="cartlistcnt">수량</th>
+						<th class="cartlistprice">금액</th>
+						<th class="cartlistdelete">삭제하기</th>
+						<th class="cartlistbuy">구매하기</th>
+					</tr>
+					<%
+						for (CartVo cvo : volist) {
+					%>
+					<tr class="cartlist_td fontnormal">
+						<td><%=cvo.getBkImg()%></td>
+						<td><%=cvo.getBkTitle()%></td>
+						<td><%=cvo.getBkWriter()%></td>
+						<td><%=cvo.getBkPublishdate()%></td>
+						<td class="bkNo"><%=cvo.getBkNo()%></td>
+						<td><%=cvo.getCaCount()%></td>
+						<td><%=cvo.getBkPrice()%></td>
+						<td><button class="btn_delete button1">삭제하기</button></td>
+						<td><button class="btn_buy button1">구매하기</button></td>
+					</tr>
+					<%
+						}
+					%>
+				</table>
+				<p>
+					<%
+						
+					%>
+				</p>
+				<%
+					} else {
+				%>
+				<div>주문 상품이 없습니다.</div>
+				<%
+					}
+				%>
+			</div>
+		</div>
 	</div>
-	<div>
-		<table class="cartlist">
-			<caption>장바구니 목록</caption>
-			<tr class="cartlist_th fontimportant2">
-				<th class="cartlistimg">상품이미지</th>
-				<th class="cartlisttitle">상품제목</th>
-				<th class="cartlistwriter">저자</th>
-				<th class="cartlistdate">출판일</th>
-				<th class="cartlistbookno">도서번호</th>
-				<th class="cartlistcnt">수량</th>
-				<th class="cartlistprice">금액</th>
-				<th class="cartlistdelete">삭제하기</th>
-				<th class="cartlistbuy">구매하기</th>
-			</tr>
-			<%
-				for (CartVo vo : volist) {
-			%>
-			<tr class="cartlisy_td fontnormal">
-				<td><%=vo.getBkImg()%></td>
-				<td><%=vo.getBkTitle()%></td>
-				<td><%=vo.getBkWriter()%></td>
-				<td><%=vo.getBkPublishdate()%></td>
-				<td class="bkNo"><%=vo.getBkNo()%></td>
-				<td><%=vo.getCaCount()%></td>
-				<td><%=vo.getBkPrice()%></td>
-				<td><button class="btn_delete button1">삭제하기</button></td>
-				<td><button class="btn_buy button1">구매하기</button></td>
-			</tr>
-			<%
-				}
-			%>
-		</table>
-		<p>
-			<%
-				
-			%>
-		</p>
-	</div>
-	<%
-		} else {
-	%>
-	<div>주문 상품이 없습니다.</div>
-	<%
-		}
-	%>
 
 	<script>
 		{
@@ -95,9 +118,9 @@
 		}
 		function deletecartHandler() {
 			console.log(this); // <button 엘리먼트
-			console.log($(this).parents(".cartlisy_td").find(".bkNo").text()); // span태그
+			console.log($(this).parents(".cartlist_td").find(".bkNo").text()); // span태그
 			//$("#bkNo").val($(this).children("span").text());
-			var bkNoVal = $(this).parents(".cartlisy_td").find(".bkNo").text();
+			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();
 			location.href = "deletecart?bkNo=" + bkNoVal;
 		}
 		//function buycartHandler() {
@@ -111,7 +134,8 @@
 				pay_method : 'card',
 				merchant_uid : 'merchant_' + new Date().getTime(),
 				name : 'ReviewBook 도서 결제',
-				amount : 17800	//도서에서 금액넘어와야함. test결제라 구현어려울듯
+				amount : 17800
+			//도서에서 금액넘어와야함. test결제라 구현어려울듯
 			}, function(rsp) { // callback
 				if (rsp.success) {
 					msg = '결제에 성공하였습니다.';

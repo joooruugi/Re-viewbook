@@ -1,10 +1,4 @@
 @charset "UTF-8";
-.infoupdate_body {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-
 .sidemenu {
     width: 200px;
     margin: 20px;
@@ -19,6 +13,7 @@
 
 .sidemenu_infoupdate {
     margin: 20px;
+    margin-left: 0px;
 }
 
 .sidemenu_infoupdate .sidemenu_item {
@@ -26,21 +21,27 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    text-decoration: none;	
+	color:black;
 }
 
 .sidemenu_infoupdate li {
+	list-style: none;
     width: 150px;
     height: 30px;
     line-height: 30px;
+    font-size: 20px;
+	margin-left: 10px;
 }
-
-.sidemenu_infoupdate .signupuser_second {
-    font-family: 'ROKAFSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    background-color: #b6d4ff;
-    border-radius: 30px;
+.sidemenu_infoupdate li:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
 }
 
 .sidemenu_infoupdate .sidemenu_topmenu {

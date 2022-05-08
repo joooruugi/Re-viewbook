@@ -4,10 +4,12 @@
 	margin: auto;
 	display : flex;
 }
+.contentmain{
+	width: 100%;
+}
 
 .contentrvb{
 	margin-left: 50px;
-	display : flex;
 }
 /* 사이드메뉴  */
 .sidemenu {
@@ -89,6 +91,11 @@
 	width: 500px;
 	background-color: white;
 }
+#rvContent {
+	width: 400px;
+    height: 250px;
+    resize: none;
+}
 
 /* 별점 */
 .star-rating {
@@ -103,12 +110,6 @@
 .star-rating input {
 	display: none;
 }
-#rvContent {
-	width: 400px;
-    height: 250px;
-    resize: none;
-}
-
 .star-rating label {
 	color: #ccc;
 	cursor: pointer;
@@ -124,7 +125,15 @@
 
 
 /* 구매목록 */
-.buylist {
+.caption{
+	 font-size: 2rem;
+}
+.buylist_wrap{
+	margin-bottom: 50px;
+	width: 1000px;
+}
+.buylist{
+	width:100%;
 	max-width: 1300px;
 	font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
@@ -136,18 +145,19 @@
    border-top: 1px solid gray;
    border-bottom: 1px solid gray;
    background-color: #eaf4fc;
-   font-size: 15px;
-   height: 30px;
-   line-height: 30px;
+   font-size: 18px;
+   height: 40px;
+   line-height: 40px;
 }
 .buylist .buylist_td{
 	border-bottom: 1px solid gray;
-    height: 20px;
-    line-height: 20px;
+	font-size: 18px;
+    height: 40px;
+    line-height: 40px;
     padding-bottom: 10px;
 }
 .buylist_th .buylistname{
-    width: 30%;
+    width: 35%;
 }
 .buylist_th .buylistno{
     width: 10%;
@@ -156,16 +166,23 @@
     width: 35%;
 }
 .buylist_th .buylistreview{
-    width: 25%;
+    width: 20%;
 }
-
+.button1 {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    margin-top: 3px;
+    background-color: rgb(188, 212, 233);
+    border: 1px solid #a9b8c4;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 /* 마이페이지 웰컴&구독권 조회 */
 .mypage_main{
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%,-50%);  */
     margin: auto;
     margin-bottom: 50px;
     width:700px;
@@ -174,13 +191,17 @@
  	padding: 20px 30px; 
     border-radius: 50px;
     box-shadow: 5px 10px 5px #ccc;
+    margin-top: 20px;
 }
 
 /* 마이페이지 유저 이미지 */
+.mypage_main_image {
+	width: 160px;
+}
 .mypage_main_image img{
-	width: 160px; height : 160px;
-	
-	
+	margin-left: 50px;
+	width: 160px; 
+	height : 160px;
 }
 
 /* 마이페이지 내용 flex 정렬 */
@@ -191,7 +212,7 @@
 /* 마이페이지 컨텐츠 센터 정렬 */
 .mypage_main_content{
 	text-align: center;
-	padding: 30px;
+	padding: 20px;
 }
 
 .mypage_main_content>h3{

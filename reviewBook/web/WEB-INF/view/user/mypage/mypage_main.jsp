@@ -8,8 +8,7 @@
 	href="<%=request.getContextPath()%>/resources/css/all/all.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/main/main.css">
+
 <%@page import="kh.semi.reviewBook.mypage.model.vo.BuyListVo"%>
 <%@page import="kh.semi.reviewBook.mypage.model.vo.SubscribeVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -24,7 +23,7 @@
 </head>
 <body>
 
-	<%@ include file="../../../view/template_header_login.jsp"%>		
+	<%@ include file="../../../view/template_header_login.jsp"%>
 	<div class="bodyrvb">
 		<nav class="sidemenu">
 			<ul class="sidemenu_mypage">
@@ -33,110 +32,112 @@
 				<li><a class="sidemenu_item" href="cartlist">장바구니</a></li>
 			</ul>
 		</nav>
-	</div>
 
-	<%
-		SubscribeVo sVo = (SubscribeVo) request.getAttribute("sVo");
-	%>
-	<div class="contentrvb">
-		<div class="contentmain">
-			<div class="mypage_main">
-				<div class="mypage_tab_header">
-					<div class="mypage_main_welcome_title">
-						<h2><%=sVo.getUsId()%>님 반갑습니다!😘
-						</h2>
-					</div>
-				</div>
-				<%
-					if (sVo.getSubYN().charAt(0) == 'n') {
-				%>
-				<div class="mypage_content_all">
-					<div class="mypage_tab_body">
-						<div class="mypage_main_image">
-							<img src="./resources/image/mypage/mypage1.png">
-						</div>
-						<div class="mypage_main_content">
-							<h3>구독중인 구독권이 없습니다.</h3>
+		<%
+			SubscribeVo sVo = (SubscribeVo) request.getAttribute("sVo");
+		%>
+		<div class="contentrvb">
+			<div class="contentmain">
+				<div class="mypage_main">
+					<div class="mypage_tab_header">
+						<div class="mypage_main_welcome_title">
+							<h2><%=sVo.getUsId()%>님 반갑습니다!😘
+							</h2>
 						</div>
 					</div>
+					<%
+						if (sVo.getSubYN().charAt(0) == 'n') {
+					%>
+					<div class="mypage_content_all">
+						<div class="mypage_tab_body">
+							<div class="mypage_main_image">
+								<img src="./resources/image/mypage/mypage1.png">
+							</div>
+							<div class="mypage_main_content">
+								<h3>구독중인 구독권이 없습니다.</h3>
+							</div>
+						</div>
+					</div>
+
+					<%
+						} else {
+					%>
+					<div class="mypage_content_all">
+						<div class="mypage_tab_body">
+							<div class="mypage_main_image">
+								<img src="./resources/image/mypage/mypage1.png">
+							</div>
+							<div class="mypage_main_content">
+								<h3>
+									구독중인 구독권 :
+									<%=sVo.getSubInf()%></h3>
+								<h3>
+									구독 시작일 :
+									<%=sVo.getSubStart()%></h3>
+							</div>
+						</div>
+					</div>
+					<%
+						}
+					%>
 				</div>
 
+
 				<%
-					} else {
+					ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
+				if (volist != null) {
 				%>
-				<div class="mypage_content_all">
-					<div class="mypage_tab_body">
-						<div class="mypage_main_image">
-							<img src="./resources/image/mypage/mypage1.png">
-						</div>
-						<div class="mypage_main_content">
-							<h3>
-								구독중인 구독권 :
-								<%=sVo.getSubInf()%></h3>
-							<h3>
-								구독 시작일 :
-								<%=sVo.getSubStart()%></h3>
-						</div>
-					</div>
+				<div class="buylist_wrap">
+					<table class="buylist">
+						<caption class="caption">구매목록</caption>
+						<tr class="buylist_th fontimportant2">
+							<th class="buylistname">주문상품</th>
+							<th class="buylistno">주문번호</th>
+							<th class="buylistdate">주문날짜</th>
+							<th class="buylistreview">상품리뷰</th>
+						</tr>
+						<%
+							for (BuyListVo vo : volist) {
+						%>
+						<tr class="buylist_td fontnormal">
+							<td><%=vo.getBkTitle()%></td>
+							<td><%=vo.getOrNum()%></td>
+							<td><%=vo.getOrDate()%></td>
+							<%
+								if (vo.getRvNum() == 0) {
+							%>
+							<td><button class="btn_modal button1">
+									<span style="display: none;"><%=vo.getBkNo()%></span>리뷰작성
+								</button></td>
+							<%
+								} else {
+							%>
+							<td>작성 완료</td>
+							<%
+								}
+							%>
+						</tr>
+						<%
+							}
+						%>
+					</table>
+					<p>
+						<%
+							
+						%>
+					</p>
+
+					<%
+						} else {
+					%>
+					<div>주문 상품이 없습니다.</div>
+					<%
+						}
+					%>
 				</div>
-				<%
-					}
-				%>
 			</div>
 		</div>
 	</div>
-
-	<%
-		ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
-	if (volist != null) {
-	%>
-	<div>
-		<table class="buylist">
-		<caption>구매목록</caption>
-			<tr class="buylist_th fontimportant2">
-				<th class="buylistname">주문상품</th>
-				<th class="buylistno">주문번호</th>
-				<th class="buylistdate">주문날짜</th>
-				<th class="buylistreview">상품리뷰</th>
-			</tr>
-			<%
-				for (BuyListVo vo : volist) {
-			%>
-			<tr class="buylisy_td fontnormal">
-				<td><%=vo.getBkTitle()%></td>
-				<td><%=vo.getOrNum()%></td>
-				<td><%=vo.getOrDate()%></td>
-				<%
-					if (vo.getRvNum() == 0) {
-				%>
-				<td><button class="btn_modal button1">
-						<span style="display: none;"><%=vo.getBkNo()%></span>리뷰작성
-					</button></td>
-				<%
-					} else {
-				%>
-				<td>작성 완료</td>
-				<%
-					}
-				%>
-			</tr>
-			<%
-				}
-			%>
-		</table>
-		<p>
-			<%
-				
-			%>
-		</p>
-	</div>
-	<%
-		} else {
-	%>
-	<div>주문 상품이 없습니다.</div>
-	<%
-		}
-	%>
 
 
 

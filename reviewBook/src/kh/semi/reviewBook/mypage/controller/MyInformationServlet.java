@@ -34,8 +34,6 @@ public class MyInformationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("/myinformation doGet");
 		// 로그인
 		UserVo vo = (UserVo) request.getSession().getAttribute("ssUserVo");
@@ -49,10 +47,6 @@ public class MyInformationServlet extends HttpServlet {
 			request.setAttribute("myinfovo", myinfovo);
 			request.getRequestDispatcher("/WEB-INF/view/user/mypage/myInfoUpdate.jsp").forward(request, response);
 		}
-//		MyInformationVo myinfovo = new MyPageService().selectMyInformation(usId);
-//		System.out.println("myinfovo: "+myinfovo);
-//		request.setAttribute("myinfovo", myinfovo);
-//		request.getRequestDispatcher("/WEB-INF/view/user/mypage/myInfoUpdate.jsp").forward(request, response);
 	}
 
 	/**
@@ -102,12 +96,6 @@ public class MyInformationServlet extends HttpServlet {
 			}
 
 		}
-
-
-		// vo -> service method -> dao메소드 호출 ->update(int형) -> return int형 ->
-		// result(int형)
-		// 0이면 업데이트 실패, -> myinformation
-		// 1이면 성공 -> 메인페이지(sendredirect.main)
 
 	}
 
