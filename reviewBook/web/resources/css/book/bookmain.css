@@ -1,102 +1,213 @@
-.bookmain_total{
+
+/* 바디부분  */
+.bodyfd{
     width: 80%;
-    margin: 20px auto;
-    margin-top: 20px;
+	margin: 20px auto;
+	display : flex;
 }
-/* �궗�씠�뱶硫붾돱  */
-.book_sidemenu{
+/* 사이드메뉴  */
+.sidemenu{
     width: 200px;
-    margin: 20px;
-    text-align: left;
-    background-color: #eaf4fc;
-    display: flex;
-    float: left;
-    flex-direction: column;
-    border: 1px solid #96bff9;
-    border-radius: 20px;
-    cursor: pointer;
+	height : 250px;
+	background-color: #eaf4fc;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #96bff9;
+	border-radius: 20px;
+	cursor: pointer;
 }
-.book_sidemenu_main {
+.sidemenu_funding {
     margin: 20px;
+	margin-left: 0px;
 }
-.book_sidemenu_main .book_sidemenu_detail{
+.sidemenu_book .sidemenu_topmenu{
+    font-family: 'ROKAFSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+.sidemenu_funding .sidemenu_item{
     font-family: 'SF_HailSnow';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;	
+	color:black;
 }
-.book_sidemenu_main li{
-    width: 150px;
-    height: 30px;
-    line-height: 30px;
+.sidemenu_funding li{
+    list-style: none;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-left: 10px;
 }
-.book_sidemenu_main li:hover{
+.sidemenu_funding li:hover{
     font-family: 'ROKAFSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    background-color: #b6d4ff;
-    border-radius: 30px;
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	background-color: #b6d4ff;
+	border-radius: 30px;
 }
-/* �겢由��떆 �깋�긽蹂�寃� �쑀吏�(�쁽�옱蹂댁뿬吏��뒗 �꺆�씠 萸붿� �븣湲곗쐞�빐�꽌*/
-.book_sidemenu_main li{
+/* 클릭시 색상변경 유지(현재보여지는 탭이 뭔지 알기위해서*/
+.sidemenu_funding li{
     font-family: 'ROKAFSansBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-size: 20px;
 }
-.bookmain_rank{
+/* 표 */
+.contentfd{
     width: 80%;
-    border: 1px solid black;
-    margin: 20px;
-}
-.bookimg{
-    width: 80%;
-    height: 80%;
-}
- .bookmain_rank{
-    width: 80%;
-    margin: 0 auto;
+    height: 60%;
+	margin-left: 50px;
     text-align: left;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-} 
-.bookmain_rank h1{
-    text-align: center;
-    margin: 20px;
-    font-size: 20px;
 }
-.swiper {
-    width: 90%;
-    height: 50%;
-    margin-bottom: 10%;
-  }
-
-  .swiper-slide {
-  background-color: #fff; 
-
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: block;
-    text-align: left;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-/*   .swiper-slide img {
-    display: block;
+.fdlist{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }  */
+    text-align: center;
+}
+.fdlist .fdlist_th{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+   background-color: #eaf4fc;
+   font-size: 15px;
+   height: 30px;
+   line-height: 30px;
+}
+.fdlist .fdlist_tb{
+	border-bottom: 1px solid gray;
+    height: 20px;
+    line-height: 20px;
+}
+.fdlist_th .fdlistno{
+    width: 20%;
+}
+.fdlist_th .fdlistname{
+    width: 30%;
+}
+.fdlist_th .fdlistprocess{
+    width: 10%;
+}
+.fdlist_th .fdlistdeadline{
+    width: 20%;
+}
+.fdlist_th .fdlistfunding{
+    width: 20%;
+}
+/* 철회,펀딩 버튼 */ 
+.btn_funding_withdraw {
+	background-color: #fce1ba;
+}
+
+.btn_funding_donation {
+	background-color: #9ecdf7;
+}
+.fdDonation {
+	width: 200px;
+}
+
+/* 펀딩성공작 슬라이드 */
+
+.bookimg {
+	width:100px;
+	height:160px;
+}
+
+.swiper {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+ /*  display: block;
+  width: 100%;
+  height: 100%; */
+  object-fit: cover;
+}
+  
+.fdtag {
+	margin : 5px;
+}
+/* 펀딩 상세정보 모달창 */
+.modal {
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 펀딩 이동하기 모달창  */
+.btn_funding, .btn_withdraw{
+	width: 100px;
+	height: 30px;
+	color: white;
+}
+
+/* 펀딩 모달창 닫기 */
+.btn_funding_close {
+	width: 100px;
+	height: 30px;
+	border: 0;
+	
+}
+
+/* 펀딩 이동하기 닫기 버튼 정렬 */
+
+.btn_funding_move_close{
+	margin: 10px auto;
+	text-align: center;
+}
+#modal_funding_content p{
+	padding:10px;
+	text-align: center;
+	
+	
+} 
+/* 펀딩 모달창 컨텐츠 감싸는부분*/
+.modal_content {
+	position: relative;
+	top: 250px;
+	width: 500px;
+	height: flex;
+	border: 1px solid;
+	margin: 0 auto;
+	background-color: white;
+}

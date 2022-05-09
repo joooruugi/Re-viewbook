@@ -29,10 +29,18 @@ public class BookMainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet : /bookmain");
 		
-//		ArrayList<BookVo> blist = new BookService().BookList();
-//		System.out.println(blist);
-//
-//		request.setAttribute("blist",blist);
+		System.out.println("servlet확인");
+		ArrayList<BookVo> blistOrderBest = new BookService().bookListOrder();
+		ArrayList<BookVo> blistRating = new BookService().bookListRating();
+		ArrayList<BookVo> blistReview = new BookService().bookListReview();
+		System.out.println(blistOrderBest);
+		System.out.println(blistRating);
+		System.out.println(blistReview);
+		
+		request.setAttribute("blistOrderBest",blistOrderBest);
+		request.setAttribute("blistRating",blistRating);
+		request.setAttribute("blistReview",blistReview);
+		
 		request.getRequestDispatcher("WEB-INF/view/user/book/bookmain.jsp").forward(request, response);
 	}
 

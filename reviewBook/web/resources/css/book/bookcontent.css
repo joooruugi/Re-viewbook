@@ -68,9 +68,32 @@
 .booklist_btn {
     width: 30%;
     margin: 10px auto;
-    text-align: center;
+    text-align: center;   
+}
+.bookreview_name{
+margin: 20px auto;
+      border-bottom: 3px solid gray;
+      width :80%;
+      font-size : 23px;
+}
+.bookreviewtable{
+	border-collapse:collapse;
+	box-shadow:0 0 0 2px #b6dcfd;
+    border: 2px solid #b6dcfd;
+    border-style:hidden;
+  	border-radius : 15px;
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	line-height:200%;
+
+
 }
 
+.bookreview_tr{
+	border-top: 1px solid black;
+}
 .booklist_btn button {
     font-family: 'GowunDodum-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
@@ -81,4 +104,6 @@
     border-radius: 10px;
     font-size: 20px;
 }
+
+
 
