@@ -1,6 +1,7 @@
 package kh.semi.reviewBook.user.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,20 +44,25 @@ public class UserLoginActServlet extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter script = response.getWriter();
 		
 		String referer = request.getHeader("Referer");
 		request.getSession().setAttribute("redirectURI", referer);
 		
 		UserVo vo = new UserService().loginUser(usId, usPassword);
 		if(vo == null) {  // 로그인실패
+			script.println("<script>");
+			script.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
+			script.println("location.href='login'");
+			script.println("</script>");
 			System.out.println("로그인 실패");
-			response.sendRedirect("login");
 		}else {  // 로그인성공
-			System.out.println("로그인 성공");
 			request.getSession().setAttribute("ssUserVo", vo);
-//			response.sendRedirect("./");  // 상대경로
-			response.sendRedirect(request.getContextPath()+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
-			//절대하지 마세요.response.sendRedirect("myWeb1"+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
+			System.out.println("로그인 성공");
+			script.println("<script>");
+			script.println("alert('"+usId+"님 환영합니다.')");
+			script.println("location.href='notice'");
+			script.println("</script>");
 		}
 	}
 

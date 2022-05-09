@@ -49,7 +49,6 @@ public class AdminLoginFindIdActServlet extends HttpServlet {
 		if (avo == null) { // 아이디 찾기 실패
 			System.out.println("아이디 찾기 실패");
 			script.println("<script>");
-			//usId띄워주고 싶은데 어떻게 넣어야하지?
 			script.println("alert('없는 정보입니다.')");
 			script.println("location.href='adfindid'");
 			script.println("</script>");

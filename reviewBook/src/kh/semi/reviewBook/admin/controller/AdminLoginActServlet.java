@@ -1,6 +1,8 @@
 package kh.semi.reviewBook.admin.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,17 +44,26 @@ public class AdminLoginActServlet extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter script = response.getWriter();
 		
 		String referer = request.getHeader("Referer");
 		request.getSession().setAttribute("redirectURI", referer);
 		
 		AdminVo vo = new AdminService().loginAdmin(adId, adPassword);
+		
 		if(vo == null) {
+			script.println("<script>");
+			script.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
+			script.println("location.href='adlogin'");
+			script.println("</script>");
 			System.out.println("로그인 실패");
-			response.sendRedirect("adlogin");
 		}else {
 			request.getSession().setAttribute("ssAdminVo", vo);
-			response.sendRedirect(request.getContextPath()+"/");
+			script.println("<script>");
+			script.println("alert('"+adId+"관리자님 환영합니다.')");
+			script.println("location.href='admain'");
+			script.println("</script>");
+			
 		}
 		
 	}
