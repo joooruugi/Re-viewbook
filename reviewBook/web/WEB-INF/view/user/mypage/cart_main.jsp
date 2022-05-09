@@ -80,13 +80,13 @@
 						for (CartVo cvo : volist) {
 					%>
 					<tr class="cartlist_td fontnormal">
-						<td><%=cvo.getBkImg()%></td>
-						<td><%=cvo.getBkTitle()%></td>
+						<td><img src="<%=request.getContextPath()%><%=cvo.getBkImg()%>" class="bookimg"></td>
+						<td class="bktitle"><%=cvo.getBkTitle()%></td>
 						<td><%=cvo.getBkWriter()%></td>
 						<td><%=cvo.getBkPublishdate()%></td>
 						<td class="bkNo"><%=cvo.getBkNo()%></td>
 						<td><%=cvo.getCaCount()%></td>
-						<td><%=cvo.getBkPrice()%></td>
+						<td class="bkprice"><%=cvo.getBkPrice()%></td>
 						<td><button class="btn_delete button1">삭제하기</button></td>
 						<td><button class="btn_buy button1">구매하기</button></td>
 					</tr>
@@ -127,20 +127,22 @@
 		//}
 		/* 결제 스크립트  */
 		$('.btn_buy').click(function requestPay() {
+			var price = $(this).parents(".cartlist_td").find(".bkprice").text();
+			var title = $(this).parents(".cartlist_td").find(".bktitle").text();
 			IMP.init('imp81715131');
 			IMP.request_pay({
 				pg : 'inicis',
 				pay_method : 'card',
 				merchant_uid : 'merchant_' + new Date().getTime(),
-				name : 'ReviewBook 도서 결제',
-				amount : 17800
+				name : title,
+				amount : price
 			//도서에서 금액넘어와야함. test결제라 구현어려울듯
 			}, function(rsp) { // callback
 				if (rsp.success) {
 					msg = '결제에 성공하였습니다.';
 					alert(msg);
 					//성공시 이동할 페이지
-					location.href = "cartlist";
+					location.href = "mypagemain";
 				} else {
 					msg = '결제에 실패하였습니다.';
 					msg += '에러내용 : ' + rsp.error_msg;

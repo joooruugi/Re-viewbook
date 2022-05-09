@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .bodyrvb {
 	width: 80%;
 	margin: auto;
@@ -76,6 +77,12 @@
 	 font-size: 2rem;
 	 margin-top: 50px;
 }
+.bookimg {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width:100px;
+	height:160px;
+}
 .cartlist {
 	width: 1000px;
 	text-align: center;
@@ -101,6 +108,9 @@
     height: 40px;
     line-height: 40px;
     padding-bottom: 10px;
+}
+td{
+	vertical-align: none;
 }
 
 .button1 {
