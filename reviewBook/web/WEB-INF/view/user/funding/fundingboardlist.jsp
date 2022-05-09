@@ -35,8 +35,7 @@
 			</nav>
 			<%
 				ArrayList<SeriesVo> slist = (ArrayList<SeriesVo>) request.getAttribute("slist");
-			FundingVo fvo = (FundingVo) request.getAttribute("fvo");
-			if (slist != null || fvo != null) {
+			if (slist != null ) {
 			%>
 			<div class="contentfd">
 				<div class="contentmainfd">
@@ -55,8 +54,8 @@
 						<tr class="fdlist_tb fontnormal">
 							<td class="wbNo"><%=svo.getWbNo()%></td>
 							<td><%=svo.getWbTitle()%></td>
-							<td><%=svo.getAvgDonation()%></td>
-							<td><%=svo.getFdDeadline()%></td>
+							<td><%=svo.getAvgDonation()%>%</td>
+							<td><%=svo.getFdDeadline().substring(0,10)%></td>
 							<%
 								if (svo.getIsDonation() == 1) {
 							%>
@@ -134,7 +133,7 @@
 				<%
 					}
 				%>
-				<div class="contentpgfd">페이징</div>
+				
 			</div>
 		</div>
 	</div>
@@ -174,7 +173,7 @@
 					.val();
 			console.log(wbNoVal);
 			console.log(fdDonationVal);
-			alert("sdfsd");
+			alert("펀딩에 성공했습니다");
 			//location.href='fundingdonation?wbNo='+wbNoVal;
 			$.ajax({
 				url : "fundingdonation",

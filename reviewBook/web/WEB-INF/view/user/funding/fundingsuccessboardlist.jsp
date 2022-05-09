@@ -52,14 +52,16 @@
 					<!-- TODO 작품 받아와서 슬라이딩으로 구성하기 -->
 					<h2 class="fontimportant fdtag">문학게시글 TOP😘</h2>
 					<!-- Swiper -->
-					<div class="swiper mySwiper">
+					<div class="swiper mySwiper fdtaglist">
 						<div class="swiper-wrapper">
 						<%
 						for (SeriesVo svo : slistFiction) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
-									class="bookimg">
+								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
+										class="bookimg">
+								</a>
 							</div>
 						<% } %>
 						</div>
@@ -76,8 +78,10 @@
 						for (SeriesVo svo : slistInfo) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
-									class="bookimg">
+								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
+										class="bookimg">
+								</a>
 							</div>
 						<% } %>	
 						</div>
@@ -93,8 +97,10 @@
 						for (SeriesVo svo : slistDaily) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
-									class="bookimg">
+								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
+										class="bookimg">
+								</a>
 							</div>
 						<% } %>
 						</div>
@@ -111,8 +117,10 @@
 						for (SeriesVo svo : slistEtc) {
 						%>
 							<div class="swiper-slide">
-								<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
-									class="bookimg">
+								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
+										class="bookimg">
+								</a>
 							</div>
 						<% } %>	
 						</div>
@@ -144,6 +152,7 @@
 				prevEl : ".swiper-button-prev",
 			},
 		});
+		
 	</script>
 </body>
 </html>
