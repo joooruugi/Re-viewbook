@@ -28,11 +28,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	<%
-		ArrayList<CartVo> volist = (ArrayList<CartVo>) request.getAttribute("cVo");
-	if (volist != null) {
-	%>
-
 	<div id="main_wrap">
 		<%
 			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
@@ -78,6 +73,10 @@
 						<th class="cartlistbuy">구매하기</th>
 					</tr>
 					<%
+						ArrayList<CartVo> volist = (ArrayList<CartVo>) request.getAttribute("cVo");
+					if (volist != null && volist.size() != 0) {
+					%>
+					<%
 						for (CartVo cvo : volist) {
 					%>
 					<tr class="cartlist_td fontnormal">
@@ -94,19 +93,19 @@
 					<%
 						}
 					%>
-				</table>
-				<p>
+					<p>
+						<%
+							
+						%>
+					</p>
 					<%
-						
+						} else {
 					%>
-				</p>
-				<%
-					} else {
-				%>
-				<div>주문 상품이 없습니다.</div>
-				<%
-					}
-				%>
+					<td colspan="9">장바구니에 상품이 없습니다.</td>
+					<%
+						}
+					%>
+				</table>
 			</div>
 		</div>
 	</div>

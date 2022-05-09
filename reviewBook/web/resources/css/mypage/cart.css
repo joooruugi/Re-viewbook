@@ -1,14 +1,16 @@
 @charset "UTF-8";
 .bodyrvb {
-	width: 100%;
+	width: 80%;
 	margin: auto;
 	display : flex;
+	justify-content: space-around;
 	height: auto;
-  	min-height: 70%;
-  	padding-bottom: 70px;
+  	min-height: 75%;
+  	padding-bottom: 80px;
 }
 
 .contentrvb{
+	display: flex;
 	margin-left: 50px;
 }
 /* 사이드메뉴  */
@@ -21,7 +23,6 @@
 	border: 1px solid #96bff9;
 	border-radius: 20px;
 	cursor: pointer;
-	margin-left: 20px;
 	margin-top: 20px;
 }
 

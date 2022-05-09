@@ -11,14 +11,14 @@ import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
 import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.MyInformationVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
-import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
+import kh.semi.reviewBook.mypage.model.vo.UserSubVo;
 
 public class MyPageService {
 	private MyPageDao dao = new MyPageDao();
 
 	// 구독권 조회
-	public SubscribeVo selectSubscribe(String usId) {
-		SubscribeVo result = null;
+	public UserSubVo selectSubscribe(String usId) {
+		UserSubVo result = null;
 		Connection conn = getConnection();
 		result = dao.selectSubscribe(conn, usId);
 		close(conn);

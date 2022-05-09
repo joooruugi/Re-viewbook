@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.reviewBook.mypage.model.service.MyPageService;
 import kh.semi.reviewBook.mypage.model.vo.BuyListVo;
-import kh.semi.reviewBook.mypage.model.vo.SubscribeVo;
+import kh.semi.reviewBook.mypage.model.vo.UserSubVo;
 import kh.semi.reviewBook.user.model.vo.UserVo;
 
 /**
@@ -42,11 +42,11 @@ public class MyPageMainServlet extends HttpServlet {
 			String usId = vo.getUsId();
 			vo.setUsId(usId);
 		}
-		SubscribeVo sVo = new MyPageService().selectSubscribe(vo.getUsId());
-		System.out.println("servlet: "+sVo);
+		UserSubVo usVo = new MyPageService().selectSubscribe(vo.getUsId());
+		System.out.println("servlet: "+usVo);
 		ArrayList<BuyListVo> bLVo = new MyPageService().selectBuyList(vo.getUsId());
 		
-		request.setAttribute("sVo", sVo);
+		request.setAttribute("usVo", usVo);
 		request.setAttribute("bLVo", bLVo);
 		
 		

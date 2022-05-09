@@ -1,3 +1,4 @@
+<%@page import="kh.semi.reviewBook.mypage.model.vo.UserSubVo"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/mypage/mypagemain.css">
 <link rel="stylesheet"
@@ -34,19 +35,20 @@
 		</nav>
 
 		<%
-			SubscribeVo sVo = (SubscribeVo) request.getAttribute("sVo");
+			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+		UserSubVo usVo = (UserSubVo) request.getAttribute("usVo");
 		%>
 		<div class="contentrvb">
 			<div class="contentmain">
 				<div class="mypage_main">
 					<div class="mypage_tab_header">
 						<div class="mypage_main_welcome_title">
-							<h2><%=sVo.getUsId()%>님 반갑습니다!😘
+							<h2><%=vo.getUsId()%>님 반갑습니다!😘
 							</h2>
 						</div>
 					</div>
 					<%
-						if (sVo.getSubYN().charAt(0) == 'n') {
+						if (usVo == null || usVo.getSubYN().charAt(0) == 'n') {
 					%>
 					<div class="mypage_content_all">
 						<div class="mypage_tab_body">
@@ -70,10 +72,10 @@
 							<div class="mypage_main_content">
 								<h3>
 									구독중인 구독권 :
-									<%=sVo.getSubInf()%></h3>
+									<%=usVo.getSubInf()%></h3>
 								<h3>
 									구독 시작일 :
-									<%=sVo.getSubStart()%></h3>
+									<%=usVo.getSubStart()%></h3>
 							</div>
 						</div>
 					</div>
@@ -83,10 +85,8 @@
 				</div>
 
 
-				<%
-					ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
-				if (volist != null) {
-				%>
+
+
 				<div class="buylist_wrap">
 					<table class="buylist">
 						<caption class="caption">구매목록</caption>
@@ -97,17 +97,21 @@
 							<th class="buylistreview">상품리뷰</th>
 						</tr>
 						<%
-							for (BuyListVo vo : volist) {
+							ArrayList<BuyListVo> volist = (ArrayList<BuyListVo>) request.getAttribute("bLVo");
+						if (volist != null && volist.size() != 0) {
+						%>
+						<%
+							for (BuyListVo bvo : volist) {
 						%>
 						<tr class="buylist_td fontnormal">
-							<td><%=vo.getBkTitle()%></td>
-							<td><%=vo.getOrNum()%></td>
-							<td><%=vo.getOrDate()%></td>
+							<td><%=bvo.getBkTitle()%></td>
+							<td><%=bvo.getOrNum()%></td>
+							<td><%=bvo.getOrDate()%></td>
 							<%
-								if (vo.getRvNum() == 0) {
+								if (bvo.getRvNum() == 0) {
 							%>
 							<td><button class="btn_modal button1">
-									<span style="display: none;"><%=vo.getBkNo()%></span>리뷰작성
+									<span style="display: none;"><%=bvo.getBkNo()%></span>리뷰작성
 								</button></td>
 							<%
 								} else {
@@ -120,7 +124,6 @@
 						<%
 							}
 						%>
-					</table>
 					<p>
 						<%
 							
@@ -130,10 +133,11 @@
 					<%
 						} else {
 					%>
-					<div>주문 상품이 없습니다.</div>
+					<td colspan="4">주문 상품이 없습니다.</td>
 					<%
 						}
 					%>
+					</table>
 				</div>
 			</div>
 		</div>

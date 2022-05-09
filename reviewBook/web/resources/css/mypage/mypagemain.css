@@ -1,14 +1,16 @@
 @charset "UTF-8";
 .bodyrvb {
-	width: 100%;
+	width: 80%;
 	margin: auto;
 	display : flex;
+	justify-content: space-around;
 }
 .contentmain{
 	width: 100%;
 }
 
 .contentrvb{
+	display: flex;
 	margin-left: 50px;
 }
 /* 사이드메뉴  */
@@ -21,7 +23,6 @@
 	border: 1px solid #96bff9;
 	border-radius: 20px;
 	cursor: pointer;
-	margin-left: 20px;
 	margin-top: 20px;
 }
 
@@ -126,14 +127,18 @@
 
 /* 구매목록 */
 .caption{
-	 font-size: 2rem;
+	width: 1000px;
+	font-size: 2rem;
 }
+
 .buylist_wrap{
 	margin-bottom: 50px;
 	width: 1000px;
+	display: flex;
 }
+
 .buylist{
-	width:100%;
+	width: 100%;
 	max-width: 1300px;
 	font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
@@ -227,7 +232,6 @@
     margin: auto;
 
 } 
-
 /* 폰트 */
 .mypage_main_welcome_title>h2, .mypage_main_content>h3{
 	font-family: 'ROKAFSansBold';
