@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.reviewBook.admin.vo.AdminVo;
 import kh.semi.reviewBook.series.model.service.SeriesService;
 import kh.semi.reviewBook.series.model.vo.SeriesVo;
+import kh.semi.reviewBook.user.model.vo.UserVo;
 
 
 @WebServlet("/adseriesmain")
@@ -37,9 +39,18 @@ public class AdminSeriesMainServlet extends HttpServlet {
 
 		request.setAttribute("slist",slist);
 		
+		AdminVo avo = (AdminVo)request.getSession().getAttribute("ssAdminVo"); 
+		if(avo == null) { //로그인이 되지 않은 상황 -> 로그인 해야만 글 작성 가능 ->로그인으로 이동
+			response.sendRedirect("adlogin");
+			return; 
+		} else {
+			//request.getRequestDispatcher("WEB-INF/view/admin/series/adseriesmain.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/view/admin/series/adseriesmainEl.jsp").forward(request, response);
+		}
+		
+	
 
-		//request.getRequestDispatcher("WEB-INF/view/admin/series/adseriesmain.jsp").forward(request, response);
-		request.getRequestDispatcher("WEB-INF/view/admin/series/adseriesmainEl.jsp").forward(request, response);
+	
 		
 	}
 

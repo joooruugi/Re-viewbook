@@ -116,15 +116,24 @@ to {
  
  /* 구독자 후기 */
  .sub_review_all{
- width: 60%;
+ width: 80%;
  margin: 0 auto;
  margin-top: 30px;
  }
+
  
  .sub_review_all h1{
  font-size: 1.2rem;
  font-weight: bold;
  padding-bottom: 10px;
+ }
+ 
+ .sub_review p:nth-of-type(2){
+  text-decoration: underline;
+ }
+ 
+ .sub_review_all a {
+ color:blue;
  }
  
  /* 구독권 종류 */

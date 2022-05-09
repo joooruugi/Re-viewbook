@@ -158,10 +158,7 @@
 
  	 	<script>
  	 	
- 	 /* 구독권 리뷰 3개만 화면에 보여지게하기*/
- 	   $(function(){
-        $(".sub_review").slice(0, 3).show(); 
-    })
+
  	 /* 정기구독권 스크립트  */
  	$('#btn_insert_sub1').click(
 	function requestPay() {
