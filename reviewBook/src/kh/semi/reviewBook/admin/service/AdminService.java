@@ -122,19 +122,26 @@ public class AdminService {
 		close(conn);
 		return result;
 	}
-	//관리자 회원 검색
-	public ArrayList<UserVo> SearchUser(String searchUser){
+	//관리자 회원 검색(아이디)
+	public ArrayList<UserVo> SearchUserId(String usId){
 		Connection conn = getConnection();
-		ArrayList<UserVo> ulist = dao.SearchUser(conn, searchUser);
+		ArrayList<UserVo> ulist = dao.SearchUserId(conn, usId);
 		close(conn);
 		return ulist;
 	}
-//	public int NoticeRegister(NoticeVo nvo) {
-//		int result = 0;
+//	//관리자 회원 검색(이름)
+//	public ArrayList<UserVo> SearchUserName(String usName){
 //		Connection conn = getConnection();
-//		result = dao.NoticeRegister(conn, nvo);
+//		ArrayList<UserVo> ulist = dao.SearchUserId(conn, usName);
 //		close(conn);
-//		return result;
+//		return ulist;
+//	}
+//	//관리자 회원 검색(닉네임)
+//	public ArrayList<UserVo> SearchUserNickname(String usNickname){
+//		Connection conn = getConnection();
+//		ArrayList<UserVo> ulist = dao.SearchUserId(conn, usNickname);
+//		close(conn);
+//		return ulist;
 //	}
 	//관리자 도서 게시
 	public int BookRegister(BookVo bvo) {

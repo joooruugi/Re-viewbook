@@ -56,7 +56,6 @@ public class AdminLoginActServlet extends HttpServlet {
 			script.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
 			script.println("location.href='adlogin'");
 			script.println("</script>");
-			System.out.println("로그인 실패");
 		}else {
 			request.getSession().setAttribute("ssAdminVo", vo);
 			script.println("<script>");

@@ -14,6 +14,7 @@
     text-align: center;
     font-size: 30px;
     border-bottom: 3px solid gray;
+    cursor: default;
 }
 .notice_noticecontent{
     width: 80%;
@@ -31,6 +32,7 @@
 .notice_noticecontentname p{
     font-size: 20px;
     text-align: center;
+     cursor: default;
 }
 .notice_contentright{
     border: 2px solid #9ecdf7;
@@ -43,6 +45,7 @@
 }
 .notice_noticecontentnick p, .notice_noticecontentcnt p, .notice_noticecontentdate p{
     margin: 10px;
+     cursor: default;
 }
 .notice_noticecontentbody{
     display: flex;
@@ -60,18 +63,22 @@
 .noticecontentname{
     margin: 10px;
     font-size: 20px;
+     cursor: default;
 }
 .noticecontentcontent{
     font-size: 18px;
+    cursor: default;
 }
 
 .adminnotice_btn {
     width: 30%;
     margin: 10px auto;
     text-align: center;
+    
 }
 
 .adminnotice_btn button {
+	cursor : pointer;
     font-family: 'GowunDodum-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
     font-weight: normal; 

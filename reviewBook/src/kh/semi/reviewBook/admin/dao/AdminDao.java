@@ -366,12 +366,13 @@ public class AdminDao {
 		return result;
 	}
 
-	// 관리자 회원 검색
-	public ArrayList<UserVo> SearchUser(Connection conn, String searchUser) {
+	// 관리자 회원 검색 (아이디)
+	public ArrayList<UserVo> SearchUserId(Connection conn, String usId) {
 		ArrayList<UserVo> ulist = null;
-		String sql = "";
+		String sql = "select * from \"USER\" where us_id=?";
 		try {
 			pstmt = conn.prepareCall(sql);
+			pstmt.setString(1, usId);
 			rs = pstmt.executeQuery();
 			ulist = new ArrayList<UserVo>();
 			while (rs.next()) {
@@ -380,11 +381,10 @@ public class AdminDao {
 				uvo.setUsEmail(rs.getString("us_email"));
 				uvo.setUsPhone(rs.getString("us_phone"));
 				uvo.setUsNickname(rs.getString("us_nickname"));
-				uvo.setUsPassword(rs.getString("us_password"));
 				uvo.setUsGender(rs.getString("us_gender"));
 				uvo.setUsAddress(rs.getString("us_address"));
 				uvo.setUsName(rs.getString("us_name"));
-				uvo.setUsBirth(rs.getString("us_birth"));
+				uvo.setUsBirth(rs.getString("us_birth").substring(0, 10));
 				ulist.add(uvo);
 			}
 		} catch (SQLException e) {
@@ -395,6 +395,64 @@ public class AdminDao {
 		}
 		return ulist;
 	}
+//	// 관리자 회원 검색 (이름)
+//	public ArrayList<UserVo> SearchUserName(Connection conn, String usName) {
+//		ArrayList<UserVo> ulist = null;
+//		String sql = "select * from \"USER\" where us_name=?";
+//		try {
+//			pstmt = conn.prepareCall(sql);
+//			pstmt.setString(1, usName);
+//			rs = pstmt.executeQuery();
+//			ulist = new ArrayList<UserVo>();
+//			while (rs.next()) {
+//				UserVo uvo = new UserVo();
+//				uvo.setUsId(rs.getString("us_id"));
+//				uvo.setUsEmail(rs.getString("us_email"));
+//				uvo.setUsNickname(rs.getString("us_nickname"));
+//				uvo.setUsPassword(rs.getString("us_password"));
+//				uvo.setUsGender(rs.getString("us_gender"));
+//				uvo.setUsAddress(rs.getString("us_address"));
+//				uvo.setUsName(rs.getString("us_name"));
+//				uvo.setUsBirth(rs.getString("us_birth").substring(0, 10));
+//				ulist.add(uvo);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return ulist;
+//	}
+//	// 관리자 회원 검색 (닉네임)
+//	public ArrayList<UserVo> SearchUserNickname(Connection conn, String usNickname) {
+//		ArrayList<UserVo> ulist = null;
+//		String sql = "select * from \"USER\" where us_nickname=?";
+//		try {
+//			pstmt = conn.prepareCall(sql);
+//			pstmt.setString(1, usNickname);
+//			rs = pstmt.executeQuery();
+//			ulist = new ArrayList<UserVo>();
+//			while (rs.next()) {
+//				UserVo uvo = new UserVo();
+//				uvo.setUsId(rs.getString("us_id"));
+//				uvo.setUsEmail(rs.getString("us_email"));
+//				uvo.setUsNickname(rs.getString("us_nickname"));
+//				uvo.setUsPassword(rs.getString("us_password"));
+//				uvo.setUsGender(rs.getString("us_gender"));
+//				uvo.setUsAddress(rs.getString("us_address"));
+//				uvo.setUsName(rs.getString("us_name"));
+//				uvo.setUsBirth(rs.getString("us_birth").substring(0, 10));
+//				ulist.add(uvo);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		return ulist;
+//	}
 //	public int NoticeRegister(Connection conn, NoticeVo nvo) {
 //		int result = 0;
 //		String sql = "INSERT INTO NOTICE (NT_NO, NT_TITLE, NT_CONTENT, NT_CNT, NT_DATE, NT_NICKNAME, AD_ID)"

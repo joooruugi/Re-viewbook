@@ -14,51 +14,28 @@ import kh.semi.reviewBook.admin.service.AdminService;
 import kh.semi.reviewBook.admin.vo.AdminVo;
 import kh.semi.reviewBook.user.notice.vo.NoticeVo;
 
-/**
- * Servlet implementation class AdminNoticeWriteActServlet
- */
 @WebServlet("/adminnotice_write.lo")
 public class AdminNoticeWriteActServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminNoticeWriteActServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
+	public AdminNoticeWriteActServlet() {
+		super();
+	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-//    private int ntNo;
-//	private String ntTitle;
-//	private String ntContent;
-//	private int ntCnt;
-//	private Date ntDate;
-//	private String ntNickname;
-//	private String adId;
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String ntTitle = request.getParameter("ntTitle");
 		String ntContent = request.getParameter("ntContent");
-		String ntNickname ="";
+		ntContent = ntContent.replace("\r\n,", "<br>");
+		String ntNickname = "";
 		String adId = "";
-		
-		AdminVo avo = (AdminVo)request.getSession().getAttribute("ssAdminVo");
-		if(avo == null) {
+
+		AdminVo avo = (AdminVo) request.getSession().getAttribute("ssAdminVo");
+		if (avo == null) {
 			response.sendRedirect("adlogin");
 			return;
-		}else {
+		} else {
 			adId = avo.getAdId();
 			ntNickname = avo.getAdNickname();
 			System.out.println(ntNickname);
@@ -70,14 +47,14 @@ public class AdminNoticeWriteActServlet extends HttpServlet {
 		nvo.setNtContent(ntContent);
 		nvo.setNtNickname(ntNickname);
 		int result = new AdminService().NoticeRegister(nvo);
-		if(result == 1) {
-			System.out.println("작성완료");
+		if (result == 1) {
+			System.out.println("공지사항 작성 완료");
 			response.sendRedirect("adnotice");
-		}else {
-			System.out.println("실패하지마");
+		} else {
+			System.out.println("공지사항 작성 실패");
 			response.sendRedirect("adminnotice_write");
 		}
-		
+
 	}
 
 }

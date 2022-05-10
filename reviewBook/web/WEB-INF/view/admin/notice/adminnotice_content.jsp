@@ -69,7 +69,7 @@
                 <div class="notice_content_div"></div>
                 <div class="notice_noticecontentdate">
                     <p class="fontnormal noticecontentname">작성일</p>
-                    <p class="fontnothing noticecontentname2"><%=nvo.getNtDate()%></p>
+                    <p class="fontnothing noticecontentname2"><%=nvo.getNtDate().substring(0,10)%></p>
                 </div>
             </div>
 

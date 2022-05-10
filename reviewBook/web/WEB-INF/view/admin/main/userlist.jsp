@@ -36,9 +36,13 @@
 	<div class="userlist">
 		<div class="userlist_content">
 			<div class="userlist_name">
-				<p class="fontimportant">회원정보 조회</p>
-				<input type="text">
+				<form action="userlist_find.lo" method="get">
+					<p class="fontimportant">회원정보 조회</p>
+					<input id="searchuserinput" name="searchuser_input" type="text"
+						placeholder="검색할 회원의 아이디 검색">
+					<button type="submit" id="searchuserbtn">검색</button>
 			</div>
+			</form>
 			<%
 				ArrayList<UserVo> ulist = (ArrayList<UserVo>) request.getAttribute("ulist");
 			if (ulist != null) {
@@ -57,12 +61,12 @@
 				<%
 					for (UserVo uvo : ulist) {
 				%>
-				<tr class="userlist_tr fontnormal user_board">
+				<tr class="userlist_tr fontnormal">
 					<td><%=uvo.getUsName()%></td>
 					<td><%=uvo.getUsNickname()%></td>
 					<td><%=uvo.getUsId()%></td>
 					<td><%=uvo.getUsGender()%></td>
-					<td><%=uvo.getUsBirth()%></td>
+					<td><%=uvo.getUsBirth().substring(0, 10)%></td>
 					<td><%=uvo.getUsPhone()%></td>
 					<td><%=uvo.getUsEmail()%></td>
 					<td><%=uvo.getUsAddress()%></td>
@@ -70,6 +74,7 @@
 							class="userlist_deletebtn"
 							onclick="location.href='userlist.lo?usName=<%=uvo.getUsName()%>'">회원삭제</button></td>
 				</tr>
+
 				<%
 					}
 				}
@@ -78,33 +83,6 @@
 			</table>
 		</div>
 	</div>
-	<div class="userlist_paging">
-		<button type="button" id="userlist_loadmore"
-			class="userlist_pagingbtn">더보기</button>
-
-	</div>
-
 	<%@ include file="../../../view/template_footer.jsp"%>
-	<script>
-    $(function(){
-        $(".user_board").slice(0, 2).show(); 
-        $("#userlist_loadmore").click(function(e){
-            e.preventDefault();
-            $(".user_board:hidden").slice(0, 2).show(); 
-            if($(".user_board:hidden").length == 0){ 
-            	 alert("다음 페이지는 마지막 페이지 입니다."); 
-            }
-        });
-    });
-   <%--  <%UserVo uvo = (UserVo)request.getAttribute("uvo");%>
-    $(function(){
-    	if($("#deleteUserchk").is(":checked")){
-    		if($("#user_delete").click(function(){
-    			location.href="'userlist.lo?usName=<%=uvo.getUsName()%>'";
-    		})
-    	}
-    }; --%>
-    
-    </script>
 </body>
 </html>
