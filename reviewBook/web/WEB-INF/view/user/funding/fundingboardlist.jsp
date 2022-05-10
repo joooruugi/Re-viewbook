@@ -53,7 +53,7 @@
 						%>
 						<tr class="fdlist_tb fontnormal">
 							<td class="wbNo"><%=svo.getWbNo()%></td>
-							<td><a href="seriesread?wbNo=<%=svo.getWbNo()%>" class="seriesread">
+							<td><a href="fundingread?wbNo=<%=svo.getWbNo()%>" class="seriesread">
 								<%=svo.getWbTitle()%></a>
 							</td>
 							<td><%=svo.getAvgDonation()%>%</td>
@@ -62,7 +62,7 @@
 								if (svo.getIsDonation() == 1) {
 							%>
 							<td><button class="btn_funding_withdraw button1">철회하기</button>
-								<div class="modal">
+								<div class="modal"> 
 									<div class="modal_content">
 										<div id="modal_funding_content">
 											<p>

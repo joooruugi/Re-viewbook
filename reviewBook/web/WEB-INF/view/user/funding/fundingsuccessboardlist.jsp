@@ -58,7 +58,7 @@
 						for (SeriesVo svo : slistFiction) {
 						%>
 							<div class="swiper-slide">
-								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 										class="bookimg">
 								</a>
@@ -78,7 +78,7 @@
 						for (SeriesVo svo : slistInfo) {
 						%>
 							<div class="swiper-slide">
-								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 										class="bookimg">
 								</a>
@@ -97,7 +97,7 @@
 						for (SeriesVo svo : slistDaily) {
 						%>
 							<div class="swiper-slide">
-								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 										class="bookimg">
 								</a>
@@ -117,7 +117,7 @@
 						for (SeriesVo svo : slistEtc) {
 						%>
 							<div class="swiper-slide">
-								<a href="seriesread?wbNo=<%=svo.getWbNo()%>">
+								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 										class="bookimg">
 								</a>
