@@ -29,7 +29,7 @@ public class SeriesMainServlet extends HttpServlet {
 		
 
 		ArrayList<SeriesVo> slist = new SeriesService().listBoard();
-		System.out.println(slist);
+		//System.out.println(slist);
 		
 
 		request.setAttribute("slist",slist);
