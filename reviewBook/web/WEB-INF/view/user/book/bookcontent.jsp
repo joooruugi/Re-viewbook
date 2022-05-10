@@ -68,16 +68,22 @@
 				</div>
 				<br>
 				<div class="book_bookcontentcontentcart">
-					<form name="addForm" method="post"
-						action="addCart.jsp?id=${product.productId}">
-						<a href="cartlist" class="fontnormal" onclick="addToCart()"> 장바구니
-							&raquo;</a>
+					<form  method="post" action="bookaddcart">
+					<select name="caCount" id="caCount" required>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					</select>
+					<input type="hidden" name="bkNo" id="bkNo" value="<%=bvo.getBkNo() %>">
+					<button type="submit" class="button2" onclick="addToCart()">장바구니</button>
+						
 					</form>
+
 				</div>
 				<div class="book_bookcontent_div"></div>
 				<div class="book_bookcontentpublishdate">
 					<p class="fontnormal bookcontentname">출판일</p>
-					<p class="fontnothing bookcontentname2"><%=bvo.getBkPublishdate()%></p>
+					<p class="fontnothing bookcontentname2"><%=bvo.getBkPublishdate().substring(0, 10)%></p>
 				</div>
 				<div class="book_bookcontent_div"></div>
 				<div class="book_bookcontentindex">
@@ -118,7 +124,7 @@
 						<td><%=rvo.getRvNum()%></td>
 						<td><%=rvo.getRvTitle()%></td>
 						<td><%=rvo.getUsId()%></td>
-						<td><%=rvo.getRvRating()%></td>
+						<td><span>&#9733;</span><%=rvo.getRvRating()%></td>
 					</tr>
 		<%
 		}
@@ -135,18 +141,16 @@
 %>
 		<div class="booklist_btn">
 			<button type="submit" class="booklist_listbtn"
-				onclick="location.href='booklist'">목록으로</button>
+				onclick="location.href='bookmain'">목록으로</button> 
+			<!-- 	booklist로 이동하는게 맞는지 확인 후 확인 완료되면 booklist 헤더 수정-->
 		</div>
 
 	</div>
 	    <script type="text/javascript">
 
         function addToCart(){
-            // 확인 true 취소 false
-            if(confirm("상품을 장바구니에 추가하시겠습니까?")){ // 확인
-                document.addForm.submit();
-            }else{ // 취소
-                document.addForm.reset();
+            // 확인 true
+            if(alert("상품을 장바구니에 추가하시겠습니까?")){ // 확인
             }
         }
     </script>

@@ -49,7 +49,7 @@
 					<td>책 제목</td>
 					<td>작가</td>
 					<td>순위</td>
-					<td>장르번호</td>
+					<td>장르</td>
 					<td>가격</td>
 				</thead>
 				<%
@@ -60,7 +60,7 @@
 					<td><a href="bookcontent?bkNo=<%=bvo.getBkNo()%>"><%=bvo.getBkTitle()%></a></td>
 					<td><%=bvo.getBkWriter()%></td>
 					<td><%=bvo.getBkRating()%></td>
-					<td><%=bvo.getGnNo()%></td>
+					<td><%=bvo.getGnName()%></td>
 					<td><%=bvo.getBkPrice()%></td>
 				</tr>
 				<%
@@ -79,7 +79,7 @@
 
 	<%@ include file="../../../view/template_footer.jsp"%>
 	<script>
-    $(function(){
+/*     $(function(){
         $(".book_board").slice(0, 2).show(); 
         $("#booklist_loadmore").click(function(e){
             e.preventDefault();
@@ -88,7 +88,7 @@
             	 alert("다음 페이지는 마지막 페이지 입니다."); 
             }
         });
-    });
+    }); */
    <%--  <%UserVo uvo = (UserVo)request.getAttribute("uvo");%>
     $(function(){
     	if($("#deleteUserchk").is(":checked")){

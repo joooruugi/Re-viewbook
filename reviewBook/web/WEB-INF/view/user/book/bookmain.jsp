@@ -9,8 +9,6 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/main/main.css">
-<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/book/bookmain.css">
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -19,7 +17,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>펀딩성공작</title>
+<title>RVB 도서</title>
 <!-- Swiper -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -29,16 +27,33 @@
 
 </head>
 <body>
+		<%
+			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+		// out.print(vo);
+		if (vo == null && avo == null) {
+		%>
+	<%@ include file="../../../view/template_header.jsp"%>
+	<%
+			} else if (vo != null) {
+		%>
+	<%@ include file="../../../view/template_header_login.jsp"%>
+	<%
+			} else if (avo != null) {
+		%>
+	<%@ include file="../../../view/template_header_adlogin.jsp"%>
+	<%
+			}
+		%>
 	<div id="main_wrap">
-		<%@ include file="../../template_header_login.jsp"%>
 		<div class="bodyfd">
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">도서</a></li>
-					<li><a class="sidemenu_item" href="#">스릴러</a></li>
-					<li><a class="sidemenu_item" href="#">힐링</a></li>
-					<li><a class="sidemenu_item" href="#">로맨스</a></li>
-					<li><a class="sidemenu_item" href="#">자기계발</a></li>
+					<li><a class="sidemenu_item" href="booklistth">스릴러</a></li>
+					<li><a class="sidemenu_item" href="booklistheal">힐링</a></li>
+					<li><a class="sidemenu_item" href="booklistro">로맨스</a></li>
+					<li><a class="sidemenu_item" href="booklistself">자기계발</a></li>
 				</ul>
 			</nav>
 			<%
@@ -139,8 +154,8 @@
 
 			</div>
 		</div>
-		<%@ include file="../../template_footer.jsp"%>
 	</div>
+		<%@ include file="../../template_footer.jsp"%>
 	<script>
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView : 5,
