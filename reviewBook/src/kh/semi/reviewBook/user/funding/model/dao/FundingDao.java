@@ -20,7 +20,7 @@ public class FundingDao {
 		String sql = "select tb_wbbs.*, round(nvl(total_donation, 0)/fd_accumulate, 4)*100   avg_donation "
 				+ "    , (select count(*)  from funding_manage tb_f2 where tb_f2.wb_no = tb_wbbs.wb_no and us_id=?) is_donation "
 				+ "    from writer_bbs tb_wbbs left outer join (select wb_no, sum(fd_donation) total_donation from funding_manage group by wb_no)  tb_f1 on tb_wbbs.wb_no = tb_f1.wb_no "
-				+ "    where fd_ox=1 order by is_donation desc, tb_wbbs.fd_limit, tb_wbbs.wb_no";
+				+ "    where fd_ox=1 order by is_donation desc, avg_donation desc"; //		tb_wbbs.fd_limit, tb_wbbs.wb_no
 
 		try {
 			pstmt = conn.prepareStatement(sql);
