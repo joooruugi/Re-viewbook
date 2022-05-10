@@ -1,7 +1,6 @@
 package kh.semi.reviewBook.mypage.model.service;
 
-import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.close;
-import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.getConnection;
+import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -33,6 +32,30 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
+	
+	//주문목록 추가
+	public int insertOrder(BuyListVo bVo) {
+		Connection conn = getConnection();
+		setAutoCommit(conn, false);
+		
+		int nextVal = dao.selectSeqOrNumNextVal(conn);
+		
+		int result = dao.insertOrder(conn, bVo, nextVal);
+		
+		if(result > 0 && bVo != null) {	//구매하면 구매목록에 추가
+			result = dao.insertOrderBook(conn, bVo, nextVal);
+		}
+		
+		if(result >0) {	//구매하면 장바구니에서는 삭제
+			result = dao.deleteCart(conn, bVo.getUsId(), bVo.getBkNo());
+		}
+		
+		if(result >0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		return result;
+	}	
 
 	// 내정보 수정 전 기존 정보 가져오기
 	public MyInformationVo selectMyInformation(String usId) {

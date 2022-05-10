@@ -90,6 +90,70 @@ public class MyPageDao {
 		System.out.println("dao volist: " + volist);
 		return volist;
 	}
+	
+	// 주문목록 추가
+	// 1. 주문번호(시퀀스)만 뽑아오기 - order의 주문번호와 order_book의 주문번호 동일하게 하기 위함
+	public int selectSeqOrNumNextVal(Connection conn) {
+		int result = 0;
+		String sql = "select SEQ_OR_NUM.nextval from dual";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("nextval:"+ result);
+		return result;
+	}
+
+	// 주문목록 추가
+	// 2. order테이블에 insert
+	public int insertOrder(Connection conn, BuyListVo bVo, int nextVal) {
+		System.out.println("dao bVo: " + bVo);
+		System.out.println("dao nextVal: " + nextVal);
+		int result = 0;
+		String sql = "INSERT INTO \"ORDER\" VALUES("+nextVal+",?,DEFAULT,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bVo.getOrPrice());
+			pstmt.setString(2, bVo.getUsId());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("dao result: " + result);
+		return result;
+	}
+	
+	// 주문목록 추가
+	// 3. order_book테이블에 insert
+	public int insertOrderBook(Connection conn, BuyListVo bVo, int nextVal) {
+		System.out.println("dao bVo: " + bVo);
+		System.out.println("dao nextVal: " + nextVal);
+		int result = 0;
+		String sql = "INSERT INTO \"ORDER_BOOK\" VALUES("+nextVal+",?,DEFAULT,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bVo.getBkNo());
+			pstmt.setInt(2, bVo.getOrPrice());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("dao result: " + result);
+		return result;
+	}
 
 	// 내 정보 조회
 	public MyInformationVo selectMyInformation(Connection conn, String usId) {
@@ -229,6 +293,4 @@ public class MyPageDao {
 		System.out.println("dao deletecart result: " + result);
 		return result;
 	}
-	
-
 }

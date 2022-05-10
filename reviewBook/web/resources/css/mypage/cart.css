@@ -109,10 +109,9 @@
     line-height: 40px;
     padding-bottom: 10px;
 }
-td{
-	vertical-align: none;
+.cartlist_td > td{
+	vertical-align: middle;
 }
-
 .button1 {
     font-family: 'GowunDodum-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
