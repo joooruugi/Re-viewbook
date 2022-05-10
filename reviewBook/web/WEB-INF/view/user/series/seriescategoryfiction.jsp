@@ -169,6 +169,7 @@
 				$(".bbs_board:hidden").slice(0, 3).show();
 				if ($(".bbs_board:hidden").length == 0) {
 					alert("다음 페이지는 마지막 페이지 입니다.");
+					 $("#series_loadmore").hide(); //마지막 페이지에서 더보기 버튼 x
 				}
 			});
 		});

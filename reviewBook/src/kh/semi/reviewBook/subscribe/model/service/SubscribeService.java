@@ -43,17 +43,17 @@ public class SubscribeService {
 	}
 	
 	//4. 정기 구독 신청
-	public int insertSubscribeLong(String usId) {
+	public int insertSubscribeLong(SubscribeVo ssvo) {
 		Connection conn = getConnection();
-		int result = dao.insertSubscribeLong(conn, usId);
+		int result = dao.insertSubscribeLong(conn, ssvo);
 		close(conn);
 		return result;
 	}
 	
 	//5. 월별 구독 신청
-	public int insertSubscribeShort(String usId) {
+	public int insertSubscribeShort(SubscribeVo ssvo) {
 		Connection conn = getConnection();
-		int result = dao.insertSubscribeShort(conn, usId);
+		int result = dao.insertSubscribeShort(conn, ssvo);
 		close(conn);
 		return result;
 		}

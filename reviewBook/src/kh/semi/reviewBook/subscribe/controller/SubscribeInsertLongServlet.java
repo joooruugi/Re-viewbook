@@ -35,6 +35,17 @@ public class SubscribeInsertLongServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do post : /subscribelong");
 		String usId = "";
+		String subInf = request.getParameter("subInf");
+		
+		//금액 string -> int 변환
+		String subPriceStr = request.getParameter("subPrice");
+		int subPrice = 0;
+		try {		
+			subPrice = Integer.parseInt(subPriceStr);
+		}catch(NumberFormatException e) {
+		e.printStackTrace();
+		}
+				
 		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo"); 
 		if(vo == null) { 
 			response.sendRedirect("login");
@@ -44,10 +55,18 @@ public class SubscribeInsertLongServlet extends HttpServlet {
 			System.out.println(usId);
 		}
 		
+		//값 확인
+		System.out.println(usId);
+		System.out.println(subInf);
+		System.out.println(subPrice);
+
+		
 		SubscribeVo ssvo = new SubscribeVo();
 		ssvo.setUsId(usId);
+		ssvo.setSubInf(subInf);
+		ssvo.setSubPrice(subPrice);
 		
-		int result = new SubscribeService().insertSubscribeLong(usId);
+		int result = new SubscribeService().insertSubscribeLong(ssvo);
 		if(result<1) {//실패
 			response.sendRedirect("subscribemain");
 			System.out.println("실패");

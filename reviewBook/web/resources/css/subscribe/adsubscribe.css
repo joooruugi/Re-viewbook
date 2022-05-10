@@ -97,10 +97,12 @@
 #subscribe_member .subscribe_member_td{
 	border-bottom: 1px solid gray;
 	border-collapse:collapse;
-    height: 20px;
-    line-height: 20px;
+    height: 35px;
+    line-height: 35px;
     padding-bottom: 10px;
+    
 }
+
 .subscribe_member_th .subscribeid{
     width: 20%;
 }

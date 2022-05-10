@@ -221,7 +221,10 @@ to {
 	text-align: center;
 	font-size: 1.2rem;
 	font-weight: bold;
-	margin-top: 20px;
+}
+
+.sub_notice{
+	margin: 30px 0 30px 0;
 }
 
 .sub_recommend h1{
@@ -410,17 +413,21 @@ body {
 .qna{
 	text-align:center;
 	width: 800px;
-	margin: 20px;
+	margin: 30px;
 }
 
-.qna p {
-	font-size: 2rem;
+.qna .subscribe_qna {
+	font-size: 1.5rem;
 }
 .subscribe_desc{
 	display: none;
+	font-size: 1.2rem;
+	line-height: 120%;
 }
 
+
 .qna_etc{
+	margin-top:40px;
 	text-align: center;
 }
 
@@ -436,6 +443,6 @@ body {
 
 .subscribe_desc{
 	padding: 20px;
-	background: rgba(248,248,248,0.5);
+	background: rgba(248,248,248,0.8);
 }
 

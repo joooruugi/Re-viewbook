@@ -113,13 +113,16 @@ public class SubscribeDao {
 	}
 	
 	//4. 정기 구독 신청
-	public int insertSubscribeLong(Connection conn, String usId) {
+	public int insertSubscribeLong(Connection conn, SubscribeVo ssvo) {
 		int result = 0;
+		String usId = ssvo.getUsId();
 		String sql = "INSERT INTO SUBSCRIBE (US_ID,SUB_INF,SUB_YN,SUB_START,AD_ID,SUB_PRICE)"
-				+ "VALUES(?,'정기구독권',DEFAULT,SYSTIMESTAMP,DEFAULT,29900)";
+				+ "VALUES(?,?,DEFAULT,SYSTIMESTAMP,DEFAULT,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
+			pstmt.setString(2,ssvo.getSubInf());
+			pstmt.setInt(3, ssvo.getSubPrice());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 
@@ -131,13 +134,16 @@ public class SubscribeDao {
 	}	
 	
 	//5. 월별 구독 신청
-	public int insertSubscribeShort(Connection conn, String usId) {
+	public int insertSubscribeShort(Connection conn,  SubscribeVo ssvo) {
 		int result = 0;
+		String usId = ssvo.getUsId();
 		String sql = "INSERT INTO SUBSCRIBE (US_ID,SUB_INF,SUB_YN,SUB_START,AD_ID,SUB_PRICE)"
-				+ "VALUES(?,'월별구독권',DEFAULT,SYSTIMESTAMP,DEFAULT,19900)";
+				+ "VALUES(?,?,DEFAULT,SYSTIMESTAMP,DEFAULT,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, usId);
+			pstmt.setString(2,ssvo.getSubInf());
+			pstmt.setInt(3, ssvo.getSubPrice());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 
@@ -169,7 +175,7 @@ public class SubscribeDao {
 	//7-1. 관리자 - 구독 y 회원 조회 
 	public ArrayList<SubscribeVo> checkSubscribe(Connection conn) {
 		ArrayList<SubscribeVo> sslist = null;
-		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'y' ORDER BY SUB_START DESC, SUB_INF DESC";
+		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'y' ORDER BY SUB_INF DESC , SUB_START DESC";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -205,7 +211,7 @@ public class SubscribeDao {
 	//7-2. 관리자 - 구독 n 회원 조회 
 	public ArrayList<SubscribeVo> checkSubscribeDel(Connection conn) {
 		ArrayList<SubscribeVo> sslist = null;
-		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'n' ORDER BY SUB_START DESC, SUB_INF DESC";
+		String sql = "SELECT * FROM SUBSCRIBE WHERE SUB_YN = 'n' ORDER BY SUB_INF DESC ,SUB_START DESC";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();

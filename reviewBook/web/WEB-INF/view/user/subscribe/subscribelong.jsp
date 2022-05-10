@@ -47,6 +47,8 @@
 			<p> RVB 정기 구독을 이용해주셔서 감사합니다. </p>
 			<p> 매월 1일 RVB와 함께 만나요 </p>
 			<p> 반드시 아래의 정기 구독 신청 완료 버튼을 눌러주세요! </p>
+			<input type="hidden" name="subInf" id="subInf"value="정기구독권">
+			<input type="hidden" name ="subPrice" id="subPrice" value="29900">
 			<button type="submit" class="button5">정기 구독 신청 완료</button>
 			</form>
 			</div>

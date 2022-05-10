@@ -49,7 +49,7 @@
                                 <li><a class="nav_item" href="subscribemain">구독권 안내</a></li>
                                 <li><a class="nav_item" href="subscribecancle">구독 철회</a></li>
                                 <li><a class="nav_item" href="subscribeqna">QNA</a></li>
-                                <li><a class="nav_item" href="#">구독회원 관리</a></li>
+                                <li><a class="nav_item" href="adsubscribemain">구독회원 관리</a></li>
                             </ul>
                         </li>
                         </ul>

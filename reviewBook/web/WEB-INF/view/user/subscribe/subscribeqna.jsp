@@ -49,39 +49,44 @@
 					</div>
 					<div class="qna">
 					<div class="subscribe_qna">
-						<p>질문1ㅇㅇㅇ </p> 
+						<p>구독 중 해지가 가능한가요?</p> 
 					</div>
 					<div class="subscribe_desc">
-						<p>질문에 들어갈내용 대충 답변 뭐라써야하지....하하하하</p>
+						<p>다음달부터 결제되지 않도록 언제든지 해지가 가능합니다.</p>
+						<p>구독 철회는 [구독] - [구독철회]를 통해서 이용해주세요!</p>
 					</div>
 					</div>
 					<div class="qna">
 					<div class="subscribe_qna">
-						<p>질문2ㅇㅇㅇ </p> 
+						<p>주로 어떤 책이 배송되나요?</p> 
 					</div>
 					<div class="subscribe_desc">
-						<p>질문에 들어갈내용 대충 답변 뭐라써야하지....하하하하</p>
+						<p>주로 배송되는 책은 RVB사이트에서 평점 및 인기순위가 높은 책</p>
+						<p>또는 신간도서 및 베스트셀러로 구성됩니다. </p>
 					</div>
 					</div>
 					<div class="qna">
 					<div class="subscribe_qna">
-						<p>질문3ㅇㅇㅇ </p> 
+						<p>책 배송 시간 및 요일을 지정할 수 있나요?</p> 
 					</div>
 					<div class="subscribe_desc">
-						<p>질문에 들어갈내용 대충 답변 뭐라써야하지....하하하하</p>
+						<p>아쉽게도 별도로 배송 시간 및 요일은 지정 불가능합니다. </p>
+						<p>매월 1일 배송될 수 있도록 전월 말일에 출고 예정입니다.</p>
 					</div>
 					</div>
 					<div class="qna">
 					<div class="subscribe_qna">
-						<p>질문4ㅇㅇㅇ </p> 
+						<p>받은 책이 마음에 들지 않는데 환불이 가능한가요?</p> 
 					</div>
 					<div class="subscribe_desc">
-						<p>질문에 들어갈내용 대충 답변 뭐라써야하지....하하하하</p> 
+						<p>먼저 RVB 서비스 이용에 감사를 드립니다.</p>
+						<p>죄송하지만 서비스 구독권으로 받으신 책은 환불이 불가능합니다.</p> 
 					</div>
 					</div>
 				</div>
 				<div class="qna_etc">
-				기타 문의사항은 <a href=#>ReviewBook@gmail.com</a>로 남겨주세요
+				<p>RVB 구독 서비스를 이용해주셔서 감사합니다. </p>
+				<p>기타 문의사항은 <a href=#>reviewbook.rvb@gmail.com</a>로 남겨주세요</p>
 				</div>
 			</div>
 		</div>

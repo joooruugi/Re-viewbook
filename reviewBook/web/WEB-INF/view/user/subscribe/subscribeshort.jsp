@@ -47,6 +47,8 @@
 			<p> RVB 월별 구독을 이용해주셔서 감사합니다. </p>
 			<p> 해당 서비스가 마음에 드시면 RVB와 또 만나요 </p>
 			<p> 반드시 아래의 월 구독 신청 완료 버튼을 눌러주세요! </p>
+			<input type="hidden" name="subInf" id="subInf"value="월별구독권">
+			<input type="hidden" name ="subPrice" id="subPrice" value="19900">
 			<button type="submit" class="button5">월 구독 신청 완료</button>
 			</form>
 			</div>
