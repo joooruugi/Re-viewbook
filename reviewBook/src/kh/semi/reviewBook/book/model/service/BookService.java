@@ -14,8 +14,8 @@ import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
 public class BookService {
 
-	private BookDao bdao = new BookDao();
-	
+//	private BookDao bdao = new BookDao();
+
 	public ArrayList<BookVo> rankinglist() {
 		ArrayList<BookVo> blist = null;
 		Connection conn = getConnection();
@@ -31,52 +31,92 @@ public class BookService {
 //		close(conn);
 //		return blist;
 //	}
-	//책 목록
-	public ArrayList<BookVo> bookList(){
+	// 책 목록
+	public ArrayList<BookVo> bookList() {
 		Connection conn = getConnection();
 		ArrayList<BookVo> blist = new BookDao().bookList(conn);
 		close(conn);
 		return blist;
 	}
-	//책 상세조회
+
+	// 책 상세조회
 	public BookVo bookContent(int bkNo) {
 		Connection conn = getConnection();
 		BookVo bvo = new BookDao().bookContent(conn, bkNo);
 		close(conn);
 		return bvo;
 	}
-	//리뷰 리스트
+
+	// 리뷰 리스트
 	public ArrayList<ReviewVo> reviewlist(int bkNo) {
 		Connection conn = getConnection();
 		ArrayList<ReviewVo> rlist = new BookDao().reviewlist(conn, bkNo);
 		close(conn);
 		return rlist;
 	}
-	//책- 판매순 조회
-	public ArrayList<BookVo> bookListOrder(){
+
+	// 책- 판매순 조회
+	public ArrayList<BookVo> bookListOrder() {
 		Connection conn = getConnection();
 		ArrayList<BookVo> blist = new BookDao().bookListOrder(conn);
 		close(conn);
 		return blist;
 	}
-	//책- 별점순 조회
-	public ArrayList<BookVo> bookListRating(){
+
+	// 책- 별점순 조회
+	public ArrayList<BookVo> bookListRating() {
 		Connection conn = getConnection();
 		ArrayList<BookVo> blist = new BookDao().bookListRating(conn);
 		close(conn);
 		return blist;
 	}
-	//책- 별점순 조회
-	public ArrayList<BookVo> bookListReview(){
+
+	// 책- 별점순 조회
+	public ArrayList<BookVo> bookListReview() {
 		Connection conn = getConnection();
 		ArrayList<BookVo> blist = new BookDao().bookListReview(conn);
 		close(conn);
 		return blist;
 	}
+
+	// 장바구니 담기
+
+	public int insertCart(CartVo cvo) {
+		Connection conn = getConnection();
+		int result = new BookDao().insertCart(conn, cvo);
+		close(conn);
+		return result;
+	}
 	
-	//장바구니 담기
-	/*
-	 * public int insertCart(CartVo cvo) { Connection conn = getConnection(); int
-	 * result = bdao.insertCart(conn, cvo); close(conn); return result; }
-	 */
+	// 스릴러
+	public ArrayList<BookVo> bookListTh(){
+		Connection conn = getConnection();
+		ArrayList<BookVo> blist = new BookDao().bookListTh(conn);
+		close(conn);
+		return blist;	
+	}
+	
+	//힐링
+	public ArrayList<BookVo> bookListHeal(){
+		Connection conn = getConnection();
+		ArrayList<BookVo> blist = new BookDao().bookListHeal(conn);
+		close(conn);
+		return blist;
+	}
+	// 로먄스
+	public ArrayList<BookVo> bookListRo(){
+		Connection conn = getConnection();
+		ArrayList<BookVo> blist = new BookDao().bookListRo(conn);
+		close(conn);
+		return blist;
+	}
+
+	//자기개발
+	public ArrayList<BookVo> bookListSelf(){
+		Connection conn = getConnection();
+		ArrayList<BookVo> blist = new BookDao().bookListSelf(conn);
+		close(conn);
+		return blist;
+		
+	}
 }

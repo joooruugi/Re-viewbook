@@ -27,13 +27,16 @@ public class BookVo {
 	private int gnNo;
 	private String bkContent;
 	private String bkIndex;
+	private String gnName;
 	
+	
+
 	@Override
 	public String toString() {
 		return "BookVo [bkNo=" + bkNo + ", bkTitle=" + bkTitle + ", bkImg=" + bkImg + ", bkPrice=" + bkPrice
 				+ ", bkWriter=" + bkWriter + ", bkPublishdate=" + bkPublishdate + ", bkRating=" + bkRating + ", bkRv="
 				+ bkRv + ", bkSales=" + bkSales + ", gnNo=" + gnNo + ", bkContent=" + bkContent + ", bkIndex=" + bkIndex
-				+ "]";
+				+ ", gnName=" + gnName + "]";
 	}
 
 	public int getBkNo() {
@@ -130,6 +133,14 @@ public class BookVo {
 
 	public void setBkIndex(String bkIndex) {
 		this.bkIndex = bkIndex;
+	}
+
+	public String getGnName() {
+		return gnName;
+	}
+
+	public void setGnName(String gnName) {
+		this.gnName = gnName;
 	}
 	
 

@@ -113,7 +113,7 @@ public class BookDao {
 	//책 조회
 	public ArrayList<BookVo> bookList(Connection conn){
 		ArrayList<BookVo> blist = null;
-		String sql="select * from book";
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -132,6 +132,7 @@ public class BookDao {
 				bvo.setBkSales(rs.getInt("bk_sales"));
 				bvo.setBkIndex(rs.getString("bk_index"));
 				bvo.setBkContent(rs.getString("bk_content"));
+				bvo.setGnName(rs.getString("gn_Name"));
 				blist.add(bvo);
 			}
 		} catch (SQLException e) {
@@ -153,6 +154,7 @@ public class BookDao {
 			rs = pstmt.executeQuery();
 			bvo = new BookVo();
 			if(rs.next()) {
+				bvo.setBkNo(rs.getInt("bk_no"));
 				bvo.setBkTitle(rs.getString("bk_title"));
 				bvo.setBkWriter(rs.getString("bk_writer"));
 				bvo.setBkPrice(rs.getInt("bk_price"));
@@ -307,7 +309,7 @@ public class BookDao {
 	
 	
 	//장바구니 담기
-	public int insertSeriesBoard(Connection conn, CartVo cvo) {
+	public int insertCart(Connection conn, CartVo cvo) {
 		String usId = cvo.getUsId() ;
 		int result = 0;
 		String sql = "INSERT INTO CART(US_ID, BK_NO, CA_COUNT) VALUES(?,?,?)";
@@ -326,6 +328,142 @@ public class BookDao {
 			close(pstmt);
 		}
 		return result;
+	}
+	//스릴러 목록 
+	public ArrayList<BookVo> bookListTh(Connection conn){
+		ArrayList<BookVo> blist = null;
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '스릴러'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			blist = new ArrayList<BookVo>();
+			while(rs.next()) {
+				BookVo bvo = new BookVo();
+				bvo.setBkNo(rs.getInt("bk_no"));
+				bvo.setBkTitle(rs.getString("bk_title"));
+				bvo.setBkWriter(rs.getString("bk_writer"));
+				bvo.setBkRating(rs.getInt("bk_rating"));
+				bvo.setGnNo(rs.getInt("gn_no"));
+				bvo.setBkPrice(rs.getInt("bk_price"));
+				bvo.setBkImg(rs.getString("bk_img"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
+				bvo.setBkRv(rs.getInt("bk_rv"));
+				bvo.setBkSales(rs.getInt("bk_sales"));
+				bvo.setBkIndex(rs.getString("bk_index"));
+				bvo.setBkContent(rs.getString("bk_content"));
+				bvo.setGnName(rs.getString("gn_Name"));
+				blist.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return blist;
+		
+	}
+	//힐링
+	public ArrayList<BookVo> bookListHeal(Connection conn){
+		ArrayList<BookVo> blist = null;
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '힐링'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			blist = new ArrayList<BookVo>();
+			while(rs.next()) {
+				BookVo bvo = new BookVo();
+				bvo.setBkNo(rs.getInt("bk_no"));
+				bvo.setBkTitle(rs.getString("bk_title"));
+				bvo.setBkWriter(rs.getString("bk_writer"));
+				bvo.setBkRating(rs.getInt("bk_rating"));
+				bvo.setGnNo(rs.getInt("gn_no"));
+				bvo.setBkPrice(rs.getInt("bk_price"));
+				bvo.setBkImg(rs.getString("bk_img"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
+				bvo.setBkRv(rs.getInt("bk_rv"));
+				bvo.setBkSales(rs.getInt("bk_sales"));
+				bvo.setBkIndex(rs.getString("bk_index"));
+				bvo.setBkContent(rs.getString("bk_content"));
+				bvo.setGnName(rs.getString("gn_Name"));
+				blist.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return blist;
+		
+	}
+	//로맨스
+	public ArrayList<BookVo> bookListRo(Connection conn){
+		ArrayList<BookVo> blist = null;
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '로맨스'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			blist = new ArrayList<BookVo>();
+			while(rs.next()) {
+				BookVo bvo = new BookVo();
+				bvo.setBkNo(rs.getInt("bk_no"));
+				bvo.setBkTitle(rs.getString("bk_title"));
+				bvo.setBkWriter(rs.getString("bk_writer"));
+				bvo.setBkRating(rs.getInt("bk_rating"));
+				bvo.setGnNo(rs.getInt("gn_no"));
+				bvo.setBkPrice(rs.getInt("bk_price"));
+				bvo.setBkImg(rs.getString("bk_img"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
+				bvo.setBkRv(rs.getInt("bk_rv"));
+				bvo.setBkSales(rs.getInt("bk_sales"));
+				bvo.setBkIndex(rs.getString("bk_index"));
+				bvo.setBkContent(rs.getString("bk_content"));
+				bvo.setGnName(rs.getString("gn_Name"));
+				blist.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return blist;
+		
+	}
+	//자기개발
+	public ArrayList<BookVo> bookListSelf(Connection conn){
+		ArrayList<BookVo> blist = null;
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '자기개발'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			blist = new ArrayList<BookVo>();
+			while(rs.next()) {
+				BookVo bvo = new BookVo();
+				bvo.setBkNo(rs.getInt("bk_no"));
+				bvo.setBkTitle(rs.getString("bk_title"));
+				bvo.setBkWriter(rs.getString("bk_writer"));
+				bvo.setBkRating(rs.getInt("bk_rating"));
+				bvo.setGnNo(rs.getInt("gn_no"));
+				bvo.setBkPrice(rs.getInt("bk_price"));
+				bvo.setBkImg(rs.getString("bk_img"));
+				bvo.setBkPublishdate(rs.getString("bk_publishdate"));
+				bvo.setBkRv(rs.getInt("bk_rv"));
+				bvo.setBkSales(rs.getInt("bk_sales"));
+				bvo.setBkIndex(rs.getString("bk_index"));
+				bvo.setBkContent(rs.getString("bk_content"));
+				bvo.setGnName(rs.getString("gn_Name"));
+				blist.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return blist;
+		
 	}
 		
 	

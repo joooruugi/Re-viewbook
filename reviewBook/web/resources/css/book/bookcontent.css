@@ -94,6 +94,7 @@ margin: 20px auto;
 .bookreview_tr{
 	border-top: 1px solid black;
 }
+
 .booklist_btn button {
     font-family: 'GowunDodum-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
@@ -102,8 +103,10 @@ margin: 20px auto;
     background-color: #9ecdf7;
     border: 1px solid #bed8ea;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 20px;r
 }
 
 
-
+.bookreviewtable span{
+	color: #fc0;
+}
