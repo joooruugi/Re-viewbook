@@ -53,7 +53,9 @@
 						%>
 						<tr class="fdlist_tb fontnormal">
 							<td class="wbNo"><%=svo.getWbNo()%></td>
-							<td><%=svo.getWbTitle()%></td>
+							<td><a href="seriesread?wbNo=<%=svo.getWbNo()%>" class="seriesread">
+								<%=svo.getWbTitle()%></a>
+							</td>
 							<td><%=svo.getAvgDonation()%>%</td>
 							<td><%=svo.getFdDeadline().substring(0,10)%></td>
 							<%
@@ -71,6 +73,7 @@
 												<%=svo.getWbTitle()%></p>
 											<p><img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 												class="bookimg"></p>
+												
 											<p>
 												작가 :
 												<%=svo.getWbWriter()%></p>

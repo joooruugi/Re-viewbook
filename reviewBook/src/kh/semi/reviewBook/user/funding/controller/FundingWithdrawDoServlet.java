@@ -41,8 +41,8 @@ public class FundingWithdrawDoServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	System.out.println("doPost : fundingwithdraw/");
-    	System.out.println(request.getParameter("wbNo"));
+//    	System.out.println("doPost : fundingwithdraw/");
+//    	System.out.println(request.getParameter("wbNo"));
 		int wbNo = Integer.parseInt(request.getParameter("wbNo"));
 		System.out.println(wbNo);
 		String loginId = "";
@@ -56,7 +56,7 @@ public class FundingWithdrawDoServlet extends HttpServlet {
 		FundingVo vo = new FundingVo();
 		vo.setWbNO(wbNo);
 		vo.setUsId(loginId);
-		System.out.println("vo: "+vo);
+//		System.out.println("vo: "+vo);
 		// 철회하기 버튼을 누르면 여기로 들어와서 글번호와 사용자아이디를 가지고 서비스로 간다.
 		int result = service.fundingWithdraw(vo);
 		FundingVo fvo = new FundingService().fundingBoardlistDonation(wbNo, loginId);

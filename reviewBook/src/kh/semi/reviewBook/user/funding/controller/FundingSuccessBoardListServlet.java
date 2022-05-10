@@ -39,10 +39,10 @@ public class FundingSuccessBoardListServlet extends HttpServlet {
 		ArrayList<SeriesVo> slistInfo = new SeriesService().listSeriesInfoRank();
 		ArrayList<SeriesVo> slistDaily = new SeriesService().listSeriesDailyRank();
 		ArrayList<SeriesVo> slistEtc = new SeriesService().listSeriesEtcRank();
-		System.out.println(slistFiction);
-		System.out.println(slistInfo);
-		System.out.println(slistDaily);
-		System.out.println(slistEtc);
+//		System.out.println(slistFiction);
+//		System.out.println(slistInfo);
+//		System.out.println(slistDaily);
+//		System.out.println(slistEtc);
 		
 		request.setAttribute("slistFiction",slistFiction);
 		request.setAttribute("slistInfo",slistInfo);

@@ -107,6 +107,9 @@
 .fdlist_th .fdlistfunding{
     width: 20%;
 }
+.seriesread {
+	color:black;
+}
 /* 철회,펀딩 버튼 */ 
 .btn_funding_withdraw {
 	background-color: #fce1ba;

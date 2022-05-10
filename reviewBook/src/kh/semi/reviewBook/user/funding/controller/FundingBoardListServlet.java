@@ -34,7 +34,7 @@ public class FundingBoardListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("servlet확인");
+//		System.out.println("servlet확인");
 //		String loginId = request.getParameter("usId") - 로그인한 사용자의 아이디
 		String loginId = "";
 		UserVo vo = (UserVo)request.getSession().getAttribute("ssUserVo");
@@ -43,9 +43,9 @@ public class FundingBoardListServlet extends HttpServlet {
 			return;
 		}
 		loginId = vo.getUsId();
-		System.out.println("fundingboardlist loginId: "+ loginId);
+//		System.out.println("fundingboardlist loginId: "+ loginId);
 		ArrayList<SeriesVo> slist = service.fundingBoardlist(loginId);
-		System.out.println("slist: " + slist);
+//		System.out.println("slist: " + slist);
 		
 		request.setAttribute("slist", slist);
 		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingboardlist.jsp").forward(request, response);

@@ -41,9 +41,9 @@ public class FundingDonationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost : fundingdonation/");
-		System.out.println(request.getParameter("wbNo"));
-		System.out.println(request.getParameter("fdDonation"));
+//		System.out.println("doPost : fundingdonation/");
+//		System.out.println(request.getParameter("wbNo"));
+//		System.out.println(request.getParameter("fdDonation"));
 		int wbNo = 0;
 		int fdDonation = 0;
 		try {
@@ -52,7 +52,7 @@ public class FundingDonationServlet extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("숫자 오류");
 		}
-		System.out.println(wbNo);
+//		System.out.println(wbNo);
 		String loginId = "";
 		UserVo ssUserVo = (UserVo)request.getSession().getAttribute("ssUserVo");
 		if(ssUserVo == null) {
@@ -65,7 +65,7 @@ public class FundingDonationServlet extends HttpServlet {
 		vo.setWbNO(wbNo);
 		vo.setFdDonation(fdDonation);
 		vo.setUsId(loginId);
-		System.out.println("vo: "+vo);
+//		System.out.println("vo: "+vo);
 		int result = service.fundingDonation(vo);
 		
 		PrintWriter out = response.getWriter();

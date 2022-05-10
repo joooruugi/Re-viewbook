@@ -41,10 +41,10 @@ public class FundingWithdrawServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	System.out.println("doPost : fundingwithdraw/");
-    	System.out.println(request.getParameter("wbNo"));
+//    	System.out.println("doPost : fundingwithdraw/");
+//    	System.out.println(request.getParameter("wbNo"));
 		int wbNo = Integer.parseInt(request.getParameter("wbNo"));
-		System.out.println(wbNo);
+//		System.out.println(wbNo);
 		String loginId = "";
 		UserVo ssUserVo = (UserVo)request.getSession().getAttribute("ssUserVo");
 		if(ssUserVo == null) {
@@ -55,7 +55,7 @@ public class FundingWithdrawServlet extends HttpServlet {
 		
 		// 글번호와 사용자 아이디를 가지고 후원금액 알아오기
 		FundingVo fvo = new FundingService().fundingBoardlistDonation(wbNo, loginId);
-		System.out.println("fvo:" + fvo);
+//		System.out.println("fvo:" + fvo);
 		PrintWriter out = response.getWriter();
 		out.print(fvo);
 		out.flush();out.close();
