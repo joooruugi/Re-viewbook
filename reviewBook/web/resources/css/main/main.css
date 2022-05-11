@@ -1,6 +1,8 @@
 .bodyrvb{
-    width: 100%;
-    /* display: flex; */
+    margin: 20px auto;
+}
+a{
+   color: black;
 }
 /* 맨 위 배너  */
 .main1_contentrvb{
@@ -22,6 +24,7 @@
     margin-top: 130px;
     text-align: center;
     color: #535353;
+    cursor: default;
 }
 .main1_contentrvb .main1_left .main1_leftword2{
     font-size: 60px;
@@ -65,53 +68,244 @@
     width: 100%;
     height: 600px;
 }
-/* 맨 위 배너 하단 중간 내용 1 */
+/* main2 */
 .main2_contentrvb{
-    clear: both;
-    margin-top: 90px;
-    width: 100%;
-    height: 1000px;
-    align-items: center;
-
-}
-.main2_contentrvb .main2_top .main2_top_name{
-    font-size: 40px;
-    text-align: center;
-}
-.main2_contentrvb .main2_top .main2_top_content{
-    margin-left: 155px;
-}
-.main2_contentrvb .main2_top .main2_top_content1{
-    float: left;
-    border: 1px solid black;
-    margin: 1px;
-    border-radius: 20px;
-    width: 600px;
-    height: 1000px;
-}
-.main2_contentrvb .main2_top .main2_top_content2{
-    float: left;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 1px;
-    width: 600px;
-    height: 1000px;
-}
-.main3_contentrvb{
-    clear: both;
-    margin-top: 120px;
-    width: 100%;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 40px auto;
     align-items: center;
 }
-.main3_contentrvb .main3_top .main3_top_name{
+/* main2 top */
+.main2_top{
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border: 3px solid #f8ae93;
+    border-radius: 20px;
+}
+.main2_top_name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+}
+.main2_top_name img{
+    width:20%;
+    background-color: #f8ae93;
+    border-radius: 180px;;
+}
+.main2_top_name p{
+    cursor: default;
+    margin:20px auto;
+    font-size: 55px;
+    text-align: center;
+}
+.main2_top_content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+}
+.main2_top_content1 .main_content1{
+    cursor: default;
+    font-size: 20px;
+    color: red;
+    margin: 5px;
+}
+.main2_top_content1 .main_content2{
+    cursor: default;
+    font-size: 35px;
+    margin: 15px;
+}
+.main2_top_content2:hover, .main2_top_content3:hover{
+    background-color:  #fbcfbf ;
+    border-radius: 40px;
+}
+.main2_top_content2 .main_content1{
+    font-size: 23px;
+    margin: 10px;
+}
+.main2_top_content2 .main_content2{
+    font-size: 19px;
+    margin: 10px;
+}
+.main2_top_content3 .main_content1{
+    font-size: 23px;
+    margin: 10px;
+}
+.main2_top_content3 .main_content2{
+    font-size: 19px;
+    margin: 10px;
+}
+/* main2_top2 */
+.main2_top2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 40px auto;
+    border: 3px solid gold;
+    border-radius: 20px;
+}
+.main2_top2 .main2_top2_name{
+    font-size:40px;
+    text-align: center;
+    margin: 30px;
+}
+.main2_top2_content{
+    width: 100%;
+    margin: auto;
+    cursor: default;
+}
+.main2_top2_content1, .main2_top2_content2{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3px solid  #f4cf9b;
+}
+.main2_top2_content1 img{
+    margin: 40px auto;
+    background-color: #ffd293;
+    border-radius: 140px;
+    float: left;
+    width: 20%;
+}
+.main2_top2_content1 p{
+    margin: auto 10px;
+    float: left;
+    text-align: center;
+}
+.main2_top2_content1 .main2_content1{
+    font-size:25px;
+    margin: auto 10px;
+}
+.main2_top2_content1 .main2_content2{
+    font-size: 20px;
+    margin: auto 100px;
+}
+.main2_top2_content1 .main2_content2:hover{
+    font-size: 22px;
+}
+.main2_top2_content2 p{
+    margin: auto 10px;
+    float: right;
+    text-align: center;
+}
+.main2_top2_content2 img{
+    margin: 40px auto;
+    background-color: #ffd293;
+    border-radius: 140px;
+    float: right;
+    width: 20%;
+}
+.main2_top2_content2 .main2_content1{
+    font-size:25px;
+    margin: auto 10px;
+}
+.main2_top2_content2 .main2_content2{
+    font-size: 20px;
+    margin: auto 100px;
+}
+.main2_top2_content2 .main2_content2:hover{
+    font-size: 22px;
+}
+.main2_top2_content3{
+    cursor: default;
+    margin: 20px auto;
+    text-align: center;
+}
+.main2_top2_content3 .fontimportant{
     font-size: 25px;
+    margin: 10px;
 }
-.main3_contentrvb .main3_top .main3_top_content{
+.main2_top2_content3 .fontnothing{
+    font-size: 22px;
+    margin: 20px auto;
+}
+.main2_top2_content3 .fontnothing:hover{
+    font-size: 23px;
+}
+.main2_top2_content3 .fontimportant2{
+    font-size: 23px;
+    margin: 10px;
+}
+/* main3 */
+.main3_contentrvb{
+    margin: 80px auto;
+    text-align: center;
+    background-color: black;
+    height: 1000px;
+}
+.main3_top_name{
+    margin: 20px auto;
+    cursor: default;
+    font-size: 55px;
+    text-align: center;
+    color: white;
+    line-height: 100px;
+}
+.main3_top1_content{
     width: 100%;
-    height: 200px;
-    margin-top: 20px;
-    border: 1px solid black;
+    margin: 10px auto;
 }
-
+.main3_top_content1{
+    width: 80%;
+    margin: 20px auto;
+}
+.main3_top_content1 .fontimportant2{
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+.main3_top_content1{
+    margin:20px auto;
+}
+.main3_top_content1 img{
+     width: 40%;
+    margin: 20px auto;
+    align-items: center;
+    border: 1px solid white;
+}
+.main3_top_content1 img:hover{
+    border: 5px solid red;
+}
+.main3_top_content1 .fontnormal{
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+.main3_top_content1 .fontnothing{
+    font-size: 25px;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+/* main4  */
+.main4_contentrvb{
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.main4_top{
+    width: 100%;
+    margin:10px auto;
+}
+.main4_top_name{
+    font-size: 30px;
+    margin: 20px auto;
+}
+.main4_top_content{
+    width: 100%;
+    margin: 10px auto;
+}
+.main4_top_content1{
+    width: 50%;
+    float: left;
+}
+.main4_top_content2{
+    width: 50%;
+}

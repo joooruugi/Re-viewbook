@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.opening .fontimportant{
+   
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 50px;
+}
+.opening .fontimportant2{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+}
+.opening_img{
+    border-top: 1px solid pink;
+    width: 80%;
+    text-align: center;
+    margin: 20px auto;
+}
+.opening_img1{
+    width: 50%;
+    float: left;
+   
+}
+.opening_img2{
+    width: 50%;
+}

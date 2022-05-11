@@ -33,7 +33,7 @@ public class UserLogoutServlet extends HttpServlet {
 		writer.println("<script> alert('로그아웃 되었습니다. 또 만나요!'); location.href='\"+/logout+\"';</script>");
 		request.getSession().removeAttribute("ssUserVo");
 		request.getSession().removeAttribute("ssAdminVo");
-		response.sendRedirect(request.getContextPath()+"/");
+		response.sendRedirect(request.getContextPath()+"/main");
 	}
 
 	/**

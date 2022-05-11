@@ -12,7 +12,7 @@
  <header>
         <div class="navbar">
             <nav class="navbar_left mainlogo">
-            <a href="<%=request.getContextPath() %>/">
+            <a href="<%=request.getContextPath() %>/main">
                 <img src="./resources/image/all/header/RVBlogo.png">
                 </a>
             </nav>

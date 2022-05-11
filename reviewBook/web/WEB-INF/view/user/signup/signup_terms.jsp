@@ -116,7 +116,7 @@
 		    	//작업 
 	    		 alert('모든 항목에 동의하셔야 회원가입이 가능합니다.');
 		    	}else{
-		    		($("#signup_nextbtn").attr("href","http://localhost:8090/reviewBook/signup_input"));
+		    		($("#signup_nextbtn").attr("href","<%=request.getContextPath() %>/signup_input"));
 		    	}
 		});
 	   

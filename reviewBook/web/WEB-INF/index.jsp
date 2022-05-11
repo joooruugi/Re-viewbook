@@ -21,31 +21,9 @@
 </head>
 <body>
 	<div id="main_wrap">
-		<%
-			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
-		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		// out.print(vo);
-		if (vo == null && avo == null) {
-		%>
-		<%@ include file="./view/template_header.jsp"%>
-		<%
-			} else if (vo != null) {
-		%>
-		<%@ include file="./view/template_header_login.jsp"%>
-		<%
-			} else if (avo != null) {
-		%>
-		<%@ include file="./view/template_header_adlogin.jsp"%>
-		<%
-			}
-		%>
-
-
-		<%@ include file="./view/user/main/main.jsp"%>
-		<div class="wrap content">
-			<div id="content"></div>
-		</div>
-		<%@ include file="./view/template_footer.jsp"%>
+	
+		<%@ include file="./view/user/main/opening.jsp"%>
+		
 	</div>
 </body>
 </html>

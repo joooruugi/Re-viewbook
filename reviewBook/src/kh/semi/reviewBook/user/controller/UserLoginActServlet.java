@@ -61,8 +61,9 @@ public class UserLoginActServlet extends HttpServlet {
 			System.out.println("로그인 성공");
 			script.println("<script>");
 			script.println("alert('"+usId+"님 환영합니다.')");
-			script.println("location.href='notice'");
+			script.println("location.href='"+request.getHeader("referer")+"'");
 			script.println("</script>");
+//			response.sendRedirect(request.getHeader("referer"));
 		}
 	}
 
