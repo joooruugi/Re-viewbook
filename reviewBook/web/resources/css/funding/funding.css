@@ -20,15 +20,6 @@
     margin: 20px;
 	margin-left: 0px;
 }
-.sidemenu_book .sidemenu_topmenu{
-    font-family: 'ROKAFSansBold';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-	font-size: 20px;
-}
 .sidemenu_funding .sidemenu_item{
     font-family: 'SF_HailSnow';
 	src:
@@ -47,7 +38,7 @@
 	font-size: 20px;
 	margin-left: 10px;
 }
-.sidemenu_funding li:hover{
+.sidemenu_funding li:hover:not(:first-of-type) {
     font-family: 'ROKAFSansMedium';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
@@ -57,13 +48,14 @@
 	background-color: #b6d4ff;
 	border-radius: 30px;
 }
-/* 클릭시 색상변경 유지(현재보여지는 탭이 뭔지 알기위해서*/
-.sidemenu_funding li{
+.sidemenu_funding .sidemenu_topmenu{
     font-family: 'ROKAFSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-size: 20px;
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
 }
 /* 표 */
 .contentfd{

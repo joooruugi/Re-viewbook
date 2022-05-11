@@ -118,7 +118,7 @@
 							<table id="board_read_recomment">
 								<tr>
 									<td colspan="3">댓글 [<%=svo.getReCommentCnt() %>]
-										<form action="seriescomment" method="post">
+										<form action="fundingseriescomment" method="post">
 											<div class="star-rating">
 												<input type="radio" id="5-stars" name="wbcRating" value="5" />
 												<label for="5-stars" class="star">&#9733;</label> <input
@@ -154,7 +154,7 @@
 							<div class="series_board_comment_up_de_btn" >
 							<button class="btn_board_comment_update">댓글 수정</button>
 							<div class="update_board_comment">
-								<form action="seriescommentupdate" method="post">
+								<form action="fundingseriescommentupdate" method="post">
 									<input type ="text" value="<%=srvo.getWbcContent() %>" id = "wbcContent" name="wbcContent">
 									<input type="hidden" name="wbNo" value="<%=svo.getWbNo()%>">
 									<input type="hidden" name="wbcNo" value="<%=srvo.getWbcNo()%>">
@@ -163,7 +163,7 @@
 								</form> 
 								</div>
 							<button class="btn_board_comment_delete"
-							onclick="location.href='seriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
+							onclick="location.href='fundingseriescommentdelete?wbNo=<%=svo.getWbNo()%>&wbcNo=<%=srvo.getWbcNo()%>';">댓글 삭제</button>
 							</div>
 							<%} %>
 							<table id="series_read_comment_rist">
