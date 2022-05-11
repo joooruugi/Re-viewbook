@@ -57,17 +57,10 @@ public class FundingWithdrawServlet extends HttpServlet {
 		FundingVo fvo = new FundingService().fundingBoardlistDonation(wbNo, loginId);
 //		System.out.println("fvo:" + fvo);
 		PrintWriter out = response.getWriter();
-		out.print(fvo);
+		out.print(fvo.getFdDonation());
 		out.flush();out.close();
 		
-		if(fvo==null) {
-			//query문 실행 중 오류 발생한 경우 메인으로 보냄 
-			response.sendRedirect("fundingboardlist");
-			return ;
-		}
-		
-		request.setAttribute("fvo", fvo); //이동할 jsp파일의 getAttribute와 같은 이름인지 확인 
-		request.getRequestDispatcher("WEB-INF/view/user/funding/fundingboardlist.jsp").forward(request, response);
+
 	}
 
 }

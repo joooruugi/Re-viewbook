@@ -80,6 +80,9 @@
 											<p>
 												카테고리 :
 												<%=svo.getWbCategory()%></p>
+											<p>
+												후원금액 :
+												<span class="funding_amount"></span></p>
 										</div>
 										<div class="btn_funding_move_close">
 											<button class="button2 btn_withdraw">철회하기</button>
@@ -206,8 +209,10 @@
 		$(".btn_funding_withdraw").click(funding_withdrawDonation);
 		function funding_withdrawDonation() {
 			console.log(this);
-			openModal(this);
-			var wbNoVal = $(this).parents(".modal").find(".wbNo").text();
+			var $thisEle = $(this);
+			var wbNoVal = $(this).next().find(".wbNo").text();
+			var $eleFundingAmount = $(this).next().find(".funding_amount");
+			console.log("여기");
 			console.log(wbNoVal);
 			//location.href='fundingwithdraw?wbNo='+wbNoVal;
 			$.ajax({
@@ -218,14 +223,18 @@
 				},
 				success : function(result) {
 					console.log(result);
+					console.log(this);  // 이때 this는 window 객체들어있음.
+					$eleFundingAmount.html(result+"원");
+					openModal($thisEle);
 					if (result == 0) {
 
 					} else {
 
 					}
-					location.reload();
+					//location.reload();
 				}
 			});
+			
 		}
 
 		//close 버튼 누르면 펀딩 모달창 close

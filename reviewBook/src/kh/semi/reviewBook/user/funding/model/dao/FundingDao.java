@@ -69,10 +69,8 @@ public class FundingDao {
 			rs = pstmt.executeQuery();
 			fvo = new FundingVo();
 			
-			while (rs.next()) {
+			if (rs.next()) {
 				fvo.setFdDonation(rs.getInt("fd_donation"));
-				
-				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -80,6 +78,7 @@ public class FundingDao {
 			close(rs);
 			close(pstmt);
 		}
+		System.out.println("후원한 금액은 " + fvo);
 		return fvo;
 	}
 
