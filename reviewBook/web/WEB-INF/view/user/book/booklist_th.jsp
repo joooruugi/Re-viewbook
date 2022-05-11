@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>RVB Book</title>
 </head>
 <body>
 	<%
@@ -105,7 +105,7 @@
 
 		</div>
 	</div>
-
+<%@ include file="../../template_footer.jsp"%>
 	<script type="text/javascript">
 		function addToCart() {
 			// 확인 true

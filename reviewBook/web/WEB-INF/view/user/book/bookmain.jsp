@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RVB 도서</title>
+<title>RVB Book</title>
 <!-- Swiper -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -55,9 +55,9 @@
 			ArrayList<BookVo> blistReview = (ArrayList<BookVo>) request.getAttribute("blistReview");
 			%>
 			<div class="contentfd">
-			<div class="bookmainname">
-			<p class="fontimportant">   🎈 도서 랭킹 🎈   </p>
-			</div>
+				<div class="bookmainname">
+					<p class="fontimportant">🎈 도서 랭킹 🎈</p>
+				</div>
 				<div class="contentmainfd">
 
 					<%

@@ -1,8 +1,4 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/series/seriesinsert.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/footer.css">
 <%@page import="kh.semi.reviewBook.user.model.vo.UserVo"%>
 <%@page import="kh.semi.reviewBook.series.model.vo.SeriesVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -32,25 +28,22 @@
 	<% } %>
 	 <div id="main_wrap">
     <div class="series_banner">
-		<div id="series_banner_title">
-			<h2>
-				<a href="seriesmain">연재</a>
-			</h2>
-			<br><br>
-			<p>작가가 되어 자유롭게 글을 작성해보세요</p>
-			<img src="./resources/image/series/author3.png"
-				class="series_banner_img">
-		</div>
+        <div id="series_banner_title">    
+        <h2><br><a href="seriesmain">연재 <글쓰기></a></h2>
+        <br><br><br>
+        <p>작가가 되어 자유롭게 글을 작성해보세요</p>
+    <img src="./resources/image/series/author3.png" class="series_banner_img">
+    </div>
 	</div>
 	<div class="bodyrvb">
 		<nav class="sidemenu">
 			<ul class="sidemenu_series">
 				<li><a class="sidemenu_item sidemenu_topmenu">연재</a></li>
-				<li><a class="sidemenu_item" href="seriesmain">전체</a></li>
-				<li><a class="sidemenu_item" href="seriescategoryfiction">문학</a></li>
-				<li><a class="sidemenu_item" href="seriescategoryinfo">정보공유</a></li>
-				<li><a class="sidemenu_item" href="seriescategorydaily">일상</a></li>
-				<li><a class="sidemenu_item" href="seriescategoryetc">기타</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="seriesmain">전체</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="seriescategoryfiction">문학</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="seriescategoryinfo">정보공유</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="seriescategorydaily">일상</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="seriescategoryetc">기타</a></li>
 			</ul>
 		</nav>
 		<div class="contentrvb">
