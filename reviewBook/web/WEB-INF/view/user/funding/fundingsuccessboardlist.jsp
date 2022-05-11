@@ -29,14 +29,14 @@
 
 </head>
 <body>
+	<%@ include file="../../template_header_login.jsp"%>
 	<div id="main_wrap">
-		<%@ include file="../../template_header_login.jsp"%>
 		<div class="bodyfd">
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">펀딩</a></li>
-					<li><a class="sidemenu_item" href="fundingboardlist">펀딩진행중</a></li>
-					<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="fundingboardlist">펀딩진행중</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="fundingsuccessboardlist">펀딩성공작</a></li>
 				</ul>
 			</nav>
 			<%
@@ -47,6 +47,9 @@
 			if (slistFiction != null || slistInfo != null || slistDaily != null || slistEtc != null) {
 			%>
 			<div class="contentfd">
+			<div class="bookmainname">
+			<p class="fontimportant">   🎈 게시글 랭킹 🎈   </p>
+			</div>
 				<div class="contentmainfd">
 
 					<!-- TODO 작품 받아와서 슬라이딩으로 구성하기 -->
@@ -61,6 +64,7 @@
 								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 										class="bookimg">
+									<div class="fontnormal bookname"><%=svo.getWbTitle()%></div>
 								</a>
 							</div>
 						<% } %>
@@ -81,6 +85,7 @@
 								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath()%><%=svo.getWbImgPath()%>"
 										class="bookimg">
+									<div class="fontnormal bookname"><%=svo.getWbTitle()%></div>
 								</a>
 							</div>
 						<% } %>	
@@ -100,6 +105,7 @@
 								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 										class="bookimg">
+									<div class="fontnormal bookname"><%=svo.getWbTitle()%></div>
 								</a>
 							</div>
 						<% } %>
@@ -108,7 +114,6 @@
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-pagination"></div>
 					</div>
-					
 					<h2 class="fontimportant fdtag">기타게시글 TOP😘</h2>
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
@@ -120,22 +125,21 @@
 								<a href="fundingread?wbNo=<%=svo.getWbNo()%>">
 									<img src="<%=request.getContextPath() %><%=svo.getWbImgPath()%>"
 										class="bookimg">
+									<div class="fontnormal bookname"><%=svo.getWbTitle()%></div>
 								</a>
 							</div>
-						<% } %>	
+						<% } %>
 						</div>
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-pagination"></div>
 					</div>
-					
-					
 				</div>
 				<% } %>
 			</div>
 		</div>
-		<%@ include file="../../template_footer.jsp"%>
 	</div>
+	<%@ include file="../../template_footer.jsp"%>
 	<script>
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView : 5,

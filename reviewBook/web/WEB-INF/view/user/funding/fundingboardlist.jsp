@@ -29,8 +29,8 @@
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">펀딩</a></li>
-					<li><a class="sidemenu_item" href="fundingboardlist">펀딩진행중</a></li>
-					<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="fundingboardlist">펀딩진행중</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="fundingsuccessboardlist">펀딩성공작</a></li>
 				</ul>
 			</nav>
 			<%
@@ -41,7 +41,7 @@
 				<div class="contentmainfd">
 					<table class="fdlist">
 						<tr class="fdlist_th fontimportant2">
-							<td class="fdlistno">No.</td>
+							<td class="fdlistno">작가</td>
 							<td class="fdlistname">책제목</td>
 							<td class="fdlistprocess">상태</td>
 							<td class="fdlistdeadline">펀딩마감일</td>
@@ -52,7 +52,7 @@
 							for (SeriesVo svo : slist) {
 						%>
 						<tr class="fdlist_tb fontnormal">
-							<td class="wbNo"><%=svo.getWbNo()%></td>
+							<td class="wbNo"><%=svo.getWbWriter()%></td>
 							<td><a href="fundingread?wbNo=<%=svo.getWbNo()%>" class="seriesread">
 								<%=svo.getWbTitle()%></a>
 							</td>
@@ -61,7 +61,7 @@
 							<%
 								if (svo.getIsDonation() == 1) {
 							%>
-							<td><button class="btn_funding_withdraw button1">철회하기</button>
+							<td><button class="btn_funding_withdraw">철회하기</button>
 								<div class="modal"> 
 									<div class="modal_content">
 										<div id="modal_funding_content">

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/series/seriesread.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/funding/funding.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/all/all.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/all/reset.css"> 
@@ -46,10 +47,10 @@
 	</div>
 	<div class="bodyrvb">
 		<nav class="sidemenu">
-			<ul class="sidemenu_series">
+			<ul class="sidemenu_funding">
 				<li><a class="sidemenu_item sidemenu_topmenu">펀딩</a></li>
-				<li><a class="sidemenu_item" href="fundingboardlist">펀딩진행중</a></li>
-				<li><a class="sidemenu_item" href="fundingsuccessboardlist">펀딩성공작</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="fundingboardlist">펀딩진행중</a></li>
+				<li><a class="sidemenu_item sidemenu_menu" href="fundingsuccessboardlist">펀딩성공작</a></li>
 			</ul>
 		</nav>
 		<div class="contentrvb">
