@@ -1,3 +1,5 @@
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/all/header.css">
 <%@page import="kh.semi.reviewBook.admin.vo.AdminVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,10 +17,10 @@
                         <li>
                             <a class="nav_item" href="bookmain">도서</a>
                             <ul class="nav_dropdownmenu2">
-                                <li><a class="nav_item" href="naver.com">스릴러</a></li>
-                                <li><a class="nav_item" href="#">힐링</a></li>
-                                <li><a class="nav_item" href="#">로맨스</a></li>
-                                <li><a class="nav_item" href="#">자기계발</a></li>
+                                <li><a class="nav_item" href="booklistth">스릴러</a></li>
+                                <li><a class="nav_item" href="booklistheal">힐링</a></li>
+                                <li><a class="nav_item" href="booklistro">로맨스</a></li>
+                                <li><a class="nav_item" href="booklistself">자기계발</a></li>
                             </ul>
                         </li>
                         </ul>
@@ -56,7 +58,6 @@
                 </div>
             </nav>
             <nav class="navbar_right">
-                <input class="searchBox">
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/admain">[관리자 화면]</a>
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/logout" onclick="adlogoutpop()">로그아웃</a> 
                 <a class="navbar_signup" href="<%=request.getContextPath() %>/adnotice">공지사항</a>

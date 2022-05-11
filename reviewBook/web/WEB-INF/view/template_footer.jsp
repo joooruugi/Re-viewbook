@@ -1,3 +1,9 @@
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/all/reset.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/all/all.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 

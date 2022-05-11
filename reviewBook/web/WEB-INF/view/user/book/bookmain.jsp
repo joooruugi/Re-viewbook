@@ -1,13 +1,6 @@
 <%@page import="kh.semi.reviewBook.book.model.vo.BookVo"%>
 <%@page import="java.util.ArrayList"%>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/all/header.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/all/reset.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/all/all.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/all/footer.css">
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/book/bookmain.css">
 
@@ -27,33 +20,33 @@
 
 </head>
 <body>
-		<%
-			UserVo vo = (UserVo) session.getAttribute("ssUserVo");
-		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
-		// out.print(vo);
-		if (vo == null && avo == null) {
-		%>
+	<%
+		UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+	AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+	// out.print(vo);
+	if (vo == null && avo == null) {
+	%>
 	<%@ include file="../../../view/template_header.jsp"%>
 	<%
-			} else if (vo != null) {
-		%>
+		} else if (vo != null) {
+	%>
 	<%@ include file="../../../view/template_header_login.jsp"%>
 	<%
-			} else if (avo != null) {
-		%>
+		} else if (avo != null) {
+	%>
 	<%@ include file="../../../view/template_header_adlogin.jsp"%>
 	<%
-			}
-		%>
+		}
+	%>
 	<div id="main_wrap">
 		<div class="bodyfd">
 			<nav class="sidemenu">
 				<ul class="sidemenu_funding">
 					<li><a class="sidemenu_item sidemenu_topmenu">도서</a></li>
-					<li><a class="sidemenu_item" href="booklistth">스릴러</a></li>
-					<li><a class="sidemenu_item" href="booklistheal">힐링</a></li>
-					<li><a class="sidemenu_item" href="booklistro">로맨스</a></li>
-					<li><a class="sidemenu_item" href="booklistself">자기계발</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="booklistth">스릴러</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="booklistheal">힐링</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="booklistro">로맨스</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="booklistself">자기계발</a></li>
 				</ul>
 			</nav>
 			<%
@@ -62,13 +55,16 @@
 			ArrayList<BookVo> blistReview = (ArrayList<BookVo>) request.getAttribute("blistReview");
 			%>
 			<div class="contentfd">
+			<div class="bookmainname">
+			<p class="fontimportant">   🎈 도서 랭킹 🎈   </p>
+			</div>
 				<div class="contentmainfd">
 
 					<%
 						if (blistOrderBest != null && blistOrderBest.size() > 0) {
 					%>
 					<!-- TODO 작품 받아와서 슬라이딩으로 구성하기 -->
-					<h2 class="fontimportant fdtag">판매 순위</h2>
+					<h2 class="fontimportant fdtag">판매 순위✔</h2>
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -79,7 +75,7 @@
 								<a href="bookcontent?bkNo=<%=svo.getBkNo()%>"> <img
 									src="<%=request.getContextPath()%><%=svo.getBkImg()%>"
 									class="bookimg">
-									<div class="fontnormal"><%=svo.getBkTitle()%></div>
+									<div class="fontnormal bookname"><%=svo.getBkTitle()%></div>
 								</a>
 							</div>
 							<%
@@ -96,7 +92,7 @@
 					<%
 						if (blistRating != null && blistRating.size() > 0) {
 					%>
-					<h2 class="fontimportant fdtag">별점 순위</h2>
+					<h2 class="fontimportant fdtag">별점 순위⭐</h2>
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -107,7 +103,7 @@
 								<a href="bookcontent?bkNo=<%=svo.getBkNo()%>"> <img
 									src="<%=request.getContextPath()%><%=svo.getBkImg()%>"
 									class="bookimg">
-									<div class="fontnormal"><%=svo.getBkTitle()%></div>
+									<div class="fontnormal bookname"><%=svo.getBkTitle()%></div>
 								</a>
 							</div>
 							<%
@@ -124,7 +120,7 @@
 					<%
 						if (blistReview != null && blistReview.size() > 0) {
 					%>
-					<h2 class="fontimportant fdtag">리뷰 순위</h2>
+					<h2 class="fontimportant fdtag">리뷰 순위🎉</h2>
 					<!-- Swiper -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -135,7 +131,7 @@
 								<a href="bookcontent?bkNo=<%=svo.getBkNo()%>"> <img
 									src="<%=request.getContextPath()%><%=svo.getBkImg()%>"
 									class="bookimg">
-									<div class="fontnormal"><%=svo.getBkTitle()%></div>
+									<div class="fontnormal bookname"><%=svo.getBkTitle()%></div>
 								</a>
 							</div>
 							<%
@@ -155,7 +151,7 @@
 			</div>
 		</div>
 	</div>
-		<%@ include file="../../template_footer.jsp"%>
+	<%@ include file="../../template_footer.jsp"%>
 	<script>
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView : 5,

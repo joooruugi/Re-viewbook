@@ -28,6 +28,7 @@
 }
 .dropdownmenu{
     display: flex;
+    z-index:200;
 }
 .dropdownmenu .nav_dropdownmenu1{
     position: relative;
@@ -35,6 +36,7 @@
     height: 72px;
     text-align: left;
     cursor: pointer;
+    z-index:200;
 }
 .dropdownmenu .nav_dropdownmenu2 li{
     top: 120px;
@@ -50,6 +52,9 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+.nav_dropdownmenu2 li a:hover{
+	font-size:20px;
 }
 .nav_dropdownmenu2{
     display: none;

@@ -1,11 +1,17 @@
-
+a{
+	color:black;
+}
 /* 바디부분  */
 .bodyfd{
     width: 80%;
 	margin: 20px auto;
 	display : flex;
 }
-
+.contentrvb{
+	width:70%;
+	margin:20px auto;
+	text-align:center;
+}
 .contentrvb{
 	font-family: 'SF_HailSnow';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff') format('woff');
@@ -13,9 +19,10 @@
     font-style: normal;
 }
 /* 사이드메뉴  */
-.sidemenu{
-    width: 200px;
-	height : 250px;
+.sidemenu {
+	width: 200px;
+	height: 200px;
+	margin: 50px;
 	background-color: #eaf4fc;
 	display: flex;
 	flex-direction: column;
@@ -23,54 +30,83 @@
 	border-radius: 20px;
 	cursor: pointer;
 }
+
 .sidemenu_funding {
-    margin: 20px;
+	margin: 20px;
 	margin-left: 0px;
 }
-.sidemenu_book .sidemenu_topmenu{
-    font-family: 'ROKAFSansBold';
+
+.sidemenu_funding .sidemenu_topmenu {
+	font-family: 'ROKAFSansBold';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff')
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-size: 20px;
+	cursor:default;
 }
-.sidemenu_funding .sidemenu_item{
-    font-family: 'SF_HailSnow';
+
+.sidemenu_funding .sidemenu_item {
+	margin: 20px;
+	font-family: 'SF_HailSnow';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
-	text-decoration: none;	
-	color:black;
+	text-decoration: none;
+	color: black;
 }
-.sidemenu_funding li{
-    list-style: none;
+
+.sidemenu_funding .sidemenu_item {
+	list-style: none;
 	width: 150px;
 	height: 30px;
 	line-height: 30px;
 	font-size: 20px;
 	margin-left: 10px;
 }
-.sidemenu_funding li:hover{
-    font-family: 'ROKAFSansMedium';
+
+.sidemenu_funding .sidemenu_topmenu {
+	font-family: 'ROKAFSansMedium';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
+	border-radius: 30px;
+}
+.sidemenu_funding .sidemenu_nowmenu {
+	font-family: 'SF_HailSnow';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	border-bottom:3px solid #b6d4ff;
+}
+
+.sidemenu_funding .sidemenu_menu:hover {
+	font-family: 'ROKAFSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-size:18px;
 	background-color: #b6d4ff;
 	border-radius: 30px;
 }
-/* 클릭시 색상변경 유지(현재보여지는 탭이 뭔지 알기위해서*/
-.sidemenu_funding li{
-    font-family: 'ROKAFSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-size: 20px;
+.bookmainname{
+	margin:10px auto;
+	text-align:center;
+	font-size:30px;
+	cursor:default;
+}
+.bookmainname p:hover{
+	text-decoration: underline;
+	text-decoration-color :#f8e0bc;
 }
 .book_img{
 	margin : 10px;
@@ -79,23 +115,46 @@
 	font-size : 30px;
 }
 
-/* .book_cart{
-	display :flex-right;
-} */
+
 
 #book_list{
-	width: 1100px;
+	width:100%;
 }
-.book_img img {
+.book_img img{
 	width:200px;
-	height:270px;
+	height:400px;
 }
 .book_board{
+	width:100%;
+	margin:20px auto;
 	display: flex;
-	margin-bottom: 50px;
-	margin-left: 50px;
+	flex-direction:row;
 	border-bottom: 1px solid black;
-	padding-bottom: 10px;
+}
+.book_board:hover{
+	border: 4px solid #f8e0bc;
+	border-radius:20px;
+}
+.book_content, .book_cart{
+	width:100%;
+	margin:auto 20px;
+	text-align:left;
+}
+.bookgenre_title a:hover{
+	color:#c57e14;
+}
+.book_content p{
+	font-size:20px;
+	margin:20px;
+}
+#caCount{
+	font-size:18px;
+	margin:10px;
+}
+.cartbtn{
+	cursor:pointer;
+	display:flex;
+	font-size:18px;
 }
 
 
