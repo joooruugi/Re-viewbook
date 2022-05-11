@@ -34,7 +34,7 @@ public class AdminSeriesMainServlet extends HttpServlet {
 		
 		//service, dao는 사용자 관리자 공통으로 사용 
 		ArrayList<SeriesVo> slist = new SeriesService().listBoard();
-		System.out.println(slist);
+		//System.out.println(slist);
 		
 
 		request.setAttribute("slist",slist);

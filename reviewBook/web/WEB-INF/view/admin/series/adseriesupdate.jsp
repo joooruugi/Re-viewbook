@@ -100,15 +100,27 @@
 								<p>--- 펀딩관리 --- </p>
 								</div>
 								<div class="update_funding_ox">
-								펀딩 여부  <input type ="radio" name="fdOX" value="0" id="fdX"><label for="fdX"> 펀딩 X</label> &nbsp; &nbsp;
-								<input type ="radio" name="fdOX" value="1" id="fdO"> <label for="fdO"> 펀딩 O </label>
+								<% if(svo.getFdDeadline()==null){ %>
+								펀딩 여부  <input type ="radio" name="fdOX" value="0" id="fdX" required="required" checked="checked"><label for="fdX"> 펀딩 X</label> &nbsp; &nbsp;
+								<input type ="radio" name="fdOX" value="1" id="fdO" required="required"> <label for="fdO"> 펀딩 O </label>
+								<%} else if(svo.getFdDeadline()!=null){ %>
+								펀딩 여부  <input type ="radio" name="fdOX" value="0" id="fdX" required="required"><label for="fdX"> 펀딩 X</label> &nbsp; &nbsp;
+								<input type ="radio" name="fdOX" value="1" id="fdO" required="required" checked="checked"> <label for="fdO"> 펀딩 O </label>
+									<%} %>
 								</div>
 								<div class="update_fdLimit">
 								1인당 제한금액 <input type="text" name ="fdLimit" id = "fdLimit" value="<%=svo.getFdLimit()%>">
 								</div>
 								<div class="update_fdDeadline">
-								펀딩 마감일 <input type="text" name ="fdDeadline" id = "fdDeadline"
-								placeholder="날짜 형태로 입력해주세요" value="<%=svo.getFdDeadline()%>">
+								펀딩 마감일 
+								<% if(svo.getFdDeadline()==null){ %>
+								<input type="text" name ="fdDeadline" id = "fdDeadline" 
+								placeholder="날짜 형태로 입력해주세요" >
+								<%} else if(svo.getFdDeadline()!=null){ %>
+								<input type="text" name ="fdDeadline" id = "fdDeadline" 
+								placeholder="날짜 형태로 입력해주세요" value="<%=svo.getFdDeadline().substring(0, 10)%>">
+								<%} %>
+								
 								</div>
 								<div class="update_fdAccumulate">
 								목표금액 <input type="text" name ="fdAccumulate" id = "fdAccumulate"

@@ -47,8 +47,8 @@ public class AdminSeriesReadServlet extends HttpServlet {
 		SeriesVo svo = new SeriesService().readBoardAndReComment(wbNo);
 		SeriesReCommentVo srvo = new SeriesReCommentVo();
 		// db갔다온 데이터는 반드시 sysout으로 콘솔으로 확인 그 다음 request에 담아줌
-		System.out.println(svo);
-		System.out.println(srvo);
+		//System.out.println(svo);
+		//System.out.println(srvo);
 
 		if (svo == null) {
 			// query문 실행 중 오류 발생한 경우 메인으로 보냄
