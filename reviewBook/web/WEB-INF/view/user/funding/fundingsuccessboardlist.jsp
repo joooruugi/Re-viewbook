@@ -29,7 +29,17 @@
 
 </head>
 <body>
-	<%@ include file="../../template_header_login.jsp"%>
+	<%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");
+		AdminVo avo = (AdminVo) session.getAttribute("ssAdminVo");
+		 //out.print(vo);
+		// out.print(avo);
+		if (vo == null && avo == null) { %>
+	<%@ include file="../../../view/template_header.jsp"%>
+	<% } else if (vo != null) { %>
+	<%@ include file="../../../view/template_header_login.jsp"%>
+	<% } else if (avo != null) { %>
+	<%@ include file="../../../view/template_header_adlogin.jsp"%>
+	<% } %>	
 	<div id="main_wrap">
 		<div class="bodyfd">
 			<nav class="sidemenu">
@@ -140,6 +150,7 @@
 		</div>
 	</div>
 	<%@ include file="../../template_footer.jsp"%>
+	<!-- 슬라이딩 기능 -->
 	<script>
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView : 5,
