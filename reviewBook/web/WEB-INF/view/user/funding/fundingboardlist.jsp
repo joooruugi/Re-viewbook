@@ -205,7 +205,7 @@
 			console.log(this);
 			openModal(this);
 		});
-		//버튼 누르면 철회 모달창 on
+		//버튼 누르면 철회 모달창 on(후원한 금액 띄우기)
 		$(".btn_funding_withdraw").click(funding_withdrawDonation);
 		function funding_withdrawDonation() {
 			console.log(this);
