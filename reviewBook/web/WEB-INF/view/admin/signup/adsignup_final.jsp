@@ -30,7 +30,7 @@
 		</nav>
 		<div class="signupuser_final_content">
 			<div class="signupuser_final_left">
-				<p class="fontimportant">RVB와 동행하는</p>
+				<p class="fontimportant">RVB의</p>
 				<p class="fontimportant">관리자가 되신 걸</p>
 				<p class="fontimportant">환영해요 !</p>
 			</div>

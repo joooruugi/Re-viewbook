@@ -43,7 +43,7 @@
 				</div>
 				<div class="loginadmin_btn">
 					<div class="loginadmin_signupbtn">
-						<button type="button" id="signupad">권한신청</button>
+						<button type="button" id="signupad" onclick="location.href='signup'">권한신청</button>
 					</div>
 					<div class="loginadmin_loginbtn">
 						<button type="submit">로그인</button>
@@ -53,10 +53,6 @@
 		</div>
     </div>
     <%@ include file="../../../view/template_footer.jsp"%>
-    <script>
-    $("#signupad").click(function(){
-    	location.href="singup";
-    });
-    </script>
+   
 </body>
 </html>
