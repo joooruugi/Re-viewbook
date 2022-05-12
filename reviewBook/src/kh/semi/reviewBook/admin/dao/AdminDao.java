@@ -478,17 +478,17 @@ public class AdminDao {
 	//Publishdate sql에 자료형 변경 필요 TODO
 	public int BookRegister(Connection conn, BookVo bvo) {
 		int result = 0;
-		String sql = "insert into book (bk_no, bk_title, bk_content, bk_img, bk_price, bk_writer, gn_no, bk_index) values (seq_bk_no.nextval, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into book (bk_no, bk_title, bk_img, bk_price, bk_Publishdate, bk_writer, gn_no, bk_index, bk_content) values (seq_bk_no.nextval, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bvo.getBkNo());
-			pstmt.setString(2, bvo.getBkTitle());
-			pstmt.setString(3, bvo.getBkContent());
-			pstmt.setString(4, bvo.getBkImg());
-			pstmt.setInt(5, bvo.getBkPrice());
-			pstmt.setString(6, bvo.getBkWriter());
-			pstmt.setInt(7, bvo.getGnNo());
-			pstmt.setString(8, bvo.getBkIndex());
+			pstmt.setString(1, bvo.getBkTitle());
+			pstmt.setString(2, bvo.getBkImg());
+			pstmt.setInt(3, bvo.getBkPrice());
+			pstmt.setString(4, bvo.getBkPublishdate());
+			pstmt.setString(5, bvo.getBkWriter());
+			pstmt.setInt(6, bvo.getGnNo());
+			pstmt.setString(7, bvo.getBkIndex());
+			pstmt.setString(8, bvo.getBkContent());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

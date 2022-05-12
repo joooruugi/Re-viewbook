@@ -45,25 +45,25 @@ public class AdminBookRegisterActServlet extends HttpServlet {
 //	pstmt.setInt(7, bvo.getGnNo());
 //	pstmt.setString(8, bvo.getBkIndex());
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	int bkNo = Integer.parseInt(request.getParameter("bkNo"));
+
 	String bkTitle = request.getParameter("bkTitle");
-	String bkContent = request.getParameter("bkContent");
 	String bkImg = request.getParameter("bkImg");
 	int bkPrice = Integer.parseInt(request.getParameter("bkPrice"));
+	String bkPublishdate = request.getParameter("bkPublishdate");
 	String bkWriter = request.getParameter("bkWriter");
 	int gnNo = Integer.parseInt(request.getParameter("gnNo"));
 	String bkIndex = request.getParameter("bkIndex");
+	String bkContent = request.getParameter("bkContent");
 	
 	BookVo bvo = new BookVo();
-	bvo.setBkNo(bkNo);
 	bvo.setBkTitle(bkTitle);
-	bvo.setBkContent(bkContent);
 	bvo.setBkImg(bkImg);
 	bvo.setBkPrice(bkPrice);
+	bvo.setBkPublishdate(bkPublishdate);
 	bvo.setBkWriter(bkWriter);
 	bvo.setGnNo(gnNo);
 	bvo.setBkIndex(bkIndex);
+	bvo.setBkContent(bkContent);
 	
 	int result = new AdminService().BookRegister(bvo);
 	if(result <1) {

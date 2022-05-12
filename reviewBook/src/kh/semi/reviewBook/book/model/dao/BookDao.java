@@ -10,6 +10,7 @@ import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 import kh.semi.reviewBook.book.model.vo.*;
 import kh.semi.reviewBook.mypage.model.vo.CartVo;
 import kh.semi.reviewBook.mypage.model.vo.ReviewVo;
+import kh.semi.reviewBook.series.model.vo.SeriesReCommentVo;
 import kh.semi.reviewBook.series.model.vo.SeriesVo;
 
 
@@ -332,7 +333,7 @@ public class BookDao {
 	//스릴러 목록 
 	public ArrayList<BookVo> bookListTh(Connection conn){
 		ArrayList<BookVo> blist = null;
-		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '스릴러'";
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '스릴러' ORDER BY BK_NO ASC ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -366,7 +367,7 @@ public class BookDao {
 	//힐링
 	public ArrayList<BookVo> bookListHeal(Connection conn){
 		ArrayList<BookVo> blist = null;
-		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '힐링'";
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '힐링' ORDER BY BK_NO ASC  ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -400,7 +401,7 @@ public class BookDao {
 	//로맨스
 	public ArrayList<BookVo> bookListRo(Connection conn){
 		ArrayList<BookVo> blist = null;
-		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '로맨스'";
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '로맨스' ORDER BY BK_NO ASC ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -434,7 +435,7 @@ public class BookDao {
 	//자기개발
 	public ArrayList<BookVo> bookListSelf(Connection conn){
 		ArrayList<BookVo> blist = null;
-		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '자기개발'";
+		String sql="SELECT * FROM BOOK B JOIN GENRE G USING (GN_NO) WHERE GN_NAME= '자기개발' ORDER BY BK_NO ASC ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -465,7 +466,26 @@ public class BookDao {
 		return blist;
 		
 	}
-		
+	
+	
+	//책삭제	
+	public int bookDelete(Connection conn, int bkNo) {
+		int result = 0;
+		String sql = "DELETE FROM BOOK WHERE BK_NO = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bkNo);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
+
 	
 
 }

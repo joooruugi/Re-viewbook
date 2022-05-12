@@ -1,10 +1,16 @@
 package kh.semi.reviewBook.book.model.service;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import static kh.semi.reviewBook.common.jdbc.JdbcDBCP.*;
 
+import kh.semi.reviewBook.admin.vo.AdminVo;
 import kh.semi.reviewBook.book.model.dao.BookDao;
 import kh.semi.reviewBook.book.model.vo.BookVo;
 import kh.semi.reviewBook.mypage.model.vo.CartVo;
@@ -119,4 +125,31 @@ public class BookService {
 		return blist;
 		
 	}
+	
+	//리뷰삭제
+	public int bookDelete(int bkNo) {
+	Connection conn = getConnection();
+	int result = new BookDao().bookDelete(conn, bkNo);
+	close(conn);
+	return result;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,7 +38,7 @@ public class BookCartServlet extends HttpServlet {
 	      System.out.println("do post : /bookaddcart");
 	      String bkNostr = request.getParameter("bkNo");
 	      System.out.println("bkNo : "+bkNostr);
-	      int bkNo = Integer.parseInt(bkNostr);
+	      int bkNo = 0;
 	      try {
 	         bkNo = Integer.parseInt(bkNostr);
 	      }catch(NumberFormatException e) {
