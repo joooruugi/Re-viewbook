@@ -27,7 +27,7 @@ public class AdminNoticeWriteActServlet extends HttpServlet {
 
 		String ntTitle = request.getParameter("ntTitle");
 		String ntContent = request.getParameter("ntContent");
-		ntContent = ntContent.replace("\r\n,", "<br>");
+		ntContent = ntContent.replace("\r\n","<br>");
 		String ntNickname = "";
 		String adId = "";
 
