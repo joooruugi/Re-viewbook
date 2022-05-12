@@ -43,7 +43,7 @@
 							<td class="fdlistname">책제목</td>
 							<td class="fdlistprocess">상태</td>
 							<td class="fdlistdeadline">펀딩마감일</td>
-							<td class="fdlistfunding">펀딩철회</td>
+							<td class="fdlistfunding">펀딩/철회</td>
 						</tr>
 
 						<%
