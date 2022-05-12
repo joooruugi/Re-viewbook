@@ -46,7 +46,7 @@
             <div class="adminmain_div"></div>
             <a class="adminmain_series_link" href="adseriesmain">
                 <div class="adminmain_series_link_text">
-                    <p class="fontnormal">연재 관리</p>
+                    <p class="fontnormal">연재 및 펀딩 관리</p>
                     <p class="fontnormal">바로가기</p>
                 </div>
             </a>
@@ -59,9 +59,9 @@
                 </div>
             </a>
             <div class="adminmain_div"></div>
-            <a class="adminmain_funding_link" href="#">
+            <a class="adminmain_funding_link" href="booklist">
                 <div class="adminmain_funding_link_text">
-                    <p class="fontnormal">펀딩 관리</p>
+                    <p class="fontnormal">도서 관리</p>
                     <p class="fontnormal">바로가기</p>
                 </div>
             </a>

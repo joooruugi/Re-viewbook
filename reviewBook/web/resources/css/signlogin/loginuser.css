@@ -50,8 +50,11 @@
 }
 .loginuser_btn{
     display: flex;
-    flex-direction: row;
-    margin: 10px;
+    flex-direction: column;
+    margin:20px;
+}
+.loginuser_loginbtn{
+	margin:10px;
 }
 .loginuser_btn .loginuser_signupbtn button{
     font-family: 'GowunDodum-Regular';
@@ -61,7 +64,6 @@
     background-color: #9ecdf7;
     border: 1px solid #bed8ea;
     border-radius: 10px;
-    margin: 20px 10px;
     font-size: 20px;
 }
 .loginuser_btn .loginuser_signupbtn button:hover{
@@ -72,7 +74,6 @@
     background-color: #7bbdf6;
     border: 1px solid #bed8ea;
     border-radius: 10px;
-    margin: 20px 10px;
     font-size: 20px;
 }
 .loginuser_btn .loginuser_loginbtn button{
@@ -83,7 +84,6 @@
     background-color: #9ecdf7;
     border: 1px solid #bed8ea;
     border-radius: 10px;
-    margin: 20px 10px;
     font-size: 20px;
 }
 .loginuser_btn .loginuser_loginbtn button:hover{
@@ -94,6 +94,5 @@
     background-color: #7bbdf6;
     border: 1px solid #bed8ea;
     border-radius: 10px;
-    margin: 20px 10px;
     font-size: 20px;
 }
