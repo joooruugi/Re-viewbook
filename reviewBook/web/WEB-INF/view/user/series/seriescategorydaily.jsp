@@ -108,19 +108,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="serise_search_all">
-						<form method="post" action="seriessearch">
-							<table id="serise_search">
-								<tr>
-									<td><input type="text" id="searchText"
-										placeholder="작가명 또는 작품명을 입력해주세요" name="searchText"
-										maxlength="100"></td>
-									<td><button type="submit" id="search_btn">검색</button></td>
-								</tr>
 
-							</table>
-						</form>
-					</div>
 					<div id="series_board_write">
 						<button onclick="location.href='seriesinsert';">게시물 작성</button>
 					</div>

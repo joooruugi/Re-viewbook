@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<title></title>
+<title>RVB 구독</title>
 </head>
 <body>
 <%	UserVo vo = (UserVo) session.getAttribute("ssUserVo");

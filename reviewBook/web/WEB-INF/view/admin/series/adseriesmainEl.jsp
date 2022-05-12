@@ -36,7 +36,6 @@
         <h2><a href="seriesmain">연재</a></h2>
         <br><br>
         <p>작가가 되어 자유롭게 글을 작성해보세요</p>
-    <img src="./resources/image/series/author3.png" class="series_banner_img">
     </div>
 	</div>
 	<div class="bodyrvb"> 
@@ -60,8 +59,8 @@
 								<img src="./resources/image/series/1.png">
 							</div>
 							<div class="series_main_content">
-								<h3>작가명1</h3>
-								<h3>작품명1</h3>
+								<h3>윈터이즈커밍</h3>
+								<h3>드래곤과의 춤</h3>
 							</div>
 						</div>
 						<div class="series_tab_body">
@@ -69,8 +68,8 @@
 								<img src="./resources/image/series/2.png">
 							</div>
 							<div class="series_main_content">
-								<h3>작가명2</h3>
-								<h3>작품명2</h3>
+								<h3>harry</h3>
+								<h3>해리와 법사의 돌</h3>
 							</div>
 						</div>
 						<div class="series_tab_body">
@@ -78,8 +77,8 @@
 								<img src="./resources/image/series/3.png">
 							</div>
 							<div class="series_main_content">
-								<h3>작가명3</h3>
-								<h3>작품명3</h3>
+								<h3>마포대교</h3>
+								<h3>순정에 관하여...</h3>
 							</div>
 						</div>
 					</div>

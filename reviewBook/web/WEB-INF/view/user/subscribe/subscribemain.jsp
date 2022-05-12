@@ -168,7 +168,7 @@
 	    pay_method: 'card',
 	    merchant_uid : 'merchant_'+new Date().getTime(),
 	    name : 'ReviewBook 정기 구독권 결제',
-	    amount : 100 //진짜 결제되니까 일단은 100원으로 나중에 29900수정
+	    amount : 29900 //진짜 결제되니까 일단은 100원으로 나중에 29900수정
 	  }, function (rsp) { // callback
 	      if (rsp.success) {
 	    	  msg = '결제에 성공하였습니다.';
@@ -194,7 +194,7 @@
 	    pay_method: 'card',
 	    merchant_uid : 'merchant_'+new Date().getTime(),
 	    name : 'ReviewBook 월별 구독권 결제',
-	    amount : 100 //진짜 결제되니까 일단은 100원으로 나중에 19900수정
+	    amount : 19900 //진짜 결제되니까 일단은 100원으로 나중에 19900수정 0512 수정완료
 	  }, function (rsp) { // callback
 	      if (rsp.success) {
 	    	  msg = '결제에 성공하였습니다.';
