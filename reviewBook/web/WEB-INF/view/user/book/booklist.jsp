@@ -48,9 +48,9 @@
 					<td>책 번호</td>
 					<td>책 제목</td>
 					<td>작가</td>
-					<td>순위</td>
 					<td>장르</td>
 					<td>가격</td>
+					<td>삭제</td>
 				</thead>
 				<%
 					for (BookVo bvo : blist) {
@@ -59,9 +59,9 @@
 					<td><a href="bookcontent?bkNo=<%=bvo.getBkNo()%>"><%=bvo.getBkNo()%></a></td>
 					<td><a href="bookcontent?bkNo=<%=bvo.getBkNo()%>"><%=bvo.getBkTitle()%></a></td>
 					<td><%=bvo.getBkWriter()%></td>
-					<td><%=bvo.getBkRating()%></td>
 					<td><%=bvo.getGnName()%></td>
 					<td><%=bvo.getBkPrice()%></td>
+					<td><button class="book_delete button4" onclick="location.href='adbookdelete?bkNo=<%=bvo.getBkNo()%>';">삭제</button></td>
 				</tr>
 				<%
 					}
@@ -72,32 +72,12 @@
 		</div>
 	</div>
 	<div class="booklist_paging">
-		<button type="button" id="booklist_loadmore"
-			class="booklist_pagingbtn">더보기</button>
+		<button class="bookinsert button2"
+		onclick="location.href='book_register';">작품등록</button>
 
 	</div>
 
 	<%@ include file="../../../view/template_footer.jsp"%>
-	<script>
-/*     $(function(){
-        $(".book_board").slice(0, 2).show(); 
-        $("#booklist_loadmore").click(function(e){
-            e.preventDefault();
-            $(".book_board:hidden").slice(0, 2).show(); 
-            if($(".book_board:hidden").length == 0){ 
-            	 alert("다음 페이지는 마지막 페이지 입니다."); 
-            }
-        });
-    }); */
-   <%--  <%UserVo uvo = (UserVo)request.getAttribute("uvo");%>
-    $(function(){
-    	if($("#deleteUserchk").is(":checked")){
-    		if($("#user_delete").click(function(){
-    			location.href="'userlist.lo?usName=<%=uvo.getUsName()%>'";
-    		})
-    	}
-    }; --%>
-    
-    </script>
+	
 </body>
 </html>
