@@ -20,7 +20,7 @@ public class MyPageDao {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	//구독권 조회
+	// 구독권 조회
 	public UserSubVo selectSubscribe(Connection conn, String usId) {
 		System.out.println("dao usId: " + usId);
 		UserSubVo result = null;
@@ -51,6 +51,7 @@ public class MyPageDao {
 
 		return result;
 	}
+
 	// 구매목록 조회
 	public ArrayList<BuyListVo> selectBuyList(Connection conn, String usId) {
 		System.out.println("dao usId: " + usId);
@@ -90,26 +91,26 @@ public class MyPageDao {
 		System.out.println("dao volist: " + volist);
 		return volist;
 	}
-	
+
 	// 주문목록 추가
 	// 1. 주문번호(시퀀스)만 뽑아오기 - order의 주문번호와 order_book의 주문번호 동일하게 하기 위함
 	public int selectSeqOrNumNextVal(Connection conn) {
 		int result = 0;
 		String sql = "select SEQ_OR_NUM.nextval from dual";
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				result = rs.getInt(1);
-			}				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println("nextval:"+ result);
+		System.out.println("nextval:" + result);
 		return result;
 	}
 
@@ -119,7 +120,7 @@ public class MyPageDao {
 		System.out.println("dao bVo: " + bVo);
 		System.out.println("dao nextVal: " + nextVal);
 		int result = 0;
-		String sql = "INSERT INTO \"ORDER\" VALUES("+nextVal+",?,DEFAULT,?)";
+		String sql = "INSERT INTO \"ORDER\" VALUES(" + nextVal + ",?,DEFAULT,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bVo.getOrPrice());
@@ -133,14 +134,14 @@ public class MyPageDao {
 		System.out.println("dao result: " + result);
 		return result;
 	}
-	
+
 	// 주문목록 추가
 	// 3. order_book테이블에 insert
 	public int insertOrderBook(Connection conn, BuyListVo bVo, int nextVal) {
 		System.out.println("dao bVo: " + bVo);
 		System.out.println("dao nextVal: " + nextVal);
 		int result = 0;
-		String sql = "INSERT INTO \"ORDER_BOOK\" VALUES("+nextVal+",?,DEFAULT,?)";
+		String sql = "INSERT INTO \"ORDER_BOOK\" VALUES(" + nextVal + ",?,DEFAULT,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bVo.getBkNo());
@@ -293,4 +294,41 @@ public class MyPageDao {
 		System.out.println("dao deletecart result: " + result);
 		return result;
 	}
+
+	// 장바구니 수량 증가
+	public int updateCart(Connection conn, CartVo cvo) {
+		int result = 0;
+		String sql = "UPDATE CART SET CA_COUNT = (CA_COUNT)+ ? WHERE US_ID = ? AND BK_NO = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cvo.getCaCount());
+			pstmt.setString(2, cvo.getUsId());
+			pstmt.setInt(3, cvo.getBkNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+	// 장바구니 수량 감소
+	public int downUpdateCart(Connection conn, CartVo cvo) {
+		int result = 0;
+		String sql = "UPDATE CART SET CA_COUNT = greatest((CA_COUNT)- ?,1) WHERE US_ID = ? AND BK_NO = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cvo.getCaCount());
+			pstmt.setString(2, cvo.getUsId());
+			pstmt.setInt(3, cvo.getBkNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
 }

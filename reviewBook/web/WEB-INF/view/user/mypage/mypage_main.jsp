@@ -91,8 +91,8 @@
 					<table class="buylist">
 						<caption class="caption">구매목록</caption>
 						<tr class="buylist_th fontimportant2">
-							<th class="buylistname">주문상품</th>
 							<th class="buylistno">주문번호</th>
+							<th class="buylistname">주문상품</th>
 							<th class="buylistdate">주문날짜</th>
 							<th class="buylistreview">상품리뷰</th>
 						</tr>
@@ -104,8 +104,8 @@
 							for (BuyListVo bvo : volist) {
 						%>
 						<tr class="buylist_td fontnormal">
-							<td><%=bvo.getBkTitle()%></td>
 							<td><%=bvo.getOrNum()%></td>
+							<td><%=bvo.getBkTitle()%></td>
 							<td><%=bvo.getOrDate()%></td>
 							<%
 								if (bvo.getRvNum() == 0) {

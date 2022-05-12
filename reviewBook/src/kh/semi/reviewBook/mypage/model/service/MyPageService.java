@@ -32,30 +32,32 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
-	
-	//주문목록 추가
+
+	// 주문목록 추가
 	public int insertOrder(BuyListVo bVo) {
 		Connection conn = getConnection();
 		setAutoCommit(conn, false);
-		
+
 		int nextVal = dao.selectSeqOrNumNextVal(conn);
-		
+
 		int result = dao.insertOrder(conn, bVo, nextVal);
-		
-		if(result > 0 && bVo != null) {	//구매하면 구매목록에 추가
+
+		if (result > 0 && bVo != null) { // 구매하면 구매목록에 추가
 			result = dao.insertOrderBook(conn, bVo, nextVal);
 		}
-		
-		if(result >0) {	//구매하면 장바구니에서는 삭제
+
+		if (result > 0) { // 구매하면 장바구니에서는 삭제
 			result = dao.deleteCart(conn, bVo.getUsId(), bVo.getBkNo());
 		}
-		
-		if(result >0) commit(conn);
-		else rollback(conn);
-		
+
+		if (result > 0)
+			commit(conn);
+		else
+			rollback(conn);
+
 		close(conn);
 		return result;
-	}	
+	}
 
 	// 내정보 수정 전 기존 정보 가져오기
 	public MyInformationVo selectMyInformation(String usId) {
@@ -101,5 +103,21 @@ public class MyPageService {
 		close(conn);
 		return result;
 	}
-	
+
+	// 장바구니 수량 증가
+	public int updateCart(CartVo cvo) {
+		Connection conn = getConnection();
+		int result = dao.updateCart(conn, cvo);
+		close(conn);
+		return result;
+	}
+
+	// 장바구니 수량 감소
+	public int downUpdateCart(CartVo cvo) {
+		Connection conn = getConnection();
+		int result = dao.downUpdateCart(conn, cvo);
+		close(conn);
+		return result;
+	}
+
 }

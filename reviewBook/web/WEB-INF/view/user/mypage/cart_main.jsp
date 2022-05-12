@@ -69,6 +69,7 @@
 						<th class="cartlistbookno">도서번호</th>
 						<th class="cartlistcnt">수량</th>
 						<th class="cartlistprice">금액</th>
+						<th class="cartlistupdate">수량변경</th>
 						<th class="cartlistdelete">삭제하기</th>
 						<th class="cartlistbuy">구매하기</th>
 					</tr>
@@ -87,6 +88,28 @@
 						<td class="bkNo"><%=cvo.getBkNo()%></td>
 						<td class="bkcnt"><%=cvo.getCaCount()%></td>
 						<td class="bkprice"><%=cvo.getBkPrice()%></td>
+						<td>
+							<form action=updatedown method="post">
+								<div class="cart_update_btn_all">
+									<button class="btn_cart_update button5" type="submit">-</button>
+									<div class="update_cart">
+										<input type="hidden" id="bkNo" name="bkNo"
+											value="<%=cvo.getBkNo()%>"> <input type="hidden"
+											class="downCaCount" id="caCount" name="caCount" value="1">
+									</div>
+								</div>
+							</form>
+							<form action="updatecart" method="post">
+								<div class="cart_update_btn_all">
+									<button class="btn_cart_update button1" type="submit">+</button>
+									<div class="update_cart">
+										<input type="hidden" id="bkNo" name="bkNo"
+											value="<%=cvo.getBkNo()%>"> <input type="hidden"
+											class="upCaCount" id="caCount" name="caCount" value="1">
+									</div>
+								</div>
+							</form>
+						</td>
 						<td><button class="btn_delete button1">삭제하기</button></td>
 						<td><button class="btn_buy button1">구매하기</button></td>
 					</tr>
@@ -113,7 +136,6 @@
 	<script>
 		{
 			$(".btn_delete").on("click", deletecartHandler);
-			//$(".btn_buy").on("click", buycartHandler);
 		}
 		function deletecartHandler() {
 			console.log(this); // <button 엘리먼트
@@ -122,7 +144,7 @@
 			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();
 			location.href = "deletecart?bkNo=" + bkNoVal;
 		}
-		
+
 		/* 결제 스크립트  */
 		$('.btn_buy').click(function requestPay() {
 			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();
