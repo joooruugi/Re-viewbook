@@ -40,13 +40,13 @@
 					<li><a class="sidemenu_item sidemenu_menu"
 						href="booklistheal">힐링</a></li>
 					<li><a class="sidemenu_item sidemenu_menu" href="booklistro">로맨스</a></li>
-					<li><a class="sidemenu_item sidemenu_nowmenu" href="booklistself">자기계발</a></li>
+					<li><a class="sidemenu_item sidemenu_nowmenu" href="booklistself">자기개발</a></li>
 				</ul>
 			</nav>
 			<div class="contentrvb">
 				<div class="contentmain">
 				<div class="bookmainname">
-						<p class="fontimportant">자기계발 🧠🧠</p>
+						<p class="fontimportant">자기개발 🧠🧠</p>
 					</div>
 					<table id="book_list">
 						<tr>
