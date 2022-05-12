@@ -113,7 +113,7 @@
 				<table class="bookreviewtable">
 					<thead class="bookreview_thead fontimportant2">
 						<td>리뷰번호</td>
-						<td>리뷰내용</td>
+						<td>리뷰제목</td>
 						<td>UserID</td>
 						<td>별점</td>
 					</thead>
@@ -122,7 +122,7 @@
 		%>
 					<tr class="bookreview_tr fontnormal book_board">
 						<td><%=rvo.getRvNum()%></td>
-						<td><%=rvo.getRvContent()%></td>
+						<td><%=rvo.getRvTitle()%></td>
 						<td><%=rvo.getUsId()%></td>
 						<td><span>&#9733;</span><%=rvo.getRvRating()%></td>
 					</tr>
