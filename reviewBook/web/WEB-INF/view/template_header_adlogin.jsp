@@ -20,7 +20,7 @@
                                 <li><a class="nav_item" href="booklistth">스릴러</a></li>
                                 <li><a class="nav_item" href="booklistheal">힐링</a></li>
                                 <li><a class="nav_item" href="booklistro">로맨스</a></li>
-                                <li><a class="nav_item" href="booklistself">자기계발</a></li>
+                                <li><a class="nav_item" href="booklistself">자기개발</a></li>
                             </ul>
                         </li>
                         </ul>

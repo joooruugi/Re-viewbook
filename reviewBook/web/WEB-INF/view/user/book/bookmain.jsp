@@ -46,7 +46,7 @@
 					<li><a class="sidemenu_item sidemenu_menu" href="booklistth">스릴러</a></li>
 					<li><a class="sidemenu_item sidemenu_menu" href="booklistheal">힐링</a></li>
 					<li><a class="sidemenu_item sidemenu_menu" href="booklistro">로맨스</a></li>
-					<li><a class="sidemenu_item sidemenu_menu" href="booklistself">자기계발</a></li>
+					<li><a class="sidemenu_item sidemenu_menu" href="booklistself">자기개발</a></li>
 				</ul>
 			</nav>
 			<%
