@@ -20,6 +20,26 @@ public class CartVo {
 	private int bkPrice;
 	private String bkWriter;
 	private Date bkPublishdate;
+	
+	//생성자
+	public CartVo() {
+		super();
+	}
+	
+	public CartVo(String usId, int bkNo, int caCount, String bkTitle, String bkImg, int bkPrice, String bkWriter,
+			Date bkPublishdate) {
+		super();
+		this.usId = usId;
+		this.bkNo = bkNo;
+		this.caCount = caCount;
+		this.bkTitle = bkTitle;
+		this.bkImg = bkImg;
+		this.bkPrice = bkPrice;
+		this.bkWriter = bkWriter;
+		this.bkPublishdate = bkPublishdate;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "CartVo [usId=" + usId + ", bkNo=" + bkNo + ", caCount=" + caCount + ", bkTitle=" + bkTitle + ", bkImg="

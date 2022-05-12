@@ -18,6 +18,24 @@ public class ReviewVo {
 	private String rvContent;
 	private int bkNo;
 	private String usId;
+	
+	// 생성자
+	public ReviewVo() {
+		super();
+	}
+	
+	public ReviewVo(int rvNum, Date rvDate, String rvTitle, int rvRating, String rvContent, int bkNo, String usId) {
+		super();
+		this.rvNum = rvNum;
+		this.rvDate = rvDate;
+		this.rvTitle = rvTitle;
+		this.rvRating = rvRating;
+		this.rvContent = rvContent;
+		this.bkNo = bkNo;
+		this.usId = usId;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "ReviewVo [rvNum=" + rvNum + ", rvDate=" + rvDate + ", rvTitle=" + rvTitle + ", rvRating=" + rvRating

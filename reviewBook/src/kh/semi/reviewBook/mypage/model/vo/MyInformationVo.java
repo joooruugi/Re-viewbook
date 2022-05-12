@@ -16,6 +16,23 @@ public class MyInformationVo {
 	private String usAddress;
 	private String usName;
 
+	//생성자
+	public MyInformationVo() {
+		super();
+	}
+	
+	public MyInformationVo(String usId, String usEmail, String usPhone, String usNickname, String usAddress,
+			String usName) {
+		super();
+		this.usId = usId;
+		this.usEmail = usEmail;
+		this.usPhone = usPhone;
+		this.usNickname = usNickname;
+		this.usAddress = usAddress;
+		this.usName = usName;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "MyinformationVo [usId=" + usId + ", usEmail=" + usEmail + ", usPhone=" + usPhone + ", usNickname="

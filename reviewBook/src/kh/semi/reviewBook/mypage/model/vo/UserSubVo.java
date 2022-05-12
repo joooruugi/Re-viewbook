@@ -13,9 +13,20 @@ public class UserSubVo {
 	private String subYN;
 	private Date subStart;
 	
+	// 생성자
 	public UserSubVo() {
 		super();
 	}
+	
+	public UserSubVo(String usId, String subInf, String subYN, Date subStart) {
+		super();
+		this.usId = usId;
+		this.subInf = subInf;
+		this.subYN = subYN;
+		this.subStart = subStart;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "UserSubVo [usId=" + usId + ", subInf=" + subInf + ", subYN=" + subYN + ", subStart=" + subStart + "]";

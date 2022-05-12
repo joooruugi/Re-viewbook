@@ -141,7 +141,7 @@ public class MyPageDao {
 		System.out.println("dao bVo: " + bVo);
 		System.out.println("dao nextVal: " + nextVal);
 		int result = 0;
-		String sql = "INSERT INTO \"ORDER_BOOK\" VALUES(" + nextVal + ",?,DEFAULT,?)";
+		String sql = "INSERT INTO ORDER_BOOK VALUES(" + nextVal + ",?,DEFAULT,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bVo.getBkNo());
