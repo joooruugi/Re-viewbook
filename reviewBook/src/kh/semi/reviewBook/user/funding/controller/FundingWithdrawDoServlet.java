@@ -58,10 +58,10 @@ public class FundingWithdrawDoServlet extends HttpServlet {
 		fvo.setUsId(loginId);
 //		System.out.println("vo: "+vo);
 		// 철회하기 버튼을 누르면 여기로 들어와서 글번호와 사용자아이디를 가지고 서비스로 간다.
-		fvo = new FundingService().fundingBoardlistDonation(wbNo, loginId);
+		int result = service.fundingWithdraw(fvo);
 		
 		PrintWriter out = response.getWriter();
-		out.print(fvo);
+		out.print(result);
 		out.flush();out.close();
 	}
 
