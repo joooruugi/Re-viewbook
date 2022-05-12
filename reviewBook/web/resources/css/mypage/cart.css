@@ -130,3 +130,10 @@
 	position : relative;
   	transform : translateY(-100%);
 }
+
+/* 수량변경 */
+.btn_cart_update{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}

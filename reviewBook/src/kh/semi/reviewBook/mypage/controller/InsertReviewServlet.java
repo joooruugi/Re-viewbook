@@ -69,14 +69,12 @@ public class InsertReviewServlet extends HttpServlet {
 			int result = new MyPageService().insertReview(rVo);
 			if(result < 1 ) {	//리뷰작성 실패한 경우 메인으로 보냄
 				PrintWriter out = response.getWriter();
-				response.setContentType("text/html; charset=utf-8");
 				out.print("<script language='javascript'>");
 				out.print("alert('리뷰 작성에 실패하였습니다.'); history.back();");
 				out.print("</script>");
 				out.flush();	
 			} else {
 				PrintWriter out = response.getWriter();
-				response.setContentType("text/html; charset=utf-8");
 				out.print("<script language='javascript'>");
 				out.print("alert('리뷰 작성이 완료되었습니다.'); location.href='" + request.getContextPath() + "/mypagemain'");
 				out.print("</script>");
