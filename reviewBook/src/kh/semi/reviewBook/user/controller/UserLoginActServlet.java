@@ -50,21 +50,20 @@ public class UserLoginActServlet extends HttpServlet {
 		request.getSession().setAttribute("redirectURI", referer);
 		
 		UserVo vo = new UserService().loginUser(usId, usPassword);
-		if(vo == null) {  // 로그인실패
-			script.println("<script>");
-			script.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
-			script.println("location.href='login'");
-			script.println("</script>");
-			System.out.println("로그인 실패");
-		}else {  // 로그인성공
-			request.getSession().setAttribute("ssUserVo", vo);
-			System.out.println("로그인 성공");
-			script.println("<script>");
-			script.println("alert('"+usId+"님 환영합니다.')");
-			script.println("location.href='"+request.getHeader("referer")+"'");
-			script.println("</script>");
-//			response.sendRedirect(request.getHeader("referer"));
-		}
+		 if(vo == null) {  // 로그인실패
+	            script.println("<script>");
+	            script.println("alert('아이디 혹은 비밀번호가 틀렸습니다.')");
+	            script.println("location.href='login'");
+	            script.println("</script>");
+	            System.out.println("로그인 실패");
+	        }else {  // 로그인성공
+	            request.getSession().setAttribute("ssUserVo", vo);
+	            System.out.println("로그인 성공");
+	            script.println("<script>");
+	            script.println("alert('"+usId+"님 환영합니다.')");
+	            script.println("location.href='main'");
+	            script.println("</script>");
+	    }
 	}
 
 }

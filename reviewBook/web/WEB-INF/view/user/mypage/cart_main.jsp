@@ -133,38 +133,40 @@
 		</div>
 	</div>
 
+
 	<script>
+		/* 장바구니 삭제 스크립트  */
 		{
 			$(".btn_delete").on("click", deletecartHandler);
 		}
 		function deletecartHandler() {
-			console.log(this); // <button 엘리먼트
-			console.log($(this).parents(".cartlist_td").find(".bkNo").text()); // span태그
+			console.log(this); // button 엘리먼트
+			console.log($(this).parents(".cartlist_td").find(".bkNo").text()); //cvo.getBkNo()
 			//$("#bkNo").val($(this).children("span").text());
 			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();
-			location.href = "deletecart?bkNo=" + bkNoVal;
+			location.href = "deletecart?bkNo=" + bkNoVal;	//책번호 들고 이동하기
 		}
 
 		/* 결제 스크립트  */
 		$('.btn_buy').click(function requestPay() {
-			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();
-			var price = $(this).parents(".cartlist_td").find(".bkprice").text();
-			var bkcnt = $(this).parents(".cartlist_td").find(".bkcnt").text();
-			var title = $(this).parents(".cartlist_td").find(".bktitle").text();
+			var bkNoVal = $(this).parents(".cartlist_td").find(".bkNo").text();		//책번호
+			var price = $(this).parents(".cartlist_td").find(".bkprice").text();	//가격
+			var bkcnt = $(this).parents(".cartlist_td").find(".bkcnt").text();		//수량
+			var title = $(this).parents(".cartlist_td").find(".bktitle").text();	//상품명(책제목)
 			IMP.init('imp81715131');
 			IMP.request_pay({
 				pg : 'inicis',
 				pay_method : 'card',
 				merchant_uid : 'merchant_' + new Date().getTime(),
-				name : title,
-				amount : price * bkcnt
+				name : title,	//상품명(책제목)
+				amount : price * bkcnt	// 가격 * 수량
 			}, function(rsp) { // callback
 				if (rsp.success) {
 					msg = '결제에 성공하였습니다.';
 					alert(msg);
-					//성공시 이동할 페이지
-					var URLEncodingVal = "buycart?bktitle="+ title +"&bkNo="+ bkNoVal;
+					var URLEncodingVal = "buycart?bktitle="+ title +"&bkNo="+ bkNoVal;	//책제목과 책번호 들고 이동
 					// alert(URLEncodingVal);
+					//성공시 이동할 페이지
 					location.href = URLEncodingVal;
 				} else {
 					msg = '결제에 실패하였습니다.';
