@@ -64,6 +64,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 ## 3️⃣ 주요 기능 / 화면
 
 
+![018](https://user-images.githubusercontent.com/92707182/168520829-9eab2a22-252f-4ad8-abfb-1b0605d327b9.png)
 
 
 
