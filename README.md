@@ -69,6 +69,47 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 ## 4️⃣  관련 산출물
 
+```html
+0.3팀
+	일정관리.xlsx
+	프로젝트정보_기획발표제출.docx
+
+1. 프로젝트 계획서
+	기획발표_PPT.pdf
+	UseCase.pdf
+	1-1. 정의서
+		단위업무정의서.xlsx
+		요구사항정의서.xlsx
+
+2. UI
+	2-1. UI설계보고서
+		화면구조도.pdf
+		UI메뉴구성.xlsx
+		UI설계보고서_초안.pptx
+
+3. DB
+	ReviewBook.sql
+	3-1.ERD
+		ERD 테이블 기술서.xlsx
+		ERD Cloud.png
+
+4. 클래스
+	클래스 매핑.xlsx
+	클래스다이어그램.mdj
+
+5. 시퀀스다이어그램
+	시퀀스다이어그램.pptx
+
+6. 최종발표 산출물
+	최종발표 PPT.pdf
+	History.xlsx
+	TestCase.xlsx
+```
+
+##### 💾구글 드라이브 링크
+
+https://drive.google.com/drive/folders/1pbJU-loD0zsMr9vWzFqOOk08bGdj-guq?usp=sharing
+
 
 
 
