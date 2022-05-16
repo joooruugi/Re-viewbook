@@ -21,9 +21,11 @@ KH_정보교육원 세미프로젝트
 
 ### 1️⃣ 팀소개 / 개발 주안점
 
-![003](SemiReadme.assets/003-16526679924461.png)
+![003](https://user-images.githubusercontent.com/92707182/168520915-865de5e7-8767-46fc-a78e-f5b548cee50b.png)
 
-![014](SemiReadme.assets/014.png)
+![014](https://user-images.githubusercontent.com/92707182/168520920-779d2593-ec82-443f-a90e-a7144bcc128b.png)
+
+
 
 #### 🔎개발 주안점
 
@@ -62,9 +64,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 
 ## 3️⃣ 주요 기능 / 화면
-
-
-![018](https://user-images.githubusercontent.com/92707182/168520829-9eab2a22-252f-4ad8-abfb-1b0605d327b9.png)
 
 
 
