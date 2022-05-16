@@ -1,10 +1,11 @@
 # Re-viewbook
 KH_정보교육원 세미프로젝트
-<img src ="https://github.com/joooruugi/Re-viewbook/issues/2#issue-1236608395">
+![001](https://user-images.githubusercontent.com/92707182/168520756-32ebffeb-28fb-4c5a-bbe7-7754b0550ace.png)
+
 
 ### 0️⃣ 개발 주제 / 목표
 
-![002](SemiReadme.assets/002.png)
+![002](https://user-images.githubusercontent.com/92707182/168520780-60f45cba-1693-4cf2-a568-a1ba4242ba4a.png)
 
 
 
