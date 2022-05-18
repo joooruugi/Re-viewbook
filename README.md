@@ -64,13 +64,14 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 
 ## 3️⃣ 주요 기능 / 화면
-🖥 메인
+
 <details>
-    <summary><h6>
-        첫 페이지
-        </h6></summary>
+    <summary><h4>
+        🖥 메인
+        </h4></summary>
     <div markdown="1">
-![오프닝](https://user-images.githubusercontent.com/92707182/168934239-99bac79f-b2e9-4db1-a3b1-aaaad63f0e40.gif)
+![오프닝](https://user-images.githubusercontent.com/92707182/168934319-8457d4fc-aa29-4f12-8122-de706cb82bc4.gif)
+
     </div>
 </details>
 
