@@ -71,7 +71,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
         </h4></summary>
     <div markdown="1">
     </div>
-	![오프닝](https://user-images.githubusercontent.com/92707182/168934319-8457d4fc-aa29-4f12-8122-de706cb82bc4.gif)
+	https://github.com/joooruugi/Re-viewbook/issues/5#issue-1239297655
 </details>
 
 ## 4️⃣  관련 산출물
