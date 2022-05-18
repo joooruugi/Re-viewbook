@@ -66,55 +66,172 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 ## 3️⃣ 주요 기능 / 화면
 
 <details>
-    <summary><h3>
-        🖥 메인
-        </h3></summary>
+    <summary><h3>🖥 메인</h3></summary>
 	<h5>첫 페이지</h5>
     	<div markdown="1">
-	    <img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
-   	</div>
-   	<h6>담당자 : 서언주</h6>
-   	<p>✔ 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성</p>
+	    	<img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
+   		</div>
+   		<h6>담당자 : 서언주</h6>
+   		<p>✔ 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성</p>
 	<h5>메인 화면</h5>
- 	<div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
     	</div>
 </details>
 <details>
-    <summary><h3>
-        🖥 회원가입 / 공지사항
-        </h3></summary>
+    <summary><h3>🖥 회원가입 / 공지사항</h3></summary>
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
-	<h5>회원가입</h5>
-    	<div markdown="1">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938073-514855a3-ceb3-4dc1-8fa1-8a80f93302ca.gif">
-   	</div>
-	<h5>로그인</h5>
- 	<div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938124-8ab48eb9-f1d2-4ab2-8239-d65f903911b4.gif">
-    	</div>
-    		<h5>로그아웃 / 공지사항</h5>
- 	<div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
-    	</div>
+		<h5>회원가입</h5>
+    		<div markdown="1">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168938073-514855a3-ceb3-4dc1-8fa1-8a80f93302ca.gif">
+   			</div>
+		<h5>로그인</h5>
+ 			<div markdown="2">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168938124-8ab48eb9-f1d2-4ab2-8239-d65f903911b4.gif">
+    		</div>
+    	<h5>로그아웃 / 공지사항</h5>
+ 			<div markdown="3">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
+    		</div>
 	</details>
 	<details>
-    	 <summary><h4>👥관리자</h4></summary>
+    <summary><h4>👥관리자</h4></summary>
 	<h5>회원가입</h5>
     	<div markdown="1">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938073-514855a3-ceb3-4dc1-8fa1-8a80f93302ca.gif">
-   	</div>
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+   		</div>
 	<h5>로그인</h5>
- 	<div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938124-8ab48eb9-f1d2-4ab2-8239-d65f903911b4.gif">
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
     	</div>
-    		<h5>로그아웃 / 공지사항</h5>
- 	<div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
+    <h5>로그아웃</h5>
+ 		<div markdown="3">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    	</div>
+	<h5>공지사항</h5>
+ 		<div markdown="4">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
     	</div>
 	</details>
 </details>
+<details>
+    <summary><h3>🖥 마이페이지</h3></summary>
+	<details>
+        <summary><h4>🙍‍♀️사용자</h4></summary>
+		<h5>정보 수정</h5>
+    		<div markdown="1">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168940772-9c0d3117-e1cc-4315-8f8b-3a3d618aa244.gif">
+   			</div>
+		<h5>리뷰 작성 / 별점 등록</h5>
+ 			<div markdown="2">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168940813-ca570294-b85b-43dd-a52a-f44eed4c5c8d.gif">
+    		</div>
+    	<h5>장바구니</h5>
+ 			<div markdown="3">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168940841-2e6055e2-3f0e-46e0-9865-96d5bd1bbbfa.gif">
+    		</div>
+		<h5>결제</h5>
+ 			<div markdown="4">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    		</div>
+	</details>
+	<details>
+    <summary><h4>👥관리자</h4></summary>
+	<h5>마이페이지</h5>
+    	<div markdown="1">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+   		</div>
+	<h5>회원 조회</h5>
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    	</div>
+	</details>
+</details>
+<details>
+    <summary><h3>🖥 도서</h3></summary>
+	<details>
+        <summary><h4>🙍‍♀️사용자</h4></summary>
+		<h5>도서 메인</h5>
+    		<div markdown="1">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941361-545b2f77-bf13-4b3a-8f29-226276c0625e.gif">
+   			</div>
+		<h5>리뷰 작성 / 별점 등록</h5>
+ 			<div markdown="2">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941390-7d92f1fc-1588-45d4-955f-48b500a7d5c5.gif">
+    		</div>
+	</details>
+	<details>
+    <summary><h4>👥관리자</h4></summary>
+	<h5>도서 관리자1</h5>
+    	<div markdown="1">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+   		</div>
+	<h5>도서 관리자2</h5>
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    	</div>
+	</details>
+</details>
+<details>
+    <summary><h3>🖥 연재</h3></summary>
+	<details>
+        <summary><h4>🙍‍♀️사용자</h4></summary>
+		<h5>연재 메인</h5>
+    		<div markdown="1">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941588-b15a0dd8-1d67-4b60-bd71-3b4242ecdc7c.gif">
+   			</div>
+		<h5>댓글 작성 / 별점 등록</h5>
+ 			<div markdown="2">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941610-7327c28a-9a98-4653-b4fd-3ab908c4152f.gif">
+    		</div>
+		<h5>게시글</h5>
+ 			<div markdown="3">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941616-301fb446-88ae-400d-b5d6-89568e7d64a0.gif">
+    		</div>
+		<h5>검색</h5>
+ 			<div markdown="4">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941623-ec19d0a9-3d94-4a5f-8359-e6f181a9001d.gif">
+    		</div>
+	</details>
+	<details>
+    <summary><h4>👥관리자</h4></summary>
+	<h5>연재 관리자1</h5>
+    	<div markdown="1">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+   		</div>
+	<h5>연재 관리자2</h5>
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    	</div>
+	</details>
+</details>
+<details>
+    <summary><h3>🖥 펀딩</h3></summary>
+	<details>
+        <summary><h4>🙍‍♀️사용자</h4></summary>
+		<h5>펀딩 메인</h5>
+    		<div markdown="1">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941838-5ccfcb2c-cebd-458c-a501-de7ecf504a1e.gif">
+   			</div>
+		<h5>펀딩 · 철회 기능</h5>
+ 			<div markdown="2">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168941842-d6c58e5a-0b39-4cc2-9037-705228f05f54.gif">
+    		</div>
+	</details>
+	<details>
+    <summary><h4>👥관리자</h4></summary>
+	<h5>펀딩 관리자1</h5>
+    	<div markdown="1">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+   		</div>
+	<h5>펀딩 관리자2</h5>
+ 		<div markdown="2">
+	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+    	</div>
+	</details>
+</details>
+
 ## 4️⃣  관련 산출물
 
 ```html
