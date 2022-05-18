@@ -84,6 +84,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     <summary><h3>
         🖥 회원가입 / 공지사항
         </h3></summary>
+	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 	<h5>회원가입</h5>
     	<div markdown="1">
@@ -97,7 +98,8 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
  	<div markdown="2">
 	    <img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
     	</div>
-		
+	</details>
+	<details>
     	 <summary><h4>👥관리자</h4></summary>
 	<h5>회원가입</h5>
     	<div markdown="1">
@@ -111,6 +113,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
  	<div markdown="2">
 	    <img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
     	</div>
+	</details>
 </details>
 ## 4️⃣  관련 산출물
 
