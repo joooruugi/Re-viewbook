@@ -70,7 +70,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
         🖥 메인
         </h4></summary>
     <div markdown="1">
-	    <img src="![오프닝](https://user-images.githubusercontent.com/92707182/168934766-db23e862-60a4-4921-bc9c-2fd601d28f72.gif)">
+	    <img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
     </div>
 	
 </details>
