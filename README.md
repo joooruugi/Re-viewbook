@@ -69,19 +69,16 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     <summary><h4>
         🖥 메인
         </h4></summary>
-    <div markdown="1">
+	<h5>첫 페이지</h5>
+    	<div markdown="1">
 	    <img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
-    </div>
- <div markdown="2">
-	    <img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
-    </div>
-	 <summary><h4>
-        🖥 메인2
-        </h4></summary>
+   	</div>
+	<h5>메인 화면</h5>
+ 	<div markdown="2">
+	    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
+    	</div>
 </details>
- <summary><h4>
-        🖥 메인3
-        </h4></summary>
+
 
 
 ## 4️⃣  관련 산출물
