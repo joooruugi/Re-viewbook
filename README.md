@@ -78,7 +78,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    	<img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
     	</div>
 </details>
----
+	***
 <details>
     <summary><h3>🖥 회원가입 / 공지사항</h3></summary>
 	<details>
