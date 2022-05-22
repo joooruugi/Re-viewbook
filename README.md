@@ -83,34 +83,33 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 		<h5>회원가입</h5>
-    		<div markdown="1">
+    			<div markdown="1">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938073-514855a3-ceb3-4dc1-8fa1-8a80f93302ca.gif">
    			</div>
 		<h5>로그인</h5>
  			<div markdown="2">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938124-8ab48eb9-f1d2-4ab2-8239-d65f903911b4.gif">
-    		</div>
-    	<h5>로그아웃 / 공지사항</h5>
+    			</div>
+    		<h5>로그아웃 / 공지사항</h5>
  			<div markdown="3">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
-    		</div>
+    			</div>
 	</details>
 	<details>
-
-    <summary><h4>👥관리자</h4></summary>
-	<h5>회원가입</h5>
+    	<summary><h4>👥관리자</h4></summary>
+		<h5>회원가입</h5>
     		<div>
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694685-fde680d1-e517-495f-b1f9-4c913409ed0f.gif">
    		</div>
-	<h5>로그인/로그아웃</h5>
+		<h5>로그인/로그아웃</h5>
  		<div markdown="2">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694703-bf800b0c-82a0-4be9-b325-5696c35ddab1.gif">
 		</div>
-	<h5>공지사항</h5>
+		<h5>공지사항</h5>
  		<div markdown="3">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694722-dcbf9acc-e486-4b4f-9a87-7045bd2b0e1b.gif">
     		</div>
-	<h5>회원조회</h5>
+		<h5>회원조회</h5>
  		<div markdown="4">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694779-1e6febf8-1d41-4a2d-9782-90ef04e5acc7.gif">
     		</div>
