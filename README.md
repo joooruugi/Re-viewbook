@@ -66,12 +66,11 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 ## 3️⃣ 주요 기능 / 화면
 
 <details>
-    <summary><h3>🖥 메인</h3></summary>
+    <summary><h3>🖥 메인(서언주)</h3></summary>
 	<h5>첫 페이지</h5>
     	<div markdown="1">
 	    	<img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
    		</div>
-   		<h6>담당자 : 서언주</h6>
    		<p>✔ 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성</p>
 	<h5>메인 화면</h5>
  		<div markdown="2">
@@ -80,7 +79,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 </details>
 <hr>	
 <details>
-    <summary><h3>🖥 회원가입 / 공지사항</h3></summary>
+    <summary><h3>🖥 회원가입 / 공지사항(서언주)</h3></summary>
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 		<h5>회원가입</h5>
@@ -97,7 +96,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     		</div>
 	</details>
 	<details>
-		---
+
     <summary><h4>👥관리자</h4></summary>
 	<h5>회원가입</h5>
     		<div>
@@ -119,9 +118,9 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 </details>
 <hr>
 <details>
-    <summary><h3>🖥 마이페이지</h3></summary>
-	<details>
-        <summary><h4>🙍‍♀️사용자</h4></summary>
+    <summary><h3>🖥 마이페이지(권소정)</h3></summary>
+	
+        <h4>🙍‍♀️사용자</h4>
 		<h5>정보 수정</h5>
     		<div markdown="1">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168940772-9c0d3117-e1cc-4315-8f8b-3a3d618aa244.gif">
@@ -138,11 +137,11 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
  			<div markdown="4">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
     		</div>
-	</details>
+	
 </details>
 <hr>
 <details>
-    <summary><h3>🖥 도서</h3></summary>
+    <summary><h3>🖥 도서(조병국)</h3></summary>
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 		<h5>도서 메인</h5>
@@ -154,7 +153,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941390-7d92f1fc-1588-45d4-955f-48b500a7d5c5.gif">
     		</div>
 	</details>
-	---
+	
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>도서 등록</h5>
@@ -169,7 +168,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 </details>
 <hr>
 <details>
-    <summary><h3>🖥 연재</h3></summary>
+    <summary><h3>🖥 연재(김도현)</h3></summary>
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 		<h5>연재 메인</h5>
@@ -189,7 +188,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941623-ec19d0a9-3d94-4a5f-8359-e6f181a9001d.gif">
     		</div>
 	</details>
-	---
+
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>연재 관리자1</h5>
@@ -204,7 +203,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 </details>
 <hr>
 <details>
-    <summary><h3>🖥 펀딩</h3></summary>
+    <summary><h3>🖥 펀딩(배민수)</h3></summary>
 	<details>
         <summary><h4>🙍‍♀️사용자</h4></summary>
 		<h5>펀딩 메인</h5>
@@ -216,7 +215,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941842-d6c58e5a-0b39-4cc2-9037-705228f05f54.gif">
     		</div>
 	</details>
-	---
+
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>펀딩 관리자1</h5>
