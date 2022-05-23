@@ -1,3 +1,4 @@
+
 # Re-viewbook
 KH_정보교육원 세미프로젝트
 ![001](https://user-images.githubusercontent.com/92707182/168520756-32ebffeb-28fb-4c5a-bbe7-7754b0550ace.png)
@@ -64,18 +65,25 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 
 ## 3️⃣ 주요 기능 / 화면
-
 <details>
     <summary><h3>🖥 메인(서언주)</h3></summary>
 	<h5>첫 페이지</h5>
     	<div markdown="1">
 	    	<img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
    		</div>
-   		<p>✔ 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성</p>
-	<h5>메인 화면</h5>
+   		
+| ✔ | details |
+|--|--|
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+<details>
+		<h5>메인 화면</h5>
  		<div markdown="2">
-	    	<img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
+		    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-		a977-ddb0fe137a57.gif">
     	</div>
+</details>
 </details>
 <hr>	
 <details>
@@ -118,7 +126,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 <hr>
 <details>
     <summary><h3>🖥 마이페이지(권소정)</h3></summary>
-	
         <h4>🙍‍♀️사용자</h4>
 		<h5>정보 수정</h5>
     		<div markdown="1">
@@ -136,7 +143,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
  			<div markdown="4">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
     		</div>
-	
 </details>
 <hr>
 <details>
@@ -152,7 +158,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941390-7d92f1fc-1588-45d4-955f-48b500a7d5c5.gif">
     		</div>
 	</details>
-	
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>도서 등록</h5>
@@ -214,7 +219,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941842-d6c58e5a-0b39-4cc2-9037-705228f05f54.gif">
     		</div>
 	</details>
-
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>펀딩 관리자1</h5>
