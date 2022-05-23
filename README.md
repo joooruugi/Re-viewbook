@@ -71,19 +71,20 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     	<div markdown="1">
 	    	<img src="https://user-images.githubusercontent.com/92707182/168934836-c9949909-5c08-4b8d-907e-595f03cb6bc2.gif">
    		</div>
-   		
-| ✔ | details |
+
+   | ✔ | details |
 |--|--|
 | 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
-<details>
-		<h5>메인 화면</h5>
+
+
+<h5>메인 화면</h5>
  		<div markdown="2">
 		    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-		a977-ddb0fe137a57.gif">
     	</div>
-</details>
+    	
+   | ✔ | details |
+|--|--|
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
 </details>
 <hr>	
 <details>
@@ -94,15 +95,28 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     			<div markdown="1">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938073-514855a3-ceb3-4dc1-8fa1-8a80f93302ca.gif">
    			</div>
-		<h5>로그인</h5>
+   			
+   | ✔ | details |
+|--|--|
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+
+<h5>로그인</h5>
  			<div markdown="2">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938124-8ab48eb9-f1d2-4ab2-8239-d65f903911b4.gif">
     			</div>
-    		<h5>로그아웃 / 공지사항</h5>
+    			
+   | ✔ | details |
+|--|--|
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+   <h5>로그아웃 / 공지사항</h5>
  			<div markdown="3">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
     			</div>
-	</details>
+
+  | ✔ | details |
+|--|--|
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+</details>
 	<details>
     	<summary><h4>👥관리자</h4></summary>
 		<h5>회원가입</h5>
@@ -231,6 +245,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     	</div>
 	</details>
 </details>
+<hr>
 
 ## 4️⃣  관련 산출물
 
