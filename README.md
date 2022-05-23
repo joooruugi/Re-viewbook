@@ -48,7 +48,7 @@ KH_정보교육원 세미프로젝트
 
 |                                       | Development Environment / Technology Used                   |
 | ------------------------------------- | :---------------------------------------------------------- |
-| **Language**                          | Java11, Jsp, Servlet, HTML5, CSS3, Javascipt, XML           |
+| **Language**                          | Java11, Jsp, Servlet, HTML5, CSS3, Javascript, XML           |
 | **Web Application Server**            | Apache Tomcat 9.0                                           |
 | **Version Management System**         | Git, Github, Github Desktop, Compare Tool(Beyond Compare 4) |
 | **DataBase**                          | Oracle 11g Express Edition                                  |
@@ -74,7 +74,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
    | ✔ | details |
 |--|--|
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 화면 구성 |
+| 2 | javascript canvas를 이용하여 벚꽃이 흩날리는 화면 구현 |
+| 3 | 하단 img를 a태그에 넣어 클릭시 메인 페이지로 이동하도록 함 |
+| 👁‍🗨 | OpeningServlet.java, opening.jsp |
 
 
 <h5>메인 화면</h5>
@@ -84,7 +87,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     	
    | ✔ | details |
 |--|--|
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 상단 드롭다운 메뉴 구현, 클릭시 해당 페이지 이동 |
+| 2 | 마우스 호버 효과를 통해 강조하고자 하는 부분 강조 |
+| 3 | 배너 및 인기작가, 도서 추천, 구독권의 경우 클릭시 해당 페이지 이동 |
+| 👁‍🗨 | MainController.java, main.jsp |
 </details>
 <hr>	
 <details>
@@ -245,7 +251,6 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     	</div>
 	</details>
 </details>
-<hr>
 
 ## 4️⃣  관련 산출물
 
@@ -275,7 +280,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 4. 클래스
 	클래스 매핑.xlsx
-	클래스다이어그램.mdj
+	3팀_classdiagram.mdj
 
 5. 시퀀스다이어그램
 	시퀀스다이어그램.pptx
