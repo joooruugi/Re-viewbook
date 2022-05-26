@@ -236,11 +236,30 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     		<div markdown="1">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941838-5ccfcb2c-cebd-458c-a501-de7ecf504a1e.gif">
    			</div>
-		<h5>펀딩 · 철회 기능</h5>
+   			
+| ✔ | details |
+|--|--|
+| 1 | swiper-slider를 이용한 카테고리별 작품 이미지 슬라이딩 화면 구현 |
+| 2 | img클릭하면 작품 상세페이지 이동 기능 구현 |
+| 3 |  jsp태그를 이용해 작품 리스트화 |
+| 4 | 사용자의 작품 펀딩유무를 파악하는 컬럼을 이용해 펀딩/철회 버튼 구분 기능 및 화면 구현 |
+| 👁‍🗨 | FundingBoardListServlet.java, FundingSuccessBoardListServlet.java, fundingboardlist.jsp, fundingsuccessboardlist.jsp |
+
+
+<h5>펀딩 · 철회 기능</h5>
  			<div markdown="2">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941842-d6c58e5a-0b39-4cc2-9037-705228f05f54.gif">
     		</div>
-	</details>
+    		
+| ✔ | details |
+|--|--|
+| 1 | ajax를 이용해 작품정보 및 펀딩/철회 모달창 구현|
+| 2 | 펀딩하기 모달창에 후원금액 입력 후 펀딩하면 DB에 모인금액 반영해서 진행률 변화 구현|
+| 3 | 철회하기 모달창에 ajax로 후원금액 알려주는 기능 구현 |
+| 4 | 철회하기 누르면  DB에서 delete하여 모인금액 반영 기능 구현|
+| 👁‍🗨 | FundingDonationServlet.java, FundingWithdrawServlet.java, FundingWithdrawDoServlet.java |
+
+</details>
 	<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>펀딩 관리자1</h5>
