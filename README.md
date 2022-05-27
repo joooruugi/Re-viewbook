@@ -78,7 +78,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 화면 구성 |
 | 2 | javascript canvas를 이용하여 벚꽃이 흩날리는 화면 구현 |
 | 3 | 하단 img를 a태그에 넣어 클릭시 메인 페이지로 이동하도록 함 |
-| 👁‍🗨 | OpeningServlet.java, opening.jsp |
+| ✨ | OpeningServlet.java, opening.jsp |
 
 
 <h5>메인 화면</h5>
@@ -92,7 +92,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 1 | 상단 드롭다운 메뉴 구현, 클릭시 해당 페이지 이동 |
 | 2 | 마우스 호버 효과를 통해 강조하고자 하는 부분 강조 |
 | 3 | 배너 및 인기작가, 도서 추천, 구독권의 경우 클릭시 해당 페이지 이동 |
-| 👁‍🗨 | MainController.java, main.jsp |
+| ✨ | MainController.java, main.jsp |
 </details>
 <hr>	
 <details>
@@ -201,21 +201,52 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     		<div markdown="1">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941588-b15a0dd8-1d67-4b60-bd71-3b4242ecdc7c.gif">
    			</div>
-		<h5>댓글 작성 / 별점 등록</h5>
+   			
+| ✔ | details |
+|--|--|
+| 1 | 사이드 메뉴에서 각 카테고리 클릭 시 각 카테고리 별 게시글 목록 확인 가능|
+| 2 | 처음엔 메인에 3개 게시물씩 화면에 나타나고, 더보기 버튼 클릭시 3개 게시물씩 더 나타나고 마지막인 경우 alert창과 더 이상 게시물이 없다는 멘트와 함께 더보기 버튼이 사라짐 |
+| ✨ | SeriesMainServlet.java , SeriesSearchCategoryFictionServlet.java, SeriesSearchCategoryInfoServlet.java, SeriesSearchCategoryDailyServlet.java, SeriesSearchCategoryEtcServlet.java, seriesmain.jsp, seriescategoryfiction.jsp, seriescategoryinfo.jsp, seriescategorydaily.jsp, seriescategoryetc.jsp|
+<h5>댓글 작성 / 별점 등록</h5>
  			<div markdown="2">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941610-7327c28a-9a98-4653-b4fd-3ab908c4152f.gif">
     		</div>
-		<h5>게시글</h5>
+<br>
+
+   | ✔ | details |
+|--|--|
+| 1 | 댓글 작성 시 별점 입력이 가능하며 별점을 부여하지 않아도 댓글이 등록 가능함 |
+| 2 | 댓글 등록 후 본인이 작성한 댓글 수정과 삭제 가능 |
+| 3 | 댓글 수정은 css에 display: none;효과를 준 다음 스크립트를 사용하여 click 이벤트를 이용하여 해당 댓글창이 나타나도록 구현|
+| 4 | 댓글 삭제버튼 클릭 시 댓글을 삭제하시겠습니까? 라는 알림창과 함께 확인 버튼을 누르면 삭제 후 기존 게시물로 돌아간다.|
+| ✨ | SeriesReadServlet.java,SeriesCommentServlet.java, SeriesCommentUpdateServlet.java, SeriesCommentDeleteServlet.java, seriesread.jsp |
+
+<h5>게시글</h5>
  			<div markdown="3">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941616-301fb446-88ae-400d-b5d6-89568e7d64a0.gif">
     		</div>
-		<h5>검색</h5>
+   
+   | ✔ | details |
+|--|--|
+| 1 | 게시글 작성 시 카테고리 선택 가능 |
+| 2 | 게시물은 위지위그 api를 활용하여 옵션 사용할 수 있도록 구현|
+| 3 | 본인이 작성한 게시글 수정이 가능하며 게시글 수정 시 '게시글이 수정에 성공하였습니다'라는 alert창이 나타나면서 메인으로 이동함 |
+| 4 | cos.jar 라이브러리를 이용하여 파일 업로드 기능 구현 |
+| 5 | 게시글 삭제 버튼 클릭 시 '게시글이 삭제되었습니다'라는 alert창이 나타나면서 메인으로 이동함 |
+| ✨ |  SeriesInsertServlet.java, SeriesInsertDoServlet.java, SeriesUpdateServlet.java, SeriesUpdateDoServlet.java, SeriesDeleteServlet.java, SeriesReadServlet.java, seriesinsert.jsp, seriesread.jsp, seriesupdate.jsp|
+<h5>검색</h5>
  			<div markdown="4">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168941623-ec19d0a9-3d94-4a5f-8359-e6f181a9001d.gif">
     		</div>
-	</details>
 
-	<details>
+ | ✔ | details |
+|--|--|
+| 1 | 해당 작가명, 작품명으로 검색했을때 일치하는 글 목록 리스트 반환 |
+| 2 |일치하는 결과가 없는 경우 alert창으로 검색 조건에 일치하는 게시물이 없다고 나타난다.|
+| ✨ |   SeriesSearchServlet.java, seriessearch.jsp|
+</details>
+
+<details>
     <summary><h4>👥관리자</h4></summary>
 	<h5>연재 관리자1</h5>
     	<div markdown="1">
@@ -243,7 +274,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 2 | img클릭하면 작품 상세페이지 이동 기능 구현 |
 | 3 |  jsp태그를 이용해 작품 리스트화 |
 | 4 | 사용자의 작품 펀딩유무를 파악하는 컬럼을 이용해 펀딩/철회 버튼 구분 기능 및 화면 구현 |
-| 👁‍🗨 | FundingBoardListServlet.java, FundingSuccessBoardListServlet.java, fundingboardlist.jsp, fundingsuccessboardlist.jsp |
+| ✨ | FundingBoardListServlet.java, FundingSuccessBoardListServlet.java, fundingboardlist.jsp, fundingsuccessboardlist.jsp |
 
 
 <h5>펀딩 · 철회 기능</h5>
@@ -257,7 +288,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 2 | 펀딩하기 모달창에 후원금액 입력 후 펀딩하면 DB에 모인금액 반영해서 진행률 변화 구현|
 | 3 | 철회하기 모달창에 ajax로 후원금액 알려주는 기능 구현 |
 | 4 | 철회하기 누르면  DB에서 delete하여 모인금액 반영 기능 구현|
-| 👁‍🗨 | FundingDonationServlet.java, FundingWithdrawServlet.java, FundingWithdrawDoServlet.java |
+| ✨ | FundingDonationServlet.java, FundingWithdrawServlet.java, FundingWithdrawDoServlet.java |
 
 </details>
 	<details>
