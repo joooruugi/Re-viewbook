@@ -149,22 +149,80 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 <details>
     <summary><h3>🖥 마이페이지(권소정)</h3></summary>
         <h4>🙍‍♀️사용자</h4>
-		<h5>정보 수정</h5>
+		<h5>마이페이지 메인</h5>
     		<div markdown="1">
-	    		<img src="https://user-images.githubusercontent.com/92707182/168940772-9c0d3117-e1cc-4315-8f8b-3a3d618aa244.gif">
+	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-9fe45b6531.gif">
    			</div>
+
+| ✔ | details |
+|--|--|
+| 1 | 로그인 정보가 없으면 로그인 페이지로 이동, 로그인 정보가 있다면 마이페이지 클릭시 마이페이지로 이동|
+| 2 | 로그인한 회원의 아이디를 이용해 '000님 반갑습니다!'라는 멘트와 함께 구독중인 구독권 정보, 구독 시작일 정보가 뜸|
+| 3 | 구독중인 구독권이 없다면 '구독중인 구독권이 없습니다.'라는 멘트가 뜸|
+| 4 | 구매목록 조회 가능|
+| 5 | 구매목록에는 주문번호, 주문상품명, 주문날짜, 상품리뷰 작성여부 조회 가능|
+| ✨ | MyPageMainServlet.java, mypage_main.jsp|
+
 		<h5>리뷰 작성 / 별점 등록</h5>
  			<div markdown="2">
-	    		<img src="https://user-images.githubusercontent.com/92707182/168940813-ca570294-b85b-43dd-a52a-f44eed4c5c8d.gif">
+	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-e9a412f3f0.gif">
     		</div>
+
+| ✔ | details |
+|--|--|
+| 1 | 구매목록 중 리뷰를 작성한 상품은 상품리뷰란에 '작성 완료'로 뜨며, 리뷰를 작성하지 않은 상품은 '리뷰 작성'이라는 버튼이 활성화 됨|
+| 2 | '리뷰 작성'버튼 클릭시, 리뷰를 작성하는 모달창이 뜸|
+| 3 | 리뷰작성 모달창에는 리뷰제목, 별점, 리뷰내용 입력 가능. 모두 입력하여야 리뷰 등록 가능|
+| 4 | 별점은 별모양을 클릭하여 부여 가능. 1~5점중 선택 가능|
+| 5 | 리뷰작성 후 '리뷰 등록'버튼 클릭시, '리뷰 작성이 완료되었습니다'라는 알림창과 함께 리뷰 등록 완료|
+| ✨ | InsertReviewServlet.java, mypage_main.jsp|
+
+		<h5>정보 수정</h5>
+    		<div markdown="1">
+	   		 	<img src="https://im3.ezgif.com/tmp/ezgif-3-a2f967249c.gif">
+   			</div>
+
+| ✔ | details |
+|--|--|
+| 1 | 사이드 메뉴에서 정보수정 클릭 시 정보수정 페이지로 이동|
+| 2 | 기존에 회원이 등록한 아이디, 이름, 전화번호, 이메일, 주소가 화면에 나타나서 정보 조회 가능|
+| 3 | 아이디와 이름은 disable처리하여 수정 불가하고 조회만 가능|
+| 4 | 전화번호, 이메일, 주소는 입력창 클릭시 새로운 정보 입력하여 정보수정 가능|
+| 5 | 전화번호 입력창에 마우스 올려놓을시, '000-0000-0000 형식으로 입력 바랍니다.' 라는 가이드 뜸|
+| 6 | 정보수정 후 수정완료 버튼 클릭시, '정보 수정이 완료되었습니다.'라는 알림창 띄운 후 정보 수정완료|
+| ✨ | MyInformationServlet.java, myInfoUpdate.jsp|
+
     	<h5>장바구니</h5>
  			<div markdown="3">
-	    		<img src="https://user-images.githubusercontent.com/92707182/168940841-2e6055e2-3f0e-46e0-9865-96d5bd1bbbfa.gif">
+	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-2d92921e68.gif">
     		</div>
+
+| ✔ | details |
+|--|--|
+| 1 | 사이드 메뉴에서 장바구니 클릭 시 장바구니 페이지로 이동|
+| 2 | 도서에서 장바구니에 추가한 목록을 조회 가능|
+| 3 | 장바구니 목록에서는 상품이미지, 상품제목, 저자, 출판일, 도서번호, 수량, 금액이 조회 가능.|
+| 4 | 장바구니 목록 중 수량변경에 있는 +버튼과 -버튼 클릭을 통해, 해당 상품의 수량 변경 가능|
+| 5 | +버튼 클릭시, 해당 상품의 수량이 1씩 증가|
+| 6 | -버튼 클릭시, 해당 상품의 수량이 1씩 감소, 1보다 작은 숫자로는 내려가지 않음|
+| 7 | 삭제하기 버튼 클릭시, '장바구니에서 삭제 완료되었습니다'라는 알림창과 함께 장바구니 목록에서 삭제|
+| 8 | 구매하기 버튼 클릭시, 결제창으로 이동|
+| ✨ | SelectCartListServlet.java, UpdateCartServlet.java, UpdateDownCartServlet.java, DeleteCartServlet.java, cart_main.jsp|	
+
 		<h5>결제</h5>
  			<div markdown="4">
-	    		<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-8d89686dfc.gif">
     		</div>
+
+| ✔ | details |
+|--|--|
+| 1 | 장바구니 목록에서 구매하기 클릭 시, 결제 api로 이동|
+| 2 | 결제창에서 상품명과 상품수량에 해당하는 결제금액 조회|
+| 3 | 결제 수단 선택 후 결제 진행|
+| 5 | 결제 취소시, '결제에 실패하였습니다'라는 알림창과 함께 장바구니 목록으로 이동|
+| 5 | 결제 완료시, '결제 완료되었습니다'라는 알림창과 함께 마이페이지 메인으로 이동|
+| 6 | 결제 완료 후, 마이페이지 내 주문목록에서 결제 상품 추가되어 정보 조회 가능 & 장바구니 목록에서는 삭제|
+| ✨ | BuyCartServlet.java, cart_main.jsp|	
 </details>
 <hr>
 <details>
