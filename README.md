@@ -151,7 +151,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
         <h4>🙍‍♀️사용자</h4>
 		<h5>마이페이지 메인</h5>
     		<div markdown="1">
-	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-9fe45b6531.gif">
+	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-9fe45b6531.gif" style="width:1000px;height:505px;">
    			</div>
 
 | ✔ | details |
@@ -164,7 +164,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | ✨ | MyPageMainServlet.java, mypage_main.jsp|
 <h5>리뷰 작성 / 별점 등록</h5>
  	<div markdown="2">
-	   	<img src="https://im3.ezgif.com/tmp/ezgif-3-e9a412f3f0.gif">
+	   	<img src="https://im3.ezgif.com/tmp/ezgif-3-e9a412f3f0.gif" style="width:1000px;height:505px;">
     </div>
 
 | ✔ | details |
@@ -178,7 +178,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>정보 수정</h5>
 	<div markdown="3">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-a2f967249c.gif">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-a2f967249c.gif" style="width:1000px;height:505px;">
 	</div>
 
 | ✔ | details |
@@ -193,7 +193,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>장바구니</h5>
 	<div markdown="4">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-2d92921e68.gif">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-2d92921e68.gif" style="width:1000px;height:505px;">
 	</div>
 
 | ✔ | details |
@@ -210,7 +210,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>결제</h5>
 	<div markdown="5">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-8d89686dfc.gif">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-8d89686dfc.gif" style="width:1000px;height:505px;">
 	</div>
 
 | ✔ | details |
