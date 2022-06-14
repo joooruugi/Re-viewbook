@@ -162,11 +162,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 4 | 구매목록 조회 가능|
 | 5 | 구매목록에는 주문번호, 주문상품명, 주문날짜, 상품리뷰 작성여부 조회 가능|
 | ✨ | MyPageMainServlet.java, mypage_main.jsp|
-
-		<h5>리뷰 작성 / 별점 등록</h5>
- 			<div markdown="2">
-	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-e9a412f3f0.gif">
-    		</div>
+<h5>리뷰 작성 / 별점 등록</h5>
+ 	<div markdown="2">
+	   	<img src="https://im3.ezgif.com/tmp/ezgif-3-e9a412f3f0.gif">
+    </div>
 
 | ✔ | details |
 |--|--|
@@ -177,10 +176,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 5 | 리뷰작성 후 '리뷰 등록'버튼 클릭시, '리뷰 작성이 완료되었습니다'라는 알림창과 함께 리뷰 등록 완료|
 | ✨ | InsertReviewServlet.java, mypage_main.jsp|
 
-		<h5>정보 수정</h5>
-    		<div markdown="1">
-	   		 	<img src="https://im3.ezgif.com/tmp/ezgif-3-a2f967249c.gif">
-   			</div>
+<h5>정보 수정</h5>
+	<div markdown="3">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-a2f967249c.gif">
+	</div>
 
 | ✔ | details |
 |--|--|
@@ -192,10 +191,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 6 | 정보수정 후 수정완료 버튼 클릭시, '정보 수정이 완료되었습니다.'라는 알림창 띄운 후 정보 수정완료|
 | ✨ | MyInformationServlet.java, myInfoUpdate.jsp|
 
-    	<h5>장바구니</h5>
- 			<div markdown="3">
-	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-2d92921e68.gif">
-    		</div>
+<h5>장바구니</h5>
+	<div markdown="4">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-2d92921e68.gif">
+	</div>
 
 | ✔ | details |
 |--|--|
@@ -209,10 +208,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | 8 | 구매하기 버튼 클릭시, 결제창으로 이동|
 | ✨ | SelectCartListServlet.java, UpdateCartServlet.java, UpdateDownCartServlet.java, DeleteCartServlet.java, cart_main.jsp|	
 
-		<h5>결제</h5>
- 			<div markdown="4">
-	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-8d89686dfc.gif">
-    		</div>
+<h5>결제</h5>
+	<div markdown="5">
+		<img src="https://im3.ezgif.com/tmp/ezgif-3-8d89686dfc.gif">
+	</div>
 
 | ✔ | details |
 |--|--|
