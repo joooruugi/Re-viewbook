@@ -1,4 +1,5 @@
 
+
 # Re-viewbook
 KH_정보교육원 세미프로젝트
 ![001](https://user-images.githubusercontent.com/92707182/168520756-32ebffeb-28fb-4c5a-bbe7-7754b0550ace.png)
@@ -52,7 +53,7 @@ KH_정보교육원 세미프로젝트
 | **Web Application Server**            | Apache Tomcat 9.0                                           |
 | **Version Management System**         | Git, Github, Github Desktop, Compare Tool(Beyond Compare 4) |
 | **DataBase**                          | Oracle 11g Express Edition                                  |
-| **FrameWork / OPEN API**              | Ajax, jQeury, WYSIWYG, Iamport, Font-Awesome, Swiper-Slider |
+| **FrameWork / OPEN API**              | Ajax, jQuery, WYSIWYG, Iamport, Font-Awesome, Swiper-Slider |
 | **Development Tool**                  | SQL Developer, Eclipse, Visual Studio Code                  |
 | **OS**                                | Window 10                                                   |
 | **Meeting Tool**                      | Notion, Discord                                             |
@@ -106,7 +107,10 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
    			
    | ✔ | details |
 |--|--|
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 헤더 상단 회원가입 버튼 클릭시 약관동의 페이지로 이동 이후 순차적 진행 |
+| 2 | 아이디와 닉네임 중복확인, 아이디 및 비밀번호 전화번호 등 유효성 검사 진행|
+| 3 | 회원가입 완료 후 각 서비스를 이용할 수 있는 페이지 이동 가능|
+| ✨ | UserSignupCheckIdServlet.java, UserSignupCheckNickServlet.java, UserSignupFinalServlet.java, UserSignupInputActServlet.java, UserSignupInputServlet.java, UserSignupServlet.java, UserSignupTermsServlet.java, signup_check.jsp, signup_checknick.jsp, signup_final.jsp, signup_input.jsp, signup_terms.jsp, signup.jsp, signupmain.jsp|
 
 <h5>로그인</h5>
  			<div markdown="2">
@@ -115,15 +119,30 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     			
    | ✔ | details |
 |--|--|
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
-   <h5>로그아웃 / 공지사항</h5>
+| 1 | 아이디와 비밀번호 일치여부를 판별해 로그인 성공여부 반환 |
+| 2 | 성공시 팝업창에 회원 정보 + 환영합니다 출력 후 헤더 세션 변경 |
+| ✨ | UserLoginActServlet.java, UserLoginFindIdActServlet, UserLoginFindPwdActServlet.java, UserLoginFindIdServlet.java, UserFindPwdServlet.java, UserLoginServlet.java, findid.jsp, findpwd.jsp, login.jsp, loginaction.jsp |
+   <h5>로그아웃 </h5>
+ 			<div markdown="3">
+	    		<img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
+    			</div>
+    			
+  | ✔ | details |
+|--|--|
+| 1 | 로그아웃 버튼 클릭시 회원정보 만료 후 헤더 변경 |
+| ✨ | UserLogoutServlet.java, logout.jsp |
+
+   <h5>공지사항</h5>
  			<div markdown="3">
 	    		<img src="https://user-images.githubusercontent.com/92707182/168938166-5ef317d2-8ce4-43ef-aba7-3c1f1f84c1cf.gif">
     			</div>
 
   | ✔ | details |
 |--|--|
-| 1 | 교육용 홈페이지 임을 알리기 위해 메인 화면 전 "/" 화면 구성 |
+| 1 | 공지사항 버튼 클릭시 목록 출력 |
+| 2 | 공지사항 제목 클릭시 상세 내용 조회 가능 |
+| 3 | 공지사항 조회시마다 조회수 cnt 1씩 증가 |
+| ✨ | UserNoticeServlet.java, UserNoticeContentServlet.java, notice.jsp, noticecontent.jsp |
 </details>
 	<details>
     	<summary><h4>👥관리자</h4></summary>
@@ -131,19 +150,51 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     		<div>
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694685-fde680d1-e517-495f-b1f9-4c913409ed0f.gif">
    		</div>
-		<h5>로그인/로그아웃</h5>
+   		
+  | ✔ | details |
+|--|--|
+| 1 | 헤더 상단 회원가입 버튼 클릭시 약관동의 페이지로 이동 이후 순차적 진행 |
+| 2 | 아이디와 닉네임 중복확인, 아이디 및 비밀번호 전화번호 등 유효성 검사 진행|
+| 3 | 회원가입 완료 후 각 서비스를 이용할 수 있는 페이지 이동 가능|
+| ✨ | AdminSignupCheckIdServlet.java, AdminSignupCheckNickServlet.java, AdminSignupFinalServlet.java, AdminSignupInputServlet.java, AdminSignupInputActServlet.java, AdminSignupTermsServlet.java, adsignup_checkid.jsp, adsignup_checknick.jsp, adsignup_final.jsp, adsignup_input.jsp, adsignup_terms.jsp |
+
+
+<h5>로그인/로그아웃</h5>
  		<div markdown="2">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694703-bf800b0c-82a0-4be9-b325-5696c35ddab1.gif">
 		</div>
-		<h5>공지사항</h5>
+
+ | ✔ | details |
+|--|--|
+| 1 | 관리자 로그인으로 로그인시 관리자 메인페이지로 이동 |
+| 2 | 로그인과 동시에 헤더 변경, 로그아웃시 원 헤더로 변경|
+| ✨ | AdminLoginServlet.java, AdminLoginActServlet.java, AdminLoginFindIdActServlet.java, AdminLoginFindIdServlet.java, AdminLoginFindPwdServlet.java, AdminLoginFindPwdActServlet.java, AdminMainServlet.java, adlogin.jsp, adfindid.jsp, adfindpwd.jsp|
+
+
+<h5>공지사항</h5>
  		<div markdown="3">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694722-dcbf9acc-e486-4b4f-9a87-7045bd2b0e1b.gif">
     		</div>
-		<h5>회원조회</h5>
+    		
+ | ✔ | details |
+|--|--|
+| 1 | 관리자 아이디로 로그인시 공지사항 작성 가능 |
+| 2 | 제목 및 내용 입력 후 등록하기 버튼 클릭시 DB에 저장, 작성자와 작성일 정보 자동 입력|
+| ✨ | AdminNoticeServlet.java, AdminNoticeWriteActServlet.java, AdminNoticeWriteServlet.java, AdminNoticeDeleteServlet.java, AdminNoticeDeleteActServlet.java, adminnotice_content.jsp, adminnotice_write.jsp, adnotice.jsp|
+
+<h5>회원조회</h5>
  		<div markdown="4">
 	    	<img src="https://user-images.githubusercontent.com/92707182/169694779-1e6febf8-1d41-4a2d-9782-90ef04e5acc7.gif">
     		</div>
-	</details>
+    		
+   | ✔ | details |
+|--|--|
+| 1 | 관리자 권한 로그인시 회원 아이디로 회원정보 조회 가능 |
+| 2 | 정보 존재 여부를 반환해주며, 해당 회원 정보 알림창 출력|
+| 3 | 리스트 우측 삭제하기 버튼을 통해 회원 정보 삭제 가능|
+| ✨ | AdminUserFindServlet.java, AdminUserListServlet.java, userlist.jsp |
+
+</details>
 </details>
 <hr>
 <details>
@@ -307,11 +358,11 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     <summary><h4>👥관리자</h4></summary>
 	<h5>연재 관리자1</h5>
     	<div markdown="1">
-	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+	    	
    		</div>
 	<h5>연재 관리자2</h5>
  		<div markdown="2">
-	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+	    	
     	</div>
 	</details>
 </details>
@@ -352,11 +403,11 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     <summary><h4>👥관리자</h4></summary>
 	<h5>펀딩 관리자1</h5>
     	<div markdown="1">
-	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+	    
    		</div>
 	<h5>펀딩 관리자2</h5>
  		<div markdown="2">
-	    	<img src="https://user-images.githubusercontent.com/92707182/168940941-0f31f38e-82f6-4926-9116-06f4e20d023d.gif">
+	    	
     	</div>
 	</details>
 </details>
@@ -404,11 +455,4 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 https://drive.google.com/drive/folders/1pbJU-loD0zsMr9vWzFqOOk08bGdj-guq?usp=sharing
 
-
-
-
-
-## 5️⃣
-
-6️⃣7️⃣
 
