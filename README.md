@@ -83,7 +83,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>메인 화면</h5>
  		<div markdown="2">
-		    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-		a977-ddb0fe137a57.gif">
+		    <img src="https://user-images.githubusercontent.com/92707182/168936840-375a9499-c792-40ec-a977-ddb0fe137a57.gif">
     	</div>
     	<br>
     	
