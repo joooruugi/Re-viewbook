@@ -202,7 +202,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
         <h4>🙍‍♀️사용자</h4>
 		<h5>마이페이지 메인</h5>
     		<div markdown="1">
-	    		<img src="https://im3.ezgif.com/tmp/ezgif-3-01f284db0c.gif">
+	    		<img src="https://user-images.githubusercontent.com/98301664/182024119-d07ce501-8e2e-43e3-b93b-52f921db4e00.gif">
    			</div>
 
 | ✔ | details |

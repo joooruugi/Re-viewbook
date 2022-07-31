@@ -33,28 +33,23 @@ public class MyPageService {
 		return result;
 	}
 
-	// 주문목록 추가
+	// 구매 후 -> 주문목록 추가 & 장바구니 삭제
 	public int insertOrder(BuyListVo bVo) {
 		Connection conn = getConnection();
 		setAutoCommit(conn, false);
-
 		int nextVal = dao.selectSeqOrNumNextVal(conn);
-
 		int result = dao.insertOrder(conn, bVo, nextVal);
-
+		
 		if (result > 0 && bVo != null) { // 구매하면 구매목록에 추가
 			result = dao.insertOrderBook(conn, bVo, nextVal);
 		}
-
 		if (result > 0) { // 구매하면 장바구니에서는 삭제
 			result = dao.deleteCart(conn, bVo.getUsId(), bVo.getBkNo());
 		}
-
 		if (result > 0)
 			commit(conn);
 		else
 			rollback(conn);
-
 		close(conn);
 		return result;
 	}
