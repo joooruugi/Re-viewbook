@@ -215,7 +215,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 | ✨ | MyPageMainServlet.java, mypage_main.jsp|
 <h5>리뷰 작성 / 별점 등록</h5>
  	<div markdown="2">
-	   	<img src="https://im3.ezgif.com/tmp/ezgif-3-33a78e75ae.gif">
+	   	<img src="https://user-images.githubusercontent.com/98301664/182026169-077968b0-ee2a-4f8a-82d5-2c5794f60582.gif">
     </div>
 
 | ✔ | details |
@@ -229,7 +229,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>정보 수정</h5>
 	<div markdown="3">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-d3e0cf705d.gif">
+		<img src="https://user-images.githubusercontent.com/98301664/182026194-ad585b09-c215-40b4-9ef8-66f2711e7899.gif">
 	</div>
 
 | ✔ | details |
@@ -244,7 +244,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>장바구니</h5>
 	<div markdown="4">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-de7719c649.gif">
+		<img src="https://user-images.githubusercontent.com/98301664/182026205-65524394-3d7d-4c68-8c00-7bb4c51592f5.gif">
 	</div>
 
 | ✔ | details |
@@ -261,7 +261,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <h5>결제</h5>
 	<div markdown="5">
-		<img src="https://im3.ezgif.com/tmp/ezgif-3-6167ae3cf8.gif">
+		<img src="https://user-images.githubusercontent.com/98301664/182026221-2e14ad3f-16b6-4cef-8016-7aba6661559c.gif">
 	</div>
 
 | ✔ | details |
