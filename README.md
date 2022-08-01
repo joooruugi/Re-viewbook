@@ -361,8 +361,8 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
     	<div markdown="1">
 		<img src="https://user-images.githubusercontent.com/92707182/182154545-4c980526-aeff-4b4f-8ba3-9ee2c32b080e.gif">
    		</div>
+	</details>
 </details>
-
 <hr>
 
 
@@ -405,7 +405,7 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 		<img src="https://user-images.githubusercontent.com/92707182/182154626-a9b925c5-f499-47f2-9395-02c148f785e5.gif">
    		</div>
 
-	
+	</details>
 </details>
 
 ## 4️⃣  관련 산출물
