@@ -399,14 +399,15 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 </details>
 	<details>
-    <summary><h4>👥관리자</h4></summary>
+   	<summary><h4>👥관리자</h4></summary>
 	<h5>펀딩 관리자</h5>
     	<div markdown="1">
 		<img src="https://user-images.githubusercontent.com/92707182/182154626-a9b925c5-f499-47f2-9395-02c148f785e5.gif">
    		</div>
-
+	</details>
 	</details>
 </details>
+
 
 ## 4️⃣  관련 산출물
 
