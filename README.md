@@ -1,5 +1,6 @@
 
 
+
 # Re-viewbook
 KH_정보교육원 세미프로젝트
 ![001](https://user-images.githubusercontent.com/92707182/168520756-32ebffeb-28fb-4c5a-bbe7-7754b0550ace.png)
@@ -356,17 +357,15 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 
 <details>
     <summary><h4>👥관리자</h4></summary>
-	<h5>연재 관리자1</h5>
+	<h5>게시글, 댓글 삭제</h5>
     	<div markdown="1">
-	    	
+		<img src="https://user-images.githubusercontent.com/92707182/182154545-4c980526-aeff-4b4f-8ba3-9ee2c32b080e.gif">
    		</div>
-	<h5>연재 관리자2</h5>
- 		<div markdown="2">
-	    	
-    	</div>
-	</details>
 </details>
+
 <hr>
+
+
 <details>
     <summary><h3>🖥 펀딩(배민수)</h3></summary>
 	<details>
@@ -401,15 +400,12 @@ https://economic-toque-a9e.notion.site/SEMIPROJECT_-cf35e53816ce49958ab45c76c9ae
 </details>
 	<details>
     <summary><h4>👥관리자</h4></summary>
-	<h5>펀딩 관리자1</h5>
+	<h5>펀딩 관리자</h5>
     	<div markdown="1">
-	    
+		<img src="https://user-images.githubusercontent.com/92707182/182154626-a9b925c5-f499-47f2-9395-02c148f785e5.gif">
    		</div>
-	<h5>펀딩 관리자2</h5>
- 		<div markdown="2">
-	    	
-    	</div>
-	</details>
+
+	
 </details>
 
 ## 4️⃣  관련 산출물
